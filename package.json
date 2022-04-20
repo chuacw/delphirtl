@@ -1,9 +1,16 @@
 {
   "name": "delphirtl",
-  "version": "1.0.0",
+  "version": "1.0.14",
   "description": "RTL functions",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*.js"
+  },  
   "scripts": {
+    "prepare": "del lib /s && npm run build",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,10 +21,20 @@
     "delphi",
     "rtl"
   ],
+  "files": [
+    "lib/**/*"
+  ],
   "author": "chuacw",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chuacw/delphirtl/issues"
   },
-  "homepage": "https://github.com/chuacw/delphirtl#readme"
+  "homepage": "https://github.com/chuacw/delphirtl#readme",
+  "dependencies": {
+    "@types/node": "^17.0.25"
+  },
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^4.6.3"
+  }
 }

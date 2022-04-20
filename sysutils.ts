@@ -12,5 +12,8 @@ function extractFileName(AFileName: string): string {
 
 export {
     extractFileDir,
-    extractFileName
+    extractFileName,
+    extractFileDir as ExtractFileDir,
+    extractFileName as ExtractFileName
 }
+
