@@ -1,0 +1,23 @@
+{
+  "name": "delphirtl",
+  "version": "1.0.0",
+  "description": "RTL functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuacw/delphirtl.git"
+  },
+  "keywords": [
+    "delphi",
+    "rtl"
+  ],
+  "author": "chuacw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuacw/delphirtl/issues"
+  },
+  "homepage": "https://github.com/chuacw/delphirtl#readme"
+}
