@@ -1,15 +1,24 @@
 {
   "name": "delphirtl",
-  "version": "1.0.14",
+  "version": "1.0.26",
   "description": "RTL functions",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "",
   "exports": {
-    ".": "./lib/index.js",
-    "./*": "./lib/*.js"
-  },  
+    ".": {
+      "import": "./lib/rtl.js",
+      "require": "./lib/rtl.js"
+    },
+    "./sysutils": {
+      "import": "./lib/sysutils.js",
+      "require": "./lib/sysutils.js"
+    },
+    "./rtl": {
+      "import": "./lib/rtl.js",
+      "require": "./lib/rtl.js"
+    }
+  },
   "scripts": {
-    "prepare": "del lib /s && npm run build",
+    "prepare": "del lib /s /q && tsc --build",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,5 +45,6 @@
   "devDependencies": {
     "tsc": "^2.0.4",
     "typescript": "^4.6.3"
-  }
+  },
+  "type": "module"
 }
