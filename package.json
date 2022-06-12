@@ -1,14 +1,21 @@
 {
   "name": "delphirtl",
-  "version": "1.0.50",
-  "description": "RTL functions",
+  "version": "1.0.54",
+  "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
+    ".": "./dist/rtl.js",
     "./dateutils": "./dist/dateutils.js",
     "./logutils": "./dist/logutils.js",
     "./rtl": "./dist/rtl.js",
     "./sysutils": "./dist/sysutils.js"
+  },
+  "typesVersions": {
+    "*": {
+      ".": ["dist/rtl"],
+      "*": ["dist/*"]
+    }
   },
   "directories": {
     "test": "tests"
