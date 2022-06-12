@@ -5,13 +5,14 @@
     "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
 // Needs either AMD or System in "module" to generate outFile
     // "outFile": "./lib/index.js",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
-    "outDir": "./lib",                                   /* Specify an output folder for all emitted files. */
+    "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
     "strict": true,                                      /* Enable all strict type-checking options. */
     "inlineSourceMap": true,
     "skipLibCheck": true                                /* Skip type checking all .d.ts files. */
   },
-  "include": ["**.ts"]
+  "include": ["**.ts"],
+  "exclude": ["node_modules", "**/__tests__/*","**/tests/*"]
 }
 

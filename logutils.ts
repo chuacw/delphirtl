@@ -1,13 +1,13 @@
-function log(arg: any) {
-    console.log(arg);
+function log(message?: any, ...optionalParams: any[]) {
+    console.log(message, optionalParams);
 }
 
-function info(arg: any) {
-    console.info(arg);
+function info(message?: any, ...optionalParams: any[]) {
+    console.info(message, optionalParams);
 }
 
-function error(arg: any) {
-    console.error(arg);
+function error(message?: any, ...optionalParams: any[]) {
+    console.error(message, optionalParams);
 }
 
 export {

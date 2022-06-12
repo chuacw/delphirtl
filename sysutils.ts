@@ -43,6 +43,6 @@ export {
     extractFileExt, extractFileExt as ExtractFileExt,
     extractFileName, extractFileName as ExtractFileName,
     FileExists, FileExists as getFileExists,
-    IncludeTrailingPathDelimiter
+    IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter
 }
 

@@ -1,30 +1,31 @@
 {
   "name": "delphirtl",
-  "version": "1.0.33",
+  "version": "1.0.38",
   "description": "RTL functions",
-  "main": "",
-  "types": "./index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     "./logutils": {
-      "import": "./lib/logutils.js",
-      "require": "./lib/logutils.js"
+      "import": "./dist/logutils.js",
+      "require": "./dist/logutils.js"
     },
     "./rtl": {
-      "import": "./lib/rtl.js",
-      "require": "./lib/rtl.js"
+      "import": "./dist/rtl.js",
+      "require": "./dist/rtl.js"
     },
     "./sysutils": {
-      "import": "./lib/sysutils.js",
-      "require": "./lib/sysutils.js"
+      "import": "./dist/sysutils.js",
+      "require": "./dist/sysutils.js"
     }
   },
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "prepare": "del lib /s /q && tsc --build && npm-dts -o lib\\index.d.ts generate",
+    "prepare": "del dist /s /q && tsc --build",
+    "prepare-uncommented":"// && npm-dts -o dist\\index.d.ts generate", 
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,7 @@
     "rtl"
   ],
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "author": "chuacw",
   "license": "ISC",

@@ -1,5 +1,8 @@
+# Exclude required modules from check-in
 node_modules/
+# Exclude generated results from check-in
 lib/
+dist/
 .env
 
 *.js

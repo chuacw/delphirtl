@@ -19,3 +19,5 @@ import { ParamStr } from "rtl";  // import the method/type from the namespace rt
 import { ExtractFileName } from "sysutils";   
 
 This current configuration is not ideal.
+
+Added unit tests

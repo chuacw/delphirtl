@@ -20,7 +20,12 @@ function ParamStr(index: number): string {
     }
 }
 
+async function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export {
     ParamCount, ParamCount as getParamCount,
-    ParamStr, ParamStr as getParamStr
+    ParamStr, ParamStr as getParamStr,
+    sleep, sleep as Sleep
 }
