@@ -1,3 +1,5 @@
+import assert from "assert";
+
 function getProcessArgs(): string[] {
     let result = process.argv.slice(1);
     return result;
@@ -9,6 +11,7 @@ function ParamCount(): number {
 }
 
 function ParamStr(index: number): string {
+    assert(index>=0);
     let processArgs = getProcessArgs();
     if (index < 0) {
         return "";
@@ -18,8 +21,6 @@ function ParamStr(index: number): string {
 }
 
 export {
-    ParamCount,
-    ParamStr,
-    ParamCount as getParamCount,
-    ParamStr as getParamStr
+    ParamCount, ParamCount as getParamCount,
+    ParamStr, ParamStr as getParamStr
 }

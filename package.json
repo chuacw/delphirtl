@@ -1,24 +1,25 @@
 {
   "name": "delphirtl",
-  "version": "1.0.27",
+  "version": "1.0.33",
   "description": "RTL functions",
   "main": "",
+  "types": "./index.d.ts",
   "exports": {
-    ".": {
+    "./logutils": {
+      "import": "./lib/logutils.js",
+      "require": "./lib/logutils.js"
+    },
+    "./rtl": {
       "import": "./lib/rtl.js",
       "require": "./lib/rtl.js"
     },
     "./sysutils": {
       "import": "./lib/sysutils.js",
       "require": "./lib/sysutils.js"
-    },
-    "./rtl": {
-      "import": "./lib/rtl.js",
-      "require": "./lib/rtl.js"
     }
   },
   "scripts": {
-    "prepare": "del lib /s /q && tsc --build",
+    "prepare": "del lib /s /q && tsc --build && npm-dts -o lib\\index.d.ts generate",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,11 +41,12 @@
   },
   "homepage": "https://github.com/chuacw/delphirtl#readme",
   "dependencies": {
-    "@types/node": "^17.0.25"
+    "@types/node": "^17.0.25",
+    "ethers": "^5.6.6"
   },
   "devDependencies": {
+    "ts-node": "^10.8.1",
     "tsc": "^2.0.4",
     "typescript": "^4.6.3"
-  },
-  "type": "module"
+  }
 }
