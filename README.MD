@@ -10,6 +10,7 @@ npm install delphirtl
 
 Modules
 =======
+* arrayutils
 * dateutils  
 * logutils  
 * sysutils  
@@ -28,3 +29,4 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | Version  | Date        | Notes  |  
 |----------|-------------|--------|  
 | 1.0.51   | 12 Jun 2022 | Added ability to import subpackages. |
+| 1.0.55   | 12 Jun 2022 | Added arrayutils. |
