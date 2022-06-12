@@ -1,9 +1,8 @@
 
-import assert = require("assert");
 import path = require("path");
 import { ExtractFileDir, ExtractFileExt, ExtractFileName, FileExists, IncludeTrailingPathDelimiter } from "../sysutils";
 
-describe('testing index file', () => {
+describe('testing SysUtils library', () => {
     test('IncludeTrailingPathDelimiter No Trailing Delimiter', () => {
         expect(IncludeTrailingPathDelimiter("path")).toEqual("path" + path.sep);
     });
@@ -25,18 +24,16 @@ describe('testing index file', () => {
         expect(ExtractFileDir(path.resolve(__dirname, "Nothing.pas"))).toEqual(__dirname);
     });
 
-    test('ExtractFileExt filename with ext', () => {
+    test('ExtractFileExt no dir, filename with ext', () => {
         expect(ExtractFileExt("Nothing.pas")).toEqual("pas");
     });
-    test('ExtractFileExt filename without ext', () => {
+    test('ExtractFileExt no dir, filename without ext', () => {
         expect(ExtractFileExt("Nothing")).toEqual("");
     });
-    test('ExtractFileExt dirname with dot ', () => {
+    test('ExtractFileExt dirname with dot, filename no dot ', () => {
         expect(ExtractFileExt(path.resolve("path1.path2", "Nothing"))).toEqual("");
     });
+    test('ExtractFileExt dirname with dot, filename with dot ', () => {
+        expect(ExtractFileExt(path.resolve("path1.path2", "Nothing.ext"))).toEqual("ext");
+    });
 });
-
-
-// assert(ExtractFileExt("Nothing.pas") == "pas", "ExtractFileExt should return pas");
-
-// assert(ExtractFileName("Nothing.pas") == "Nothing.pas", "ExtractFileName should return Nothing.pas");

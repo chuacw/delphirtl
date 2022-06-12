@@ -28,7 +28,7 @@ Date.prototype.ToBlockchainTimestamp = function(): number {
  */
 function JSDateAddYears(date: Date, years: number): Date {
     let result = new Date(date.getTime());
-    result = JSDateAddDays(result, 365); // average
+    result.setFullYear(result.getFullYear() + years);
     return result;
 }
 
