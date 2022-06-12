@@ -10,10 +10,10 @@ npm install delphirtl
 
 Modules
 =======
-dateutils
-logutils
-sysutils  
-rtl  
+* dateutils  
+* logutils  
+* sysutils  
+* rtl  
 
 Comments
 ========
