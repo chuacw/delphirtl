@@ -1,22 +1,14 @@
 {
   "name": "delphirtl",
-  "version": "1.0.38",
+  "version": "1.0.50",
   "description": "RTL functions",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "./logutils": {
-      "import": "./dist/logutils.js",
-      "require": "./dist/logutils.js"
-    },
-    "./rtl": {
-      "import": "./dist/rtl.js",
-      "require": "./dist/rtl.js"
-    },
-    "./sysutils": {
-      "import": "./dist/sysutils.js",
-      "require": "./dist/sysutils.js"
-    }
+    "./dateutils": "./dist/dateutils.js",
+    "./logutils": "./dist/logutils.js",
+    "./rtl": "./dist/rtl.js",
+    "./sysutils": "./dist/sysutils.js"
   },
   "directories": {
     "test": "tests"
