@@ -8,8 +8,12 @@ function extractFileDir(AFilename: string): string {
 }
 
 function extractFileExt(AFilename: string): string {
+    let result = "";
+    const LPathDelimIndex = AFilename.lastIndexOf(path.sep);
     const index = AFilename.lastIndexOf(".");
-    const result = AFilename.substring(index+1, AFilename.length);
+    if (index > LPathDelimIndex) { // ensure . is after path separator  
+        result = (index==-1)?"":AFilename.substring(index+1, AFilename.length);
+    }
     return result;
 }
 
