@@ -1,6 +1,6 @@
 
 import path = require("path");
-import { ExtractFileDir, ExtractFileExt, ExtractFileName, FileExists, IncludeTrailingPathDelimiter } from "../sysutils";
+import { ExtractFileDir, ExtractFileExt, ExtractFileName, FileExists, IncludeTrailingPathDelimiter } from "../src/sysutils";
 
 describe('testing SysUtils library', () => {
     test('IncludeTrailingPathDelimiter No Trailing Delimiter', () => {

@@ -38,11 +38,19 @@ function IncludeTrailingPathDelimiter(APath: string): string {
     return result;
 }
 
+function LowerCase(str: string): string {
+    return str.toLowerCase();
+}
+function UpperCase(str: string): string {
+    return str.toUpperCase();
+}
+
 export {
     extractFileDir, extractFileDir as ExtractFileDir,
     extractFileExt, extractFileExt as ExtractFileExt,
     extractFileName, extractFileName as ExtractFileName,
-    FileExists, FileExists as getFileExists,
-    IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter
+    FileExists as getFileExists, FileExists, 
+    IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter,
+    LowerCase, UpperCase
 }
 

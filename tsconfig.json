@@ -12,7 +12,7 @@
     "inlineSourceMap": true,
     "skipLibCheck": true                                /* Skip type checking all .d.ts files. */
   },
-  "include": ["**.ts"],
+  "include": ["**.ts", "src/**.ts"],
   "exclude": ["node_modules", "**/__tests__/*","**/tests/*"]
 }
 

@@ -1,4 +1,4 @@
-import { fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears } from "../dateutils";
+import { fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears } from "../src/dateutils";
 describe('testing DateUtils library', () => {
     test('fromBlockchainTimestamp 1', () => {
         expect(fromBlockchainTimestamp(1)).toEqual(new Date(1000));
