@@ -1,5 +1,6 @@
 import path from "path";
 import * as fs from "fs";
+import assert from "assert";
 
 function extractFileDir(AFilename: string): string {
     const index = AFilename.lastIndexOf(path.sep);
@@ -45,12 +46,32 @@ function UpperCase(str: string): string {
     return str.toUpperCase();
 }
 
+function DeleteEnvironmentVariable(Name: string) {
+    delete process.env[Name];
+}
+
+// In Reactjs, only env vars starting with REACT_APP_ is allowed
+// Anything else will not show up
+// Nextjs, only env vars starting with NEXT_PUBLIC_ are allowed
+function GetEnvironmentVariable(Name: string): string {
+    const result = process.env[Name] || "";
+    return result;
+}
+
+function SetEnvironmentVariable(Name: string, Value: string) {
+    assert(Name); assert(Value);
+    process.env[Name] = Value;
+}
+
 export {
     extractFileDir, extractFileDir as ExtractFileDir,
     extractFileExt, extractFileExt as ExtractFileExt,
     extractFileName, extractFileName as ExtractFileName,
     FileExists as getFileExists, FileExists, 
     IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter,
-    LowerCase, UpperCase
+    LowerCase, UpperCase,
+    DeleteEnvironmentVariable, DeleteEnvironmentVariable as deleteEnvironmentVariable,
+    GetEnvironmentVariable, GetEnvironmentVariable as getEnvironmentVariable,
+    SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable
 }
 
