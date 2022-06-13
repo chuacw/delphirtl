@@ -1,18 +1,18 @@
 import assert from "assert";
 
 function getProcessArgs(): string[] {
-    let result = process.argv.slice(1);
+    const result = process.argv.slice(1);
     return result;
 }
 
 function ParamCount(): number {
-    let processArgs = getProcessArgs();
+    const processArgs = getProcessArgs();
     return processArgs.length-1;
 }
 
 function ParamStr(index: number): string {
     assert(index>=0);
-    let processArgs = getProcessArgs();
+    const processArgs = getProcessArgs();
     if (index < 0) {
         return "";
     } else {

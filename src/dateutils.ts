@@ -10,14 +10,14 @@ declare global {
  * @returns Converted block.timestamp to Date
  */
 function fromBlockchainTimestamp(time: number): Date {
-    let timestamp = time * 1000;
-    let result = new global.Date(timestamp);
+    const timestamp = time * 1000;
+    const result = new global.Date(timestamp);
     return result;
 }
 
 Date.prototype.ToBlockchainTimestamp = function(): number {
-    let timestamp = this.getTime(); // in seconds
-    let result = Math.floor((timestamp) / 1000);
+    const timestamp = this.getTime(); // in seconds
+    const result = Math.floor((timestamp) / 1000);
     return result;
 }
 
@@ -27,7 +27,7 @@ Date.prototype.ToBlockchainTimestamp = function(): number {
  * @returns Date
  */
 function JSDateAddYears(date: Date, years: number): Date {
-    let result = new Date(date.getTime());
+    const result = new Date(date.getTime());
     result.setFullYear(result.getFullYear() + years);
     return result;
 }
@@ -81,7 +81,7 @@ function JSDateToBlockchainTimestamp(time: number | Date): number {
         // assume already in UTC
         timestamp = time;
     }
-    let result = Math.floor((timestamp) / 1000);
+    const result = Math.floor((timestamp) / 1000);
     return result;
 }
 
