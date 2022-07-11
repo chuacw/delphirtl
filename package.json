@@ -1,6 +1,6 @@
 {
   "name": "delphirtl",
-  "version": "1.0.58",
+  "version": "1.1.0",
   "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,7 +13,9 @@
     "./ArrayUtils": "./dist/arrayutils.js",
     "./DateUtils": "./dist/dateutils.js",
     "./LogUtils": "./dist/logutils.js",
-    "./SysUtils": "./dist/sysutils.js"
+    "./SysUtils": "./dist/sysutils.js",
+    "./Messaging": "./dist/messaging.js",
+    "./messaging": "./dist/messaging.js"
   },
   "typesVersionsComments": "ArrayUtils mapped to arrayutils, and so on. ",
   "typesVersions": {

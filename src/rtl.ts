@@ -1,4 +1,4 @@
-import assert from "assert";
+import assert =  require("assert");
 
 function getProcessArgs(): string[] {
     const result = process.argv.slice(1);
