@@ -13,6 +13,7 @@ Modules
 * arrayutils
 * dateutils  
 * logutils  
+* messaging / Messaging
 * sysutils  
 * rtl  
 
