@@ -31,4 +31,6 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 |----------|-------------|--------|  
 | 1.0.51   | 12 Jun 2022 | Added ability to import subpackages. |
 | 1.0.55   | 12 Jun 2022 | Added arrayutils. |
-| 1.0.60   | 11 Jul 2022 | Added Messaging and example |
+| 1.1.0    | 11 Jul 2022 | Added Messaging and example |
+| 1.1.1    | 11 Jul 2022 | Fixed Messaging and example to use better names |
+| 1.1.2    | 12 Jul 2022 | added subscribeToWrappedMessage, sendWrappedMessage, unsubscribeWrappedMessage and more unit tests |

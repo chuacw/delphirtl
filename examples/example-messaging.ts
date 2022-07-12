@@ -21,18 +21,28 @@ class TMyKeys2 {
 
 const lMgr = TMessageManager.getDefaultManager();
 
-const index12 = lMgr.subscribeToMessage2(Date, (aMessage: Date)=>{
+const index12 = lMgr.subscribeToMessage(Date, (aMessage: Date)=>{
     console.log(aMessage.toUTCString());
 })
-lMgr.sendMessage2(Date, new Date());
+lMgr.sendMessage(Date, new Date());
 
-const index11 = lMgr.subscribeToMessage2(Date, (aMessage: Date)=>{
+const index1 = lMgr.subscribeToMessage(Date, (aMessage: Date)=>{
     console.log(aMessage.toUTCString());
 })
-lMgr.sendMessage2(Date, new TMessage(new Date()));
+lMgr.sendMessage(Date, new Date());
+console.log("Message 1 sent!")
 
-const index8 = lMgr.subscribeToMessage2(TMyKeys, (aMessage: TMyKeys)=> {
+const index2 = lMgr.subscribeToMessage(TMyKeys, (aMessage: TMyKeys)=> {
     console.log('fString: ', aMessage.fString);
     console.log('fNumber: ', aMessage.fNumber);
 })
-lMgr.sendMessage2(TMyKeys, new TMyKeys(10, "hey 10!"))
+lMgr.sendMessage(TMyKeys, new TMyKeys(10, "hey 10!"))
+console.log("Message 2 sent!")
+
+const index3 = lMgr.subscribeToWrappedMessage(Date, (aMessage: TMessage<Date>)=>{
+    console.log("The wrapped date is : ", aMessage.value.toUTCString());
+})
+lMgr.sendWrappedMessage(Date, new TMessage(new Date()));
+console.log("Message 3 sent!")
+lMgr.unsubscribeWrappedMessage(Date, index3); // no more messages can be received after unsubscribing
+
