@@ -15,7 +15,8 @@
     "./LogUtils": "./dist/logutils.js",
     "./SysUtils": "./dist/sysutils.js",
     "./Messaging": "./dist/messaging.js",
-    "./messaging": "./dist/messaging.js"
+    "./messaging": "./dist/messaging.js",
+    "./PerformanceUtils": "./dist/performanceutils.js"
   },
   "typesVersionsComments": "ArrayUtils mapped to arrayutils, and so on. ",
   "typesVersions": {
@@ -25,7 +26,8 @@
       "ArrayUtils": ["dist/arrayutils"],
       "DateUtils": ["dist/dateutils"],
       "LogUtils": ["dist/logutils"],
-      "SysUtils": ["dist/sysutils"]
+      "SysUtils": ["dist/sysutils"],
+      "PerformanceUtils": ["dist/performanceutils"]
     }
   },
   "directories": {

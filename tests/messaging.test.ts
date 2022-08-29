@@ -21,7 +21,6 @@ describe('testing Messaging library', () => {
     test("Subscribe doesn't throw on Number type when enabled", () => {
         expect(() => {
             const lMgr = TMessageManager.getDefaultManager();
-            let lNumberEnabled = false;
             lMgr.enableType(Number.name);
             lMgr.subscribeToMessage(Number.name, (aMessage: number) => { });
         }).not.toThrow("Number not enabled");
@@ -29,13 +28,14 @@ describe('testing Messaging library', () => {
 
     test("Send message is successful on Number when enabled", () => {
         const lMgr = TMessageManager.getDefaultManager();
-        let lNumberEnabled = false;
+        let lNumber = 0;
         lMgr.enableType(Number);
         lMgr.subscribeToMessage(Number.name, (aMessage: number) => {
-            lNumberEnabled = true;
+            lNumber = aMessage;
         });
-        lMgr.sendMessage(Number, 5);
-        expect(lNumberEnabled).toEqual(true);
+        const lMessage = 5
+        lMgr.sendMessage(Number, lMessage);
+        expect(lNumber).toEqual(lMessage);
     });
 
     test("Send message do not send messages to different types/do not cross-talk", () => {
@@ -46,7 +46,7 @@ describe('testing Messaging library', () => {
             lMessagesReceived+=1
         });
         lMgr.sendMessage(Number, 5);
-        lMgr.sendMessage(Date, new Date());
+        lMgr.sendMessage(Number, new Date());
         expect(lMessagesReceived).toEqual(1);
     });
 
