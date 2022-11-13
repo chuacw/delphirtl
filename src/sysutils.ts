@@ -48,15 +48,14 @@ interface TTimeStamp {
     Date: number;
 }
 
-function DecodeDateFully(DateTime: TDateTime, Year: TYMD, Month: TYMD, Day: TYMD, DOW: TYMD): boolean {
-const D1 = 365;
-const D4 = D1 * 4 + 1;
-const D100 = D4 * 25 - 1;
-const D400 = D100 * 4 + 1;
-let Y, M, D, I, T: number
-   T = DateTimeToTimeStamp(DateTime).Date
-}
-
+// function DecodeDateFully(DateTime: TDateTime, Year: TYMD, Month: TYMD, Day: TYMD, DOW: TYMD): boolean {
+//     const D1 = 365;
+//     const D4 = D1 * 4 + 1;
+//     const D100 = D4 * 25 - 1;
+//     const D400 = D100 * 4 + 1;
+//     let Y, M, D, I, T: number
+//     T = DateTimeToTimeStamp(DateTime).Date
+// }
 
 // function DecodeDateFully(const DateTime: TDateTime; var Year, Month, Day, DOW: Word): Boolean;
 // const
@@ -224,10 +223,5 @@ export {
     SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable
 }
 
-let aDateTime = new TDateTime(0)
-TryEncodeDate(2022, 1, 1, aDateTime)
-console.log(aDateTime)
-
 function DateTimeToTimeStamp(DateTime: TDateTime) {
-    
 }

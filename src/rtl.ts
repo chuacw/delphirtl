@@ -1,15 +1,44 @@
-import assert =  require("assert");
+import assert = require("assert");
 
+/**
+ * Declares a type that extracts common properties or methods of two classes.
+ * Usage: "type CommonType = CommonMethodsOrProperties<ClassA, ClassB>;"
+ * To use on multiple classes, nest the definitions: "CommonMethodsOrProperties<ClassA, CommonMethodsOrProperties<ClassB, ClassC>>;"
+ *
+ * @type {CommonMethodsOrProperties}
+ * @template A extends {}
+ * @template B extends {}
+ */
+type CommonMethodsOrProperties<A extends {}, B extends {}> = {
+    [P in keyof A & keyof B]: A[P] | B[P];
+}
+
+/**
+ * Gets the process arguments
+ *
+ * @returns {string[]}
+ */
 function getProcessArgs(): string[] {
     const result = process.argv.slice(1);
     return result;
 }
 
+/**
+ * Returns the number of parameters passed to the app
+ *
+ * @returns {number}
+ */
 function ParamCount(): number {
     const processArgs = getProcessArgs();
     return processArgs.length-1;
 }
 
+/**
+ * Returns the index'th argument passed to the app
+ *
+ * @param {number} index
+ * @returns {string}
+ */
 function ParamStr(index: number): string {
     assert(index>=0);
     const processArgs = getProcessArgs();
@@ -20,12 +49,28 @@ function ParamStr(index: number): string {
     }
 }
 
+/**
+ * Sleeps for the specified number of millisecs.
+ *
+ * @async
+ * @param {number} ms number of ms to sleep
+ * @returns {unknown}
+ */
 async function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+/**
+ * Used for ignoring any unused types, variables, so that the compiler doesn't complain.
+ *
+ * @param {...*} x any number of parameters to ignore
+ */
+function UNUSED(...x: any) {}
+
 export {
     ParamCount, ParamCount as getParamCount,
     ParamStr, ParamStr as getParamStr,
-    sleep, sleep as Sleep
+    sleep, sleep as Sleep,
+    CommonMethodsOrProperties,
+    UNUSED
 }

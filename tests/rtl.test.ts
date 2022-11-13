@@ -38,5 +38,5 @@ describe('testing rtl', () => {
         // console.log(`time slept: ${LSleepTime}.`);
         const diffTime = endTime.getTime() - startTime.getTime();
         expect(diffTime).toBeGreaterThanOrEqual(LSleepTime);
-    });
+    }, LSleepTime * 2);
 });

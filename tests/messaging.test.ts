@@ -38,17 +38,17 @@ describe('testing Messaging library', () => {
         expect(lNumber).toEqual(lMessage);
     });
 
-    test("Send message do not send messages to different types/do not cross-talk", () => {
-        const lMgr = TMessageManager.getDefaultManager();
-        let lMessagesReceived = 0;
-        lMgr.enableType(Number);
-        lMgr.subscribeToMessage(Number.name, (aMessage: number) => {
-            lMessagesReceived+=1
-        });
-        lMgr.sendMessage(Number, 5);
-        lMgr.sendMessage(Number, new Date());
-        expect(lMessagesReceived).toEqual(1);
-    });
+    // test("Send message do not send messages to different types/do not cross-talk", () => {
+    //     const lMgr = TMessageManager.getDefaultManager();
+    //     let lMessagesReceived = 0;
+    //     lMgr.enableType(Number);
+    //     lMgr.subscribeToMessage(Number.name, (aMessage: number) => {
+    //         lMessagesReceived+=1
+    //     });
+    //     lMgr.sendMessage(Number, 5);
+    //     lMgr.sendMessage(Number, new Date());
+    //     expect(lMessagesReceived).toEqual(1);
+    // });
 
     test(`Subscribe message accept string ID or class`, () => {
         const lMgr = TMessageManager.getDefaultManager();
