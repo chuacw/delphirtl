@@ -1,3 +1,5 @@
+import { strict as assert } from "node:assert";
+
 class Queue<T> {
     #store: T[] = [];
     push(val: T) {
@@ -25,8 +27,17 @@ class TreeNode<T> {
         this.left = null;
         this.right = null;
     }
-    public static createTree<T>(nodeValues: Iterable<T>): PTreeNode<T> {
+    public static createTree<T>(nodeValues: Iterable<T>): TreeNode<T> {
         let root: PTreeNode<T> = null;
+
+        // ensure iterables have at least 1 value
+        let count = 0;
+        for(const nodeValue of nodeValues) {
+            count++;
+            break;
+        }
+        assert(count > 0, SEmptyIterables);
+
         for (const nodeValue of nodeValues) {
             root = insertNode(root, nodeValue);
         }
@@ -34,7 +45,15 @@ class TreeNode<T> {
     }
 
     // should only be called when this is the root, otherwise, it'll return the wrong values
-    get height(): number {
+    /**
+     * Returns the height of the tree. Call only when this is the root.
+     * @date 28/11/2022 - 12:38:36 am
+     *
+     * @public
+     * @readonly
+     * @type {number} height of the tree
+     */
+    public get height(): number {
         return height(this);
     }
 }
@@ -49,8 +68,18 @@ function insertNode<T>(node: PTreeNode<T>, data: T): TreeNode<T> {
     return node;
 }
 
-function createTree<T>(nodeValues: Iterable<T>): PTreeNode<T> {
+const SEmptyIterables = "Iterable do not have any elements!";
+function createTree<T>(nodeValues: Iterable<T>): TreeNode<T> {
     let root: PTreeNode<T> = null;
+
+    // ensure iterables have at least 1 value
+    let count = 0;
+    for(const nodeValue of nodeValues) {
+        count++;
+        break;
+    }
+    assert(count > 0, SEmptyIterables);
+
     for (const nodeValue of nodeValues) {
         root = insertNode(root, nodeValue);
     }
@@ -59,13 +88,15 @@ function createTree<T>(nodeValues: Iterable<T>): PTreeNode<T> {
 
 // see https://www.baeldung.com/cs/binary-tree-height
 function height<T>(root: PTreeNode<T>): number {
-    if(root === null)
+    if (root === null) {
         return -1;
+    }
     const result = 1+Math.max(height(root.left), height(root.right));
     return result;
 }
 
 
 export {
-    Queue, Dictionary, TreeNode as Tree, TreeNode
+    Queue, Dictionary, TreeNode as Tree, TreeNode,
+    SEmptyIterables
 }
