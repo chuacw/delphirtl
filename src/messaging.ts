@@ -4,6 +4,9 @@
 *
 */
 
+const SMethodNotImplemented = "Method not implemented.";
+const SFunction = 'function';
+
 interface IMessageName {
     getName(): string
 }
@@ -30,7 +33,7 @@ interface ICallback<T> {
 
 class TCallback<T> implements IMessageName {
     getName(): string {
-        throw new Error("Method not implemented.");
+        throw new Error(SMethodNotImplemented);
     }
     fCallback: ICallback<T>;
     constructor(aCallback: ICallback<T>) {
@@ -58,13 +61,13 @@ class TMessageManager {
     }
 
     public disableType(aType: SubscriptionIdentifierType) {
-        const lTypeName = (typeof aType == 'function')?(aType.name):aType;
+        const lTypeName = (typeof aType === 'function')?(aType.name):aType;
         this.fDisabledTypes.push(lTypeName)
     }
 
     public enableType(aType: SubscriptionIdentifierType) {
         let lIndex = -1;
-        const lTypeName = (typeof aType == 'function')?(aType.name):aType;
+        const lTypeName = (typeof aType === 'function')?(aType.name):aType;
         for (let i=0; i<this.fDisabledTypes.length; i++) {
             if (lTypeName == this.fDisabledTypes[i]) {
                 lIndex = i; break;
@@ -96,7 +99,7 @@ class TMessageManager {
 
 
     sendMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessage: T) {
-        const lClassName = (typeof aClass == 'function')?(aClass.name):aClass;
+        const lClassName = (typeof aClass === 'function')?(aClass.name):aClass;
         const lMessageClassName = `${lClassName.toUpperCase()}`
         const lListenerList = this.fListeners.get(lMessageClassName);
         if (lListenerList != undefined) {
@@ -107,7 +110,7 @@ class TMessageManager {
     }
 
     subscribeToMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessageListener: (aMessage: T) => void): SubscriptionIndex {
-        const lSuffix = (typeof aClass == 'function')?(aClass.name):aClass;
+        const lSuffix = (typeof aClass === 'function')?(aClass.name):aClass;
         this.ensureTypeEnabled(lSuffix);
         const lMessageClassName = `${lSuffix.toUpperCase()}`;       // TMessage<Number>, TMessage<String>, TMessage<Date>
         let lListenerList = this.fListeners.get(lMessageClassName); // name is erased, so aMessageClass is always TMessage
@@ -120,7 +123,7 @@ class TMessageManager {
     }
 
     public unsubscribe(aClass: SubscriptionIdentifierType, aSubscriptionIndex: SubscriptionIndex) {
-        const lClassName = (typeof aClass == 'function')?(aClass.name):aClass;
+        const lClassName = (typeof aClass === 'function')?(aClass.name):aClass;
         const lMessageClassName = `${lClassName.toUpperCase()}`
         const lListenerList = this.fListeners.get(lMessageClassName);
         if (lListenerList != undefined) {
@@ -144,7 +147,7 @@ class TMessageManager {
 
     // wrapped message
     subscribeToWrappedMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessageListener: (aMessage: TMessage<T>) => void): SubscriptionIndex {
-        const lSuffix = (typeof aClass == 'function')?(aClass.name):aClass;
+        const lSuffix = (typeof aClass === 'function')?(aClass.name):aClass;
         this.ensureTypeEnabled(lSuffix);
         const lMessageClassName = `${TMessage.name}<${lSuffix.toUpperCase()}>`; // TMessage<NUMBER>, TMessage<STRING>, TMessage<DATE>
         let lListenerList = this.fListeners.get(lMessageClassName); // name is erased, so aMessageClass is always TMessage
@@ -157,7 +160,7 @@ class TMessageManager {
     }
 
     unsubscribeWrappedMessage(aClass: SubscriptionIdentifierType, aSubscriptionIndex: SubscriptionIndex) {
-        const lSuffix = (typeof aClass == 'function')?(aClass.name):aClass;
+        const lSuffix = (typeof aClass === 'function')?(aClass.name):aClass;
         const lMessageClassName = `${TMessage.name}<${lSuffix.toUpperCase()}>`; // TMessage<NUMBER>, TMessage<STRING>, TMessage<DATE> 
         let lListenerList = this.fListeners.get(lMessageClassName); 
         if (lListenerList != undefined) {
@@ -173,4 +176,5 @@ export {
     SubscriptionIndex, SubscriptionIdentifierType,
     TMessage,
     TMessageManager,
+    SMethodNotImplemented, SFunction
 }
