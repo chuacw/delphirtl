@@ -19,3 +19,7 @@ const getAllMethods = (obj: any) => {
     )
     return props;
 }
+
+export {
+    getAllMethods
+}
