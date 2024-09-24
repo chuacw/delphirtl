@@ -45,4 +45,4 @@ const index3 = lMgr.subscribeToWrappedMessage(Date, (aMessage: TMessage<Date>)=>
 lMgr.sendWrappedMessage(Date, new TMessage(new Date()));
 console.log("Message 3 sent!")
 lMgr.unsubscribeWrappedMessage(Date, index3); // no more messages can be received after unsubscribing
-
+lMgr.sendWrappedMessage(Date, new TMessage(new Date()));
