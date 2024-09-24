@@ -11,11 +11,17 @@ npm install delphirtl
 Modules
 =======
 * arrayutils
+* BaseJsonRpcServer
+* collections
 * dateutils  
 * logutils  
 * messaging / Messaging
+* performanceutils
 * sysutils  
+* reflectutils
 * rtl  
+* threadutils  
+
 
 Comments
 ========
