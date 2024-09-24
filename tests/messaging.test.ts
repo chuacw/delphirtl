@@ -84,6 +84,25 @@ describe('testing Messaging library', () => {
         expect(lMessagesReceived).toEqual(1)
     });
 
+    test("Unsubscribe works on multiple listeners", () => {
+        const lMgr = TMessageManager.getDefaultManager();
+        lMgr.enableType(Number);
+        let lMessagesReceived1 = 0;
+        let lMessagesReceived2 = 0;
+        const index1 = lMgr.subscribeToMessage(Number.name, (aMessage: number) => {
+            lMessagesReceived1 += aMessage
+        });
+        const index2 = lMgr.subscribeToMessage(Number.name, (aMessage: number) => {
+            lMessagesReceived2 += aMessage
+        });
+        lMgr.sendMessage(Number, 1);
+        expect(lMessagesReceived1).toEqual(1);
+        lMgr.unsubscribe(Number.name, index1);
+
+        lMgr.sendMessage(Number, 2);
+        expect(lMessagesReceived2).toEqual(3);
+    });
+
     test("sendMessage performs similarly to sendWrappedMessage", () => {
         const lMgr = TMessageManager.getDefaultManager();
         lMgr.enableType(Number);
