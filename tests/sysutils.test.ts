@@ -95,6 +95,10 @@ describe('testing SysUtils library', () => {
         test("hasFieldOfType<string>", () => {
             expect(hasFieldOfType<string>(obj, "message", "string")).toEqual(true);
         });
+
+        test("hasFieldOfType<boolean>", () => {
+            expect(hasFieldOfType<boolean>(obj, "message", "boolean")).toBeFalsy();
+        });
     });
 
     describe('EnvironmentVariables', () => {
