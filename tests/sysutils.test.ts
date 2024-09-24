@@ -1,6 +1,11 @@
 
 import path = require("path");
-import { DeleteEnvironmentVariable, ExtractFileDir, ExtractFileExt, ExtractFileName, FileExists, GetEnvironmentVariable, IncludeTrailingPathDelimiter, LowerCase, SetEnvironmentVariable, UpperCase } from "../src/sysutils";
+import { 
+    DeleteEnvironmentVariable, ExtractFileDir, ExtractFileExt, ExtractFileName, FileExists, 
+    GetEnvironmentVariable, IncludeTrailingPathDelimiter, LowerCase, SetEnvironmentVariable, 
+    UpperCase,
+    hasFieldOfType,
+ } from "../src/sysutils";
 
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
@@ -73,8 +78,23 @@ describe('testing SysUtils library', () => {
     test('LowerCase', () => {
         expect(LowerCase("ABCD")).toEqual("abcd");
     });
-    test('UpperCase', ()=> {
+    test('UpperCase', () => {
         expect(UpperCase("abcde")).toEqual("ABCDE");
+    });
+
+    describe("hasFieldOfType", () => {
+        let obj = {
+            message: "An error occurred.",
+            code: 404
+        };
+
+        test("hasFieldOfType<number>", () => {
+            expect(hasFieldOfType<number>(obj, "code", "number")).toEqual(true);
+        });
+        
+        test("hasFieldOfType<string>", () => {
+            expect(hasFieldOfType<string>(obj, "message", "string")).toEqual(true);
+        });
     });
 
     describe('EnvironmentVariables', () => {

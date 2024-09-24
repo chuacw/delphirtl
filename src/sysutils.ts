@@ -8,11 +8,11 @@ function IsLeapYear(Year: number): boolean {
     return result;
 }
 
-
 const MonthDays = [
     [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
     [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 ]
+
 // ((31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),
 //  (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31));
 
@@ -210,16 +210,31 @@ function SetEnvironmentVariable(Name: string, Value: string) {
     process.env[Name] = Value;
 }
 
+function hasFieldOfType<T>(error: unknown, fieldName: string, fieldType: string): error is { [key: string]: T } {
+    const result =
+      error !== null &&
+      typeof error === 'object' && 
+      typeof (error as any)[fieldName] === fieldType;
+    return result;
+}
+  
+function hasMessageField(error: unknown): error is { message: string } {
+    const result = 
+      hasFieldOfType<string>(error, "message", "string");
+    return result;
+}
+   
 export {
     extractFileDir, extractFileDir as ExtractFileDir,
     extractFileExt, extractFileExt as ExtractFileExt,
     extractFileName, extractFileName as ExtractFileName,
     FileExists as getFileExists, FileExists,
     IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter,
-    LowerCase, UpperCase,
+    LowerCase, UpperCase, LowerCase as lowerCase, UpperCase as upperCase,
     DeleteEnvironmentVariable, DeleteEnvironmentVariable as deleteEnvironmentVariable,
     GetEnvironmentVariable, GetEnvironmentVariable as getEnvironmentVariable,
-    SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable
+    SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable,
+    hasMessageField, hasFieldOfType, 
 }
 
 function DateTimeToTimeStamp(DateTime: TDateTime) {
