@@ -104,7 +104,11 @@ class TMessageManager {
         const lListenerList = this.fListeners.get(lMessageClassName);
         if (lListenerList != undefined) {
             for (const lListener of lListenerList) {
-                lListener(aMessage);
+                try {
+                    lListener(aMessage);
+                } catch (e) {
+                  // keep going
+                }
             }
         }
     }
@@ -140,7 +144,11 @@ class TMessageManager {
         const lListenerList = this.fListeners.get(lMessageClassName);
         if (lListenerList != undefined) {
             for (const lListener of lListenerList) {
-                lListener(aMessage);
+                try {
+                    lListener(aMessage);
+                } catch(e) {
+                    // keep going
+                }
             }
         }
     }
