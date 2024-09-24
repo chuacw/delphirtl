@@ -210,17 +210,17 @@ function SetEnvironmentVariable(Name: string, Value: string) {
     process.env[Name] = Value;
 }
 
-function hasFieldOfType<T>(error: unknown, fieldName: string, fieldType: string): error is { [key: string]: T } {
+function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [key: string]: T } {
     const result =
-      error !== null &&
-      typeof error === 'object' && 
-      typeof (error as any)[fieldName] === fieldType;
+      obj !== null &&
+      typeof obj === 'object' && 
+      typeof (obj as any)[fieldName] === fieldType;
     return result;
 }
   
-function hasMessageField(error: unknown): error is { message: string } {
+function hasMessageField(obj: unknown): obj is { message: string } {
     const result = 
-      hasFieldOfType<string>(error, "message", "string");
+      hasFieldOfType<string>(obj, "message", "string");
     return result;
 }
    
