@@ -50,6 +50,15 @@ function ParamStr(index: number): string {
 }
 
 /**
+ * 
+ * @returns the launcher, ie, node.exe or something that can run Javascript...
+ */
+function getLauncher(): string {
+    const result = process.argv[0];
+    return result;
+}
+
+/**
  * Sleeps for the specified number of millisecs.
  *
  * @async
@@ -72,5 +81,5 @@ export {
     ParamStr, ParamStr as getParamStr,
     sleep, sleep as Sleep,
     CommonMethodsOrProperties,
-    UNUSED
+    UNUSED, getLauncher
 }
