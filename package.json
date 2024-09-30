@@ -1,6 +1,6 @@
 {
   "name": "delphirtl",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -68,7 +68,7 @@
     "test": "tests"
   },
   "scripts": {
-    "prepare": "del dist /s /q && tsc --build && npm-dts -o dist\\index.d.ts generate",
+    "prepublishOnly": "tsc --build",
     "prepare-uncommented": "// && npm-dts -o dist\\index.d.ts generate",
     "build": "tsc",
     "test": "npx jest"
