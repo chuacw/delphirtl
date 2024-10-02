@@ -210,7 +210,7 @@ function SetEnvironmentVariable(Name: string, Value: string) {
     process.env[Name] = Value;
 }
 
-function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [key: string]: T } {
+function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [fieldName: string]: T } {
     const result =
       obj !== null &&
       typeof obj === 'object' && 

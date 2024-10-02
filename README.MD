@@ -40,4 +40,5 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.0    | 11 Jul 2022 | Added Messaging and example |
 | 1.1.1    | 11 Jul 2022 | Fixed Messaging and example to use better names |
 | 1.1.2    | 12 Jul 2022 | added subscribeToWrappedMessage, sendWrappedMessage, unsubscribeWrappedMessage and more unit tests |
-| 1.1.3-6  | 24 Sep 2024 | Added threadutils, reflectutils and hasMessageField, hasFieldOfType in sysutils, fixed exports in index.ts |
+| 1.1.3-8  | 2 Oct 2024 | Added threadutils, reflectutils and hasMessageField, hasFieldOfType in sysutils, fixed exports in index.ts |
+
