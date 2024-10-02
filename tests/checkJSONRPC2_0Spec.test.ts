@@ -216,13 +216,13 @@ describe('JSON RPC 2.0 spec', () => {
 
   it('RPC notify foobar has no return', async() => {
     // any notification, requests without id should return null
-    const result = await rpcClient.request("foobar");
+    const result = await rpcClient.request("foobar", []);
     expect(result).toBe(null);
   }, timeout);
 
   it('RPC call of non-existent method', async() => {
     await expect(async() => {
-      const result = await rpcClient.request("nofoobar");
+      const result = await rpcClient.request("nofoobar", []);
     }).rejects.toThrow("Method not found");
   }, timeout);
 
@@ -381,7 +381,7 @@ describe('JSON RPC 2.0 spec', () => {
 
   it("Any notification returns null", async() => {
     // A notification is one without the ID
-    const result = await rpcClient.notify("anything");
+    const result = await rpcClient.notify("anything", []);
     expect(result).toBe(undefined);
   }, timeout);
 
