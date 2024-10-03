@@ -2,11 +2,30 @@ import { strict as assert } from "node:assert";
 
 class Queue<T> {
     #store: T[] = [];
+
     push(val: T) {
         this.#store.push(val);
     }
+
     pop(): T | undefined {
         return this.#store.shift();
+    }
+
+    get length(): number {
+        return this.#store.length;
+    }
+}
+
+class Stack<T> {
+    #store: T[] = [];
+
+    push(v: T) {
+        this.#store.push(v);
+    }
+
+    pop(): T | undefined {
+        const result = this.#store.pop();
+        return result;
     }
 
     get length(): number {
@@ -97,6 +116,6 @@ function height<T>(root: PTreeNode<T>): number {
 
 
 export {
-    Queue, Dictionary, TreeNode as Tree, TreeNode,
+    Queue, Dictionary, TreeNode as Tree, TreeNode, Stack,
     SEmptyIterables
 }
