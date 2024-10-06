@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it } from '@jest/globals';
 import { JSONRPCParams } from 'json-rpc-2.0';
 import { JSONRPC, JSONRPCClient, JSONRPCErrorCode, TestJsonRpcServer } from './TestJsonRpcServer';
 
+// #region Helper functions
 const timeout = 100_000;
 const port = 8081;
 
@@ -132,16 +133,16 @@ function customJSONClient(aSendType: SendType) {
   return rpcClientCallbatch;
 }
 
-const echo = async(rpcClient: JSONRPCClient, params: JSONRPCParams) => {
+const echo = async (rpcClient: JSONRPCClient, params: JSONRPCParams) => {
   const result = await rpcClient.request("echo", params);
   expect(result).toEqual(params);
 };
-
+// #endregion
 
 describe('JSON RPC 2.0 spec', () => {
   let rpcServer: TestJsonRpcServer;
   let rpcClient: JSONRPCClient;
-  beforeEach(async() => {
+  beforeEach(async () => {
     rpcServer = new TestJsonRpcServer();
     await rpcServer.listen(port);
 
@@ -169,12 +170,12 @@ describe('JSON RPC 2.0 spec', () => {
     }, RPCID.createRPCID);
   }, timeout);
 
-  afterEach(async() => {
+  afterEach(async () => {
     await rpcServer.stop();
   }, timeout);
 
 
-  it('RPC call with no name', async() => {
+  it('RPC call with no name', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send("");
 
@@ -189,44 +190,44 @@ describe('JSON RPC 2.0 spec', () => {
 
   }, timeout);
 
-  it('RPC call with positional parameters 01: subtract [42, 23]', async() => {
+  it('RPC call with positional parameters 01: subtract [42, 23]', async () => {
     const result = await rpcClient.request("subtract", [42, 23]);
     expect(result).toBe(19);
   }, timeout);
 
-  it('RPC call with positional parameters 02: subtract [23, 42]', async() => {
+  it('RPC call with positional parameters 02: subtract [23, 42]', async () => {
     const result = await rpcClient.request("subtract", [23, 42]);
     expect(result).toBe(-19);
   }, timeout);
 
-  it('RPC call with named parameters 01: subtract {"subtrahend": 23, "minuend": 42}', async() => {
+  it('RPC call with named parameters 01: subtract {"subtrahend": 23, "minuend": 42}', async () => {
     const result = await rpcClient.request("subtract", { "subtrahend": 23, "minuend": 42 });
     expect(result).toBe(19);
   }, timeout);
 
-  it('RPC call with named parameters 02: subtract {"minuend": 42, "subtrahend": 23}', async() => {
+  it('RPC call with named parameters 02: subtract {"minuend": 42, "subtrahend": 23}', async () => {
     const result = await rpcClient.request("subtract", { "minuend": 42, "subtrahend": 23 });
     expect(result).toBe(19);
   }, timeout);
 
-  it('RPC notify update has no return', async() => {
+  it('RPC notify update has no return', async () => {
     const result = await rpcClient.request("update", [1, 2, 3, 4, 5]);
     expect(result).toBe(null);
   }, timeout);
 
-  it('RPC notify foobar has no return', async() => {
+  it('RPC notify foobar has no return', async () => {
     // any notification, requests without id should return null
     const result = await rpcClient.request("foobar", []);
     expect(result).toBe(null);
   }, timeout);
 
-  it('RPC call of non-existent method', async() => {
-    await expect(async() => {
+  it('RPC call of non-existent method', async () => {
+    await expect(async () => {
       const result = await rpcClient.request("nofoobar", []);
     }).rejects.toThrow("Method not found");
   }, timeout);
 
-  it('RPC call with invalid JSON', async() => {
+  it('RPC call with invalid JSON', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`{"jsonrpc": "2.0", "method": "foobar, "params": "bar", "baz]`);
 
@@ -241,7 +242,7 @@ describe('JSON RPC 2.0 spec', () => {
 
   }, timeout);
 
-  it('RPC call with invalid Request object', async() => {
+  it('RPC call with invalid Request object', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`{"jsonrpc": "2.0", "method": 1, "params": "bar"}`);
     expect(compareObject(result, {
@@ -249,7 +250,7 @@ describe('JSON RPC 2.0 spec', () => {
     })).toEqual(true);
   }, timeout);
 
-  it('RPC call batch, invalid JSON', async() => {
+  it('RPC call batch, invalid JSON', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`[
       {"jsonrpc": "2.0", "method": "sum", "params": [1,2,4], "id": "1"},
@@ -267,7 +268,7 @@ describe('JSON RPC 2.0 spec', () => {
 
   }, timeout);
 
-  it('RPC call with an empty array', async() => {
+  it('RPC call with an empty array', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`[]`);
 
@@ -282,7 +283,7 @@ describe('JSON RPC 2.0 spec', () => {
 
   }, timeout);
 
-  it('RPC call with an invalid batch (but not empty)', async() => {
+  it('RPC call with an invalid batch (but not empty)', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`[1]`);
 
@@ -297,7 +298,7 @@ describe('JSON RPC 2.0 spec', () => {
 
   }, timeout);
 
-  it('RPC call with invalid batch', async() => {
+  it('RPC call with invalid batch', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
     const result = await rpcClientCallbatch.send(`[1,2,3]`);
 
@@ -331,7 +332,7 @@ describe('JSON RPC 2.0 spec', () => {
     expect(result).toEqual(expect.arrayContaining(expectedResult));
   }, timeout);
 
-  it('RPC call batch', async() => {
+  it('RPC call batch', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendStringify);
     const id1 = 1; const id2 = 2; const id5 = 5; const id9 = 9;
     const result = await rpcClientCallbatch.send(
@@ -363,7 +364,7 @@ describe('JSON RPC 2.0 spec', () => {
     ]));
   }, timeout);
 
-  it('RPC call batch (all notifications)', async() => {
+  it('RPC call batch (all notifications)', async () => {
     const result = await rpcClient.requestAdvanced([
       { jsonrpc: JSONRPC, method: "notify_sum", params: [1, 2, 4] },
       { jsonrpc: JSONRPC, method: "notify_hello", params: [7] }
@@ -371,15 +372,15 @@ describe('JSON RPC 2.0 spec', () => {
     expect(result).toEqual(expect.arrayContaining([]));
   }, timeout);
 
-  it('Echoes back parameters 1', async() => {
+  it('Echoes back parameters 1', async () => {
     await echo(rpcClient, [1]);
   }, timeout);
 
-  it('Echoes back parameters 2', async() => {
+  it('Echoes back parameters 2', async () => {
     await echo(rpcClient, [2]);
   }, timeout);
 
-  it("Any notification returns null", async() => {
+  it("Any notification returns null", async () => {
     // A notification is one without the ID
     const result = await rpcClient.notify("anything", []);
     expect(result).toBe(undefined);

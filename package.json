@@ -68,7 +68,7 @@
     "test": "tests"
   },
   "scripts": {
-    "prepublishOnly": "tsc --build",
+    "prepublishOnly": "npm run test && npm uninstall delphirtl --save && tsc --build",
     "prepare-uncommented": "// && npm-dts -o dist\\index.d.ts generate",
     "build": "tsc",
     "test": "jest"

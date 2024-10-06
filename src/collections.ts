@@ -1,39 +1,192 @@
 import { strict as assert } from "node:assert";
 
+/**
+ * A first in, first out class
+ */
 class Queue<T> {
     #store: T[] = [];
 
+    /**
+     * 
+     * @param val Puts the given value into the class
+     */
     push(val: T) {
         this.#store.push(val);
     }
 
+    /**
+     * 
+     * @returns The first value in the store
+     */
     pop(): T | undefined {
-        return this.#store.shift();
+        return this.next();
     }
 
+    /**
+     * 
+     * @returns The first value in the store
+     */
+    next(): T | undefined {
+        const result = this.#store.shift();
+        return result;
+    }
+
+    
+    /**
+     * The number of values in the store
+     *
+     * @readonly
+     * @type {number}
+     */
     get length(): number {
         return this.#store.length;
     }
 }
 
+
+/**
+ * A last in, first out class
+ */
 class Stack<T> {
     #store: T[] = [];
 
+    /**
+     * 
+     * @param v Puts the given value into the store
+     */
     push(v: T) {
         this.#store.push(v);
     }
 
+    /**
+     * 
+     * @returns The last value that was pushed into the store
+     */
     pop(): T | undefined {
         const result = this.#store.pop();
         return result;
     }
 
+    
+    /**
+     * The number of items in the store
+     *
+     * @readonly
+     * @type {number}
+     */
     get length(): number {
         return this.#store.length;
     }
 }
 
-type Dictionary<K, V> = Map<K, V>;
+class Dictionary<K, V> extends Map<K, V> {
+    AddOrSetValue(key: K, value: V) {
+        this.set(key, value);
+    }
+
+    Add(key: K, value: V) {
+        this.set(key, value);
+    }
+
+    Clear() {
+        this.clear();
+    }
+
+    public get Count(): number {
+        const result = this.size;
+        return result;
+    }
+
+    public get count(): number { return this.Count; }
+
+    // private convertToGeneric<K>(value: unknown): K {
+    // // Convert value based on the type of K
+    // if (typeof value === 'string' && typeof (undefined as K) === 'number') {
+    //     // Convert string to number
+    //     const numberValue = Number(value);
+    //     if (isNaN(numberValue)) {
+    //         throw new Error(`Cannot convert '${value}' to type number.`);
+    //     }
+    //     return numberValue as K; // Type assertion
+    // } else if (typeof value === 'number' && typeof (undefined as K) === 'string') {
+    //     // Convert number to string
+    //     return String(value) as K; // Type assertion
+    // }
+    //     // Add more conversion logic as needed
+    //     return value as K; // Default case (not a valid conversion)
+    // }
+    
+    // public get Items(): { [key: string]: V } {
+    //     const items: { [key: string]: V } = {};
+    //     this.forEach((value: V, key: K) => {
+    //         items[key as any] = value;
+    //     });
+
+    //     // in-place of returning items, returns the following
+    //     // the following will intercept non-existent indices and
+    //     // throw an Error
+    //     // Unfortunately, can't declare a class within a class
+    //     // so, there's the repeated definition of { [key...]: V }
+    //     return new Proxy(items, {
+    //         // Intercept 'get' operation
+    //         get: (map: { [key: string]: V }, key: string) => {
+    //             if (!(key in map)) {
+    //                 throw new Error(`Key "${key}" not found.`);
+    //             }
+    //             return map[key];
+    //         },
+
+    //         // Intercept 'set' operation
+    //         set: (map: { [key: string]: V }, key: any, value: V): boolean => {
+    //             // const [firstKey, _firstValue] = this.entries().next().value;
+    //             let k = this.convertToGeneric<K>(key);
+    //             this.AddOrSetValue(k, value);  // Update the internal map
+    //             return true;  // Indicate success
+    //         }
+    //     });
+    // }
+
+    // public get items(): { [key: string]: V } {
+    //     const result = this.Items;
+    //     return result;
+    // }
+
+    TryGetValue(key: K): {
+        found: boolean,
+        value: V | undefined
+    } {
+        const value = this.get(key);
+        const found = value !== undefined;
+        const result = {found, value};
+        return result;
+    }
+
+    Contains(key: K): boolean {
+        const result = this.has(key);
+        return result;
+    }
+
+    ContainsValue(value: V): boolean {
+        for(const v of this.values()) {
+            if (value === v) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    TryAdd(key: K, value: V): boolean {
+        if (this.Contains(key)) {
+            return false;
+        }
+        this.set(key, value);
+        return true;
+    }
+
+    Remove(key: K) {
+        this.delete(key);
+    }
+};
 
 type PTreeNode<T> = TreeNode<T> | null;
 class TreeNode<T> {
@@ -115,12 +268,12 @@ function height<T>(root: PTreeNode<T>): number {
 }
 
 class List<T> {
-    find(callback: T): T | undefined {
+    find(callback: T): boolean {
         const result = this.items.find((value, index, obj: T[]) => {
             const result = (value == callback);
             return result;
         });
-        return result;
+        return result !== undefined;
     }
 
     private items: Array<T>;

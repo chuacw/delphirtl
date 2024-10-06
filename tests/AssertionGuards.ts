@@ -1,6 +1,7 @@
 import { array, number, assert } from "superstruct";
 import { JSONRPCParameters, JSONRPCErrorCode, JSONRPCErrorException } from "../src/BaseJsonRpcServer";
 
+// #region validation functions
 function validateParams(params: JSONRPCParameters): asserts params is any[] {
     if (!Array.isArray(params) || params.length < 1) {
         throw new JSONRPCErrorException("Invalid parameter", JSONRPCErrorCode.InvalidParams);
@@ -12,6 +13,7 @@ function validateArray(params: any): asserts params is any[] {
         throw new JSONRPCErrorException("Invalid numbers array", JSONRPCErrorCode.InvalidParams);
     }
 }
+// #endregion
 
 function isNumbers(params: JSONRPCParameters): asserts params is number[] {
     validateParams(params);
