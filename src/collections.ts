@@ -114,8 +114,100 @@ function height<T>(root: PTreeNode<T>): number {
     return result;
 }
 
+class List<T> {
+    find(callback: T): T | undefined {
+        const result = this.items.find((value, index, obj: T[]) => {
+            const result = (value == callback);
+            return result;
+        });
+        return result;
+    }
+
+    private items: Array<T>;
+
+    constructor() {
+        this.items = [];
+    }
+
+    /**
+     * 
+     * @returns Size of the List
+     */
+    size(): number {
+        return this.items.length;
+    }
+
+    
+    /**
+     * Returns the length of this list
+     *
+     * @public
+     * @readonly
+     * @type {number}
+     */
+    public get length(): number {
+        return this.items.length;
+    }
+
+    /**
+     * Adds a value to the list
+     * @param value The value to add to the list
+     */
+    add(value: T): void {
+        this.items.push(value);
+    }
+
+    indexOf(value: T): number {
+        const result = this.items.indexOf(value);
+        return result;
+    }
+
+    get(index: number): T {
+        return this.items[index];
+    }
+
+    /**
+     * Delete a specified value
+     *
+     * @type {*}
+     */
+    delete(value: T): boolean {
+        const index = this.items.indexOf(value); 
+        if (index !== -1) {  
+            this.items.splice(index, 1); 
+            return true; 
+        }
+        return false; 
+    }
+
+    /**
+     * Removes the specified value
+     * @param value 
+     * @returns 
+     */
+    remove(value: T): boolean {
+        return this.delete(value);
+    }
+
+    // Implementing the iterator
+    [Symbol.iterator](): Iterator<T> {
+        let index = 0;
+        const items = this.items;
+
+        return {
+            next(): IteratorResult<T> {
+                if (index < items.length) {
+                    return { value: items[index++], done: false };
+                } else {
+                    return { value: undefined, done: true };
+                }
+            }
+        };
+    }
+
+}
 
 export {
-    Queue, Dictionary, TreeNode as Tree, TreeNode, Stack,
+    Queue, Dictionary, TreeNode as Tree, TreeNode, Stack, List,
     SEmptyIterables
 }
