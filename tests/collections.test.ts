@@ -15,19 +15,21 @@ describe('testing Collections library', () => {
         expect(tree!.height).toEqual(3);
     });
 
-    test('Dictionary<string, number>', () => {
+    test('Dictionary<string, number> - 1', () => {
         const d = new Dictionary<string, number>();
         d.set("hello", 5);
         let value = d.get('hello');
         expect(value).toEqual(5);
+
         d.set('hello', 6);
         value = d.get('hello');
         expect(value).toBe(6);
+
         value = d.get('nothing');
-        expect(value).toBeFalsy();
+        expect(value).toBeUndefined();
     });
 
-    test('Dictionary<string, number>', () => {
+    test('Dictionary<string, number> - 2', () => {
         const d = new Dictionary<string, number>();
         d.Add("hello", 5);
         let v = d.get("hello")!;
@@ -38,7 +40,7 @@ describe('testing Collections library', () => {
         expect(v).toEqual(7);
     });
 
-    test('Dictionary<number, string>', () => {
+    test('Dictionary<number, string> - 3', () => {
         const d = new Dictionary<number, string>();
         d.Add(1, "hello");
         let v = d.get(1)!;
@@ -60,6 +62,43 @@ describe('testing Collections library', () => {
         let {found, value} = d.TryGetValue(key)!;
         expect(found).toBeTruthy();
         expect(value)!.toBe('yahoo');
+    });
+
+    test('Dictionary<string|number, number|string>.Items', () => {
+        let d1 = new Dictionary<number, string>();
+        d1.Items[5] = 'hello';
+        let v1 = d1.Items[5];
+        expect(v1).toBe("hello");
+
+        let d2 = new Dictionary<string, number>();
+        d2.Items["world"] = 5;
+        let v2 = d2.Items["world"];
+        expect(v2).toBe(5);
+
+        let el1 = function(event: Event) {}
+        let el2 = function(event: Event) {}
+        let el3 = function(event: Event) {}
+        let d3 = new Dictionary<EventListener, number>();
+        d3.set(el1, 9); // can't use Items here, ie, d3.Items[el1] = 9;
+        let v3: number = 0;
+        expect(() => { v3 = d3.get(el1)!}).not.toThrowError();
+        expect(v3).toEqual(9);
+
+        let v4 = d3.get(el2);
+        expect(v4).toBeUndefined();
+    });
+
+    test('Dictionary<object, string>', () => {
+        let d = new Dictionary<object, string>();
+        let obj1 = {};
+        let obj2 = {};
+        
+        d.set(obj1, "hello");
+        let v1 = d.get(obj1);
+        expect(v1).toBe("hello");
+        
+        let v2 = d.get(obj2);
+        expect(v2).toBeUndefined();
     });
 
     test('List<number> add and indexOf', () => {

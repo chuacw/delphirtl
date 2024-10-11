@@ -1,5 +1,57 @@
-import { fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears } from "../src/dateutils";
+import { DiffDuration, fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears } from "../src/dateutils";
+
+
+describe('test DateUtils Date.add functionality', () => {
+    /**
+    * 1 second
+    */
+    const ONE_SEC = 1000;
+    const ONE_MIN = 60 * ONE_SEC;
+    const ONE_HOUR = 60 * ONE_MIN;
+    const ONE_DAY = 24 * ONE_HOUR;
+    const ONE_WEEK = 7 * ONE_DAY;
+
+    test('Date.addSeconds(1)', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addSeconds(1);
+        expect(newDate.getTime()).toEqual(now.getTime()+ONE_SEC);
+    });
+    test('Date.addMinutes(1)', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addMinutes(1);
+        expect(newDate.getTime()).toEqual(now.getTime()+ONE_MIN);
+    });
+    test('Date.addHours(1)', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addHours(1);
+        expect(newDate.getTime()).toEqual(now.getTime()+ONE_HOUR);
+    });
+    test('Date.addDays(1)', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addDays(1);
+        expect(newDate.getTime()).toEqual(now.getTime()+ONE_DAY);
+    });
+    test('Date.addWeeks(1)', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addWeeks(1);
+        expect(newDate.getTime()).toEqual(now.getTime()+ONE_WEEK);
+    });
+    test('Date.addMonths(1)', () => {
+        const now = new Date(1990, 0, 1, 0, 0, 0);
+        const newDate = now.addMonths(1);
+        const duration = DiffDuration(newDate, now);
+        expect(duration.months).toEqual(1);
+    });
+    test('Date.addYears(1)', () => {
+        const now = new Date(1990, 0, 1, 0, 0, 0);
+        const newDate = now.addYears(1);
+        const duration = DiffDuration(newDate, now);
+        expect(duration.years).toEqual(1);
+    });
+});
+
 describe('testing DateUtils library', () => {
+
     test('fromBlockchainTimestamp 1', () => {
         expect(fromBlockchainTimestamp(1)).toEqual(new Date(1000));
     });

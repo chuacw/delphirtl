@@ -80,76 +80,97 @@ class Stack<T> {
 }
 
 class Dictionary<K, V> extends Map<K, V> {
+
+    /**
+     * Sets the specified value for the given key.
+     * @param key 
+     * @param value 
+     */
     AddOrSetValue(key: K, value: V) {
-        this.set(key, value);
+        this.Add(key, value);
     }
 
+
+    /**
+     * Sets the specified value for the given key.
+     * @param key 
+     * @param value 
+     */
     Add(key: K, value: V) {
         this.set(key, value);
     }
 
+    /**
+     * Clears the dictionary of all data
+     */
     Clear() {
         this.clear();
     }
 
+    
+    /**
+     * Gets the number of keys and values stored.
+     *
+     * @public
+     * @readonly
+     * @type {number}
+     */
     public get Count(): number {
         const result = this.size;
         return result;
     }
 
+    /**
+     * Gets the number of keys and values stored.
+     *
+     * @public
+     * @readonly
+     * @type {number}
+     */
     public get count(): number { return this.Count; }
 
-    // private convertToGeneric<K>(value: unknown): K {
-    // // Convert value based on the type of K
-    // if (typeof value === 'string' && typeof (undefined as K) === 'number') {
-    //     // Convert string to number
-    //     const numberValue = Number(value);
-    //     if (isNaN(numberValue)) {
-    //         throw new Error(`Cannot convert '${value}' to type number.`);
-    //     }
-    //     return numberValue as K; // Type assertion
-    // } else if (typeof value === 'number' && typeof (undefined as K) === 'string') {
-    //     // Convert number to string
-    //     return String(value) as K; // Type assertion
-    // }
-    //     // Add more conversion logic as needed
-    //     return value as K; // Default case (not a valid conversion)
-    // }
     
-    // public get Items(): { [key: string]: V } {
-    //     const items: { [key: string]: V } = {};
-    //     this.forEach((value: V, key: K) => {
-    //         items[key as any] = value;
-    //     });
+    /**
+     * Gets the keys and values stored in the Dictionary
+     *
+     * @public
+     * @readonly
+     * @type {{ [key: string]: V }}
+     */
+    public get Items(): { [key: string]: V } {
+        const items: { } = {};
+        this.forEach((value: V, key: K) => {
+            (items as any)[key as any] = value;
+        });
 
-    //     // in-place of returning items, returns the following
-    //     // the following will intercept non-existent indices and
-    //     // throw an Error
-    //     // Unfortunately, can't declare a class within a class
-    //     // so, there's the repeated definition of { [key...]: V }
-    //     return new Proxy(items, {
-    //         // Intercept 'get' operation
-    //         get: (map: { [key: string]: V }, key: string) => {
-    //             if (!(key in map)) {
-    //                 throw new Error(`Key "${key}" not found.`);
-    //             }
-    //             return map[key];
-    //         },
+        // in-place of returning items
+        // the following will intercept non-existent indices and
+        // throw an Error
+        // Unfortunately, can't declare a class within a class
+        // so, there's the repeated definition of { [key...]: V }
+        return new Proxy(items, {
+            // Intercept 'get' operation
+            get: (map: { [key: string | number | symbol ]: V }, key: any) => {
+                let k = key.toString();
+                if (!this.has(k)) {
+                    throw new Error(`Key "${key}" not found.`);
+                }
+                return this.get(k);
+            },
+            // Intercept 'set' operation
+            set: (map: { [key: string | number | symbol]: V }, key: any, value: V): boolean => {
+                let k = key.toString();
+                this.set(k, value);
+                return true;
+            }
+        });
 
-    //         // Intercept 'set' operation
-    //         set: (map: { [key: string]: V }, key: any, value: V): boolean => {
-    //             // const [firstKey, _firstValue] = this.entries().next().value;
-    //             let k = this.convertToGeneric<K>(key);
-    //             this.AddOrSetValue(k, value);  // Update the internal map
-    //             return true;  // Indicate success
-    //         }
-    //     });
-    // }
+    }
 
-    // public get items(): { [key: string]: V } {
-    //     const result = this.Items;
-    //     return result;
-    // }
+    public get items(): { [key: string]: V } {
+        const result = this.Items;
+        return result;
+    }
 
     TryGetValue(key: K): {
         found: boolean,
