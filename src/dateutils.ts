@@ -57,6 +57,7 @@ declare global {
          * @returns {Date}
          */
         addYears(years: number): Date;
+        isValidDate(): boolean;
     }
 }
 
@@ -143,6 +144,11 @@ Date.prototype.addYears = function (years: number) {
     }
     return result;
 };
+
+Date.prototype.isValidDate = function(): boolean {
+    const result = this instanceof Date && !isNaN(this.valueOf());
+    return result;
+}
 
 /**
  * @param  {Date} date
@@ -279,6 +285,11 @@ function DiffDuration(d1: Date, d2: Date): TDiffDuration {
     return { years, months, days: remainingDays, hours, minutes, seconds };
 }
 
+function isValidDate(date: Date): boolean {
+    const result = date.isValidDate();
+    return result;
+}
+
 export {
     fromBlockchainTimestamp,
     getEstimatedBlockNumberForDuration,
@@ -291,5 +302,6 @@ export {
     JSDateAddSecs,
     JSTimeToUTC,
     JSDateToBlockchainTimestamp,
-    DiffDuration
+    DiffDuration,
+    isValidDate
 }

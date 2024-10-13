@@ -47,108 +47,6 @@ interface TTimeStamp {
     Date: number;
 }
 
-// function DecodeDateFully(DateTime: TDateTime, Year: TYMD, Month: TYMD, Day: TYMD, DOW: TYMD): boolean {
-//     const D1 = 365;
-//     const D4 = D1 * 4 + 1;
-//     const D100 = D4 * 25 - 1;
-//     const D400 = D100 * 4 + 1;
-//     let Y, M, D, I, T: number
-//     T = DateTimeToTimeStamp(DateTime).Date
-// }
-
-// function DecodeDateFully(const DateTime: TDateTime; var Year, Month, Day, DOW: Word): Boolean;
-// const
-//   D1 = 365;
-//   D4 = D1 * 4 + 1;
-//   D100 = D4 * 25 - 1;
-//   D400 = D100 * 4 + 1;
-// var
-//   Y, M, D, I: Word;
-//   T: Integer;
-//   DayTable: PDayTable;
-// begin
-//   T := DateTimeToTimeStamp(DateTime).Date;
-//   if T <= 0 then
-//   begin
-//     Year := 0;
-//     Month := 0;
-//     Day := 0;
-//     DOW := 0;
-//     Result := False;
-//   end else
-//   begin
-//     DOW := T mod 7 + 1;
-//     Dec(T);
-//     Y := 1;
-//     while T >= D400 do
-//     begin
-//       Dec(T, D400);
-//       Inc(Y, 400);
-//     end;
-//     DivMod(T, D100, I, D);
-//     if I = 4 then
-//     begin
-//       Dec(I);
-//       Inc(D, D100);
-//     end;
-//     Inc(Y, I * 100);
-//     DivMod(D, D4, I, D);
-//     Inc(Y, I * 4);
-//     DivMod(D, D1, I, D);
-//     if I = 4 then
-//     begin
-//       Dec(I);
-//       Inc(D, D1);
-//     end;
-//     Inc(Y, I);
-//     Result := IsLeapYear(Y);
-//     DayTable := @MonthDays[Result];
-//     M := 1;
-//     while True do
-//     begin
-//       I := DayTable^[M];
-//       if D < I then Break;
-//       Dec(D, I);
-//       Inc(M);
-//     end;
-//     Year := Y;
-//     Month := M;
-//     Day := D + 1;
-//   end;
-// end;
-
-
-function TryEncodeDate(Year: number, Month: number, Day: number, Date: TDateTime): boolean {
-    let result = false
-    let DayTable = MonthDays[boolToInt(IsLeapYear(Year))]
-    if ((Year >= 1) && (Year <= 9999) && (Month >= 1) && (Month <= 12) &&
-        (Day >= 1) && (Day <= DayTable[Month])) {
-        for (let i = 1; i <= Month - 1; i++) { Day += DayTable[i] }
-        let I = Year - 1;
-        Object.assign(Date, new TDateTime((I * 365) + Math.trunc(I / 4) - Math.trunc(I / 100) + Math.trunc(I / 400) + Day - DateDelta));
-        result = true;
-    }
-    return result
-}
-// var
-//   I: Integer;
-//   DayTable: PDayTable;
-// begin
-//   Result := False;
-//   DayTable := @MonthDays[IsLeapYear(Year)];
-//   if (Year >= 1) and (Year <= 9999) and (Month >= 1) and (Month <= 12) and
-//     (Day >= 1) and (Day <= DayTable^[Month]) then
-//   begin
-//     for I := 1 to Month - 1 do Inc(Day, DayTable^[I]);
-//     I := Year - 1;
-//     Date := I * 365 + I div 4 - I div 100 + I div 400 + Day - DateDelta;
-//     Result := True;
-//   end;
-// end;
-
-// function Now(): TDateTime {
-// }
-
 function extractFileDir(AFilename: string): string {
     const index = AFilename.lastIndexOf(path.sep);
     const result = AFilename.substring(0, index);
@@ -210,6 +108,33 @@ function SetEnvironmentVariable(Name: string, Value: string) {
     process.env[Name] = Value;
 }
 
+type ArbitraryObject = { [key: string]: unknown; };
+
+
+/**
+ * Checks if the given parameter is an object
+ * @param potentialObject item to check as an object
+ * @returns boolean
+ */
+function isArbitraryObject(potentialObject: unknown): potentialObject is ArbitraryObject {
+    const result = (potentialObject !== null) && 
+                   (!Array.isArray(potentialObject)) &&
+                   (typeof potentialObject === "object");
+    return result;
+}
+
+/**
+ * Checks that obj is an object, and it has a field named fieldName and that its type is fieldType  
+ * Assuming e is an object with the field code of type string.  
+ * * If you use this, then the expression following it is valid, for example:  
+ *   - hasFieldOfType<string>(e, "code", "string") && e.code === "INSUFFICIENT_FUNDS")  
+ * * If you do not use it, then  
+ *   - e.code is invalid when checked by code analyzer
+ * @param obj 
+ * @param fieldName 
+ * @param fieldType 
+ * @returns 
+ */
 function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [fieldName: string]: T } {
     const result =
       obj !== null &&
@@ -234,8 +159,5 @@ export {
     DeleteEnvironmentVariable, DeleteEnvironmentVariable as deleteEnvironmentVariable,
     GetEnvironmentVariable, GetEnvironmentVariable as getEnvironmentVariable,
     SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable,
-    hasMessageField, hasFieldOfType, 
-}
-
-function DateTimeToTimeStamp(DateTime: TDateTime) {
+    hasMessageField, hasFieldOfType, isArbitraryObject
 }
