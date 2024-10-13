@@ -113,13 +113,17 @@ type ArbitraryObject = { [key: string]: unknown; };
 
 /**
  * Checks if the given parameter is an object
- * @param potentialObject item to check as an object
+ * @param potentialObj item to check as an object
  * @returns boolean
  */
-function isArbitraryObject(potentialObject: unknown): potentialObject is ArbitraryObject {
-    const result = (potentialObject !== null) && 
-                   (!Array.isArray(potentialObject)) &&
-                   (typeof potentialObject === "object");
+function isArbitraryObject(potentialObj: unknown): potentialObj is ArbitraryObject {
+    // an array/date is identified as an object in JavaScript
+    // so this function checks that the potentialObject is not an array/date, and not a regex
+    const result = (potentialObj !== null) && 
+                   (!Array.isArray(potentialObj)) &&
+                   (!(potentialObj instanceof RegExp)) &&
+                   (!(potentialObj instanceof Date)) &&
+                   (typeof potentialObj === "object");
     return result;
 }
 
@@ -137,9 +141,8 @@ function isArbitraryObject(potentialObject: unknown): potentialObject is Arbitra
  */
 function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [fieldName: string]: T } {
     const result =
-      obj !== null &&
-      typeof obj === 'object' && 
-      typeof (obj as any)[fieldName] === fieldType;
+      isArbitraryObject(obj) && 
+      typeof obj[fieldName] === fieldType;
     return result;
 }
   

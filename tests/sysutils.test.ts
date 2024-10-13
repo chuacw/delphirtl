@@ -5,6 +5,7 @@ import {
     GetEnvironmentVariable, IncludeTrailingPathDelimiter, LowerCase, SetEnvironmentVariable, 
     UpperCase,
     hasFieldOfType,
+    isArbitraryObject,
  } from "../src/sysutils";
 
 function getRandomInt(max: number) {
@@ -139,5 +140,54 @@ describe('testing SysUtils library', () => {
             expect(GetEnvironmentVariable(LVarName)).toEqual(""); 
         });
     });
+
+    describe('isArbitraryObject', () => {
+
+        it("should identify isArbitraryObject correctly", () => {
+          const obj = {};
+          const objResult = isArbitraryObject(obj);
+          expect(objResult).toBe(true);
+        });
+      
+        it("shouldn't identify null as isArbitraryObject", () => {
+          const obj = null;
+          const objResult = isArbitraryObject(obj);
+          expect(objResult).toBe(false);
+        });
+      
+        it("shouldn't identify undefined as isArbitraryObject", () => {
+          const obj = undefined;
+          const objResult = isArbitraryObject(obj);
+          expect(objResult).toBe(false);
+        });
+      
+        it("shouldn't identify number as isArbitraryObject", () => {
+          const objResult = isArbitraryObject(5);
+          expect(objResult).toBe(false);
+        });
+      
+        it("shouldn't identify array as isArbitraryObject", () => {
+          const objResult = isArbitraryObject([]);
+          expect(objResult).toBe(false);
+        });
+
+        it("shouldn't identify Function as isArbitraryObject", () => {
+            const objResult = isArbitraryObject(function() {});
+            expect(objResult).toBe(false);
+        });
+  
+        it("shouldn't identify date as isArbitraryObject", () => {
+            const objResult = isArbitraryObject(new Date());
+            expect(objResult).toBe(false);
+        });
+
+        it("shouldn't identify regex as isArbitraryObject", () => {
+            const everythingRegex = /[\s\S]*/;
+            const objResult = isArbitraryObject(everythingRegex);
+            expect(objResult).toBe(false);
+        });
+
+      
+      });
 
 });
