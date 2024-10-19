@@ -43,4 +43,7 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.8  | 2 Oct 2024 | Added threadutils, reflectutils and hasMessageField, hasFieldOfType in sysutils, fixed exports in index.ts |
 | 1.1.13-16 | 6 Oct 2024 | Added List\<T\> to collections |
 | 1.1.17 | 12 Oct 2024 | Added various add* functionality to Date |
+| 1.1.18 | 13 Oct 2024 | Added isArbitraryObject |
+| 1.1.19 | 19 Oct 2024 | Added haveNoDuplicates to ArrayUtils |
+
 

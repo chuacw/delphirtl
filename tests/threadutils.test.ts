@@ -23,7 +23,7 @@ describe('testing threadutils library', () => {
                 console.log(`Result: ${result}`);
                 expect(result).toBe(10);
             }).catch(err => {
-                // console.error(err); // cannot use import statement outside a module
+                console.error(err); // cannot use import statement outside a module
             });
         }
     });

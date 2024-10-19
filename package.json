@@ -1,6 +1,6 @@
 {
   "name": "delphirtl",
-  "version": "1.1.18",
+  "version": "1.1.19",
   "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -92,7 +92,8 @@
   "homepage": "https://github.com/chuacw/delphirtl#readme",
   "dependencies": {
     "@types/node": "^17.0.25",
-    "ethers": "^5.6.6",
+    "delphirtl": "file:",
+    "ethers": "^5.7.2",
     "express": "^4.21.0",
     "http": "^0.0.1-security",
     "http-terminator": "^3.2.0",
@@ -111,5 +112,9 @@
   },
   "engines": {
     "node": ">=17.5.0"
-  }
+  },
+  "maintainers": [
+    "chuacw",
+    "chuacw3000"
+  ]
 }
