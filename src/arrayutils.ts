@@ -32,7 +32,7 @@ function sort(values: string[], ascending: boolean = true): string[] {
  */
 function haveNoDuplicates(arr1: any[], arr2: any[], key: string): boolean {
     if ((arr1.length === 0) && (arr2.length === 0)) {
-        return false;
+        return true;
     }
     return arr1.every(item1 => !arr2.some(item2 => item1[key] === item2[key]));
 }
