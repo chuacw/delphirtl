@@ -63,12 +63,25 @@ function extractFileExt(AFilename: string): string {
     return result;
 }
 
+/**
+ * Extracts the name and extension parts of a file name.
+ *
+ * The resulting string is the rightmost characters of FileName, starting with the first character after the colon or backslash that separates the path information from the name and extension. The resulting string is equal to FileName, if FileName contains no drive and directory parts. 
+ * @param AFileName 
+ * @returns 
+ */
 function extractFileName(AFileName: string): string {
     const index = AFileName.lastIndexOf(path.sep) + 1;
     const result = AFileName.substring(index);
     return result;
 }
 
+/**
+ * Checks if the given filename exists
+ *
+ * @param {string} AFileName Filename to check existence for.
+ * @returns {boolean}
+ */
 function FileExists(AFileName: string): boolean {
     let result = false;
     try {
@@ -79,6 +92,12 @@ function FileExists(AFileName: string): boolean {
     return result;
 }
 
+/**
+ * Adds a path delimiter to the given string. If the path delimiter is already at the end of the string, does nothing.
+ *
+ * @param {string} APath Given path to check for delimiter to add to
+ * @returns {string} The path with added delimiter
+ */
 function IncludeTrailingPathDelimiter(APath: string): string {
     const result = (APath.charAt(APath.length - 1) != path.sep) ? (APath + path.sep) : APath;
     return result;
@@ -87,10 +106,16 @@ function IncludeTrailingPathDelimiter(APath: string): string {
 function LowerCase(str: string): string {
     return str.toLowerCase();
 }
+
 function UpperCase(str: string): string {
     return str.toUpperCase();
 }
 
+/**
+ * Deletes the given name from the environment variable
+ *
+ * @param {string} Name
+ */
 function DeleteEnvironmentVariable(Name: string) {
     delete process.env[Name];
 }
@@ -98,16 +123,33 @@ function DeleteEnvironmentVariable(Name: string) {
 // In Reactjs, only env vars starting with REACT_APP_ is allowed
 // Anything else will not show up
 // Nextjs, only env vars starting with NEXT_PUBLIC_ are allowed
+/**
+ * Retrieves the contents of the specified variable from the environment block
+ * 
+ * @param Name 
+ * @returns 
+ */
 function GetEnvironmentVariable(Name: string): string {
     const result = process.env[Name] || "";
     return result;
 }
 
+/**
+ * Sets the specified variable in the environment with the given value
+ *
+ * @param {string} Name
+ * @param {string} Value
+ */
 function SetEnvironmentVariable(Name: string, Value: string) {
     assert(Name); assert(Value);
     process.env[Name] = Value;
 }
 
+/**
+ * An object
+ *
+ * @typedef {ArbitraryObject}
+ */
 type ArbitraryObject = { [key: string]: unknown; };
 
 
@@ -146,6 +188,12 @@ function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): 
     return result;
 }
   
+/**
+ * Checks if the given object has a message field of string type 
+ *
+ * @param obj 
+ * @returns 
+ */
 function hasMessageField(obj: unknown): obj is { message: string } {
     const result = 
       hasFieldOfType<string>(obj, "message", "string");

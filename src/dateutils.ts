@@ -62,8 +62,9 @@ declare global {
 }
 
 /**
- * @param  {number} block.timestamp
- * @returns Converted block.timestamp to Date
+ * Converts the given time into Javascript Date
+ * @param time 
+ * @returns 
  */
 function fromBlockchainTimestamp(time: number): Date {
     const timestamp = time * 1000;

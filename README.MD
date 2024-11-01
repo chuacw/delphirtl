@@ -28,9 +28,10 @@ Comments
 
 The current configuration allows importing with the following mechanism:
 
-
+```
 import { ParamStr } from "delphirtl/rtl";  // import the method/type from the namespace rtl which was exported from delphirtl  
 import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName from sysutils   
+```
 
 
 | Version  | Date        | Notes  |  

@@ -1,7 +1,13 @@
 import { Worker, isMainThread, parentPort } from 'worker_threads';
 
-// Function to create a thread
-function runInThread<T>(fn: () => T): Promise<T> {
+/**
+ * Runs a function in a thread
+ *
+ * @template T
+ * @param {() => T} fn The function to run in a thread
+ * @returns {Promise<T>}
+ */
+async function runInThread<T>(fn: () => T): Promise<T> {
     return new Promise<T>((resolve, reject) => {
         const worker = new Worker(__filename, {
             workerData: { fn: fn.toString() }
