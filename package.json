@@ -84,14 +84,16 @@
     "rtl"
   ],
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "examples/**/*",
+    "docs/**/*"
   ],
   "author": "chuacw",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chuacw/delphirtl/issues"
   },
-  "homepage": "https://github.com/chuacw/delphirtl#readme",
+  "homepage": "https://chuacw.github.io/delphirtl/md/index.html",
   "dependencies": {
     "@types/node": "^17.0.25",
     "ethers": "^5.7.2",

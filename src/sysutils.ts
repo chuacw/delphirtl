@@ -120,6 +120,9 @@ function DeleteEnvironmentVariable(Name: string) {
     delete process.env[Name];
 }
 
+const ENV_REACT_PREFIX = "REACT_APP_";
+const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
+
 // In Reactjs, only env vars starting with REACT_APP_ is allowed
 // Anything else will not show up
 // Nextjs, only env vars starting with NEXT_PUBLIC_ are allowed
@@ -210,5 +213,6 @@ export {
     DeleteEnvironmentVariable, DeleteEnvironmentVariable as deleteEnvironmentVariable,
     GetEnvironmentVariable, GetEnvironmentVariable as getEnvironmentVariable,
     SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable,
-    hasMessageField, hasFieldOfType, isArbitraryObject
+    hasMessageField, hasFieldOfType, isArbitraryObject,
+    ENV_NEXT_PREFIX, ENV_REACT_PREFIX
 }
