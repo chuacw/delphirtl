@@ -36,7 +36,7 @@
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:53
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:50
 
 ### new Dictionary()
 
@@ -44,7 +44,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:53
 
 #### Parameters
 
-• **iterable?**: `null` \| `Iterable`\<readonly [`K`, `V`]\>
+• **iterable?**: `null` \| `Iterable`\<readonly [`K`, `V`], `any`, `any`\>
 
 #### Returns
 
@@ -56,7 +56,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:53
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:52
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:49
 
 ## Properties
 
@@ -70,7 +70,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:52
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:135
+node\_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:137
 
 ***
 
@@ -88,7 +88,7 @@ the number of elements in the Map.
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:48
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:45
 
 ***
 
@@ -102,7 +102,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:48
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:317
+node\_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:319
 
 ## Accessors
 
@@ -120,7 +120,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L130)
+[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L130)
 
 ***
 
@@ -138,7 +138,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L118)
+[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L118)
 
 ***
 
@@ -154,7 +154,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:170](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L170)
+[src/collections.ts:170](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L170)
 
 ***
 
@@ -172,19 +172,19 @@ Gets the keys and values stored in the Dictionary
 
 #### Defined in
 
-[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L140)
+[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L140)
 
 ## Methods
 
 ### \[iterator\]()
 
-> **\[iterator\]**(): `IterableIterator`\<[`K`, `V`]\>
+> **\[iterator\]**(): `MapIterator`\<[`K`, `V`]\>
 
 Returns an iterable of entries in the map.
 
 #### Returns
 
-`IterableIterator`\<[`K`, `V`]\>
+`MapIterator`\<[`K`, `V`]\>
 
 #### Inherited from
 
@@ -192,7 +192,7 @@ Returns an iterable of entries in the map.
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.iterable.d.ts:121
+node\_modules/typescript/lib/lib.es2015.iterable.d.ts:143
 
 ***
 
@@ -214,7 +214,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L99)
+[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L99)
 
 ***
 
@@ -236,7 +236,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L89)
+[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L89)
 
 ***
 
@@ -254,7 +254,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:23
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:20
 
 ***
 
@@ -270,7 +270,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L106)
+[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L106)
 
 ***
 
@@ -288,7 +288,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:185](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L185)
+[src/collections.ts:185](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L185)
 
 ***
 
@@ -306,7 +306,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:190](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L190)
+[src/collections.ts:190](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L190)
 
 ***
 
@@ -330,19 +330,19 @@ true if an element in the Map existed and has been removed, or false if the elem
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:27
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:24
 
 ***
 
 ### entries()
 
-> **entries**(): `IterableIterator`\<[`K`, `V`]\>
+> **entries**(): `MapIterator`\<[`K`, `V`]\>
 
 Returns an iterable of key, value pairs for every entry in the map.
 
 #### Returns
 
-`IterableIterator`\<[`K`, `V`]\>
+`MapIterator`\<[`K`, `V`]\>
 
 #### Inherited from
 
@@ -350,7 +350,7 @@ Returns an iterable of key, value pairs for every entry in the map.
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.iterable.d.ts:126
+node\_modules/typescript/lib/lib.es2015.iterable.d.ts:148
 
 ***
 
@@ -376,7 +376,7 @@ Executes a provided function once per each key/value pair in the Map, in inserti
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:31
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:28
 
 ***
 
@@ -402,7 +402,7 @@ Returns the element associated with the specified key. If no element is associat
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:36
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:33
 
 ***
 
@@ -426,19 +426,19 @@ boolean indicating whether an element with the specified key exists or not.
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:40
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:37
 
 ***
 
 ### keys()
 
-> **keys**(): `IterableIterator`\<`K`\>
+> **keys**(): `MapIterator`\<`K`\>
 
 Returns an iterable of keys in the map
 
 #### Returns
 
-`IterableIterator`\<`K`\>
+`MapIterator`\<`K`\>
 
 #### Inherited from
 
@@ -446,7 +446,7 @@ Returns an iterable of keys in the map
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.iterable.d.ts:131
+node\_modules/typescript/lib/lib.es2015.iterable.d.ts:153
 
 ***
 
@@ -464,7 +464,7 @@ node\_modules/typescript/lib/lib.es2015.iterable.d.ts:131
 
 #### Defined in
 
-[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L207)
+[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L207)
 
 ***
 
@@ -490,7 +490,7 @@ Adds a new element with a specified key and value to the Map. If an element with
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.collection.d.ts:44
+node\_modules/typescript/lib/lib.es2015.collection.d.ts:41
 
 ***
 
@@ -510,7 +510,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:44
 
 #### Defined in
 
-[src/collections.ts:199](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L199)
+[src/collections.ts:199](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L199)
 
 ***
 
@@ -536,19 +536,19 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:44
 
 #### Defined in
 
-[src/collections.ts:175](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L175)
+[src/collections.ts:175](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L175)
 
 ***
 
 ### values()
 
-> **values**(): `IterableIterator`\<`V`\>
+> **values**(): `MapIterator`\<`V`\>
 
 Returns an iterable of values in the map
 
 #### Returns
 
-`IterableIterator`\<`V`\>
+`MapIterator`\<`V`\>
 
 #### Inherited from
 
@@ -556,4 +556,4 @@ Returns an iterable of values in the map
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es2015.iterable.d.ts:136
+node\_modules/typescript/lib/lib.es2015.iterable.d.ts:158

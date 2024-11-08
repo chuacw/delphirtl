@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L218)
+[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L218)
 
 ## Properties
 
@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/collections.ts:216](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L216)
+[src/collections.ts:216](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L216)
 
 ***
 
@@ -46,7 +46,7 @@
 
 #### Defined in
 
-[src/collections.ts:214](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L214)
+[src/collections.ts:214](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L214)
 
 ***
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[src/collections.ts:215](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L215)
+[src/collections.ts:215](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L215)
 
 ## Accessors
 
@@ -78,7 +78,7 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:249](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L249)
+[src/collections.ts:249](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L249)
 
 ## Methods
 
@@ -92,7 +92,7 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Parameters
 
-• **nodeValues**: `Iterable`\<`T`\>
+• **nodeValues**: `Iterable`\<`T`, `any`, `any`\>
 
 #### Returns
 
@@ -100,4 +100,4 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:223](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L223)
+[src/collections.ts:223](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L223)

@@ -38,7 +38,7 @@ The number of items in the store
 
 #### Defined in
 
-[src/collections.ts:77](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L77)
+[src/collections.ts:77](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L77)
 
 ## Methods
 
@@ -54,7 +54,7 @@ The last value that was pushed into the store
 
 #### Defined in
 
-[src/collections.ts:65](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L65)
+[src/collections.ts:65](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L65)
 
 ***
 
@@ -74,4 +74,4 @@ Puts the given value into the store
 
 #### Defined in
 
-[src/collections.ts:57](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L57)
+[src/collections.ts:57](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/collections.ts#L57)

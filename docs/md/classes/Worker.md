@@ -2065,7 +2065,7 @@ node\_modules/@types/node/events.d.ts:242
 
 ### on()
 
-> `static` **on**(`emitter`, `eventName`, `options`?): `AsyncIterableIterator`\<`any`\>
+> `static` **on**(`emitter`, `eventName`, `options`?): `AsyncIterableIterator`\<`any`, `any`, `any`\>
 
 ```js
 const { on, EventEmitter } = require('events');
@@ -2133,7 +2133,7 @@ The name of the event being listened for
 
 #### Returns
 
-`AsyncIterableIterator`\<`any`\>
+`AsyncIterableIterator`\<`any`, `any`, `any`\>
 
 that iterates `eventName` events emitted by the `emitter`
 

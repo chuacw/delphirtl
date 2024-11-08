@@ -84,7 +84,7 @@ node\_modules/json-rpc-2.0/dist/models.d.ts:36
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1054
+node\_modules/typescript/lib/lib.es5.d.ts:1077
 
 ***
 
@@ -98,7 +98,7 @@ node\_modules/typescript/lib/lib.es5.d.ts:1054
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1053
+node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 ***
 
@@ -112,7 +112,7 @@ node\_modules/typescript/lib/lib.es5.d.ts:1053
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1055
+node\_modules/typescript/lib/lib.es5.d.ts:1078
 
 ***
 
