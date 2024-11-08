@@ -69,7 +69,7 @@
   },
   "scripts": {
     "gen-md": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out ./docs/md src --hostedBaseUrl https://chuacw.github.io/delphirtl/md/",
-    "gen-html": "typedoc --cleanOutputDir true --out ./docs/html ./src/index.ts --basePath ./html/",
+    "gen-html": "typedoc --cleanOutputDir true --plugin typedoc-github-theme --out ./docs/html ./src/index.ts --basePath ./html/",
     "prepublishOnly": "npm run test && npm uninstall delphirtl --save && tsc --build",
     "prepare-uncommented": "// && npm-dts -o dist\\index.d.ts generate",
     "build": "tsc -b",
@@ -114,6 +114,7 @@
     "ts-jest": "^28.0.8",
     "ts-node": "^10.9.2",
     "typedoc": "^0.26.11",
+    "typedoc-github-theme": "^0.1.2",
     "typedoc-plugin-markdown": "^4.2.9",
     "typescript": "^5.6.3"
   },
