@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/messaging.ts:21](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/messaging.ts#L21)
+[src/messaging.ts:21](https://github.com/chuacw/delphirtl/blob/0f93eed91d1db2ed286c4d8935806fd1be0ca3a9/src/messaging.ts#L21)
 
 ## Properties
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[src/messaging.ts:20](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/messaging.ts#L20)
+[src/messaging.ts:20](https://github.com/chuacw/delphirtl/blob/0f93eed91d1db2ed286c4d8935806fd1be0ca3a9/src/messaging.ts#L20)
 
 ## Methods
 
@@ -66,4 +66,4 @@
 
 #### Defined in
 
-[src/messaging.ts:22](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/messaging.ts#L22)
+[src/messaging.ts:22](https://github.com/chuacw/delphirtl/blob/0f93eed91d1db2ed286c4d8935806fd1be0ca3a9/src/messaging.ts#L22)
