@@ -1,15 +1,11 @@
-Delphi RTL
-==========
+# Delphi RTL
 
 These libraries provide a set of functionality that makes it easy to use known Delphi functions with TypeScript and Javascript.
 
-Installation
-============
-
+## Installation
 npm install delphirtl
 
-Modules
-=======
+## Modules
 * arrayutils
 * BaseJsonRpcServer
 * collections
@@ -23,16 +19,13 @@ Modules
 * threadutils  
 
 
-Comments
-========
-
+## Comments
 The current configuration allows importing with the following mechanism:
 
 ```
 import { ParamStr } from "delphirtl/rtl";  // import the method/type from the namespace rtl which was exported from delphirtl  
 import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName from sysutils   
 ```
-
 
 | Version  | Date        | Notes  |  
 |----------|-------------|--------|  

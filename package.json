@@ -96,7 +96,6 @@
   "homepage": "https://chuacw.github.io/delphirtl/md/index.html",
   "dependencies": {
     "@types/node": "^17.0.25",
-    "delphirtl": "file:",
     "ethers": "^5.7.2",
     "express": "^4.21.0",
     "http": "^0.0.1-security",
