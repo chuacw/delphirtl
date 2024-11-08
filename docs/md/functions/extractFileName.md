@@ -22,4 +22,4 @@ The resulting string is the rightmost characters of FileName, starting with the 
 
 ## Defined in
 
-[src/sysutils.ts:73](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/sysutils.ts#L73)
+[src/sysutils.ts:73](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/sysutils.ts#L73)

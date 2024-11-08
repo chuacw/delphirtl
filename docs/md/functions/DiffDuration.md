@@ -22,4 +22,4 @@ Calculates the difference between 2 dates
 
 ## Defined in
 
-[src/dateutils.ts:268](https://github.com/chuacw/delphirtl/blob/c3bd984ce6705ae71e078fec89787c01bca39c7d/src/dateutils.ts#L268)
+[src/dateutils.ts:268](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/dateutils.ts#L268)
