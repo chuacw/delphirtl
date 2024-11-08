@@ -1,8 +1,19 @@
+/**
+ * Deduplicates the given array
+ * @param values An array containing duplicated elements
+ * @returns The given array, but without duplicates
+ */
 function dedupArray(values: any[]): any[] {
     const result = Array.from(new Set(values));
     return result;
 }
 
+/**
+ * 
+ *
+ * @param {string[]} values
+ * @returns {number} The length of the longest string in the given values array.
+ */
 function maxLen(values: string[]): number {
     let result = 0;
     for (const value of values) {
@@ -13,6 +24,13 @@ function maxLen(values: string[]): number {
     return result;
 }
 
+/**
+ * Sorts the given values array and returns it
+ *
+ * @param {string[]} values
+ * @param {boolean} [ascending=true]
+ * @returns {string[]} The sorted values array, in a new array.
+ */
 function sort(values: string[], ascending: boolean = true): string[] {
     let result = [...values];
     if (ascending) {

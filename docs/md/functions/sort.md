@@ -6,18 +6,22 @@
 
 # Function: sort()
 
-> **sort**(`values`, `ascending`): `string`[]
+> **sort**(`values`, `ascending`?): `string`[]
+
+Sorts the given values array and returns it
 
 ## Parameters
 
 • **values**: `string`[]
 
-• **ascending**: `boolean` = `true`
+• **ascending?**: `boolean` = `true`
 
 ## Returns
 
 `string`[]
 
+The sorted values array, in a new array.
+
 ## Defined in
 
-[src/arrayutils.ts:16](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/arrayutils.ts#L16)
+[src/arrayutils.ts:34](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/arrayutils.ts#L34)

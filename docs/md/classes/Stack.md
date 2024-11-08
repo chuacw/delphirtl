@@ -26,17 +26,19 @@ A last in, first out class
 
 ### length
 
-> `get` **length**(): `number`
+#### Get Signature
+
+> **get** **length**(): `number`
 
 The number of items in the store
 
-#### Returns
+##### Returns
 
 `number`
 
 #### Defined in
 
-[src/collections.ts:77](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/collections.ts#L77)
+[src/collections.ts:77](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L77)
 
 ## Methods
 
@@ -52,7 +54,7 @@ The last value that was pushed into the store
 
 #### Defined in
 
-[src/collections.ts:65](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/collections.ts#L65)
+[src/collections.ts:65](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L65)
 
 ***
 
@@ -72,4 +74,4 @@ Puts the given value into the store
 
 #### Defined in
 
-[src/collections.ts:57](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/collections.ts#L57)
+[src/collections.ts:57](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/collections.ts#L57)

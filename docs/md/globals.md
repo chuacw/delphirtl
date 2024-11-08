@@ -128,6 +128,8 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 ## Variables
 
 - [CNoContent](variables/CNoContent.md)
+- [ENV\_NEXT\_PREFIX](variables/ENV_NEXT_PREFIX.md)
+- [ENV\_REACT\_PREFIX](variables/ENV_REACT_PREFIX.md)
 - [isMainThread](variables/isMainThread.md)
 - [JSONRPC](variables/JSONRPC.md)
 - [parentPort](variables/parentPort.md)

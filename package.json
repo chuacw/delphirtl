@@ -1,6 +1,6 @@
 {
   "name": "delphirtl",
-  "version": "1.1.20",
+  "version": "1.1.21",
   "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -68,8 +68,8 @@
     "test": "tests"
   },
   "scripts": {
-    "gen-markdown": "typedoc --githubPages false --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
-    "gen-html": "typedoc --githubPages false --cleanOutputDir true --out docs/html src",
+    "gen-markdown": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
+    "gen-html": "typedoc --cleanOutputDir true --out docs/html src",
     "prepublishOnly": "npm run test && npm uninstall delphirtl --save && tsc --build",
     "prepare-uncommented": "// && npm-dts -o dist\\index.d.ts generate",
     "build": "tsc -b",

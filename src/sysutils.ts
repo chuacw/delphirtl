@@ -80,7 +80,7 @@ function extractFileName(AFileName: string): string {
  * Checks if the given filename exists
  *
  * @param {string} AFileName Filename to check existence for.
- * @returns {boolean}
+ * @returns {boolean} true if the given filename exists, false otherwise.
  */
 function FileExists(AFileName: string): boolean {
     let result = false;

@@ -21,28 +21,38 @@ class TMyKeys2 {
 
 const lMgr = TMessageManager.getDefaultManager();
 
-const index12 = lMgr.subscribeToMessage(Date, (aMessage: Date) => {
-    console.log(aMessage.toUTCString());
-})
-lMgr.sendMessage(Date, new Date());
-
 const index1 = lMgr.subscribeToMessage(Date, (aMessage: Date) => {
-    console.log(aMessage.toUTCString());
-})
-lMgr.sendMessage(Date, new Date());
-console.log("Message 1 sent!")
+    console.log("index1: ", aMessage.toUTCString());
+});
 
-const index2 = lMgr.subscribeToMessage(TMyKeys, (aMessage: TMyKeys) => {
+lMgr.sendMessage(Date, new Date());
+console.log("Message 1 sent!\n");
+
+const index2 = lMgr.subscribeToMessage(Date, (aMessage: Date) => {
+    console.log("index2: ", aMessage.toUTCString());
+});
+lMgr.sendMessage(Date, new Date());
+console.log("Message 2 sent!\n");
+
+lMgr.unsubscribe(Date, index2);
+lMgr.sendMessage(Date, new Date()); // This will not be received by subscriber that returned index2
+lMgr.unsubscribe(Date, index1);
+lMgr.sendMessage(Date, new Date()); // This will not be received by subscriber that returned index1
+
+const index3 = lMgr.subscribeToMessage(TMyKeys, (aMessage: TMyKeys) => {
     console.log('fString: ', aMessage.fString);
     console.log('fNumber: ', aMessage.fNumber);
-})
-lMgr.sendMessage(TMyKeys, new TMyKeys(10, "hey 10!"))
-console.log("Message 2 sent!")
+});
+lMgr.sendMessage(TMyKeys, new TMyKeys(10, "hey 10!"));
+console.log("Message 3 sent!\n");
 
-const index3 = lMgr.subscribeToWrappedMessage(Date, (aMessage: TMessage<Date>) => {
+const index4 = lMgr.subscribeToWrappedMessage(Date, (aMessage: TMessage<Date>) => {
     console.log("The wrapped date is : ", aMessage.value.toUTCString());
-})
+});
 lMgr.sendWrappedMessage(Date, new TMessage(new Date()));
-console.log("Message 3 sent!")
-lMgr.unsubscribeWrappedMessage(Date, index3); // no more messages can be received after unsubscribing
+console.log("Message 4 sent!\n");
+
+lMgr.unsubscribeWrappedMessage(Date, index4); // no more messages can be received after unsubscribing
+
 lMgr.sendWrappedMessage(Date, new TMessage(new Date()));
+console.log("Message 5 sent!\n");

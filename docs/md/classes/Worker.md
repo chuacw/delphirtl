@@ -312,8 +312,6 @@ node\_modules/@types/node/worker\_threads.d.ts:431
 
 > **addListener**(`event`, `listener`): `this`
 
-Alias for `emitter.on(eventName, listener)`.
-
 ##### Parameters
 
 • **event**: `"exit"`
@@ -323,10 +321,6 @@ Alias for `emitter.on(eventName, listener)`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -340,8 +334,6 @@ node\_modules/@types/node/worker\_threads.d.ts:432
 
 > **addListener**(`event`, `listener`): `this`
 
-Alias for `emitter.on(eventName, listener)`.
-
 ##### Parameters
 
 • **event**: `"message"`
@@ -351,10 +343,6 @@ Alias for `emitter.on(eventName, listener)`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -368,8 +356,6 @@ node\_modules/@types/node/worker\_threads.d.ts:433
 
 > **addListener**(`event`, `listener`): `this`
 
-Alias for `emitter.on(eventName, listener)`.
-
 ##### Parameters
 
 • **event**: `"messageerror"`
@@ -379,10 +365,6 @@ Alias for `emitter.on(eventName, listener)`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -396,8 +378,6 @@ node\_modules/@types/node/worker\_threads.d.ts:434
 
 > **addListener**(`event`, `listener`): `this`
 
-Alias for `emitter.on(eventName, listener)`.
-
 ##### Parameters
 
 • **event**: `"online"`
@@ -407,10 +387,6 @@ Alias for `emitter.on(eventName, listener)`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -424,8 +400,6 @@ node\_modules/@types/node/worker\_threads.d.ts:435
 
 > **addListener**(`event`, `listener`): `this`
 
-Alias for `emitter.on(eventName, listener)`.
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
@@ -435,10 +409,6 @@ Alias for `emitter.on(eventName, listener)`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -520,44 +490,6 @@ node\_modules/@types/node/worker\_threads.d.ts:437
 
 > **emit**(`event`, `exitCode`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
-
-Returns `true` if the event had listeners, `false` otherwise.
-
-```js
-const EventEmitter = require('events');
-const myEmitter = new EventEmitter();
-
-// First listener
-myEmitter.on('event', function firstListener() {
-  console.log('Helloooo! first listener');
-});
-// Second listener
-myEmitter.on('event', function secondListener(arg1, arg2) {
-  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
-});
-// Third listener
-myEmitter.on('event', function thirdListener(...args) {
-  const parameters = args.join(', ');
-  console.log(`event with parameters ${parameters} in third listener`);
-});
-
-console.log(myEmitter.listeners('event'));
-
-myEmitter.emit('event', 1, 2, 3, 4, 5);
-
-// Prints:
-// [
-//   [Function: firstListener],
-//   [Function: secondListener],
-//   [Function: thirdListener]
-// ]
-// Helloooo! first listener
-// event with parameters 1, 2 in second listener
-// event with parameters 1, 2, 3, 4, 5 in third listener
-```
-
 ##### Parameters
 
 • **event**: `"exit"`
@@ -567,10 +499,6 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 ##### Returns
 
 `boolean`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -584,44 +512,6 @@ node\_modules/@types/node/worker\_threads.d.ts:438
 
 > **emit**(`event`, `value`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
-
-Returns `true` if the event had listeners, `false` otherwise.
-
-```js
-const EventEmitter = require('events');
-const myEmitter = new EventEmitter();
-
-// First listener
-myEmitter.on('event', function firstListener() {
-  console.log('Helloooo! first listener');
-});
-// Second listener
-myEmitter.on('event', function secondListener(arg1, arg2) {
-  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
-});
-// Third listener
-myEmitter.on('event', function thirdListener(...args) {
-  const parameters = args.join(', ');
-  console.log(`event with parameters ${parameters} in third listener`);
-});
-
-console.log(myEmitter.listeners('event'));
-
-myEmitter.emit('event', 1, 2, 3, 4, 5);
-
-// Prints:
-// [
-//   [Function: firstListener],
-//   [Function: secondListener],
-//   [Function: thirdListener]
-// ]
-// Helloooo! first listener
-// event with parameters 1, 2 in second listener
-// event with parameters 1, 2, 3, 4, 5 in third listener
-```
-
 ##### Parameters
 
 • **event**: `"message"`
@@ -631,10 +521,6 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 ##### Returns
 
 `boolean`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -648,44 +534,6 @@ node\_modules/@types/node/worker\_threads.d.ts:439
 
 > **emit**(`event`, `error`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
-
-Returns `true` if the event had listeners, `false` otherwise.
-
-```js
-const EventEmitter = require('events');
-const myEmitter = new EventEmitter();
-
-// First listener
-myEmitter.on('event', function firstListener() {
-  console.log('Helloooo! first listener');
-});
-// Second listener
-myEmitter.on('event', function secondListener(arg1, arg2) {
-  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
-});
-// Third listener
-myEmitter.on('event', function thirdListener(...args) {
-  const parameters = args.join(', ');
-  console.log(`event with parameters ${parameters} in third listener`);
-});
-
-console.log(myEmitter.listeners('event'));
-
-myEmitter.emit('event', 1, 2, 3, 4, 5);
-
-// Prints:
-// [
-//   [Function: firstListener],
-//   [Function: secondListener],
-//   [Function: thirdListener]
-// ]
-// Helloooo! first listener
-// event with parameters 1, 2 in second listener
-// event with parameters 1, 2, 3, 4, 5 in third listener
-```
-
 ##### Parameters
 
 • **event**: `"messageerror"`
@@ -695,10 +543,6 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 ##### Returns
 
 `boolean`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -712,44 +556,6 @@ node\_modules/@types/node/worker\_threads.d.ts:440
 
 > **emit**(`event`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
-
-Returns `true` if the event had listeners, `false` otherwise.
-
-```js
-const EventEmitter = require('events');
-const myEmitter = new EventEmitter();
-
-// First listener
-myEmitter.on('event', function firstListener() {
-  console.log('Helloooo! first listener');
-});
-// Second listener
-myEmitter.on('event', function secondListener(arg1, arg2) {
-  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
-});
-// Third listener
-myEmitter.on('event', function thirdListener(...args) {
-  const parameters = args.join(', ');
-  console.log(`event with parameters ${parameters} in third listener`);
-});
-
-console.log(myEmitter.listeners('event'));
-
-myEmitter.emit('event', 1, 2, 3, 4, 5);
-
-// Prints:
-// [
-//   [Function: firstListener],
-//   [Function: secondListener],
-//   [Function: thirdListener]
-// ]
-// Helloooo! first listener
-// event with parameters 1, 2 in second listener
-// event with parameters 1, 2, 3, 4, 5 in third listener
-```
-
 ##### Parameters
 
 • **event**: `"online"`
@@ -757,10 +563,6 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 ##### Returns
 
 `boolean`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -774,44 +576,6 @@ node\_modules/@types/node/worker\_threads.d.ts:441
 
 > **emit**(`event`, ...`args`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
-to each.
-
-Returns `true` if the event had listeners, `false` otherwise.
-
-```js
-const EventEmitter = require('events');
-const myEmitter = new EventEmitter();
-
-// First listener
-myEmitter.on('event', function firstListener() {
-  console.log('Helloooo! first listener');
-});
-// Second listener
-myEmitter.on('event', function secondListener(arg1, arg2) {
-  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
-});
-// Third listener
-myEmitter.on('event', function thirdListener(...args) {
-  const parameters = args.join(', ');
-  console.log(`event with parameters ${parameters} in third listener`);
-});
-
-console.log(myEmitter.listeners('event'));
-
-myEmitter.emit('event', 1, 2, 3, 4, 5);
-
-// Prints:
-// [
-//   [Function: firstListener],
-//   [Function: secondListener],
-//   [Function: thirdListener]
-// ]
-// Helloooo! first listener
-// event with parameters 1, 2 in second listener
-// event with parameters 1, 2, 3, 4, 5 in third listener
-```
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
@@ -821,10 +585,6 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 ##### Returns
 
 `boolean`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -1025,8 +785,6 @@ node\_modules/@types/node/worker\_threads.d.ts:473
 
 > **off**(`event`, `listener`): `this`
 
-Alias for `emitter.removeListener()`.
-
 ##### Parameters
 
 • **event**: `"exit"`
@@ -1036,10 +794,6 @@ Alias for `emitter.removeListener()`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v10.0.0
 
 ##### Overrides
 
@@ -1053,8 +807,6 @@ node\_modules/@types/node/worker\_threads.d.ts:474
 
 > **off**(`event`, `listener`): `this`
 
-Alias for `emitter.removeListener()`.
-
 ##### Parameters
 
 • **event**: `"message"`
@@ -1064,10 +816,6 @@ Alias for `emitter.removeListener()`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v10.0.0
 
 ##### Overrides
 
@@ -1081,8 +829,6 @@ node\_modules/@types/node/worker\_threads.d.ts:475
 
 > **off**(`event`, `listener`): `this`
 
-Alias for `emitter.removeListener()`.
-
 ##### Parameters
 
 • **event**: `"messageerror"`
@@ -1092,10 +838,6 @@ Alias for `emitter.removeListener()`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v10.0.0
 
 ##### Overrides
 
@@ -1109,8 +851,6 @@ node\_modules/@types/node/worker\_threads.d.ts:476
 
 > **off**(`event`, `listener`): `this`
 
-Alias for `emitter.removeListener()`.
-
 ##### Parameters
 
 • **event**: `"online"`
@@ -1120,10 +860,6 @@ Alias for `emitter.removeListener()`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v10.0.0
 
 ##### Overrides
 
@@ -1137,8 +873,6 @@ node\_modules/@types/node/worker\_threads.d.ts:477
 
 > **off**(`event`, `listener`): `this`
 
-Alias for `emitter.removeListener()`.
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
@@ -1148,10 +882,6 @@ Alias for `emitter.removeListener()`.
 ##### Returns
 
 `this`
-
-##### Since
-
-v10.0.0
 
 ##### Overrides
 
@@ -1223,47 +953,15 @@ node\_modules/@types/node/worker\_threads.d.ts:443
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.on('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.on('foo', () => console.log('a'));
-myEE.prependListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"exit"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.101
 
 ##### Overrides
 
@@ -1277,47 +975,15 @@ node\_modules/@types/node/worker\_threads.d.ts:444
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.on('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.on('foo', () => console.log('a'));
-myEE.prependListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"message"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.101
 
 ##### Overrides
 
@@ -1331,47 +997,15 @@ node\_modules/@types/node/worker\_threads.d.ts:445
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.on('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.on('foo', () => console.log('a'));
-myEE.prependListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"messageerror"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.101
 
 ##### Overrides
 
@@ -1385,47 +1019,15 @@ node\_modules/@types/node/worker\_threads.d.ts:446
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.on('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.on('foo', () => console.log('a'));
-myEE.prependListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"online"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.101
 
 ##### Overrides
 
@@ -1439,47 +1041,15 @@ node\_modules/@types/node/worker\_threads.d.ts:447
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.on('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.on('foo', () => console.log('a'));
-myEE.prependListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.101
 
 ##### Overrides
 
@@ -1549,45 +1119,15 @@ node\_modules/@types/node/worker\_threads.d.ts:449
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
-
-```js
-server.once('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.once('foo', () => console.log('a'));
-myEE.prependOnceListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"exit"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.3.0
 
 ##### Overrides
 
@@ -1601,45 +1141,15 @@ node\_modules/@types/node/worker\_threads.d.ts:450
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
-
-```js
-server.once('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.once('foo', () => console.log('a'));
-myEE.prependOnceListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"message"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.3.0
 
 ##### Overrides
 
@@ -1653,45 +1163,15 @@ node\_modules/@types/node/worker\_threads.d.ts:451
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
-
-```js
-server.once('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.once('foo', () => console.log('a'));
-myEE.prependOnceListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"messageerror"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.3.0
 
 ##### Overrides
 
@@ -1705,45 +1185,15 @@ node\_modules/@types/node/worker\_threads.d.ts:452
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
-
-```js
-server.once('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.once('foo', () => console.log('a'));
-myEE.prependOnceListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `"online"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.3.0
 
 ##### Overrides
 
@@ -1757,45 +1207,15 @@ node\_modules/@types/node/worker\_threads.d.ts:453
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
-next time `eventName` is triggered, this listener is removed and then invoked.
-
-```js
-server.once('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
-event listener to the beginning of the listeners array.
-
-```js
-const myEE = new EventEmitter();
-myEE.once('foo', () => console.log('a'));
-myEE.prependOnceListener('foo', () => console.log('b'));
-myEE.emit('foo');
-// Prints:
-//   b
-//   a
-```
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.3.0
 
 ##### Overrides
 
@@ -1881,34 +1301,15 @@ node\_modules/@types/node/worker\_threads.d.ts:455
 
 > **prependListener**(`event`, `listener`): `this`
 
-Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.prependListener('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"exit"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -1922,34 +1323,15 @@ node\_modules/@types/node/worker\_threads.d.ts:456
 
 > **prependListener**(`event`, `listener`): `this`
 
-Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.prependListener('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"message"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -1963,34 +1345,15 @@ node\_modules/@types/node/worker\_threads.d.ts:457
 
 > **prependListener**(`event`, `listener`): `this`
 
-Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.prependListener('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"messageerror"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2004,34 +1367,15 @@ node\_modules/@types/node/worker\_threads.d.ts:458
 
 > **prependListener**(`event`, `listener`): `this`
 
-Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.prependListener('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"online"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2045,34 +1389,15 @@ node\_modules/@types/node/worker\_threads.d.ts:459
 
 > **prependListener**(`event`, `listener`): `this`
 
-Adds the `listener` function to the _beginning_ of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
-
-```js
-server.prependListener('connection', (stream) => {
-  console.log('someone connected!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2129,32 +1454,15 @@ node\_modules/@types/node/worker\_threads.d.ts:461
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
-
-```js
-server.prependOnceListener('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"exit"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2168,32 +1476,15 @@ node\_modules/@types/node/worker\_threads.d.ts:462
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
-
-```js
-server.prependOnceListener('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"message"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2207,32 +1498,15 @@ node\_modules/@types/node/worker\_threads.d.ts:463
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
-
-```js
-server.prependOnceListener('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"messageerror"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2246,32 +1520,15 @@ node\_modules/@types/node/worker\_threads.d.ts:464
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
-
-```js
-server.prependOnceListener('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"online"`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2285,32 +1542,15 @@ node\_modules/@types/node/worker\_threads.d.ts:465
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
-listener is removed, and then invoked.
-
-```js
-server.prependOnceListener('connection', (stream) => {
-  console.log('Ah, we have our first user!');
-});
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
 
 • **listener**
 
-The callback function
-
 ##### Returns
 
 `this`
-
-##### Since
-
-v6.0.0
 
 ##### Overrides
 
@@ -2540,83 +1780,6 @@ node\_modules/@types/node/worker\_threads.d.ts:467
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
-
-```js
-const callback = (stream) => {
-  console.log('someone connected!');
-};
-server.on('connection', callback);
-// ...
-server.removeListener('connection', callback);
-```
-
-`removeListener()` will remove, at most, one instance of a listener from the
-listener array. If any single listener has been added multiple times to the
-listener array for the specified `eventName`, then `removeListener()` must be
-called multiple times to remove each instance.
-
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
-
-```js
-const myEmitter = new MyEmitter();
-
-const callbackA = () => {
-  console.log('A');
-  myEmitter.removeListener('event', callbackB);
-};
-
-const callbackB = () => {
-  console.log('B');
-};
-
-myEmitter.on('event', callbackA);
-
-myEmitter.on('event', callbackB);
-
-// callbackA removes listener callbackB but it will still be called.
-// Internal listener array at time of emit [callbackA, callbackB]
-myEmitter.emit('event');
-// Prints:
-//   A
-//   B
-
-// callbackB is now removed.
-// Internal listener array [callbackA]
-myEmitter.emit('event');
-// Prints:
-//   A
-```
-
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
-
-When a single function has been added as a handler multiple times for a single
-event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
-
-```js
-const ee = new EventEmitter();
-
-function pong() {
-  console.log('pong');
-}
-
-ee.on('ping', pong);
-ee.once('ping', pong);
-ee.removeListener('ping', pong);
-
-ee.emit('ping');
-ee.emit('ping');
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"exit"`
@@ -2626,10 +1789,6 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -2643,83 +1802,6 @@ node\_modules/@types/node/worker\_threads.d.ts:468
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
-
-```js
-const callback = (stream) => {
-  console.log('someone connected!');
-};
-server.on('connection', callback);
-// ...
-server.removeListener('connection', callback);
-```
-
-`removeListener()` will remove, at most, one instance of a listener from the
-listener array. If any single listener has been added multiple times to the
-listener array for the specified `eventName`, then `removeListener()` must be
-called multiple times to remove each instance.
-
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
-
-```js
-const myEmitter = new MyEmitter();
-
-const callbackA = () => {
-  console.log('A');
-  myEmitter.removeListener('event', callbackB);
-};
-
-const callbackB = () => {
-  console.log('B');
-};
-
-myEmitter.on('event', callbackA);
-
-myEmitter.on('event', callbackB);
-
-// callbackA removes listener callbackB but it will still be called.
-// Internal listener array at time of emit [callbackA, callbackB]
-myEmitter.emit('event');
-// Prints:
-//   A
-//   B
-
-// callbackB is now removed.
-// Internal listener array [callbackA]
-myEmitter.emit('event');
-// Prints:
-//   A
-```
-
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
-
-When a single function has been added as a handler multiple times for a single
-event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
-
-```js
-const ee = new EventEmitter();
-
-function pong() {
-  console.log('pong');
-}
-
-ee.on('ping', pong);
-ee.once('ping', pong);
-ee.removeListener('ping', pong);
-
-ee.emit('ping');
-ee.emit('ping');
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"message"`
@@ -2729,10 +1811,6 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -2746,83 +1824,6 @@ node\_modules/@types/node/worker\_threads.d.ts:469
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
-
-```js
-const callback = (stream) => {
-  console.log('someone connected!');
-};
-server.on('connection', callback);
-// ...
-server.removeListener('connection', callback);
-```
-
-`removeListener()` will remove, at most, one instance of a listener from the
-listener array. If any single listener has been added multiple times to the
-listener array for the specified `eventName`, then `removeListener()` must be
-called multiple times to remove each instance.
-
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
-
-```js
-const myEmitter = new MyEmitter();
-
-const callbackA = () => {
-  console.log('A');
-  myEmitter.removeListener('event', callbackB);
-};
-
-const callbackB = () => {
-  console.log('B');
-};
-
-myEmitter.on('event', callbackA);
-
-myEmitter.on('event', callbackB);
-
-// callbackA removes listener callbackB but it will still be called.
-// Internal listener array at time of emit [callbackA, callbackB]
-myEmitter.emit('event');
-// Prints:
-//   A
-//   B
-
-// callbackB is now removed.
-// Internal listener array [callbackA]
-myEmitter.emit('event');
-// Prints:
-//   A
-```
-
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
-
-When a single function has been added as a handler multiple times for a single
-event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
-
-```js
-const ee = new EventEmitter();
-
-function pong() {
-  console.log('pong');
-}
-
-ee.on('ping', pong);
-ee.once('ping', pong);
-ee.removeListener('ping', pong);
-
-ee.emit('ping');
-ee.emit('ping');
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"messageerror"`
@@ -2832,10 +1833,6 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -2849,83 +1846,6 @@ node\_modules/@types/node/worker\_threads.d.ts:470
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
-
-```js
-const callback = (stream) => {
-  console.log('someone connected!');
-};
-server.on('connection', callback);
-// ...
-server.removeListener('connection', callback);
-```
-
-`removeListener()` will remove, at most, one instance of a listener from the
-listener array. If any single listener has been added multiple times to the
-listener array for the specified `eventName`, then `removeListener()` must be
-called multiple times to remove each instance.
-
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
-
-```js
-const myEmitter = new MyEmitter();
-
-const callbackA = () => {
-  console.log('A');
-  myEmitter.removeListener('event', callbackB);
-};
-
-const callbackB = () => {
-  console.log('B');
-};
-
-myEmitter.on('event', callbackA);
-
-myEmitter.on('event', callbackB);
-
-// callbackA removes listener callbackB but it will still be called.
-// Internal listener array at time of emit [callbackA, callbackB]
-myEmitter.emit('event');
-// Prints:
-//   A
-//   B
-
-// callbackB is now removed.
-// Internal listener array [callbackA]
-myEmitter.emit('event');
-// Prints:
-//   A
-```
-
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
-
-When a single function has been added as a handler multiple times for a single
-event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
-
-```js
-const ee = new EventEmitter();
-
-function pong() {
-  console.log('pong');
-}
-
-ee.on('ping', pong);
-ee.once('ping', pong);
-ee.removeListener('ping', pong);
-
-ee.emit('ping');
-ee.emit('ping');
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `"online"`
@@ -2935,10 +1855,6 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 
@@ -2952,83 +1868,6 @@ node\_modules/@types/node/worker\_threads.d.ts:471
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
-
-```js
-const callback = (stream) => {
-  console.log('someone connected!');
-};
-server.on('connection', callback);
-// ...
-server.removeListener('connection', callback);
-```
-
-`removeListener()` will remove, at most, one instance of a listener from the
-listener array. If any single listener has been added multiple times to the
-listener array for the specified `eventName`, then `removeListener()` must be
-called multiple times to remove each instance.
-
-Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
-
-```js
-const myEmitter = new MyEmitter();
-
-const callbackA = () => {
-  console.log('A');
-  myEmitter.removeListener('event', callbackB);
-};
-
-const callbackB = () => {
-  console.log('B');
-};
-
-myEmitter.on('event', callbackA);
-
-myEmitter.on('event', callbackB);
-
-// callbackA removes listener callbackB but it will still be called.
-// Internal listener array at time of emit [callbackA, callbackB]
-myEmitter.emit('event');
-// Prints:
-//   A
-//   B
-
-// callbackB is now removed.
-// Internal listener array [callbackA]
-myEmitter.emit('event');
-// Prints:
-//   A
-```
-
-Because listeners are managed using an internal array, calling this will
-change the position indices of any listener registered _after_ the listener
-being removed. This will not impact the order in which listeners are called,
-but it means that any copies of the listener array as returned by
-the `emitter.listeners()` method will need to be recreated.
-
-When a single function has been added as a handler multiple times for a single
-event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
-
-```js
-const ee = new EventEmitter();
-
-function pong() {
-  console.log('pong');
-}
-
-ee.on('ping', pong);
-ee.once('ping', pong);
-ee.removeListener('ping', pong);
-
-ee.emit('ping');
-ee.emit('ping');
-```
-
-Returns a reference to the `EventEmitter`, so that calls can be chained.
-
 ##### Parameters
 
 • **event**: `string` \| `symbol`
@@ -3038,10 +1877,6 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 ##### Returns
 
 `this`
-
-##### Since
-
-v0.1.26
 
 ##### Overrides
 

@@ -1,5 +1,5 @@
-import {ExtractFileName} from "../src/sysutils";
-import {ParamStr} from "../src/rtl";
+import { ExtractFileName } from "../src/sysutils";
+import { ParamStr } from "../src/rtl";
 
-console.log(ExtractFileName("name"));
+console.log(ExtractFileName("c:\\development\\typescript\\name.ts"));
 console.log(ParamStr(0));

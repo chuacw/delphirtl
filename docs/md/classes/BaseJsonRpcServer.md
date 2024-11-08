@@ -32,7 +32,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:64](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L64)
+[src/BaseJsonRpcServer.ts:64](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L64)
 
 ## Properties
 
@@ -42,7 +42,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:36](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L36)
+[src/BaseJsonRpcServer.ts:36](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L36)
 
 ***
 
@@ -52,7 +52,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:38](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L38)
+[src/BaseJsonRpcServer.ts:38](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L38)
 
 ***
 
@@ -62,7 +62,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:37](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L37)
+[src/BaseJsonRpcServer.ts:37](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L37)
 
 ***
 
@@ -72,7 +72,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:39](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L39)
+[src/BaseJsonRpcServer.ts:39](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L39)
 
 ***
 
@@ -82,7 +82,7 @@ BaseJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:40](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L40)
+[src/BaseJsonRpcServer.ts:40](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L40)
 
 ***
 
@@ -94,7 +94,7 @@ Only valid when processing a request
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:51](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L51)
+[src/BaseJsonRpcServer.ts:51](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L51)
 
 ***
 
@@ -106,7 +106,7 @@ Only valid when processing a request
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:46](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L46)
+[src/BaseJsonRpcServer.ts:46](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L46)
 
 ***
 
@@ -116,17 +116,19 @@ Only valid when processing a request
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:41](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L41)
+[src/BaseJsonRpcServer.ts:41](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L41)
 
 ## Accessors
 
 ### listeningPath
 
-> `get` **listeningPath**(): `string`
+#### Get Signature
+
+> **get** **listeningPath**(): `string`
 
 Returns the path on which to listen to requests for. Override to listen on another path.
 
-#### Returns
+##### Returns
 
 `string`
 
@@ -134,7 +136,7 @@ path on which to listen to requests for
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:324](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L324)
+[src/BaseJsonRpcServer.ts:324](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L324)
 
 ## Methods
 
@@ -150,7 +152,7 @@ Adds all necessary JSON RPC methods to this.mJsonRpcServer
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:75](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L75)
+[src/BaseJsonRpcServer.ts:75](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L75)
 
 ***
 
@@ -168,7 +170,7 @@ void
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:93](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L93)
+[src/BaseJsonRpcServer.ts:93](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L93)
 
 ***
 
@@ -191,7 +193,7 @@ Invalid Params JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:113](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L113)
+[src/BaseJsonRpcServer.ts:113](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L113)
 
 ***
 
@@ -216,7 +218,7 @@ Invalid Params JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:102](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L102)
+[src/BaseJsonRpcServer.ts:102](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L102)
 
 ***
 
@@ -239,7 +241,7 @@ Invalid Request JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:151](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L151)
+[src/BaseJsonRpcServer.ts:151](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L151)
 
 ***
 
@@ -261,7 +263,7 @@ Invalid Params JSON RPC response
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:123](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L123)
+[src/BaseJsonRpcServer.ts:123](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L123)
 
 ***
 
@@ -284,7 +286,7 @@ Invalid Request JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:138](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L138)
+[src/BaseJsonRpcServer.ts:138](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L138)
 
 ***
 
@@ -314,7 +316,7 @@ Invalid Request JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:164](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L164)
+[src/BaseJsonRpcServer.ts:164](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L164)
 
 ***
 
@@ -332,7 +334,7 @@ Invalid Request JSON RPC Error exception
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:434](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L434)
+[src/BaseJsonRpcServer.ts:434](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L434)
 
 ***
 
@@ -354,7 +356,7 @@ Handles a single or a batch JSON RPC request.
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:193](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L193)
+[src/BaseJsonRpcServer.ts:193](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L193)
 
 ***
 
@@ -373,7 +375,7 @@ array of RPC methods implemented
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:232](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L232)
+[src/BaseJsonRpcServer.ts:232](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L232)
 
 ***
 
@@ -389,7 +391,7 @@ Initializes the Express server and returns it
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:241](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L241)
+[src/BaseJsonRpcServer.ts:241](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L241)
 
 ***
 
@@ -405,7 +407,7 @@ Initializes the JSON RPC server and returns it
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:268](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L268)
+[src/BaseJsonRpcServer.ts:268](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L268)
 
 ***
 
@@ -425,7 +427,7 @@ Returns a JSON parse error during express.json parsing
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:283](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L283)
+[src/BaseJsonRpcServer.ts:283](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L283)
 
 ***
 
@@ -449,7 +451,7 @@ Do not throw an exception within this method
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:297](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L297)
+[src/BaseJsonRpcServer.ts:297](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L297)
 
 ***
 
@@ -469,7 +471,7 @@ Starts listening for RPC requests
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:303](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L303)
+[src/BaseJsonRpcServer.ts:303](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L303)
 
 ***
 
@@ -487,7 +489,7 @@ Starts listening for RPC requests
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:328](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L328)
+[src/BaseJsonRpcServer.ts:328](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L328)
 
 ***
 
@@ -507,7 +509,7 @@ Displays the JSON RPC methods being listened to
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:336](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L336)
+[src/BaseJsonRpcServer.ts:336](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L336)
 
 ***
 
@@ -533,7 +535,7 @@ If the request is invalid, it should throw an appropriate error.
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:350](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L350)
+[src/BaseJsonRpcServer.ts:350](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L350)
 
 ***
 
@@ -550,7 +552,7 @@ Override this, for example, to listen just on IPv4 by calling dns.setDefaultResu
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:365](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L365)
+[src/BaseJsonRpcServer.ts:365](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L365)
 
 ***
 
@@ -576,7 +578,7 @@ If the error is not handled, this class will return an error
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:375](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L375)
+[src/BaseJsonRpcServer.ts:375](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L375)
 
 ***
 
@@ -596,7 +598,7 @@ Creates an Invalid Params JSON RPC Error exception and sends it.
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:393](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L393)
+[src/BaseJsonRpcServer.ts:393](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L393)
 
 ***
 
@@ -616,7 +618,7 @@ Creates an Invalid Request JSON RPC Error exception and sends it.
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:383](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L383)
+[src/BaseJsonRpcServer.ts:383](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L383)
 
 ***
 
@@ -632,7 +634,7 @@ Stops the RPC server. This can be called by a RPC call or by the app itself
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:401](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L401)
+[src/BaseJsonRpcServer.ts:401](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L401)
 
 ***
 
@@ -646,7 +648,7 @@ Stops the RPC server. This can be called by a RPC call or by the app itself
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:406](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L406)
+[src/BaseJsonRpcServer.ts:406](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L406)
 
 ***
 
@@ -663,7 +665,7 @@ Override to disable this
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:416](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L416)
+[src/BaseJsonRpcServer.ts:416](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L416)
 
 ***
 
@@ -677,4 +679,4 @@ Override to disable this
 
 #### Defined in
 
-[src/BaseJsonRpcServer.ts:424](https://github.com/chuacw/delphirtl/blob/330aebacf278bc1990fa50cf42ddc34bae1be0d7/src/BaseJsonRpcServer.ts#L424)
+[src/BaseJsonRpcServer.ts:424](https://github.com/chuacw/delphirtl/blob/6aa69946480948177da786cf3f6d1a4c3cea17f9/src/BaseJsonRpcServer.ts#L424)
