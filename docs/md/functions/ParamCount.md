@@ -16,4 +16,4 @@ Returns the number of parameters passed to the app
 
 ## Defined in
 
-[src/rtl.ts:31](https://github.com/chuacw/delphirtl/blob/7a1dbc1208d0ae4be883184626c89e323acf7470/src/rtl.ts#L31)
+[src/rtl.ts:31](https://github.com/chuacw/delphirtl/blob/4a0b8e9df693eb3c199a989bcb1a2158edc9e81e/src/rtl.ts#L31)
