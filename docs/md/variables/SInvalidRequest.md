@@ -8,6 +8,8 @@
 
 > `const` **SInvalidRequest**: `"Invalid Request"` = `"Invalid Request"`
 
+Description placeholder
+
 ## Defined in
 
-[src/BaseJsonRpcServer.ts:23](https://github.com/chuacw/delphirtl/blob/8ce65e250c1dfd9fa8a7bbe6d8347fa1cfdad851/src/BaseJsonRpcServer.ts#L23)
+[src/BaseJsonRpcServer.ts:36](https://github.com/chuacw/delphirtl/blob/80997f05fb80959294087b23c3624913ac7b46e9/src/BaseJsonRpcServer.ts#L36)

@@ -6,6 +6,12 @@
 
 # Class: JSONRPCServer\<ServerParams\>
 
+Description placeholder
+
+## Export
+
+JSONRPCServer
+
 ## Type Parameters
 
 • **ServerParams** = `void`
@@ -26,7 +32,7 @@
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:15
+node\_modules/json-rpc-2.0/dist/server.d.ts:78
 
 ## Properties
 
@@ -46,7 +52,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:15
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:14
+node\_modules/json-rpc-2.0/dist/server.d.ts:77
 
 ## Methods
 
@@ -66,7 +72,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:14
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:17
+node\_modules/json-rpc-2.0/dist/server.d.ts:80
 
 ***
 
@@ -86,7 +92,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:17
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:20
+node\_modules/json-rpc-2.0/dist/server.d.ts:83
 
 ***
 
@@ -104,7 +110,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:20
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:27
+node\_modules/json-rpc-2.0/dist/server.d.ts:90
 
 ***
 
@@ -122,7 +128,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:27
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:16
+node\_modules/json-rpc-2.0/dist/server.d.ts:79
 
 ***
 
@@ -144,7 +150,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:16
 
 ##### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:23
+node\_modules/json-rpc-2.0/dist/server.d.ts:86
 
 #### receive(request, serverParams)
 
@@ -162,7 +168,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:23
 
 ##### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:24
+node\_modules/json-rpc-2.0/dist/server.d.ts:87
 
 ***
 
@@ -182,7 +188,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:24
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:21
+node\_modules/json-rpc-2.0/dist/server.d.ts:84
 
 ***
 
@@ -200,4 +206,4 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:21
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:18
+node\_modules/json-rpc-2.0/dist/server.d.ts:81

@@ -8,6 +8,8 @@
 
 > **JSONRPCServerMiddlewareNext**\<`ServerParams`\>: (`request`, `serverParams`) => [`JSONRPCResponsePromise`](JSONRPCResponsePromise.md)
 
+Description placeholder
+
 ## Type Parameters
 
 • **ServerParams**
@@ -22,6 +24,8 @@
 
 [`JSONRPCResponsePromise`](JSONRPCResponsePromise.md)
 
+## Export
+
 ## Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:5
+node\_modules/json-rpc-2.0/dist/server.d.ts:40

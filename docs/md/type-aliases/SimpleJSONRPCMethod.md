@@ -8,6 +8,8 @@
 
 > **SimpleJSONRPCMethod**\<`ServerParams`\>: (`params`, `serverParams`) => `any`
 
+Description placeholder
+
 ## Type Parameters
 
 • **ServerParams** = `void`
@@ -22,6 +24,8 @@
 
 `any`
 
+## Export
+
 ## Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:2
+node\_modules/json-rpc-2.0/dist/server.d.ts:11

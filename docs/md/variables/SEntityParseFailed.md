@@ -8,6 +8,8 @@
 
 > `const` **SEntityParseFailed**: `"entity.parse.failed"` = `"entity.parse.failed"`
 
+Description placeholder
+
 ## Defined in
 
-[src/BaseJsonRpcServer.ts:26](https://github.com/chuacw/delphirtl/blob/8ce65e250c1dfd9fa8a7bbe6d8347fa1cfdad851/src/BaseJsonRpcServer.ts#L26)
+[src/BaseJsonRpcServer.ts:60](https://github.com/chuacw/delphirtl/blob/80997f05fb80959294087b23c3624913ac7b46e9/src/BaseJsonRpcServer.ts#L60)
