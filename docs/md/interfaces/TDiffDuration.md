@@ -16,7 +16,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:256](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L256)
+[src/dateutils.ts:256](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L256)
 
 ***
 
@@ -26,7 +26,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:257](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L257)
+[src/dateutils.ts:257](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L257)
 
 ***
 
@@ -36,7 +36,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:258](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L258)
+[src/dateutils.ts:258](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L258)
 
 ***
 
@@ -48,7 +48,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:255](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L255)
+[src/dateutils.ts:255](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L255)
 
 ***
 
@@ -58,7 +58,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:259](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L259)
+[src/dateutils.ts:259](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L259)
 
 ***
 
@@ -70,4 +70,4 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:250](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/dateutils.ts#L250)
+[src/dateutils.ts:250](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/dateutils.ts#L250)

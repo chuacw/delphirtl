@@ -120,7 +120,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L130)
+[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L130)
 
 ***
 
@@ -138,7 +138,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L118)
+[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L118)
 
 ***
 
@@ -156,7 +156,7 @@ Gets all items
 
 #### Defined in
 
-[src/collections.ts:177](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L177)
+[src/collections.ts:177](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L177)
 
 ***
 
@@ -174,7 +174,7 @@ Gets the keys and values stored in the Dictionary
 
 #### Defined in
 
-[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L140)
+[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L140)
 
 ## Methods
 
@@ -216,7 +216,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L99)
+[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L99)
 
 ***
 
@@ -238,7 +238,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L89)
+[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L89)
 
 ***
 
@@ -272,7 +272,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L106)
+[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L106)
 
 ***
 
@@ -292,7 +292,7 @@ Returns true if the dictionary has the specified key, false if not.
 
 #### Defined in
 
-[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L207)
+[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L207)
 
 ***
 
@@ -312,7 +312,7 @@ Returns true if the dictionary contains the given value.
 
 #### Defined in
 
-[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L218)
+[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L218)
 
 ***
 
@@ -472,7 +472,7 @@ Removes the given key and its value.
 
 #### Defined in
 
-[src/collections.ts:244](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L244)
+[src/collections.ts:244](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L244)
 
 ***
 
@@ -520,7 +520,7 @@ Adds the given key and value
 
 #### Defined in
 
-[src/collections.ts:234](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L234)
+[src/collections.ts:234](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L234)
 
 ***
 
@@ -548,7 +548,7 @@ Returns a boolean, which, if true, means value has valid information.
 
 #### Defined in
 
-[src/collections.ts:191](https://github.com/chuacw/delphirtl/blob/e3cbafae763359e4511613875492dbec7f810b8b/src/collections.ts#L191)
+[src/collections.ts:191](https://github.com/chuacw/delphirtl/blob/7cdff4fb9a05124bdd3aaafa70e9539e4f06ec46/src/collections.ts#L191)
 
 ***
 

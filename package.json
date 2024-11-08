@@ -96,11 +96,13 @@
   "homepage": "https://chuacw.github.io/delphirtl/md/index.html",
   "dependencies": {
     "@types/node": "^17.0.25",
+    "docs": "^0.3.2-canary.0",
     "ethers": "^5.7.2",
     "express": "^4.21.0",
     "http": "^0.0.1-security",
     "http-terminator": "^3.2.0",
-    "node-fetch": "^3.3.0"
+    "node-fetch": "^3.3.0",
+    "package": "^1.0.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
