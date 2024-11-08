@@ -243,7 +243,7 @@ function getEstimatedBlockNumberForDuration(Block1: ethers.providers.Block, Bloc
 /**
  * The difference / duration between 2 dates
  */
-interface TDiffDuration {
+export interface TDiffDuration {
     /**
      * 365 days in a year
      */

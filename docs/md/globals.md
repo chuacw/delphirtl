@@ -62,6 +62,8 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 ## Interfaces
 
 - [JSONRPCRequest](interfaces/JSONRPCRequest.md)
+- [TDiffDuration](interfaces/TDiffDuration.md)
+- [TSendHandler](interfaces/TSendHandler.md)
 
 ## Type Aliases
 
@@ -72,6 +74,8 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [JSONRPCParams](type-aliases/JSONRPCParams.md)
 - [JSONRPCResponsePromise](type-aliases/JSONRPCResponsePromise.md)
 - [JSONRPCServerMiddlewareNext](type-aliases/JSONRPCServerMiddlewareNext.md)
+- [MessageType](type-aliases/MessageType.md)
+- [PTreeNode](type-aliases/PTreeNode.md)
 - [Request](type-aliases/Request.md)
 - [Response](type-aliases/Response.md)
 - [SimpleJSONRPCMethod](type-aliases/SimpleJSONRPCMethod.md)

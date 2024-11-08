@@ -43,7 +43,7 @@ class TCallback<T> implements IMessageName {
 
 type SubscriptionIdentifierType = Function | string
 type SubscriptionIndex = number
-type MessageType = Date | boolean | number | string | {}
+export type MessageType = Date | boolean | number | string | {}
 class TMessageManager {
     private fListeners: Map<any, Array<any>> = new Map();
     private fDisabledTypes: string[] = [];

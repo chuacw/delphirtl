@@ -246,7 +246,7 @@ class Dictionary<K, V> extends Map<K, V> {
     }
 };
 
-type PTreeNode<T> = TreeNode<T> | null;
+export type PTreeNode<T> = TreeNode<T> | null;
 class TreeNode<T> {
     left: PTreeNode<T>;
     right: PTreeNode<T>;
@@ -277,7 +277,6 @@ class TreeNode<T> {
     // should only be called when this is the root, otherwise, it'll return the wrong values
     /**
      * Returns the height of the tree. Call only when this is the root.
-     * @date 28/11/2022 - 12:38:36 am
      *
      * @public
      * @readonly

@@ -14,7 +14,7 @@ type Response = express.Response;
 type ListenAddr = string | net.AddressInfo | null;
 type JSONRPCParameters = JSONRPCParams | undefined;
 
-interface TSendHandler {
+export interface TSendHandler {
      send: (body: string|number|boolean|object|Buffer) => void;
 }
 

@@ -6,7 +6,7 @@
 
 # Function: DiffDuration()
 
-> **DiffDuration**(`d1`, `d2`): `TDiffDuration`
+> **DiffDuration**(`d1`, `d2`): [`TDiffDuration`](../interfaces/TDiffDuration.md)
 
 Calculates the difference between 2 dates
 
@@ -18,8 +18,8 @@ Calculates the difference between 2 dates
 
 ## Returns
 
-`TDiffDuration`
+[`TDiffDuration`](../interfaces/TDiffDuration.md)
 
 ## Defined in
 
-[src/dateutils.ts:268](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/dateutils.ts#L268)
+[src/dateutils.ts:268](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/dateutils.ts#L268)

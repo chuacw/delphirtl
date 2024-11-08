@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[src/collections.ts:339](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L339)
+[src/collections.ts:338](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L338)
 
 ## Accessors
 
@@ -40,7 +40,7 @@ Returns the length of this list
 
 #### Defined in
 
-[src/collections.ts:359](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L359)
+[src/collections.ts:358](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L358)
 
 ## Methods
 
@@ -54,7 +54,7 @@ Returns the length of this list
 
 #### Defined in
 
-[src/collections.ts:404](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L404)
+[src/collections.ts:403](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L403)
 
 ***
 
@@ -76,7 +76,7 @@ The value to add to the list
 
 #### Defined in
 
-[src/collections.ts:367](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L367)
+[src/collections.ts:366](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L366)
 
 ***
 
@@ -96,7 +96,7 @@ Delete a specified value
 
 #### Defined in
 
-[src/collections.ts:385](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L385)
+[src/collections.ts:384](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L384)
 
 ***
 
@@ -114,7 +114,7 @@ Delete a specified value
 
 #### Defined in
 
-[src/collections.ts:329](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L329)
+[src/collections.ts:328](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L328)
 
 ***
 
@@ -132,7 +132,7 @@ Delete a specified value
 
 #### Defined in
 
-[src/collections.ts:376](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L376)
+[src/collections.ts:375](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L375)
 
 ***
 
@@ -150,7 +150,7 @@ Delete a specified value
 
 #### Defined in
 
-[src/collections.ts:371](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L371)
+[src/collections.ts:370](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L370)
 
 ***
 
@@ -170,7 +170,7 @@ Removes the specified value
 
 #### Defined in
 
-[src/collections.ts:399](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L399)
+[src/collections.ts:398](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L398)
 
 ***
 
@@ -186,4 +186,4 @@ Size of the List
 
 #### Defined in
 
-[src/collections.ts:347](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L347)
+[src/collections.ts:346](https://github.com/chuacw/delphirtl/blob/4a4c64bce92db2a5d78ca568ba3371d801319bd9/src/collections.ts#L346)
