@@ -19,19 +19,85 @@ export interface TSendHandler {
 }
 
 
+/**
+ * Description placeholder
+ *
+ * @type {"Invalid params"}
+ * @category Constants
+ */
 const SInvalidParams = "Invalid params";
+
+/**
+ * Description placeholder
+ *
+ * @type {"Invalid Request"}
+ * @category Constants
+ */
 const SInvalidRequest = "Invalid Request";
+
+/**
+ * Description placeholder
+ *
+ * @type {"Method not found"}
+ * @category Constants
+ */
 const SMethodNotFound = "Method not found";
+
+/**
+ * Description placeholder
+ *
+ * @type {"Parse error"}
+ * @category Constants
+ */
 const SParseError = "Parse error";
+
+/**
+ * Description placeholder
+ *
+ * @type {"entity.parse.failed"}
+ * @category Constants
+ */
 const SEntityParseFailed = "entity.parse.failed";
+
+/**
+ * Description placeholder
+ *
+ * @type {204}
+ * @category Constants
+ */
 const CNoContent = 204;
+
+/**
+ * Description placeholder
+ *
+ * @type {8080}
+ * @category Constants
+ */
 const CDefaultPort = 8080;
+
+/**
+ * Description placeholder
+ *
+ * @type {"string"}
+ * @category Constants
+ */
 const CString = "string";
+
+/**
+ * Description placeholder
+ *
+ * @type {"x-powered-by"}
+ * @category Constants
+ */
 const CXPoweredBy = "x-powered-by";
 
-/** 
-* This is a JSON RPC server that conforms to the JSON RPC 2.0 spec as documented at https://www.jsonrpc.org/specification 
-*/
+/**
+ * This is a JSON RPC server that conforms to the JSON RPC 2.0 spec as documented at https://www.jsonrpc.org/specification 
+ *
+ * @class BaseJsonRpcServer
+ * @typedef {BaseJsonRpcServer}
+ * @category JSON RPC
+ */
 class BaseJsonRpcServer {
     protected mExpressServer!: Express;
     protected mJsonRpcServer!: JSONRPCServer;

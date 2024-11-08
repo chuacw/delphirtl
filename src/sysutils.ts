@@ -187,7 +187,20 @@ function DeleteEnvironmentVariable(Name: string) {
     delete process.env[Name];
 }
 
+/**
+ * Description placeholder
+ *
+ * @type {"REACT_APP_"}
+ * @category Constants
+ */
 const ENV_REACT_PREFIX = "REACT_APP_";
+
+/**
+ * Description placeholder
+ *
+ * @type {"NEXT_PUBLIC_"}
+ * @category Constants
+ */
 const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
 
 // In Reactjs, only env vars starting with REACT_APP_ is allowed

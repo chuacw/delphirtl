@@ -6,6 +6,7 @@ import { Worker, isMainThread, parentPort } from 'worker_threads';
  * @template T
  * @param {() => T} fn The function to run in a thread
  * @returns {Promise<T>}
+ * @category Threads
  */
 async function runInThread<T>(fn: () => T): Promise<T> {
     return new Promise<T>((resolve, reject) => {
