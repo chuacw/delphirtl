@@ -69,7 +69,7 @@
   },
   "scripts": {
     "gen-md": "typedoc --cleanOutputDir true --plugin typedoc-plugin-markdown --out docs/md src",
-    "gen-html": "typedoc --cleanOutputDir true --out docs/html ./src/index.ts",
+    "gen-html": "typedoc --cleanOutputDir true --out docs/html ./src/index.ts --useHostedBaseUrlForAbsoluteLinks --hostedBaseUrl https://chuacw.github.io/delphirtl/html/",
     "prepublishOnly": "npm run test && npm uninstall delphirtl --save && tsc --build",
     "prepare-uncommented": "// && npm-dts -o dist\\index.d.ts generate",
     "build": "tsc -b",
