@@ -16,4 +16,4 @@ the launcher, ie, node.exe or something that can run Javascript...
 
 ## Defined in
 
-[src/rtl.ts:56](https://github.com/chuacw/delphirtl/blob/f3163e04bfe463ee73ae24dddcc0e3307d4e880a/src/rtl.ts#L56)
+[src/rtl.ts:56](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/rtl.ts#L56)

@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[src/collections.ts:300](https://github.com/chuacw/delphirtl/blob/f3163e04bfe463ee73ae24dddcc0e3307d4e880a/src/collections.ts#L300)
+[src/collections.ts:300](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L300)

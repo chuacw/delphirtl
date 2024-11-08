@@ -18,4 +18,4 @@
 
 ## Defined in
 
-[src/performanceutils.ts:3](https://github.com/chuacw/delphirtl/blob/f3163e04bfe463ee73ae24dddcc0e3307d4e880a/src/performanceutils.ts#L3)
+[src/performanceutils.ts:3](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/performanceutils.ts#L3)

@@ -47,3 +47,6 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 For further documentation, see the 
 * [docs directory](https://chuacw.github.io/delphirtl/md/globals.html) on GitHub.
 * [HTML documents](https://chuacw.github.io/delphirtl/html/index.html).
+
+## Examples
+There's an [examples](./examples/) directory showing how to use this library.
