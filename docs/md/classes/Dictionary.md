@@ -6,6 +6,10 @@
 
 # Class: Dictionary\<K, V\>
 
+Dictionary
+
+ Dictionary
+
 ## Extends
 
 - `Map`\<`K`, `V`\>
@@ -120,7 +124,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L130)
+[src/collections.ts:146](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L146)
 
 ***
 
@@ -138,7 +142,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L118)
+[src/collections.ts:134](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L134)
 
 ***
 
@@ -156,7 +160,7 @@ Gets all items
 
 #### Defined in
 
-[src/collections.ts:177](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L177)
+[src/collections.ts:193](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L193)
 
 ***
 
@@ -174,7 +178,7 @@ Gets the keys and values stored in the Dictionary
 
 #### Defined in
 
-[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L140)
+[src/collections.ts:156](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L156)
 
 ## Methods
 
@@ -216,7 +220,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L99)
+[src/collections.ts:115](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L115)
 
 ***
 
@@ -238,7 +242,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L89)
+[src/collections.ts:105](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L105)
 
 ***
 
@@ -272,7 +276,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L106)
+[src/collections.ts:122](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L122)
 
 ***
 
@@ -292,7 +296,7 @@ Returns true if the dictionary has the specified key, false if not.
 
 #### Defined in
 
-[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L207)
+[src/collections.ts:223](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L223)
 
 ***
 
@@ -312,7 +316,7 @@ Returns true if the dictionary contains the given value.
 
 #### Defined in
 
-[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L218)
+[src/collections.ts:234](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L234)
 
 ***
 
@@ -472,7 +476,7 @@ Removes the given key and its value.
 
 #### Defined in
 
-[src/collections.ts:244](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L244)
+[src/collections.ts:260](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L260)
 
 ***
 
@@ -520,7 +524,7 @@ Adds the given key and value
 
 #### Defined in
 
-[src/collections.ts:234](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L234)
+[src/collections.ts:250](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L250)
 
 ***
 
@@ -548,7 +552,7 @@ Returns a boolean, which, if true, means value has valid information.
 
 #### Defined in
 
-[src/collections.ts:191](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L191)
+[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L207)
 
 ***
 

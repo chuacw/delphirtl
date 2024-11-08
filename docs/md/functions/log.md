@@ -8,6 +8,8 @@
 
 > **log**(`message`?, ...`optionalParams`?): `void`
 
+Description placeholder
+
 ## Parameters
 
 • **message?**: `any`
@@ -20,4 +22,4 @@
 
 ## Defined in
 
-[src/logutils.ts:1](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/logutils.ts#L1)
+[src/logutils.ts:8](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/logutils.ts#L8)

@@ -6,6 +6,10 @@
 
 # Class: Tree\<T\>
 
+TreeNode
+
+ TreeNode
+
 ## Type Parameters
 
 • **T**
@@ -26,7 +30,7 @@
 
 #### Defined in
 
-[src/collections.ts:255](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L255)
+[src/collections.ts:280](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L280)
 
 ## Properties
 
@@ -36,7 +40,7 @@
 
 #### Defined in
 
-[src/collections.ts:253](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L253)
+[src/collections.ts:278](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L278)
 
 ***
 
@@ -46,7 +50,7 @@
 
 #### Defined in
 
-[src/collections.ts:251](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L251)
+[src/collections.ts:276](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L276)
 
 ***
 
@@ -56,7 +60,7 @@
 
 #### Defined in
 
-[src/collections.ts:252](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L252)
+[src/collections.ts:277](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L277)
 
 ## Accessors
 
@@ -74,7 +78,7 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:285](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L285)
+[src/collections.ts:310](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L310)
 
 ## Methods
 
@@ -96,4 +100,4 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:260](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L260)
+[src/collections.ts:285](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L285)

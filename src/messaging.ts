@@ -7,15 +7,53 @@
 const SMethodNotImplemented = "Method not implemented.";
 const SFunction = 'function';
 
+/**
+ * Description placeholder
+ *
+ * @interface IMessageName
+ * @typedef {IMessageName}
+ * @category Messaging
+ */
 interface IMessageName {
     getName(): string
 }
+
+/**
+ * Description placeholder
+ *
+ * @interface IMessage
+ * @typedef {IMessage}
+ * @template T
+ * @extends {IMessageName}
+ * @category Messaging
+ */
 interface IMessage<T> extends IMessageName {
     readonly value: T
 }
+
+/**
+ * Description placeholder
+ *
+ * @interface IMessageConstructor
+ * @typedef {IMessageConstructor}
+ * @template T
+ * @category Messaging
+ */
 interface IMessageConstructor<T> {
     new(aValue: T): IMessage<T>
 }
+
+/**
+ * Description placeholder
+ *
+ * @abstract
+ * @class TMessageBase
+ * @typedef {TMessageBase}
+ * @template T
+ * @implements {IMessage<T>}
+ * @implements {IMessageName}
+ * @category Messaging
+ */
 abstract class TMessageBase<T> implements IMessage<T>, IMessageName {
     public readonly value: T;
     constructor(aValue: T) { this.value = aValue }
@@ -24,13 +62,39 @@ abstract class TMessageBase<T> implements IMessage<T>, IMessageName {
     }
 }
 
+/**
+ * Description placeholder
+ *
+ * @class TMessage
+ * @typedef {TMessage}
+ * @template T
+ * @extends {TMessageBase<T>}
+ * @category Messaging
+ */
 class TMessage<T> extends TMessageBase<T> {
 }
 
+/**
+ * Description placeholder
+ *
+ * @interface ICallback
+ * @typedef {ICallback}
+ * @template T
+ * @category Messaging
+ */
 interface ICallback<T> {
     (aMessage: TMessage<T>): void;
 }
 
+/**
+ * Description placeholder
+ *
+ * @class TCallback
+ * @typedef {TCallback}
+ * @template T
+ * @implements {IMessageName}
+ * @category Messaging
+ */
 class TCallback<T> implements IMessageName {
     getName(): string {
         throw new Error(SMethodNotImplemented);
@@ -44,6 +108,14 @@ class TCallback<T> implements IMessageName {
 type SubscriptionIdentifierType = Function | string
 type SubscriptionIndex = number
 export type MessageType = Date | boolean | number | string | {}
+
+/**
+ * Description placeholder
+ *
+ * @class TMessageManager
+ * @typedef {TMessageManager}
+ * @category Messaging
+ */
 class TMessageManager {
     private fListeners: Map<any, Array<any>> = new Map();
     private fDisabledTypes: string[] = [];
@@ -98,6 +170,14 @@ class TMessageManager {
     }
 
 
+    /**
+     * Description placeholder
+     *
+     * @template {MessageType} T
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {T} aMessage
+     * @category Messaging
+     */
     sendMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessage: T) {
         const lClassName = (typeof aClass === 'function') ? (aClass.name) : aClass;
         const lMessageClassName = `${lClassName.toUpperCase()}`
@@ -113,6 +193,15 @@ class TMessageManager {
         }
     }
 
+    /**
+     * Description placeholder
+     *
+     * @template {MessageType} T
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {(aMessage: T) => void} aMessageListener
+     * @returns {SubscriptionIndex}
+     * @category Messaging
+     */
     subscribeToMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessageListener: (aMessage: T) => void): SubscriptionIndex {
         const lSuffix = (typeof aClass === 'function') ? (aClass.name) : aClass;
         this.ensureTypeEnabled(lSuffix);

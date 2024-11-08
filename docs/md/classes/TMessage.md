@@ -6,6 +6,10 @@
 
 # Class: TMessage\<T\>
 
+Description placeholder
+
+ TMessage
+
 ## Extends
 
 - `TMessageBase`\<`T`\>
@@ -34,7 +38,7 @@
 
 #### Defined in
 
-[src/messaging.ts:21](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L21)
+[src/messaging.ts:59](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L59)
 
 ## Properties
 
@@ -48,7 +52,7 @@
 
 #### Defined in
 
-[src/messaging.ts:20](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L20)
+[src/messaging.ts:58](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L58)
 
 ## Methods
 
@@ -66,4 +70,4 @@
 
 #### Defined in
 
-[src/messaging.ts:22](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L22)
+[src/messaging.ts:60](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L60)

@@ -2,6 +2,7 @@
  * Deduplicates the given array
  * @param values An array containing duplicated elements
  * @returns The given array, but without duplicates
+ * @category Arrays
  */
 function dedupArray(values: any[]): any[] {
     const result = Array.from(new Set(values));
@@ -13,6 +14,7 @@ function dedupArray(values: any[]): any[] {
  *
  * @param {string[]} values
  * @returns {number} The length of the longest string in the given values array.
+ * @category Arrays
  */
 function maxLen(values: string[]): number {
     let result = 0;
@@ -30,6 +32,7 @@ function maxLen(values: string[]): number {
  * @param {string[]} values
  * @param {boolean} [ascending=true]
  * @returns {string[]} The sorted values array, in a new array.
+ * @category Arrays
  */
 function sort(values: string[], ascending: boolean = true): string[] {
     let result = [...values];
@@ -47,6 +50,7 @@ function sort(values: string[], ascending: boolean = true): string[] {
  * @param arr2 
  * @param key  
  * @returns true if there's duplicates, false otherwise
+ * @category Arrays
  */
 function haveNoDuplicates(arr1: any[], arr2: any[], key: string): boolean {
     if ((arr1.length === 0) && (arr2.length === 0)) {

@@ -2,6 +2,13 @@ import path from "path";
 import * as fs from "fs";
 import assert from "assert";
 
+/**
+ * Description placeholder
+ *
+ * @param {number} Year
+ * @returns {boolean}
+ * @category SysUtils
+ */
 function IsLeapYear(Year: number): boolean {
     //   Result := (Year mod 4 = 0) and ((Year mod 100 <> 0) or (Year mod 400 = 0));
     const result = (Year % 4 == 0) && ((Year % 100 != 0) || (Year % 400 == 0))
@@ -20,15 +27,36 @@ const MonthDays = [
 
 const DateDelta = 693594;
 
+/**
+ * Description placeholder
+ *
+ * @param {boolean} value
+ * @returns {number}
+ * @category SysUtils
+ */
 function boolToInt(value: boolean): number {
     return value ? 1 : 0
 }
 
+/**
+ * Description placeholder
+ *
+ * @class TDateTime
+ * @typedef {TDateTime}
+ * @category SysUtils
+ */
 class TDateTime {
     Value: number
     constructor(AValue: number) {this.Value = AValue}
 }
 
+/**
+ * Description placeholder
+ *
+ * @class TYMD
+ * @typedef {TYMD}
+ * @category SysUtils
+ */
 class TYMD {
     Year: number
     Month: number
@@ -42,17 +70,38 @@ class TYMD {
     }
 }
 
+/**
+ * Description placeholder
+ *
+ * @interface TTimeStamp
+ * @typedef {TTimeStamp}
+ * @category SysUtils
+ */
 interface TTimeStamp {
     Time: number;
     Date: number;
 }
 
+/**
+ * Description placeholder
+ *
+ * @param {string} AFilename
+ * @returns {string}
+ * @category SysUtils
+ */
 function ExtractFileDir(AFilename: string): string {
     const index = AFilename.lastIndexOf(path.sep);
     const result = AFilename.substring(0, index);
     return result;
 }
 
+/**
+ * Description placeholder
+ *
+ * @param {string} AFilename
+ * @returns {string}
+ * @category SysUtils
+ */
 function ExtractFileExt(AFilename: string): string {
     let result = "";
     const LPathDelimIndex = AFilename.lastIndexOf(path.sep);
@@ -69,6 +118,7 @@ function ExtractFileExt(AFilename: string): string {
  * The resulting string is the rightmost characters of FileName, starting with the first character after the colon or backslash that separates the path information from the name and extension. The resulting string is equal to FileName, if FileName contains no drive and directory parts. 
  * @param AFileName 
  * @returns 
+ * @category SysUtils
  */
 function ExtractFileName(AFileName: string): string {
     const index = AFileName.lastIndexOf(path.sep) + 1;
@@ -81,6 +131,7 @@ function ExtractFileName(AFileName: string): string {
  *
  * @param {string} AFileName Filename to check existence for.
  * @returns {boolean} true if the given filename exists, false otherwise.
+ * @category SysUtils
  */
 function FileExists(AFileName: string): boolean {
     let result = false;
@@ -97,16 +148,31 @@ function FileExists(AFileName: string): boolean {
  *
  * @param {string} APath Given path to check for delimiter to add to
  * @returns {string} The path with added delimiter
+ * @category SysUtils
  */
 function IncludeTrailingPathDelimiter(APath: string): string {
     const result = (APath.charAt(APath.length - 1) != path.sep) ? (APath + path.sep) : APath;
     return result;
 }
 
+/**
+ * Description placeholder
+ *
+ * @param {string} str
+ * @returns {string}
+ * @category SysUtils
+ */
 function LowerCase(str: string): string {
     return str.toLowerCase();
 }
 
+/**
+ * Description placeholder
+ *
+ * @param {string} str
+ * @returns {string}
+ * @category SysUtils
+ */
 function UpperCase(str: string): string {
     return str.toUpperCase();
 }
@@ -115,6 +181,7 @@ function UpperCase(str: string): string {
  * Deletes the given name from the environment variable
  *
  * @param {string} Name
+ * @category SysUtils
  */
 function DeleteEnvironmentVariable(Name: string) {
     delete process.env[Name];
@@ -131,6 +198,7 @@ const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
  * 
  * @param Name 
  * @returns 
+ * @category SysUtils
  */
 function GetEnvironmentVariable(Name: string): string {
     const result = process.env[Name] || "";
@@ -142,6 +210,7 @@ function GetEnvironmentVariable(Name: string): string {
  *
  * @param {string} Name
  * @param {string} Value
+ * @category SysUtils
  */
 function SetEnvironmentVariable(Name: string, Value: string) {
     assert(Name); assert(Value);
@@ -152,6 +221,7 @@ function SetEnvironmentVariable(Name: string, Value: string) {
  * An object
  *
  * @typedef {ArbitraryObject}
+ * @category SysUtils
  */
 export type ArbitraryObject = { [key: string]: unknown; };
 
@@ -160,6 +230,7 @@ export type ArbitraryObject = { [key: string]: unknown; };
  * Checks if the given parameter is an object
  * @param potentialObj item to check as an object
  * @returns boolean
+ * @category SysUtils
  */
 function isArbitraryObject(potentialObj: unknown): potentialObj is ArbitraryObject {
     // an array/date is identified as an object in JavaScript
@@ -183,6 +254,7 @@ function isArbitraryObject(potentialObj: unknown): potentialObj is ArbitraryObje
  * @param fieldName 
  * @param fieldType 
  * @returns 
+ * @category SysUtils
  */
 function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [fieldName: string]: T } {
     const result =
@@ -196,6 +268,7 @@ function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): 
  *
  * @param obj 
  * @returns 
+ * @category SysUtils
  */
 function hasMessageField(obj: unknown): obj is { message: string } {
     const result = 

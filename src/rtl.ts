@@ -8,6 +8,7 @@ import assert = require("assert");
  * @type {CommonMethodsOrProperties}
  * @template A extends {}
  * @template B extends {}
+ * @category RTL
  */
 type CommonMethodsOrProperties<A extends {}, B extends {}> = {
     [P in keyof A & keyof B]: A[P] | B[P];
@@ -17,6 +18,7 @@ type CommonMethodsOrProperties<A extends {}, B extends {}> = {
  * Gets the process arguments
  *
  * @returns {string[]}
+ * @category RTL
  */
 function getProcessArgs(): string[] {
     const result = process.argv.slice(1);
@@ -27,6 +29,7 @@ function getProcessArgs(): string[] {
  * Returns the number of parameters passed to the app
  *
  * @returns {number}
+ * @category RTL
  */
 function ParamCount(): number {
     const processArgs = getProcessArgs();
@@ -38,6 +41,7 @@ function ParamCount(): number {
  *
  * @param {number} index
  * @returns {string}
+ * @category RTL
  */
 function ParamStr(index: number): string {
     assert(index>=0);
@@ -52,6 +56,7 @@ function ParamStr(index: number): string {
 /**
  * 
  * @returns the launcher, ie, node.exe or something that can run Javascript...
+ * @category RTL
  */
 function getLauncher(): string {
     const result = process.argv[0];
@@ -64,6 +69,7 @@ function getLauncher(): string {
  * @async
  * @param {number} ms number of ms to sleep
  * @returns {unknown}
+ * @category RTL
  */
 async function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -73,6 +79,7 @@ async function sleep(ms: number) {
  * Used for ignoring any unused types, variables, so that the compiler doesn't complain.
  *
  * @param {...*} x any number of parameters to ignore
+ * @category RTL
  */
 function UNUSED(...x: any) {}
 

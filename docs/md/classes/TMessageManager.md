@@ -6,6 +6,10 @@
 
 # Class: TMessageManager
 
+Description placeholder
+
+ TMessageManager
+
 ## Constructors
 
 ### new TMessageManager()
@@ -18,81 +22,15 @@
 
 #### Defined in
 
-[src/messaging.ts:52](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L52)
+[src/messaging.ts:124](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L124)
 
-## Methods
-
-### disableType()
-
-> **disableType**(`aType`): `void`
-
-#### Parameters
-
-• **aType**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/messaging.ts:63](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L63)
-
-***
-
-### enableType()
-
-> **enableType**(`aType`): `void`
-
-#### Parameters
-
-• **aType**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/messaging.ts:68](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L68)
-
-***
-
-### ensureTypeEnabled()
-
-> **ensureTypeEnabled**(`aSuffix`): `void`
-
-#### Parameters
-
-• **aSuffix**: `string`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/messaging.ts:81](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L81)
-
-***
-
-### reset()
-
-> **reset**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/messaging.ts:56](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L56)
-
-***
+## Messaging
 
 ### sendMessage()
 
 > **sendMessage**\<`T`\>(`aClass`, `aMessage`): `void`
+
+Description placeholder
 
 #### Type Parameters
 
@@ -110,7 +48,101 @@
 
 #### Defined in
 
-[src/messaging.ts:101](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L101)
+[src/messaging.ts:181](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L181)
+
+***
+
+### subscribeToMessage()
+
+> **subscribeToMessage**\<`T`\>(`aClass`, `aMessageListener`): `number`
+
+Description placeholder
+
+#### Type Parameters
+
+• **T** *extends* [`MessageType`](../type-aliases/MessageType.md)
+
+#### Parameters
+
+• **aClass**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
+
+• **aMessageListener**
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[src/messaging.ts:205](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L205)
+
+## Other
+
+### disableType()
+
+> **disableType**(`aType`): `void`
+
+#### Parameters
+
+• **aType**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/messaging.ts:135](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L135)
+
+***
+
+### enableType()
+
+> **enableType**(`aType`): `void`
+
+#### Parameters
+
+• **aType**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/messaging.ts:140](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L140)
+
+***
+
+### ensureTypeEnabled()
+
+> **ensureTypeEnabled**(`aSuffix`): `void`
+
+#### Parameters
+
+• **aSuffix**: `string`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/messaging.ts:153](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L153)
+
+***
+
+### reset()
+
+> **reset**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/messaging.ts:128](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L128)
 
 ***
 
@@ -134,31 +166,7 @@
 
 #### Defined in
 
-[src/messaging.ts:141](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L141)
-
-***
-
-### subscribeToMessage()
-
-> **subscribeToMessage**\<`T`\>(`aClass`, `aMessageListener`): `number`
-
-#### Type Parameters
-
-• **T** *extends* [`MessageType`](../type-aliases/MessageType.md)
-
-#### Parameters
-
-• **aClass**: [`SubscriptionIdentifierType`](../type-aliases/SubscriptionIdentifierType.md)
-
-• **aMessageListener**
-
-#### Returns
-
-`number`
-
-#### Defined in
-
-[src/messaging.ts:116](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L116)
+[src/messaging.ts:230](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L230)
 
 ***
 
@@ -182,7 +190,7 @@
 
 #### Defined in
 
-[src/messaging.ts:157](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L157)
+[src/messaging.ts:246](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L246)
 
 ***
 
@@ -196,7 +204,7 @@
 
 #### Defined in
 
-[src/messaging.ts:89](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L89)
+[src/messaging.ts:161](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L161)
 
 ***
 
@@ -216,7 +224,7 @@
 
 #### Defined in
 
-[src/messaging.ts:129](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L129)
+[src/messaging.ts:218](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L218)
 
 ***
 
@@ -236,7 +244,7 @@
 
 #### Defined in
 
-[src/messaging.ts:170](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L170)
+[src/messaging.ts:259](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L259)
 
 ***
 
@@ -250,4 +258,4 @@
 
 #### Defined in
 
-[src/messaging.ts:93](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/messaging.ts#L93)
+[src/messaging.ts:165](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/messaging.ts#L165)

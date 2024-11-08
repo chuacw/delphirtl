@@ -24,4 +24,4 @@ The sorted values array, in a new array.
 
 ## Defined in
 
-[src/arrayutils.ts:34](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/arrayutils.ts#L34)
+[src/arrayutils.ts:37](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/arrayutils.ts#L37)

@@ -2,6 +2,7 @@ import { strict as assert } from "node:assert";
 
 /**
  * A first in, first out class
+ * @category Collections
  */
 class Queue<T> {
     #store: T[] = [];
@@ -46,6 +47,11 @@ class Queue<T> {
 
 /**
  * A last in, first out class
+ *
+ * @class Stack
+ * @typedef {Stack}
+ * @template T
+ * @category Collections
  */
 class Stack<T> {
     #store: T[] = [];
@@ -79,6 +85,16 @@ class Stack<T> {
     }
 }
 
+/**
+ * Dictionary
+ *
+ * @class Dictionary
+ * @typedef {Dictionary}
+ * @template K
+ * @template V
+ * @extends {Map<K, V>}
+ * @category Collections
+ */
 class Dictionary<K, V> extends Map<K, V> {
 
     /**
@@ -247,6 +263,15 @@ class Dictionary<K, V> extends Map<K, V> {
 };
 
 export type PTreeNode<T> = TreeNode<T> | null;
+
+/**
+ * TreeNode
+ *
+ * @class TreeNode
+ * @typedef {TreeNode}
+ * @template T
+ * @category Collections
+ */
 class TreeNode<T> {
     left: PTreeNode<T>;
     right: PTreeNode<T>;
@@ -324,6 +349,14 @@ function height<T>(root: PTreeNode<T>): number {
     return result;
 }
 
+/**
+ * List
+ *
+ * @class List
+ * @typedef {List}
+ * @template T
+ * @category Collections
+*/
 class List<T> {
     find(callback: T): boolean {
         const result = this.items.find((value, index, obj: T[]) => {

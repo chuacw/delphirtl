@@ -22,4 +22,4 @@ Date
 
 ## Defined in
 
-[src/dateutils.ts:179](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/dateutils.ts#L179)
+[src/dateutils.ts:179](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/dateutils.ts#L179)

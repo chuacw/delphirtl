@@ -286,6 +286,12 @@ function DiffDuration(d1: Date, d2: Date): TDiffDuration {
     return { years, months, days: remainingDays, hours, minutes, seconds };
 }
 
+/**
+ * Checks if a date is valid
+ *
+ * @param {Date} date
+ * @returns {boolean}
+ */
 function isValidDate(date: Date): boolean {
     const result = date.isValidDate();
     return result;

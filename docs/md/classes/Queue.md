@@ -38,7 +38,7 @@ The number of values in the store
 
 #### Defined in
 
-[src/collections.ts:41](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L41)
+[src/collections.ts:42](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L42)
 
 ## Methods
 
@@ -54,7 +54,7 @@ The first value in the store
 
 #### Defined in
 
-[src/collections.ts:29](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L29)
+[src/collections.ts:30](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L30)
 
 ***
 
@@ -70,7 +70,7 @@ The first value in the store
 
 #### Defined in
 
-[src/collections.ts:21](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L21)
+[src/collections.ts:22](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L22)
 
 ***
 
@@ -90,4 +90,4 @@ Puts the given value into the class
 
 #### Defined in
 
-[src/collections.ts:13](https://github.com/chuacw/delphirtl/blob/b363681ceafc5201b1500ec74e5ca8bda65687c6/src/collections.ts#L13)
+[src/collections.ts:14](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/collections.ts#L14)
