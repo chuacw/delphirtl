@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/collections.ts:255](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L255)
+[src/collections.ts:255](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L255)
 
 ## Properties
 
@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/collections.ts:253](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L253)
+[src/collections.ts:253](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L253)
 
 ***
 
@@ -46,7 +46,7 @@
 
 #### Defined in
 
-[src/collections.ts:251](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L251)
+[src/collections.ts:251](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L251)
 
 ***
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[src/collections.ts:252](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L252)
+[src/collections.ts:252](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L252)
 
 ## Accessors
 
@@ -78,7 +78,7 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:286](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L286)
+[src/collections.ts:286](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L286)
 
 ## Methods
 
@@ -100,4 +100,4 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:260](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/collections.ts#L260)
+[src/collections.ts:260](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/collections.ts#L260)

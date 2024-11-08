@@ -18,4 +18,4 @@
 
 ## Defined in
 
-[src/reflectutils.ts:2](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/reflectutils.ts#L2)
+[src/reflectutils.ts:2](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/reflectutils.ts#L2)

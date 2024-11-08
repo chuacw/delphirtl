@@ -20,4 +20,4 @@ Returns the index'th argument passed to the app
 
 ## Defined in
 
-[src/rtl.ts:42](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/rtl.ts#L42)
+[src/rtl.ts:42](https://github.com/chuacw/delphirtl/blob/81e46ed8e71de73f45f9b80059b720517cfde254/src/rtl.ts#L42)
