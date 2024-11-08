@@ -51,7 +51,6 @@ class BaseJsonRpcServer {
     protected mRequest: express.Request | undefined;
 
     /**
-     * @constructor
      * Constructs a BaseJsonRpcServer server and returns it.
      * Listens on localhost:8080 by default, on both IPv4 and IPv6
      * To listen only on IPv4, override onBeforeListening and call dns.setDefaultResultOrder('ipv4first');

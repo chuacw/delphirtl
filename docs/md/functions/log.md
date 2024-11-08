@@ -20,4 +20,4 @@
 
 ## Defined in
 
-[src/logutils.ts:1](https://github.com/chuacw/delphirtl/blob/a346bc29a51cbf7ec2f78046723acc330bc10ce1/src/logutils.ts#L1)
+[src/logutils.ts:1](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/logutils.ts#L1)

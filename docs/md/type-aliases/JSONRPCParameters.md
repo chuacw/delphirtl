@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[src/BaseJsonRpcServer.ts:15](https://github.com/chuacw/delphirtl/blob/a346bc29a51cbf7ec2f78046723acc330bc10ce1/src/BaseJsonRpcServer.ts#L15)
+[src/BaseJsonRpcServer.ts:15](https://github.com/chuacw/delphirtl/blob/e1fd59769609dd1c15ebbb696eede363e701778b/src/BaseJsonRpcServer.ts#L15)
