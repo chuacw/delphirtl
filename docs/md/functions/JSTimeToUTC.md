@@ -20,4 +20,4 @@ number
 
 ## Defined in
 
-[src/dateutils.ts:232](https://github.com/chuacw/delphirtl/blob/4a086bd5f5c288d4c6ef4d5de0c7d38afe362fb3/src/dateutils.ts#L232)
+[src/dateutils.ts:232](https://github.com/chuacw/delphirtl/blob/8ce65e250c1dfd9fa8a7bbe6d8347fa1cfdad851/src/dateutils.ts#L232)

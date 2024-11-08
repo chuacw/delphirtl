@@ -89,7 +89,7 @@
   "bugs": {
     "url": "https://github.com/chuacw/delphirtl/issues"
   },
-  "homepage": "https://chuacw.github.io/delphirtl/md/index.html",
+  "homepage": "https://chuacw.github.io/delphirtl/html/index.html",
   "dependencies": {
     "@types/node": "^17.0.25",
     "delphirtl": "file:",
