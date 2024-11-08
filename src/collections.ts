@@ -167,11 +167,27 @@ class Dictionary<K, V> extends Map<K, V> {
 
     }
 
+    /**
+     * Gets all items
+     *
+     * @public
+     * @readonly
+     * @type {{ [key: string]: V }}
+     */
     public get items(): { [key: string]: V } {
         const result = this.Items;
         return result;
     }
 
+    /**
+     * Returns a boolean, which, if true, means value has valid information.
+     *
+     * @param {K} key
+     * @returns {{
+     *         found: boolean,
+     *         value: V | undefined
+     *     }}
+     */
     TryGetValue(key: K): {
         found: boolean,
         value: V | undefined
@@ -182,11 +198,23 @@ class Dictionary<K, V> extends Map<K, V> {
         return result;
     }
 
+    /**
+     * Returns true if the dictionary has the specified key, false if not.
+     *
+     * @param {K} key
+     * @returns {boolean}
+     */
     Contains(key: K): boolean {
         const result = this.has(key);
         return result;
     }
 
+    /**
+     * Returns true if the dictionary contains the given value.
+     *
+     * @param {V} value
+     * @returns {boolean}
+     */
     ContainsValue(value: V): boolean {
         for(const v of this.values()) {
             if (value === v) {
@@ -196,14 +224,23 @@ class Dictionary<K, V> extends Map<K, V> {
         return false;
     }
 
+    /**
+     * Adds the given key and value
+     *
+     * @param {K} key
+     * @param {V} value
+     * @returns {boolean}
+     */
     TryAdd(key: K, value: V): boolean {
-        if (this.Contains(key)) {
-            return false;
-        }
         this.set(key, value);
         return true;
     }
 
+    /**
+     * Removes the given key and its value.
+     *
+     * @param {K} key
+     */
     Remove(key: K) {
         this.delete(key);
     }

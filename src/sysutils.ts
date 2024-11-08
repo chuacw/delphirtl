@@ -47,13 +47,13 @@ interface TTimeStamp {
     Date: number;
 }
 
-function extractFileDir(AFilename: string): string {
+function ExtractFileDir(AFilename: string): string {
     const index = AFilename.lastIndexOf(path.sep);
     const result = AFilename.substring(0, index);
     return result;
 }
 
-function extractFileExt(AFilename: string): string {
+function ExtractFileExt(AFilename: string): string {
     let result = "";
     const LPathDelimIndex = AFilename.lastIndexOf(path.sep);
     const index = AFilename.lastIndexOf(".");
@@ -70,7 +70,7 @@ function extractFileExt(AFilename: string): string {
  * @param AFileName 
  * @returns 
  */
-function extractFileName(AFileName: string): string {
+function ExtractFileName(AFileName: string): string {
     const index = AFileName.lastIndexOf(path.sep) + 1;
     const result = AFileName.substring(index);
     return result;
@@ -153,7 +153,7 @@ function SetEnvironmentVariable(Name: string, Value: string) {
  *
  * @typedef {ArbitraryObject}
  */
-type ArbitraryObject = { [key: string]: unknown; };
+export type ArbitraryObject = { [key: string]: unknown; };
 
 
 /**
@@ -204,15 +204,15 @@ function hasMessageField(obj: unknown): obj is { message: string } {
 }
    
 export {
-    extractFileDir, extractFileDir as ExtractFileDir,
-    extractFileExt, extractFileExt as ExtractFileExt,
-    extractFileName, extractFileName as ExtractFileName,
-    FileExists as getFileExists, FileExists,
-    IncludeTrailingPathDelimiter, IncludeTrailingPathDelimiter as includeTrailingPathDelimiter,
+    ExtractFileDir,
+    ExtractFileExt,
+    ExtractFileName,
+    FileExists,
+    IncludeTrailingPathDelimiter, 
     LowerCase, UpperCase, LowerCase as lowerCase, UpperCase as upperCase,
-    DeleteEnvironmentVariable, DeleteEnvironmentVariable as deleteEnvironmentVariable,
-    GetEnvironmentVariable, GetEnvironmentVariable as getEnvironmentVariable,
-    SetEnvironmentVariable, SetEnvironmentVariable as setEnvironmentVariable,
+    DeleteEnvironmentVariable,
+    GetEnvironmentVariable,
+    SetEnvironmentVariable,
     hasMessageField, hasFieldOfType, isArbitraryObject,
     ENV_NEXT_PREFIX, ENV_REACT_PREFIX
 }

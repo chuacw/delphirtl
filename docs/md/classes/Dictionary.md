@@ -120,7 +120,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L130)
+[src/collections.ts:130](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L130)
 
 ***
 
@@ -138,7 +138,7 @@ Gets the number of keys and values stored.
 
 #### Defined in
 
-[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L118)
+[src/collections.ts:118](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L118)
 
 ***
 
@@ -148,13 +148,15 @@ Gets the number of keys and values stored.
 
 > **get** **items**(): `object`
 
+Gets all items
+
 ##### Returns
 
 `object`
 
 #### Defined in
 
-[src/collections.ts:170](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L170)
+[src/collections.ts:177](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L177)
 
 ***
 
@@ -172,7 +174,7 @@ Gets the keys and values stored in the Dictionary
 
 #### Defined in
 
-[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L140)
+[src/collections.ts:140](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L140)
 
 ## Methods
 
@@ -214,7 +216,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L99)
+[src/collections.ts:99](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L99)
 
 ***
 
@@ -236,7 +238,7 @@ Sets the specified value for the given key.
 
 #### Defined in
 
-[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L89)
+[src/collections.ts:89](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L89)
 
 ***
 
@@ -270,13 +272,15 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L106)
+[src/collections.ts:106](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L106)
 
 ***
 
 ### Contains()
 
 > **Contains**(`key`): `boolean`
+
+Returns true if the dictionary has the specified key, false if not.
 
 #### Parameters
 
@@ -288,13 +292,15 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:185](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L185)
+[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L207)
 
 ***
 
 ### ContainsValue()
 
 > **ContainsValue**(`value`): `boolean`
+
+Returns true if the dictionary contains the given value.
 
 #### Parameters
 
@@ -306,7 +312,7 @@ Clears the dictionary of all data
 
 #### Defined in
 
-[src/collections.ts:190](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L190)
+[src/collections.ts:218](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L218)
 
 ***
 
@@ -454,6 +460,8 @@ node\_modules/typescript/lib/lib.es2015.iterable.d.ts:153
 
 > **Remove**(`key`): `void`
 
+Removes the given key and its value.
+
 #### Parameters
 
 • **key**: `K`
@@ -464,7 +472,7 @@ node\_modules/typescript/lib/lib.es2015.iterable.d.ts:153
 
 #### Defined in
 
-[src/collections.ts:207](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L207)
+[src/collections.ts:244](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L244)
 
 ***
 
@@ -498,6 +506,8 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:41
 
 > **TryAdd**(`key`, `value`): `boolean`
 
+Adds the given key and value
+
 #### Parameters
 
 • **key**: `K`
@@ -510,13 +520,15 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:41
 
 #### Defined in
 
-[src/collections.ts:199](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L199)
+[src/collections.ts:234](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L234)
 
 ***
 
 ### TryGetValue()
 
 > **TryGetValue**(`key`): `object`
+
+Returns a boolean, which, if true, means value has valid information.
 
 #### Parameters
 
@@ -536,7 +548,7 @@ node\_modules/typescript/lib/lib.es2015.collection.d.ts:41
 
 #### Defined in
 
-[src/collections.ts:175](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/collections.ts#L175)
+[src/collections.ts:191](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/collections.ts#L191)
 
 ***
 

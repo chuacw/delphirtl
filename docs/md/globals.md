@@ -6,42 +6,6 @@
 
 ## References
 
-### deleteEnvironmentVariable
-
-Renames and re-exports [DeleteEnvironmentVariable](functions/DeleteEnvironmentVariable.md)
-
-***
-
-### ExtractFileDir
-
-Renames and re-exports [extractFileDir](functions/extractFileDir.md)
-
-***
-
-### ExtractFileExt
-
-Renames and re-exports [extractFileExt](functions/extractFileExt.md)
-
-***
-
-### ExtractFileName
-
-Renames and re-exports [extractFileName](functions/extractFileName.md)
-
-***
-
-### FileExists
-
-Renames and re-exports [getFileExists](functions/getFileExists.md)
-
-***
-
-### getEnvironmentVariable
-
-Renames and re-exports [GetEnvironmentVariable](functions/GetEnvironmentVariable.md)
-
-***
-
 ### getParamCount
 
 Renames and re-exports [ParamCount](functions/ParamCount.md)
@@ -54,21 +18,9 @@ Renames and re-exports [ParamStr](functions/ParamStr.md)
 
 ***
 
-### includeTrailingPathDelimiter
-
-Renames and re-exports [IncludeTrailingPathDelimiter](functions/IncludeTrailingPathDelimiter.md)
-
-***
-
 ### lowerCase
 
 Renames and re-exports [LowerCase](functions/LowerCase.md)
-
-***
-
-### setEnvironmentVariable
-
-Renames and re-exports [SetEnvironmentVariable](functions/SetEnvironmentVariable.md)
 
 ***
 
@@ -113,6 +65,7 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 
 ## Type Aliases
 
+- [ArbitraryObject](type-aliases/ArbitraryObject.md)
 - [CommonMethodsOrProperties](type-aliases/CommonMethodsOrProperties.md)
 - [JSONRPC](type-aliases/JSONRPC.md)
 - [JSONRPCParameters](type-aliases/JSONRPCParameters.md)
@@ -150,14 +103,14 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [DeleteEnvironmentVariable](functions/DeleteEnvironmentVariable.md)
 - [DiffDuration](functions/DiffDuration.md)
 - [error](functions/error.md)
-- [extractFileDir](functions/extractFileDir.md)
-- [extractFileExt](functions/extractFileExt.md)
-- [extractFileName](functions/extractFileName.md)
+- [ExtractFileDir](functions/ExtractFileDir.md)
+- [ExtractFileExt](functions/ExtractFileExt.md)
+- [ExtractFileName](functions/ExtractFileName.md)
+- [FileExists](functions/FileExists.md)
 - [fromBlockchainTimestamp](functions/fromBlockchainTimestamp.md)
 - [getAllMethods](functions/getAllMethods.md)
 - [GetEnvironmentVariable](functions/GetEnvironmentVariable.md)
 - [getEstimatedBlockNumberForDuration](functions/getEstimatedBlockNumberForDuration.md)
-- [getFileExists](functions/getFileExists.md)
 - [getLauncher](functions/getLauncher.md)
 - [hasFieldOfType](functions/hasFieldOfType.md)
 - [hasMessageField](functions/hasMessageField.md)

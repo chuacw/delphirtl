@@ -48,3 +48,8 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.17 | 12 Oct 2024 | Added various add* functionality to Date |
 | 1.1.18 | 13 Oct 2024 | Added isArbitraryObject |
 | 1.1.19-20 | 19 Oct 2024 | Added haveNoDuplicates to ArrayUtils |
+
+## Documentation
+For further documentation, see the 
+* [docs directory](https://chuacw.github.io/delphirtl/md/globals.html) on GitHub.
+* [HTML documents](https://chuacw.github.io/delphirtl/html/index.html).

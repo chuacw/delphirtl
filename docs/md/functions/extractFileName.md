@@ -2,11 +2,11 @@
 
 ***
 
-[delphirtl](../globals.md) / extractFileName
+[delphirtl](../globals.md) / ExtractFileName
 
-# Function: extractFileName()
+# Function: ExtractFileName()
 
-> **extractFileName**(`AFileName`): `string`
+> **ExtractFileName**(`AFileName`): `string`
 
 Extracts the name and extension parts of a file name.
 
@@ -22,4 +22,4 @@ The resulting string is the rightmost characters of FileName, starting with the 
 
 ## Defined in
 
-[src/sysutils.ts:73](https://github.com/chuacw/delphirtl/blob/85a5b7662f28c8fe6421ae3f7b08687e4f743bd4/src/sysutils.ts#L73)
+[src/sysutils.ts:73](https://github.com/chuacw/delphirtl/blob/3204d33881fa10f212cb716c105eeee0d44571fa/src/sysutils.ts#L73)
