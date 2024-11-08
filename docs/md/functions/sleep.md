@@ -24,4 +24,4 @@ number of ms to sleep
 
 ## Defined in
 
-[src/rtl.ts:68](https://github.com/chuacw/delphirtl/blob/88492fbb2ae6ff649ca664adf641bd7af7998170/src/rtl.ts#L68)
+[src/rtl.ts:68](https://github.com/chuacw/delphirtl/blob/7a1dbc1208d0ae4be883184626c89e323acf7470/src/rtl.ts#L68)
