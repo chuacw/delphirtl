@@ -20,4 +20,4 @@ Deletes the given name from the environment variable
 
 ## Defined in
 
-[src/sysutils.ts:119](https://github.com/chuacw/delphirtl/blob/9d3905248e31f9e407f7d93f22a1ad9ed76c2b79/src/sysutils.ts#L119)
+[src/sysutils.ts:119](https://github.com/chuacw/delphirtl/blob/9155347a443be8e1df1021d02dbd646d9cee97fc/src/sysutils.ts#L119)
