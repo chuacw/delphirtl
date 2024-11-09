@@ -14,4 +14,4 @@
 
 ## Defined in
 
-[src/collections.ts:265](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/collections.ts#L265)
+[src/collections.ts:265](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/collections.ts#L265)

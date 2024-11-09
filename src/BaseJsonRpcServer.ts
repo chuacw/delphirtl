@@ -20,7 +20,7 @@ export interface TSendHandler {
 
 
 /**
- * Description placeholder
+ * Invalid params
  *
  * @type {"Invalid params"}
  * @category Constants
@@ -28,7 +28,7 @@ export interface TSendHandler {
 const SInvalidParams = "Invalid params";
 
 /**
- * Description placeholder
+ * Invalid request
  *
  * @type {"Invalid Request"}
  * @category Constants
@@ -36,7 +36,7 @@ const SInvalidParams = "Invalid params";
 const SInvalidRequest = "Invalid Request";
 
 /**
- * Description placeholder
+ * Method not found
  *
  * @type {"Method not found"}
  * @category Constants
@@ -44,7 +44,7 @@ const SInvalidRequest = "Invalid Request";
 const SMethodNotFound = "Method not found";
 
 /**
- * Description placeholder
+ * Parse error
  *
  * @type {"Parse error"}
  * @category Constants
@@ -52,7 +52,7 @@ const SMethodNotFound = "Method not found";
 const SParseError = "Parse error";
 
 /**
- * Description placeholder
+ * Entity parse failed
  *
  * @type {"entity.parse.failed"}
  * @category Constants
@@ -60,7 +60,7 @@ const SParseError = "Parse error";
 const SEntityParseFailed = "entity.parse.failed";
 
 /**
- * Description placeholder
+ * No content
  *
  * @type {204}
  * @category Constants
@@ -68,7 +68,7 @@ const SEntityParseFailed = "entity.parse.failed";
 const CNoContent = 204;
 
 /**
- * Description placeholder
+ * Default port
  *
  * @type {8080}
  * @category Constants
@@ -76,7 +76,7 @@ const CNoContent = 204;
 const CDefaultPort = 8080;
 
 /**
- * Description placeholder
+ * String
  *
  * @type {"string"}
  * @category Constants
@@ -84,7 +84,7 @@ const CDefaultPort = 8080;
 const CString = "string";
 
 /**
- * Description placeholder
+ * Powered by
  *
  * @type {"x-powered-by"}
  * @category Constants

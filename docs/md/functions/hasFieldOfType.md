@@ -33,4 +33,4 @@ Assuming e is an object with the field code of type string.
 
 ## Defined in
 
-[src/sysutils.ts:272](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/sysutils.ts#L272)
+[src/sysutils.ts:272](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/sysutils.ts#L272)

@@ -3,7 +3,7 @@ import * as fs from "fs";
 import assert from "assert";
 
 /**
- * Description placeholder
+ * Returs true if the given year is a leap year
  *
  * @param {number} Year
  * @returns {boolean}
@@ -28,7 +28,7 @@ const MonthDays = [
 const DateDelta = 693594;
 
 /**
- * Description placeholder
+ * Returns 1 if the given boolean is true, 0 otherwise
  *
  * @param {boolean} value
  * @returns {number}
@@ -300,5 +300,6 @@ export {
     GetEnvironmentVariable,
     SetEnvironmentVariable,
     hasMessageField, hasFieldOfType, isArbitraryObject,
+    IsLeapYear,
     ENV_NEXT_PREFIX, ENV_REACT_PREFIX
 }

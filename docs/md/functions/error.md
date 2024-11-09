@@ -8,7 +8,7 @@
 
 > **error**(`message`?, ...`optionalParams`?): `void`
 
-Description placeholder
+Logs the given message to the console's error
 
 ## Parameters
 
@@ -22,4 +22,4 @@ Description placeholder
 
 ## Defined in
 
-[src/logutils.ts:30](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/logutils.ts#L30)
+[src/logutils.ts:30](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/logutils.ts#L30)

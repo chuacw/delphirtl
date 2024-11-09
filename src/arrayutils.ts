@@ -10,7 +10,7 @@ function dedupArray(values: any[]): any[] {
 }
 
 /**
- * 
+ * Gets the length of the longest string in the given values array.
  *
  * @param {string[]} values
  * @returns {number} The length of the longest string in the given values array.

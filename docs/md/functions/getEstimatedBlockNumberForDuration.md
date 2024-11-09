@@ -22,4 +22,4 @@
 
 ## Defined in
 
-[src/dateutils.ts:236](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/dateutils.ts#L236)
+[src/dateutils.ts:236](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/dateutils.ts#L236)

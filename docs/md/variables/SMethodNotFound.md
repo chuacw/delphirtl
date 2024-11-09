@@ -8,8 +8,8 @@
 
 > `const` **SMethodNotFound**: `"Method not found"` = `"Method not found"`
 
-Description placeholder
+Method not found
 
 ## Defined in
 
-[src/BaseJsonRpcServer.ts:44](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/BaseJsonRpcServer.ts#L44)
+[src/BaseJsonRpcServer.ts:44](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/BaseJsonRpcServer.ts#L44)

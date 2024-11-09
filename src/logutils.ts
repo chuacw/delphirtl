@@ -1,5 +1,5 @@
 /**
- * Description placeholder
+ * Logs the given message to the console
  *
  * @param {?*} [message]
  * @param {...any[]} optionalParams
@@ -10,7 +10,7 @@ function log(message?: any, ...optionalParams: any[]) {
 }
 
 /**
- * Description placeholder
+ * Logs the given message to the console's info
  *
  * @param {?*} [message]
  * @param {...any[]} optionalParams
@@ -21,7 +21,7 @@ function info(message?: any, ...optionalParams: any[]) {
 }
 
 /**
- * Description placeholder
+ * Logs the given message to the console's error
  *
  * @param {?*} [message]
  * @param {...any[]} optionalParams

@@ -38,7 +38,7 @@ Description placeholder
 
 #### Defined in
 
-[src/messaging.ts:59](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/messaging.ts#L59)
+[src/messaging.ts:59](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/messaging.ts#L59)
 
 ## Properties
 
@@ -52,7 +52,7 @@ Description placeholder
 
 #### Defined in
 
-[src/messaging.ts:58](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/messaging.ts#L58)
+[src/messaging.ts:58](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/messaging.ts#L58)
 
 ## Methods
 
@@ -70,4 +70,4 @@ Description placeholder
 
 #### Defined in
 
-[src/messaging.ts:60](https://github.com/chuacw/delphirtl/blob/43018ba067448e7ddb820bbba64235119b6becfc/src/messaging.ts#L60)
+[src/messaging.ts:60](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/messaging.ts#L60)
