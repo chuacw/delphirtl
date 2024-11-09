@@ -12,4 +12,4 @@ No content
 
 ## Defined in
 
-[src/BaseJsonRpcServer.ts:68](https://github.com/chuacw/delphirtl/blob/65b8db69badfc6b1f76e4c089a4334916b69a373/src/BaseJsonRpcServer.ts#L68)
+[src/BaseJsonRpcServer.ts:68](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/BaseJsonRpcServer.ts#L68)

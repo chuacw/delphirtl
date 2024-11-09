@@ -6,12 +6,6 @@
 
 # Class: JSONRPCServer\<ServerParams\>
 
-Description placeholder
-
-## Export
-
-JSONRPCServer
-
 ## Type Parameters
 
 • **ServerParams** = `void`
@@ -32,7 +26,7 @@ JSONRPCServer
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:78
+node\_modules/json-rpc-2.0/dist/server.d.ts:15
 
 ## Properties
 
@@ -52,7 +46,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:78
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:77
+node\_modules/json-rpc-2.0/dist/server.d.ts:14
 
 ## Methods
 
@@ -72,7 +66,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:77
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:80
+node\_modules/json-rpc-2.0/dist/server.d.ts:17
 
 ***
 
@@ -92,7 +86,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:80
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:83
+node\_modules/json-rpc-2.0/dist/server.d.ts:20
 
 ***
 
@@ -110,7 +104,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:83
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:90
+node\_modules/json-rpc-2.0/dist/server.d.ts:27
 
 ***
 
@@ -128,7 +122,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:90
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:79
+node\_modules/json-rpc-2.0/dist/server.d.ts:16
 
 ***
 
@@ -150,7 +144,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:79
 
 ##### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:86
+node\_modules/json-rpc-2.0/dist/server.d.ts:23
 
 #### receive(request, serverParams)
 
@@ -168,7 +162,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:86
 
 ##### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:87
+node\_modules/json-rpc-2.0/dist/server.d.ts:24
 
 ***
 
@@ -188,7 +182,7 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:87
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:84
+node\_modules/json-rpc-2.0/dist/server.d.ts:21
 
 ***
 
@@ -206,4 +200,4 @@ node\_modules/json-rpc-2.0/dist/server.d.ts:84
 
 #### Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:81
+node\_modules/json-rpc-2.0/dist/server.d.ts:18

@@ -1,10 +1,12 @@
 import { TMessage, TMessageManager } from "../src/messaging";
 
 describe('testing Messaging library', () => {
-    beforeEach(()=>{
-        const lMgr = TMessageManager.getDefaultManager();
-        lMgr.reset();
-    });
+    // Not using this
+    // let lMgr: TMessageManager;
+    // beforeEach(() => {
+    //     lMgr = TMessageManager.getDefaultManager();
+    //     lMgr.reset();
+    // });
 
     test('getDefaultManager returns a manager', () => {
         const lMgr = TMessageManager.getDefaultManager();
@@ -54,10 +56,10 @@ describe('testing Messaging library', () => {
         const lMgr = TMessageManager.getDefaultManager();
         let lMessageReceived = "";
         lMgr.subscribeToMessage(String, (aMessage: string) => {
-            lMessageReceived+=aMessage
+            lMessageReceived += aMessage
         });
         lMgr.subscribeToMessage(String.name, (aMessage: string) => {
-            lMessageReceived+=aMessage
+            lMessageReceived += aMessage
         });
         lMgr.sendMessage(String, "Hello world");
         expect(lMessageReceived).toEqual("Hello worldHello world");
@@ -112,7 +114,7 @@ describe('testing Messaging library', () => {
         });
         const lValue = 10;
         lMgr.sendMessage(Number, lValue)
-        lMgr.subscribeToWrappedMessage(Number, (aMessage: TMessage<number>)=>{
+        lMgr.subscribeToWrappedMessage(Number, (aMessage: TMessage<number>) => {
             lMessage2 = aMessage.value;
         })
         lMgr.sendWrappedMessage(Number, new TMessage(lValue));

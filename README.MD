@@ -47,5 +47,5 @@ For further documentation, see the
 * [HTML documents](https://chuacw.github.io/delphirtl/html/index.html).
 
 ## Examples
-There's an [examples](./examples/) directory showing how to use this library.
+There's an [examples](https://github.com/chuacw/delphirtl/tree/main/examples) directory showing how to use this library.
  

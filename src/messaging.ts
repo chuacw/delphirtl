@@ -44,7 +44,7 @@ interface IMessageConstructor<T> {
 }
 
 /**
- * Description placeholder
+ * Base class from which other classes derive from
  *
  * @abstract
  * @class TMessageBase
@@ -171,7 +171,7 @@ class TMessageManager {
 
 
     /**
-     * Description placeholder
+     * Sends the given message to listeners that subscribes to the given class.
      *
      * @template {MessageType} T
      * @param {SubscriptionIdentifierType} aClass
@@ -194,7 +194,29 @@ class TMessageManager {
     }
 
     /**
-     * Description placeholder
+     * Sends a wrapped message to listeners on the given class
+     *
+     * @template {MessageType} T
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {TMessage<T>} aMessage
+     */
+    sendWrappedMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessage: TMessage<T>) {
+        const lClassName = (typeof aMessage.value) != "object" ? (typeof aMessage.value).toUpperCase() : (aMessage.value as unknown as object).constructor.name.toUpperCase();
+        const lMessageClassName = `${aMessage.constructor.name}<${lClassName}>`
+        const lListenerList = this.fListeners.get(lMessageClassName);
+        if (lListenerList !== undefined) {
+            for (const lListener of lListenerList) {
+                try {
+                    lListener(aMessage);
+                } catch (e) {
+                    // keep going
+                }
+            }
+        }
+    }
+
+    /**
+     * Subscribes to the given class and receives the given message
      *
      * @template {MessageType} T
      * @param {SubscriptionIdentifierType} aClass
@@ -215,34 +237,14 @@ class TMessageManager {
         return index;
     }
 
-    public unsubscribe(aClass: SubscriptionIdentifierType, aSubscriptionIndex: SubscriptionIndex) {
-        const lClassName = (typeof aClass === 'function') ? (aClass.name) : aClass;
-        const lMessageClassName = `${lClassName.toUpperCase()}`
-        const lListenerList = this.fListeners.get(lMessageClassName);
-        if (lListenerList != undefined) {
-            lListenerList.splice(aSubscriptionIndex, 1)
-            if (lListenerList.length === 0) {
-                this.fListeners.delete(lMessageClassName);
-            }
-        }
-    }
-
-    sendWrappedMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessage: TMessage<T>) {
-        const lClassName = (typeof aMessage.value) != "object" ? (typeof aMessage.value).toUpperCase() : (aMessage.value as unknown as object).constructor.name.toUpperCase();
-        const lMessageClassName = `${aMessage.constructor.name}<${lClassName}>`
-        const lListenerList = this.fListeners.get(lMessageClassName);
-        if (lListenerList !== undefined) {
-            for (const lListener of lListenerList) {
-                try {
-                    lListener(aMessage);
-                } catch (e) {
-                    // keep going
-                }
-            }
-        }
-    }
-
-    // wrapped message
+    /**
+     * Subscribes to the wrapped message on the given class
+     *
+     * @template {MessageType} T
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {(aMessage: TMessage<T>) => void} aMessageListener
+     * @returns {SubscriptionIndex}
+     */
     subscribeToWrappedMessage<T extends MessageType>(aClass: SubscriptionIdentifierType, aMessageListener: (aMessage: TMessage<T>) => void): SubscriptionIndex {
         const lSuffix = (typeof aClass === 'function') ? (aClass.name) : aClass;
         this.ensureTypeEnabled(lSuffix);
@@ -256,6 +258,33 @@ class TMessageManager {
         return index;
     }
 
+    /**
+     * Unsubscribes from messages on the given class
+     *
+     * @public
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {SubscriptionIndex} aSubscriptionIndex
+     * @category Messaging
+     */
+    public unsubscribe(aClass: SubscriptionIdentifierType, aSubscriptionIndex: SubscriptionIndex) {
+        const lClassName = (typeof aClass === 'function') ? (aClass.name) : aClass;
+        const lMessageClassName = `${lClassName.toUpperCase()}`
+        const lListenerList = this.fListeners.get(lMessageClassName);
+        if (lListenerList != undefined) {
+            lListenerList.splice(aSubscriptionIndex, 1)
+            if (lListenerList.length === 0) {
+                this.fListeners.delete(lMessageClassName);
+            }
+        }
+    }
+
+    /**
+     * Unsubscribes from the wrapped message on the given class
+     *
+     * @param {SubscriptionIdentifierType} aClass
+     * @param {SubscriptionIndex} aSubscriptionIndex
+     * @category Messaging
+     */
     unsubscribeWrappedMessage(aClass: SubscriptionIdentifierType, aSubscriptionIndex: SubscriptionIndex) {
         const lSuffix = (typeof aClass === 'function') ? (aClass.name) : aClass;
         const lMessageClassName = `${TMessage.name}<${lSuffix.toUpperCase()}>`; // TMessage<NUMBER>, TMessage<STRING>, TMessage<DATE> 

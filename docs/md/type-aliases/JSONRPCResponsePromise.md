@@ -8,10 +8,6 @@
 
 > **JSONRPCResponsePromise**: `PromiseLike`\<`JSONRPCResponse` \| `null`\>
 
-Description placeholder
-
-## Export
-
 ## Defined in
 
-node\_modules/json-rpc-2.0/dist/server.d.ts:30
+node\_modules/json-rpc-2.0/dist/server.d.ts:4
