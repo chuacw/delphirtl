@@ -1,4 +1,4 @@
-import {isMainThread, runInThread} from "../src/threadutils";
+import { isMainThread, runInThread } from "../src/threadutils";
 
 // Example usage
 // if (isMainThread) {

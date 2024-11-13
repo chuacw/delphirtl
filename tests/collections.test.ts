@@ -5,7 +5,7 @@ describe('testing Collections library', () => {
         expect(() => {
             const nodeValues: number[] = [];
             const tree = Tree.createTree(nodeValues);
-            const height = tree?.height;                
+            const height = tree?.height;
         }).toThrow(SEmptyIterables);
     }, 100_000);
 
@@ -59,7 +59,7 @@ describe('testing Collections library', () => {
         v = d.get(key)!;
         expect(v).toBe('yahoo');
 
-        let {found, value} = d.TryGetValue(key)!;
+        let { found, value } = d.TryGetValue(key)!;
         expect(found).toBeTruthy();
         expect(value)!.toBe('yahoo');
     });
@@ -75,13 +75,13 @@ describe('testing Collections library', () => {
         let v2 = d2.Items["world"];
         expect(v2).toBe(5);
 
-        let el1 = function(event: Event) {}
-        let el2 = function(event: Event) {}
-        let el3 = function(event: Event) {}
+        let el1 = function (event: Event) { }
+        let el2 = function (event: Event) { }
+        let el3 = function (event: Event) { }
         let d3 = new Dictionary<EventListener, number>();
         d3.set(el1, 9); // can't use Items here, ie, d3.Items[el1] = 9;
         let v3: number = 0;
-        expect(() => { v3 = d3.get(el1)!}).not.toThrowError();
+        expect(() => { v3 = d3.get(el1)! }).not.toThrowError();
         expect(v3).toEqual(9);
 
         let v4 = d3.get(el2);
@@ -92,11 +92,11 @@ describe('testing Collections library', () => {
         let d = new Dictionary<object, string>();
         let obj1 = {};
         let obj2 = {};
-        
+
         d.set(obj1, "hello");
         let v1 = d.get(obj1);
         expect(v1).toBe("hello");
-        
+
         let v2 = d.get(obj2);
         expect(v2).toBeUndefined();
     });
@@ -140,9 +140,9 @@ describe('testing Collections library', () => {
 
     test('List<function> add, indexOf, delete', () => {
         const fnList = new List<EventListener>();
-        function event1(event: Event) {}
-        function event2(event: Event) {}
-        function event3(event: Event) {}
+        function event1(event: Event) { }
+        function event2(event: Event) { }
+        function event3(event: Event) { }
         fnList.add(event1);
         fnList.add(event2);
 

@@ -1,6 +1,6 @@
 import { PerformanceObserverEntryList, performance, PerformanceObserver } from "perf_hooks";
 
-function timePerformance(fn: ()=>void) {
+function timePerformance(fn: () => void) {
     const obs = new PerformanceObserver((list: PerformanceObserverEntryList) => {
         const entries = list.getEntries();
         const entry = entries[0];

@@ -1,7 +1,7 @@
-import { 
-    createJSONRPCErrorResponse, isJSONRPCID, JSONRPC, JSONRPCClient, JSONRPCErrorCode, JSONRPCErrorException, 
-    JSONRPCErrorResponse, JSONRPCParams, JSONRPCRequest, JSONRPCResponsePromise, JSONRPCServer, JSONRPCServerMiddlewareNext, 
-    SimpleJSONRPCMethod 
+import {
+    createJSONRPCErrorResponse, isJSONRPCID, JSONRPC, JSONRPCClient, JSONRPCErrorCode, JSONRPCErrorException,
+    JSONRPCErrorResponse, JSONRPCParams, JSONRPCRequest, JSONRPCResponsePromise, JSONRPCServer, JSONRPCServerMiddlewareNext,
+    SimpleJSONRPCMethod
 } from "json-rpc-2.0";
 import express, { Express, NextFunction, response } from 'express';
 import * as http from 'http';
@@ -15,7 +15,7 @@ type ListenAddr = string | net.AddressInfo | null;
 type JSONRPCParameters = JSONRPCParams | undefined;
 
 export interface TSendHandler {
-     send: (body: string|number|boolean|object|Buffer) => void;
+    send: (body: string | number | boolean | object | Buffer) => void;
 }
 
 
@@ -230,8 +230,8 @@ class BaseJsonRpcServer {
         let handled = false;
         // creates a custom response with a send function
         // if the send function is called, sets the handled flag
-        const response: TSendHandler = { 
-            send: (body: string|number|boolean|object|Buffer) => {
+        const response: TSendHandler = {
+            send: (body: string | number | boolean | object | Buffer) => {
                 handled = true;
                 res.send(body);
             }
@@ -239,7 +239,7 @@ class BaseJsonRpcServer {
         this.mResponse = undefined; // prevents mResponse from being used by overridden onParseError methods
         this.onParseError(err, req, response);
         // if this is not set, we'll know that onParseError didn't call it, so we should handle it
-        if(!handled) {
+        if (!handled) {
             // this entity.parse.failed constant is used/sent by Express
             if (err.type === SEntityParseFailed) {
                 const obj = createJSONRPCErrorResponse(null, JSONRPCErrorCode.ParseError, SParseError);
@@ -256,7 +256,7 @@ class BaseJsonRpcServer {
      * @returns {void} 
      */
     protected async handleRequest(request: express.Request, response: express.Response) {
-        try { 
+        try {
             const temp = request.body;
             // checks that the request body fits a JSON RPC call
             const isBatch = Array.isArray(temp);
@@ -268,13 +268,13 @@ class BaseJsonRpcServer {
             if (jsonRpcResponse) {
                 response.send(jsonRpcResponse);
             } else {
-                switch(isBatch) {
+                switch (isBatch) {
                     case false: {
                         if (typeof request.body.method != CString) {
                             response.send(this.createInvalidRequestResponse(request));
                             break;
                         }
-                        response.sendStatus(CNoContent); 
+                        response.sendStatus(CNoContent);
                         break;
                     }
                     case true: {
@@ -283,7 +283,7 @@ class BaseJsonRpcServer {
                 }
             }
         } catch (e) {
-            const error = createJSONRPCErrorResponse(isJSONRPCID(request.body.id) ? request.body.id : null, 
+            const error = createJSONRPCErrorResponse(isJSONRPCID(request.body.id) ? request.body.id : null,
                 JSONRPCErrorCode.InvalidRequest, SInvalidRequest);
             response.send(error);
         }
@@ -310,10 +310,10 @@ class BaseJsonRpcServer {
         result.use(express.json());
         this.initParseErrorHandler(result);
 
-        result.post(this.listeningPath, async(request: express.Request, response: express.Response) => {
+        result.post(this.listeningPath, async (request: express.Request, response: express.Response) => {
             this.mResponse = response;
             this.mRequest = request;
-            try { 
+            try {
                 await this.handleRequest(request, response);
             } finally {
                 // @ts-ignore
@@ -324,7 +324,7 @@ class BaseJsonRpcServer {
         });
         return result;
     }
-    
+
     /**
      * Initializes the JSON RPC server and returns it
      *
@@ -332,10 +332,10 @@ class BaseJsonRpcServer {
      */
     protected initJsonRpcServer() {
         const result = new JSONRPCServer({ errorListener: this.JsonRpcErrorListener.bind(this) });
-        const checkRequest = 
+        const checkRequest =
             (next: JSONRPCServerMiddlewareNext<void>, request: JSONRPCRequest, serverParams: void | undefined): JSONRPCResponsePromise => {
                 return this.onBeforeDispatchRequest(next, request, serverParams);
-        };
+            };
         result.applyMiddleware(checkRequest);
         return result;
     }
@@ -367,7 +367,7 @@ class BaseJsonRpcServer {
      */
     async listen(port?: number) {
         this.addRPCMethods();
-        switch(typeof port) {
+        switch (typeof port) {
             case "undefined": {
                 port = this.mListeningPort;
                 break;
@@ -400,7 +400,7 @@ class BaseJsonRpcServer {
      */
     protected logListeningMethods(methods: SimpleJSONRPCMethod<void>[]) {
         this.log("Listening for these JSON RPC methods:")
-        for(const method of methods) {
+        for (const method of methods) {
             this.log(method.name);
         }
     }
@@ -413,7 +413,7 @@ class BaseJsonRpcServer {
      * @returns {JSONRPCResponsePromise}
      */
     protected onBeforeDispatchRequest(next: JSONRPCServerMiddlewareNext<void>, request: JSONRPCRequest, serverParams: void | undefined): JSONRPCResponsePromise {
-        switch(typeof request.method) {
+        switch (typeof request.method) {
             case CString: {
                 return next(request, serverParams);
             }
@@ -507,9 +507,9 @@ export {
     SimpleJSONRPCMethod,
     Request,
     Response,
-    createJSONRPCErrorResponse, isJSONRPCID,  
+    createJSONRPCErrorResponse, isJSONRPCID,
     JSONRPCErrorCode, JSONRPCErrorException, JSONRPC, JSONRPCClient, JSONRPCParams,
-    JSONRPCRequest, JSONRPCResponsePromise, JSONRPCServer, JSONRPCServerMiddlewareNext, 
+    JSONRPCRequest, JSONRPCResponsePromise, JSONRPCServer, JSONRPCServerMiddlewareNext,
     JSONRPCParameters,
     SEntityParseFailed,
     SInvalidParams,

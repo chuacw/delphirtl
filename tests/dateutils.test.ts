@@ -14,27 +14,27 @@ describe('test DateUtils Date.add functionality', () => {
     test('Date.addSeconds(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addSeconds(1);
-        expect(newDate.getTime()).toEqual(now.getTime()+ONE_SEC);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_SEC);
     });
     test('Date.addMinutes(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addMinutes(1);
-        expect(newDate.getTime()).toEqual(now.getTime()+ONE_MIN);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_MIN);
     });
     test('Date.addHours(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addHours(1);
-        expect(newDate.getTime()).toEqual(now.getTime()+ONE_HOUR);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_HOUR);
     });
     test('Date.addDays(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addDays(1);
-        expect(newDate.getTime()).toEqual(now.getTime()+ONE_DAY);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_DAY);
     });
     test('Date.addWeeks(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addWeeks(1);
-        expect(newDate.getTime()).toEqual(now.getTime()+ONE_WEEK);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_WEEK);
     });
     test('Date.addMonths(1)', () => {
         const now = new Date(1990, 0, 1, 0, 0, 0);
@@ -95,7 +95,7 @@ describe('testing DateUtils library', () => {
 
 // function getEstimatedBlockNumberForDuration(Block1: ethers.providers.Block, Block2: ethers.providers.Block, timestampInMS: number): number {
 //     const diffBlockNumber = Math.abs(Block1.number - Block2.number);
-//     const diffTimestamp = Math.abs(Block1.timestamp - Block2.timestamp) * 1000; 
+//     const diffTimestamp = Math.abs(Block1.timestamp - Block2.timestamp) * 1000;
 //     const result = timestampInMS / (diffTimestamp / diffBlockNumber);
 //     return result;
 // }

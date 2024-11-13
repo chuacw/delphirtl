@@ -1,14 +1,14 @@
 import { ParamCount, ParamStr, Sleep } from "../src/rtl";
 
 function clearArgv() {
-    while (process.argv.length>0) process.argv.pop();
+    while (process.argv.length > 0) process.argv.pop();
 }
 
 describe('testing rtl', () => {
     const LScriptName = "myscriptname";
     test('ParamCount empty', () => {
         clearArgv();
-        process.argv.push("node.exe"); process.argv.push(LScriptName); 
+        process.argv.push("node.exe"); process.argv.push(LScriptName);
         expect(ParamCount()).toEqual(0);
     });
     test('ParamCount 1', () => {
@@ -19,14 +19,14 @@ describe('testing rtl', () => {
 
     test('ParamStr(0)', () => {
         clearArgv();
-        process.argv.push("node.exe"); process.argv.push(LScriptName); 
+        process.argv.push("node.exe"); process.argv.push(LScriptName);
         expect(ParamStr(0)).toEqual(LScriptName);
     });
 
     test('ParamStr(1)', () => {
         clearArgv();
         const LParamStr1 = "ParamStr1";
-        process.argv.push("node.exe"); process.argv.push(LScriptName); process.argv.push(LParamStr1); 
+        process.argv.push("node.exe"); process.argv.push(LScriptName); process.argv.push(LParamStr1);
         expect(ParamStr(1)).toEqual(LParamStr1);
     });
 

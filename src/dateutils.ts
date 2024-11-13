@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 declare global {
     interface Date {
         ToBlockchainTimestamp(): number;
-        
+
         /**
          * Adds the given number of seconds to a new instance of Date, with the starting value from this instance
          *
@@ -146,7 +146,7 @@ Date.prototype.addYears = function (years: number) {
     return result;
 };
 
-Date.prototype.isValidDate = function(): boolean {
+Date.prototype.isValidDate = function (): boolean {
     const result = this instanceof Date && !isNaN(this.valueOf());
     return result;
 }
@@ -267,22 +267,22 @@ export interface TDiffDuration {
  */
 function DiffDuration(d1: Date, d2: Date): TDiffDuration {
     const msDiff = Math.abs(d1.getTime() - d2.getTime());
-  
+
     const totalSeconds = Math.floor(msDiff / 1000);
     const totalMinutes = Math.floor(totalSeconds / 60);
     const totalHours = Math.floor(totalMinutes / 60);
     const totalDays = Math.floor(totalHours / 24);
-    
+
     let years = Math.floor(totalDays / 365);
     let remainingDays = totalDays % 365;
-    
+
     let months = Math.floor(remainingDays / 30);
     remainingDays = remainingDays % 30;
-  
+
     const hours = totalHours % 24;
     const minutes = totalMinutes % 60;
     const seconds = totalSeconds % 60;
-  
+
     return { years, months, days: remainingDays, hours, minutes, seconds };
 }
 

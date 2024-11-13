@@ -3,8 +3,8 @@ import { JSONRPCParams } from 'json-rpc-2.0';
 import { JSONRPC, JSONRPCClient, JSONRPCErrorCode, TestJsonRpcServer } from './TestJsonRpcServer';
 
 // #region Helper functions
-const timeout = 100_000;
-const port = 8081;
+const TIMEOUT = 100_000;
+const PORT = 8081;
 
 /** 
 * This is a debug class that shows the incoming and outgoing JSON requests.
@@ -108,7 +108,7 @@ function customJSONClient(aSendType: SendType) {
       }
     }
     Debug.Out(jsonBody);
-    const result = fetch(`http://localhost:${port}/test-rpc/`, {
+    const result = fetch(`http://localhost:${PORT}/test-rpc/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -144,12 +144,12 @@ describe('JSON RPC 2.0 spec', () => {
   let rpcClient: JSONRPCClient;
   beforeEach(async () => {
     rpcServer = new TestJsonRpcServer();
-    await rpcServer.listen(port);
+    await rpcServer.listen(PORT);
 
     rpcClient = new JSONRPCClient((jsonRPCRequest) => {
       const jsonBody = JSON.stringify(jsonRPCRequest);
       Debug.Out(jsonBody);
-      const result = fetch(`http://localhost:${port}/test-rpc/`, {
+      const result = fetch(`http://localhost:${PORT}/test-rpc/`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -168,11 +168,11 @@ describe('JSON RPC 2.0 spec', () => {
       });
       return result;
     }, RPCID.createRPCID);
-  }, timeout);
+  }, TIMEOUT);
 
   afterEach(async () => {
     await rpcServer.stop();
-  }, timeout);
+  }, TIMEOUT);
 
 
   it('RPC call with no name', async () => {
@@ -188,44 +188,44 @@ describe('JSON RPC 2.0 spec', () => {
       }
     })).toEqual(true);
 
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with positional parameters 01: subtract [42, 23]', async () => {
     const result = await rpcClient.request("subtract", [42, 23]);
     expect(result).toBe(19);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with positional parameters 02: subtract [23, 42]', async () => {
     const result = await rpcClient.request("subtract", [23, 42]);
     expect(result).toBe(-19);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with named parameters 01: subtract {"subtrahend": 23, "minuend": 42}', async () => {
     const result = await rpcClient.request("subtract", { "subtrahend": 23, "minuend": 42 });
     expect(result).toBe(19);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with named parameters 02: subtract {"minuend": 42, "subtrahend": 23}', async () => {
     const result = await rpcClient.request("subtract", { "minuend": 42, "subtrahend": 23 });
     expect(result).toBe(19);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC notify update has no return', async () => {
     const result = await rpcClient.request("update", [1, 2, 3, 4, 5]);
     expect(result).toBe(null);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC notify foobar has no return', async () => {
     // any notification, requests without id should return null
     const result = await rpcClient.request("foobar", []);
     expect(result).toBe(null);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call of non-existent method', async () => {
     await expect(async () => {
       const result = await rpcClient.request("nofoobar", []);
     }).rejects.toThrow("Method not found");
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with invalid JSON', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -240,7 +240,7 @@ describe('JSON RPC 2.0 spec', () => {
       }
     })).toEqual(true);
 
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with invalid Request object', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -248,7 +248,7 @@ describe('JSON RPC 2.0 spec', () => {
     expect(compareObject(result, {
       jsonrpc: JSONRPC, error: { code: -32600, message: "Invalid Request" }, id: null
     })).toEqual(true);
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call batch, invalid JSON', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -266,7 +266,7 @@ describe('JSON RPC 2.0 spec', () => {
       }
     })).toEqual(true);
 
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with an empty array', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -281,7 +281,7 @@ describe('JSON RPC 2.0 spec', () => {
       }
     })).toEqual(true);
 
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with an invalid batch (but not empty)', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -296,7 +296,7 @@ describe('JSON RPC 2.0 spec', () => {
       }
     })).toEqual(true);
 
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call with invalid batch', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendDirect);
@@ -330,7 +330,7 @@ describe('JSON RPC 2.0 spec', () => {
     ];
     // expect(compareArray(result as unknown as any[], expectedResult)).toEqual(true);
     expect(result).toEqual(expect.arrayContaining(expectedResult));
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call batch', async () => {
     const rpcClientCallbatch = customJSONClient(SendType.sendStringify);
@@ -362,7 +362,7 @@ describe('JSON RPC 2.0 spec', () => {
       },
       { jsonrpc: JSONRPC, id: id9, result: ["hello", 5] }
     ]));
-  }, timeout);
+  }, TIMEOUT);
 
   it('RPC call batch (all notifications)', async () => {
     const result = await rpcClient.requestAdvanced([
@@ -370,21 +370,21 @@ describe('JSON RPC 2.0 spec', () => {
       { jsonrpc: JSONRPC, method: "notify_hello", params: [7] }
     ]);
     expect(result).toEqual(expect.arrayContaining([]));
-  }, timeout);
+  }, TIMEOUT);
 
   it('Echoes back parameters 1', async () => {
     await echo(rpcClient, [1]);
-  }, timeout);
+  }, TIMEOUT);
 
   it('Echoes back parameters 2', async () => {
     await echo(rpcClient, [2]);
-  }, timeout);
+  }, TIMEOUT);
 
   it("Any notification returns null", async () => {
     // A notification is one without the ID
     const result = await rpcClient.notify("anything", []);
     expect(result).toBe(undefined);
-  }, timeout);
+  }, TIMEOUT);
 
 });
 

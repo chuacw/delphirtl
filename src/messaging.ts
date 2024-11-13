@@ -110,15 +110,15 @@ type SubscriptionIndex = number
 export type MessageType = Date | boolean | number | string | {}
 
 /**
- * Description placeholder
+ * TMessageManager enables messaging between different code points.
  *
  * @class TMessageManager
  * @typedef {TMessageManager}
  * @category Messaging
  */
 class TMessageManager {
-    private fListeners: Map<any, Array<any>> = new Map();
-    private fDisabledTypes: string[] = [];
+    private fListeners!: Map<any, Array<any>>;
+    private fDisabledTypes!: string[];
     private static fDefaultManager: TMessageManager;
 
     constructor() {
@@ -127,7 +127,7 @@ class TMessageManager {
 
     reset() {
         // Enums works similarly to number during runtime, so, disable Number as a native type from working
-        this.fDisabledTypes = []
+        this.fDisabledTypes = [];
         this.fDisabledTypes.push(Number.name);
         this.fListeners = new Map();
     }

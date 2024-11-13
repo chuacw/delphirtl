@@ -32,7 +32,7 @@ class Queue<T> {
         return result;
     }
 
-    
+
     /**
      * The number of values in the store
      *
@@ -73,7 +73,7 @@ class Stack<T> {
         return result;
     }
 
-    
+
     /**
      * The number of items in the store
      *
@@ -123,7 +123,7 @@ class Dictionary<K, V> extends Map<K, V> {
         this.clear();
     }
 
-    
+
     /**
      * Gets the number of keys and values stored.
      *
@@ -145,7 +145,7 @@ class Dictionary<K, V> extends Map<K, V> {
      */
     public get count(): number { return this.Count; }
 
-    
+
     /**
      * Gets the keys and values stored in the Dictionary
      *
@@ -154,7 +154,7 @@ class Dictionary<K, V> extends Map<K, V> {
      * @type {{ [key: string]: V }}
      */
     public get Items(): { [key: string]: V } {
-        const items: { } = {};
+        const items: {} = {};
         this.forEach((value: V, key: K) => {
             (items as any)[key as any] = value;
         });
@@ -166,7 +166,7 @@ class Dictionary<K, V> extends Map<K, V> {
         // so, there's the repeated definition of { [key...]: V }
         return new Proxy(items, {
             // Intercept 'get' operation
-            get: (map: { [key: string | number | symbol ]: V }, key: any) => {
+            get: (map: { [key: string | number | symbol]: V }, key: any) => {
                 let k = key.toString();
                 if (!this.has(k)) {
                     throw new Error(`Key "${key}" not found.`);
@@ -210,7 +210,7 @@ class Dictionary<K, V> extends Map<K, V> {
     } {
         const value = this.get(key);
         const found = value !== undefined;
-        const result = {found, value};
+        const result = { found, value };
         return result;
     }
 
@@ -232,7 +232,7 @@ class Dictionary<K, V> extends Map<K, V> {
      * @returns {boolean}
      */
     ContainsValue(value: V): boolean {
-        for(const v of this.values()) {
+        for (const v of this.values()) {
             if (value === v) {
                 return true;
             }
@@ -276,7 +276,7 @@ class TreeNode<T> {
     left: PTreeNode<T>;
     right: PTreeNode<T>;
     data: T;
-    
+
     constructor(value: T) {
         this.data = value;
         this.left = null;
@@ -287,7 +287,7 @@ class TreeNode<T> {
 
         // ensure iterables have at least 1 value
         let count = 0;
-        for(const nodeValue of nodeValues) {
+        for (const nodeValue of nodeValues) {
             count++;
             break;
         }
@@ -328,7 +328,7 @@ function createTree<T>(nodeValues: Iterable<T>): TreeNode<T> {
 
     // ensure iterables have at least 1 value
     let count = 0;
-    for(const nodeValue of nodeValues) {
+    for (const nodeValue of nodeValues) {
         count++;
         break;
     }
@@ -345,7 +345,7 @@ function height<T>(root: PTreeNode<T>): number {
     if (root === null) {
         return -1;
     }
-    const result = 1+Math.max(height(root.left), height(root.right));
+    const result = 1 + Math.max(height(root.left), height(root.right));
     return result;
 }
 
@@ -380,7 +380,7 @@ class List<T> {
         return this.items.length;
     }
 
-    
+
     /**
      * Returns the length of this list
      *
@@ -415,12 +415,12 @@ class List<T> {
      * @type {*}
      */
     delete(value: T): boolean {
-        const index = this.items.indexOf(value); 
-        if (index !== -1) {  
-            this.items.splice(index, 1); 
-            return true; 
+        const index = this.items.indexOf(value);
+        if (index !== -1) {
+            this.items.splice(index, 1);
+            return true;
         }
-        return false; 
+        return false;
     }
 
     /**

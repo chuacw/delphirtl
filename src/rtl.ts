@@ -33,7 +33,7 @@ function getProcessArgs(): string[] {
  */
 function ParamCount(): number {
     const processArgs = getProcessArgs();
-    return processArgs.length-1;
+    return processArgs.length - 1;
 }
 
 /**
@@ -44,7 +44,7 @@ function ParamCount(): number {
  * @category RTL
  */
 function ParamStr(index: number): string {
-    assert(index>=0);
+    assert(index >= 0);
     const processArgs = getProcessArgs();
     if (index < 0) {
         return "";
@@ -81,7 +81,7 @@ async function sleep(ms: number) {
  * @param {...*} x any number of parameters to ignore
  * @category RTL
  */
-function UNUSED(...x: any) {}
+function UNUSED(...x: any) { }
 
 export {
     ParamCount, ParamCount as getParamCount,

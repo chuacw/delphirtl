@@ -47,7 +47,7 @@ function boolToInt(value: boolean): number {
  */
 class TDateTime {
     Value: number
-    constructor(AValue: number) {this.Value = AValue}
+    constructor(AValue: number) { this.Value = AValue }
 }
 
 /**
@@ -83,20 +83,174 @@ interface TTimeStamp {
 }
 
 /**
- * Description placeholder
+ * Creates the given directory, Dir
  *
- * @param {string} AFilename
- * @returns {string}
- * @category SysUtils
+ * @param {string} Dir
+ * @returns {boolean}
  */
-function ExtractFileDir(AFilename: string): string {
-    const index = AFilename.lastIndexOf(path.sep);
-    const result = AFilename.substring(0, index);
+function CreateDir(Dir: string): boolean {
+    let result = true;
+    try {
+        fs.mkdirSync(Dir, { recursive: true });
+    } catch (e) {
+        result = false
+    }
     return result;
 }
 
 /**
- * Description placeholder
+ * Checks if the given Dir exists or not.
+ *
+ * @param {string} Dir
+ * @returns {boolean}
+ */
+function DirectoryExists(Dir: string): boolean {
+    const result = fs.existsSync(Dir);
+    return result;
+}
+
+// File attribute constants
+export const faInvalid = -1;
+export const faReadOnly = 0x00000001;
+export const faHidden = 0x00000002; // only a convention on POSIX
+export const faSysFile = 0x00000004; // on POSIX system files are not regular files and not directories
+export const faVolumeID = 0x00000008; // not used in Win32
+/**
+ * The referenced item is a directory
+ */
+export const faDirectory = 0x00000010;
+export const faArchive = 0x00000020;
+/**
+ *  * The referenced item is a file
+ *
+ * @type {128}
+ */
+export const faNormal = 0x00000080;
+export const faTemporary = 0x00000100;
+export const faSymLink = 0x00000400; // Available on POSIX and Vista and above
+export const faCompressed = 0x00000800;
+export const faEncrypted = 0x00004000;
+export const faVirtual = 0x00010000;
+export const faAnyFile = 0x000001FF;
+
+export type TSearchRec = {
+    Time: number
+    Size: number
+    Attr: number
+    Name: string
+    ExcludeAttr: number
+    /**
+     * Last time it was accessed or modified, whichever's later
+     *
+     * @type {Date}
+     */
+    LastAccessTime: Date;
+    /**
+     * Last modified time
+     *
+     * @type {Date}
+     */
+    TimeStamp: Date;
+    CreationTime: number;
+}
+
+type IPaths = {
+    parentPath: string
+    path: string
+}
+
+export type TFilterPredicate = (path: string, sr: TSearchRec) => boolean;
+
+/**
+ * Get subdirectories from the given path, using the given predicate to filter out items
+ *
+ * @param {string} path
+ * @param {TFilterPredicate} predicate
+ * @returns {string[]}
+ */
+function GetDirectories(path: string, predicate: TFilterPredicate): string[];
+/**
+ * Get subdirectories from the given path, using the optional predicate to filter out items.
+ *
+ * @param {string} path
+ * @param {?TFilterPredicate} [predicate]
+ * @returns {string[]}
+ */
+function GetDirectories(path: string, predicate?: TFilterPredicate): string[] {
+    let result: string[] = [];
+    if (predicate) {
+        // filters through the callback
+        const rdsResult = fs.readdirSync(path, { withFileTypes: true });
+        const filterResult = rdsResult.filter(dirent => {
+            const path = (dirent as unknown as IPaths).parentPath;
+            const filename = IncludeTrailingPathDelimiter(path) + dirent.name;
+            const fsstatResult = fs.statSync(filename);
+            const attr = (fsstatResult.isDirectory() ? faDirectory : 0) | (fsstatResult.isFile() ? faNormal : 0);
+            const creationTime = fsstatResult.birthtime.getTime();
+            const sr: TSearchRec = {
+                Size: fsstatResult.size,
+                Attr: attr,
+                Name: dirent.name,
+                ExcludeAttr: 0,
+                LastAccessTime: (fsstatResult.atime > fsstatResult.mtime) ? fsstatResult.atime : fsstatResult.mtime,
+                TimeStamp: fsstatResult.mtime,
+                Time: creationTime,
+                CreationTime: creationTime
+            };
+            const result = predicate(path, sr);
+            return result;
+        });
+        const mapResult = filterResult.map(dirent => dirent.name);
+        result = mapResult;
+    } else {
+        result = fs.readdirSync(path, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
+    }
+    return result;
+}
+
+/**
+ * Removes the given directory, Dir
+ *
+ * @param {string} Dir
+ * @param {?boolean} [Recursive]
+ * @returns {boolean}
+ * @throws ENOENT
+ * @throws ENOTDIR
+ */
+function RemoveDir(Dir: string, Recursive?: boolean): boolean {
+    let result = true;
+    try {
+        const opt = { recursive: Recursive ? true : false }
+        fs.rmdirSync(Dir, opt);
+    } catch (e) {
+        result = false;
+    }
+    return result;
+}
+
+/**
+ * Extracts the drive and directory parts from AFileName.
+ * Regardless of whether AFileName is a path or filename,
+ * this routine returns the path up to the last path.sep
+ * eg, AFileName contains K:\\Development\\TypeScript\\delphirtl\\tests
+ * the result is K:\\Development\\TypeScript\\delphirtl
+ *
+ * @param {string} AFileNameOrPath
+ * @returns {string}
+ * @category SysUtils
+ */
+function ExtractFileDir(AFileNameOrPath: string): string {
+    const index = AFileNameOrPath.lastIndexOf(path.sep);
+    const result = AFileNameOrPath.substring(0, index);
+    return result;
+}
+
+/**
+ * Extracts the file extension, given the filename, AFileName
+ * For example, if given "Nothing.pas", returns "pas"
+ * If given "Nothing", returns ""
  *
  * @param {string} AFilename
  * @returns {string}
@@ -115,7 +269,9 @@ function ExtractFileExt(AFilename: string): string {
 /**
  * Extracts the name and extension parts of a file name.
  *
- * The resulting string is the rightmost characters of FileName, starting with the first character after the colon or backslash that separates the path information from the name and extension. The resulting string is equal to FileName, if FileName contains no drive and directory parts. 
+ * The resulting string is the rightmost characters of FileName, starting with the first character after
+ *  the colon or backslash that separates the path information from the name and extension. The resulting 
+ * string is equal to FileName, if FileName contains no drive and directory parts. 
  * @param AFileName 
  * @returns 
  * @category SysUtils
@@ -188,7 +344,7 @@ function DeleteEnvironmentVariable(Name: string) {
 }
 
 /**
- * Description placeholder
+ * Only environment variables starting with ENV_REACT_PREFIX are returned in React
  *
  * @type {"REACT_APP_"}
  * @category Constants
@@ -196,7 +352,7 @@ function DeleteEnvironmentVariable(Name: string) {
 const ENV_REACT_PREFIX = "REACT_APP_";
 
 /**
- * Description placeholder
+ * Only environment variables starting with ENV_NEXT_PREFIX are returned in Nextjs
  *
  * @type {"NEXT_PUBLIC_"}
  * @category Constants
@@ -215,6 +371,19 @@ const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
  */
 function GetEnvironmentVariable(Name: string): string {
     const result = process.env[Name] || "";
+    return result;
+}
+
+/**
+ * Checks if an environment variable exists
+ *
+ * @param {string} Name
+ * @returns {boolean}
+ * @category SysUtils
+ */
+function ExistsEnvironmentVariable(Name: string): boolean {
+    const EnvValue = process.env[Name];
+    const result = EnvValue !== undefined;
     return result;
 }
 
@@ -248,11 +417,11 @@ export type ArbitraryObject = { [key: string]: unknown; };
 function isArbitraryObject(potentialObj: unknown): potentialObj is ArbitraryObject {
     // an array/date is identified as an object in JavaScript
     // so this function checks that the potentialObject is not an array/date, and not a regex
-    const result = (potentialObj !== null) && 
-                   (!Array.isArray(potentialObj)) &&
-                   (!(potentialObj instanceof RegExp)) &&
-                   (!(potentialObj instanceof Date)) &&
-                   (typeof potentialObj === "object");
+    const result = (potentialObj !== null) &&
+        (!Array.isArray(potentialObj)) &&
+        (!(potentialObj instanceof RegExp)) &&
+        (!(potentialObj instanceof Date)) &&
+        (typeof potentialObj === "object");
     return result;
 }
 
@@ -271,11 +440,11 @@ function isArbitraryObject(potentialObj: unknown): potentialObj is ArbitraryObje
  */
 function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): obj is { [fieldName: string]: T } {
     const result =
-      isArbitraryObject(obj) && 
-      typeof obj[fieldName] === fieldType;
+        isArbitraryObject(obj) &&
+        typeof obj[fieldName] === fieldType;
     return result;
 }
-  
+
 /**
  * Checks if the given object has a message field of string type 
  *
@@ -284,21 +453,23 @@ function hasFieldOfType<T>(obj: unknown, fieldName: string, fieldType: string): 
  * @category SysUtils
  */
 function hasMessageField(obj: unknown): obj is { message: string } {
-    const result = 
-      hasFieldOfType<string>(obj, "message", "string");
+    const result =
+        hasFieldOfType<string>(obj, "message", "string");
     return result;
 }
-   
+
 export {
+    CreateDir, DirectoryExists,
+    GetDirectories,
+    RemoveDir,
     ExtractFileDir,
     ExtractFileExt,
     ExtractFileName,
     FileExists,
-    IncludeTrailingPathDelimiter, 
+    IncludeTrailingPathDelimiter,
     LowerCase, UpperCase, LowerCase as lowerCase, UpperCase as upperCase,
-    DeleteEnvironmentVariable,
-    GetEnvironmentVariable,
-    SetEnvironmentVariable,
+    DeleteEnvironmentVariable, ExistsEnvironmentVariable,
+    GetEnvironmentVariable, SetEnvironmentVariable,
     hasMessageField, hasFieldOfType, isArbitraryObject,
     IsLeapYear,
     ENV_NEXT_PREFIX, ENV_REACT_PREFIX

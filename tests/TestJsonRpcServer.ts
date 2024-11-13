@@ -1,6 +1,6 @@
 import { isNumbers } from "./AssertionGuards";
-import { 
-    BaseJsonRpcServer, JSONRPC, JSONRPCClient, JSONRPCErrorCode, JSONRPCErrorException, JSONRPCParameters 
+import {
+    BaseJsonRpcServer, JSONRPC, JSONRPCClient, JSONRPCErrorCode, JSONRPCErrorException, JSONRPCParameters
 } from "../src/BaseJsonRpcServer";
 
 class TestJsonRpcServer extends BaseJsonRpcServer {
