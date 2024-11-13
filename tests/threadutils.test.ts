@@ -22,8 +22,6 @@ describe('testing threadutils library', () => {
             }).then(result => {
                 console.log(`Result: ${result}`);
                 expect(result).toBe(10);
-            }).catch(err => {
-                console.error(err); // cannot use import statement outside a module
             });
         }
     });
