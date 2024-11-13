@@ -24,7 +24,6 @@
             "request": "launch",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "disableOptimisticBPs": true,
             "program": "${workspaceFolder}\\npx",
             "cwd": "${workspaceFolder}",
             "args": [
