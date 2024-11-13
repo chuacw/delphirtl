@@ -18,7 +18,10 @@ import {
     faDirectory,
     hasFieldOfType,
     isArbitraryObject,
+    GetCurrentDir,
+    SetCurrentDir,
 } from "../src/sysutils";
+import { TIMEOUT } from "dns";
 
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
@@ -93,6 +96,19 @@ describe('test SysUtils.test functions', () => {
 })
 
 describe('testing SysUtils library', () => {
+
+    test('GetCurrentDir', () => {
+        const currentDir = GetCurrentDir();
+        expect(__dirname).toContain(currentDir);
+    });
+
+    test('SetCurrentDir', () => {
+        const currentDir = GetCurrentDir();
+        const newDir = ExtractFileDir(currentDir);
+        SetCurrentDir(newDir);
+        const changedDir = GetCurrentDir();
+        expect(changedDir).toEqual(newDir);
+    });
 
     test('CreateDir', () => {
         const newDir = IncludeTrailingPathDelimiter(__dirname) + GenerateVarName(10);

@@ -8,7 +8,9 @@
 
 > **ExtractFileExt**(`AFilename`): `string`
 
-Description placeholder
+Extracts the file extension, given the filename, AFileName
+For example, if given "Nothing.pas", returns "pas"
+If given "Nothing", returns ""
 
 ## Parameters
 
@@ -20,4 +22,4 @@ Description placeholder
 
 ## Defined in
 
-[src/sysutils.ts:105](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L105)
+[src/sysutils.ts:284](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L284)

@@ -1,6 +1,7 @@
 import path from "path";
 import * as fs from "fs";
 import assert from "assert";
+import { chdir, cwd } from "process";
 
 /**
  * Returs true if the given year is a leap year
@@ -87,6 +88,7 @@ interface TTimeStamp {
  *
  * @param {string} Dir
  * @returns {boolean}
+ * @category SysUtils
  */
 function CreateDir(Dir: string): boolean {
     let result = true;
@@ -103,6 +105,7 @@ function CreateDir(Dir: string): boolean {
  *
  * @param {string} Dir
  * @returns {boolean}
+ * @category SysUtils
  */
 function DirectoryExists(Dir: string): boolean {
     const result = fs.existsSync(Dir);
@@ -167,6 +170,7 @@ export type TFilterPredicate = (path: string, sr: TSearchRec) => boolean;
  * @param {string} path
  * @param {TFilterPredicate} predicate
  * @returns {string[]}
+ * @category SysUtils
  */
 function GetDirectories(path: string, predicate: TFilterPredicate): string[];
 /**
@@ -175,6 +179,7 @@ function GetDirectories(path: string, predicate: TFilterPredicate): string[];
  * @param {string} path
  * @param {?TFilterPredicate} [predicate]
  * @returns {string[]}
+ * @category SysUtils
  */
 function GetDirectories(path: string, predicate?: TFilterPredicate): string[] {
     let result: string[] = [];
@@ -218,6 +223,7 @@ function GetDirectories(path: string, predicate?: TFilterPredicate): string[] {
  * @returns {boolean}
  * @throws ENOENT
  * @throws ENOTDIR
+ * @category SysUtils
  */
 function RemoveDir(Dir: string, Recursive?: boolean): boolean {
     let result = true;
@@ -228,6 +234,25 @@ function RemoveDir(Dir: string, Recursive?: boolean): boolean {
         result = false;
     }
     return result;
+}
+
+/**
+ * Gets the current working directory
+ * @returns The current working directory
+ * @category SysUtils
+ */
+function GetCurrentDir(): string {
+    const result = cwd();
+    return result;
+}
+
+/**
+ * Changes the current working directory to the specified directory
+ * @param newDir New working directory
+ * @category SysUtils
+ */
+function SetCurrentDir(newDir: string) {
+    chdir(newDir);
 }
 
 /**
@@ -365,8 +390,8 @@ const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
 /**
  * Retrieves the contents of the specified variable from the environment block
  * 
- * @param Name 
- * @returns 
+ * @param Name The name of the environment variable to retrieve
+ * @returns The value of the given environment variable
  * @category SysUtils
  */
 function GetEnvironmentVariable(Name: string): string {
@@ -460,7 +485,7 @@ function hasMessageField(obj: unknown): obj is { message: string } {
 
 export {
     CreateDir, DirectoryExists,
-    GetDirectories,
+    GetDirectories, GetCurrentDir, SetCurrentDir, 
     RemoveDir,
     ExtractFileDir,
     ExtractFileExt,

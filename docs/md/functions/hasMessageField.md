@@ -20,4 +20,4 @@ Checks if the given object has a message field of string type
 
 ## Defined in
 
-[src/sysutils.ts:286](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L286)
+[src/sysutils.ts:480](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L480)

@@ -10,7 +10,9 @@
 
 Extracts the name and extension parts of a file name.
 
-The resulting string is the rightmost characters of FileName, starting with the first character after the colon or backslash that separates the path information from the name and extension. The resulting string is equal to FileName, if FileName contains no drive and directory parts.
+The resulting string is the rightmost characters of FileName, starting with the first character after
+ the colon or backslash that separates the path information from the name and extension. The resulting 
+string is equal to FileName, if FileName contains no drive and directory parts.
 
 ## Parameters
 
@@ -22,4 +24,4 @@ The resulting string is the rightmost characters of FileName, starting with the 
 
 ## Defined in
 
-[src/sysutils.ts:123](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L123)
+[src/sysutils.ts:304](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L304)

@@ -8,8 +8,8 @@
 
 > `const` **ENV\_REACT\_PREFIX**: `"REACT_APP_"` = `"REACT_APP_"`
 
-Description placeholder
+Only environment variables starting with ENV_REACT_PREFIX are returned in React
 
 ## Defined in
 
-[src/sysutils.ts:196](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L196)
+[src/sysutils.ts:377](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L377)

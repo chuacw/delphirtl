@@ -6,13 +6,17 @@
 
 # Function: ExtractFileDir()
 
-> **ExtractFileDir**(`AFilename`): `string`
+> **ExtractFileDir**(`AFileNameOrPath`): `string`
 
-Description placeholder
+Extracts the drive and directory parts from AFileName.
+Regardless of whether AFileName is a path or filename,
+this routine returns the path up to the last path.sep
+eg, AFileName contains K:\\Development\\TypeScript\\delphirtl\\tests
+the result is K:\\Development\\TypeScript\\delphirtl
 
 ## Parameters
 
-• **AFilename**: `string`
+• **AFileNameOrPath**: `string`
 
 ## Returns
 
@@ -20,4 +24,4 @@ Description placeholder
 
 ## Defined in
 
-[src/sysutils.ts:92](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L92)
+[src/sysutils.ts:269](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L269)

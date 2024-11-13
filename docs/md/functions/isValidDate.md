@@ -20,4 +20,4 @@ Checks if a date is valid
 
 ## Defined in
 
-[src/dateutils.ts:295](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/dateutils.ts#L295)
+[src/dateutils.ts:295](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/dateutils.ts#L295)

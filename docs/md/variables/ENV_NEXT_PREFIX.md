@@ -8,8 +8,8 @@
 
 > `const` **ENV\_NEXT\_PREFIX**: `"NEXT_PUBLIC_"` = `"NEXT_PUBLIC_"`
 
-Description placeholder
+Only environment variables starting with ENV_NEXT_PREFIX are returned in Nextjs
 
 ## Defined in
 
-[src/sysutils.ts:204](https://github.com/chuacw/delphirtl/blob/90bd0c730c5c81cc0765c7e7f88c8237ad1647eb/src/sysutils.ts#L204)
+[src/sysutils.ts:385](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L385)
