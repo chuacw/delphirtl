@@ -68,7 +68,8 @@ describe('test SysUtils.test functions', () => {
             Name: "",
             ExcludeAttr: 0,
             LastAccessTime: new Date(),
-            TimeStamp: new Date()
+            TimeStamp: new Date(),
+            CreationTime: 0
         }
         const result = isDirectory(sr);
         expect(result).toBeTruthy();
