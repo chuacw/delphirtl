@@ -58,7 +58,7 @@ declare global {
          * @returns {Date}
          */
         addYears(years: number): Date;
-        
+
         /**
          * Checks if this date instance is a valid date
          *
@@ -67,21 +67,23 @@ declare global {
         isValidDate(): boolean;
 
         /**
-         * Formats this date instance into the given format and returns it  
-              'YYYY': Full year (e.g., 2024)  
-              'YY':   Last two digits of year (e.g., 24)  
-              'MM':   Month with leading zero (e.g., 01 - 12)  
-              'M':    Month without leading zero (e.g., 1 - 12)  
-              'DD':   Day with leading zero (e.g., 01 - 31)  
-              'D':    Day without leading zero (e.g., 1 - 31)  
-              'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)  
-              'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)  
-              'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)  
-              'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)  
-              'nn':   Minute with leading zero (e.g., 00 - 59)  
-              'n':    Minute without leading zero (e.g., 0 - 59)  
-              'ss':   Second with leading zero (e.g., 00 - 59)  
-              's':    Second without leading zero (e.g., 0 - 59)  
+         * Formats this date instance into the given format and returns it\
+              'YYYY': Full year (e.g., 2024)\
+              'YY':   Last two digits of year (e.g., 24)\
+              'MMMM': January to December\
+              'MMM':  Jan to Dec\
+              'MM':   Month with leading zero (e.g., 01 - 12)\
+              'M':    Month without leading zero (e.g., 1 - 12)\
+              'DD':   Day with leading zero (e.g., 01 - 31)\
+              'D':    Day without leading zero (e.g., 1 - 31)\
+              'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)\
+              'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)\
+              'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)\
+              'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)\
+              'nn':   Minute with leading zero (e.g., 00 - 59)\
+              'n':    Minute without leading zero (e.g., 0 - 59)\
+              'ss':   Second with leading zero (e.g., 00 - 59)\
+              's':    Second without leading zero (e.g., 0 - 59)\
          *
          * @param {string} format
          * @returns {string}
@@ -332,21 +334,23 @@ function isValidDate(date: Date): boolean {
 }
 
 /**
- * Returns a string for the date in the given format  
-      'YYYY': Full year (e.g., 2024)  
-      'YY':   Last two digits of year (e.g., 24)  
-      'MM':   Month with leading zero (e.g., 01 - 12)  
-      'M':    Month without leading zero (e.g., 1 - 12)  
-      'DD':   Day with leading zero (e.g., 01 - 31)  
-      'D':    Day without leading zero (e.g., 1 - 31)  
-      'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)  
-      'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)  
-      'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)  
-      'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)  
-      'nn':   Minute with leading zero (e.g., 00 - 59)  
-      'n':    Minute without leading zero (e.g., 0 - 59)  
-      'ss':   Second with leading zero (e.g., 00 - 59)  
-      's':    Second without leading zero (e.g., 0 - 59)  
+ * Returns a string for the date in the given format\
+      'YYYY': Full year (e.g., 2024)\
+      'YY':   Last two digits of year (e.g., 24)\
+      'MMMM': January to December\
+      'MMM':  Jan to Dec\
+      'MM':   Month with leading zero (e.g., 01 - 12)\
+      'M':    Month without leading zero (e.g., 1 - 12)\
+      'DD':   Day with leading zero (e.g., 01 - 31)\
+      'D':    Day without leading zero (e.g., 1 - 31)\
+      'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)\
+      'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)\
+      'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)\
+      'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)\
+      'nn':   Minute with leading zero (e.g., 00 - 59)\
+      'n':    Minute without leading zero (e.g., 0 - 59)\
+      'ss':   Second with leading zero (e.g., 00 - 59)\
+      's':    Second without leading zero (e.g., 0 - 59)\
  *
  *
  * @param {Date} d date instance
@@ -362,7 +366,7 @@ function toFormat(format: string, d: Date): string {
 
     const monthsAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    
+
     const replacements: { [key: string]: string } = {
         'YYYY': d.getFullYear().toString(),                  // Full year (e.g., 2024)
         'YY': d.getFullYear().toString().slice(-2),          // Last two digits of year (e.g., 24)
