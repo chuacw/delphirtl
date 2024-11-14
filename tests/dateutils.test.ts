@@ -110,28 +110,40 @@ describe('testing DateUtils library', () => {
         expect(result).toBe('2020-12-01 11:59:59 PM');
     });
 
-    test('toFormat for Date 3', () => {
-        const d = new Date(2020, 11, 1, 23, 59, 59);
-        const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
-        expect(result).toBe('2020-12-01 11:59:59 pm');
-    });
-
     test('toFormat for Date 4', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
-        const result = d.toFormat('YYYY-MM-DD hh:nn:ss am');
+        const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
     test('toFormat for Date 5', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
-        const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
+        const result = d.toFormat('YYYY-MM-DD hh:nn:ss am');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
     test('toFormat for Date 6', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
+        const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
+        expect(result).toBe('2020-12-01 11:59:59 pm');
+    });
+
+    test('toFormat for Date 7', () => {
+        const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss am');
         expect(result).toBe('2020-12-01 11:59:59 pm');
+    });
+
+    test('toFormat for Date 8', () => {
+        const d = new Date(2020, 11, 1, 23, 59, 59);
+        const result = d.toFormat('YYYY MMM DD hh:nn:ss am');
+        expect(result).toBe('2020 Dec 01 11:59:59 pm');
+    });
+
+    test('toFormat for Date 9', () => {
+        const d = new Date(2020, 11, 1, 23, 59, 59);
+        const result = d.toFormat('YYYY MMMM DD hh:nn:ss am');
+        expect(result).toBe('2020 December 01 11:59:59 pm');
     });
 
 });

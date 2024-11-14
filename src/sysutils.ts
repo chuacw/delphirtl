@@ -2,6 +2,7 @@ import path from "path";
 import * as fs from "fs";
 import assert from "assert";
 import { chdir, cwd } from "process";
+import { FormatDateTime } from "./dateutils";
 
 /**
  * Returs true if the given year is a leap year
@@ -491,6 +492,7 @@ export {
     ExtractFileExt,
     ExtractFileName,
     FileExists,
+    FormatDateTime,
     IncludeTrailingPathDelimiter,
     LowerCase, UpperCase, LowerCase as lowerCase, UpperCase as upperCase,
     DeleteEnvironmentVariable, ExistsEnvironmentVariable,

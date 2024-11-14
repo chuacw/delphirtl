@@ -181,7 +181,7 @@ Date.prototype.isValidDate = function (): boolean {
 }
 
 Date.prototype.toFormat = function (format: string) {
-    const result = toFormat(this, format);
+    const result = toFormat(format, this);
     return result;
 }
 
@@ -353,16 +353,21 @@ function isValidDate(date: Date): boolean {
  * @param {string} format string format
  * @returns {string}
  */
-function toFormat(d: Date, format: string): string {
+function toFormat(format: string, d: Date): string {
     assert(d.isValidDate(), 'date instance is invalid!');
     const padZero = (value: number, length: number) => String(value).padStart(length, '0');
 
     const hour = d.getHours();
     const isPM = hour >= 12;
+
+    const monthsAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
     const replacements: { [key: string]: string } = {
         'YYYY': d.getFullYear().toString(),                  // Full year (e.g., 2024)
         'YY': d.getFullYear().toString().slice(-2),          // Last two digits of year (e.g., 24)
+        'MMMM': monthsFull[d.getMonth()],                    // Full month name (e.g., January - December)
+        'MMM': monthsAbbr[d.getMonth()],                     // Abbreviated month name (e.g., Jan - Dec)
         'MM': padZero(d.getMonth() + 1, 2),                  // Month with leading zero (e.g., 01 - 12)
         'M': (d.getMonth() + 1).toString(),                  // Month without leading zero (e.g., 1 - 12)
         'DD': padZero(d.getDate(), 2),                       // Day with leading zero (e.g., 01 - 31)
@@ -381,7 +386,7 @@ function toFormat(d: Date, format: string): string {
         'pm': isPM ? 'pm' : 'am'                             // am/pm lowercase
     };
 
-    return format.replace(/YYYY|YY|MM|M|DD|D|HH|H|hh|h|nn|n|ss|s|AM|PM|am|pm/g, match => replacements[match]);
+    return format.replace(/YYYY|YY|MMMM|MMM|MM|M|DD|D|HH|H|hh|h|nn|n|ss|s|AM|PM|am|pm/g, match => replacements[match]);
 }
 
 
@@ -399,5 +404,6 @@ export {
     JSDateToBlockchainTimestamp,
     DiffDuration,
     isValidDate,
-    toFormat
+    toFormat,
+    toFormat as FormatDateTime
 }
