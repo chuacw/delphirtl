@@ -1,3 +1,4 @@
+import { assert } from "console";
 import { ethers } from "ethers";
 
 declare global {
@@ -57,7 +58,35 @@ declare global {
          * @returns {Date}
          */
         addYears(years: number): Date;
+        
+        /**
+         * Checks if this date instance is a valid date
+         *
+         * @returns {boolean}
+         */
         isValidDate(): boolean;
+
+        /**
+         * Formats this date instance into the given format and returns it  
+              'YYYY': Full year (e.g., 2024)  
+              'YY':   Last two digits of year (e.g., 24)  
+              'MM':   Month with leading zero (e.g., 01 - 12)  
+              'M':    Month without leading zero (e.g., 1 - 12)  
+              'DD':   Day with leading zero (e.g., 01 - 31)  
+              'D':    Day without leading zero (e.g., 1 - 31)  
+              'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)  
+              'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)  
+              'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)  
+              'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)  
+              'nn':   Minute with leading zero (e.g., 00 - 59)  
+              'n':    Minute without leading zero (e.g., 0 - 59)  
+              'ss':   Second with leading zero (e.g., 00 - 59)  
+              's':    Second without leading zero (e.g., 0 - 59)  
+         *
+         * @param {string} format
+         * @returns {string}
+         */
+        toFormat(format: string): string;
     }
 }
 
@@ -148,6 +177,11 @@ Date.prototype.addYears = function (years: number) {
 
 Date.prototype.isValidDate = function (): boolean {
     const result = this instanceof Date && !isNaN(this.valueOf());
+    return result;
+}
+
+Date.prototype.toFormat = function (format: string) {
+    const result = toFormat(this, format);
     return result;
 }
 
@@ -297,6 +331,60 @@ function isValidDate(date: Date): boolean {
     return result;
 }
 
+/**
+ * Returns a string for the date in the given format  
+      'YYYY': Full year (e.g., 2024)  
+      'YY':   Last two digits of year (e.g., 24)  
+      'MM':   Month with leading zero (e.g., 01 - 12)  
+      'M':    Month without leading zero (e.g., 1 - 12)  
+      'DD':   Day with leading zero (e.g., 01 - 31)  
+      'D':    Day without leading zero (e.g., 1 - 31)  
+      'HH':   Hour in 24-hour format with leading zero (e.g., 00 - 23)  
+      'H':    Hour in 24-hour format without leading zero (e.g., 0 - 23)  
+      'hh':   Hour in 12-hour format with leading zero (e.g., 01 - 12)  
+      'h':    Hour in 12-hour format without leading zero (e.g., 1 - 12)  
+      'nn':   Minute with leading zero (e.g., 00 - 59)  
+      'n':    Minute without leading zero (e.g., 0 - 59)  
+      'ss':   Second with leading zero (e.g., 00 - 59)  
+      's':    Second without leading zero (e.g., 0 - 59)  
+ *
+ *
+ * @param {Date} d date instance
+ * @param {string} format string format
+ * @returns {string}
+ */
+function toFormat(d: Date, format: string): string {
+    assert(d.isValidDate(), 'date instance is invalid!');
+    const padZero = (value: number, length: number) => String(value).padStart(length, '0');
+
+    const hour = d.getHours();
+    const isPM = hour >= 12;
+    
+    const replacements: { [key: string]: string } = {
+        'YYYY': d.getFullYear().toString(),                  // Full year (e.g., 2024)
+        'YY': d.getFullYear().toString().slice(-2),          // Last two digits of year (e.g., 24)
+        'MM': padZero(d.getMonth() + 1, 2),                  // Month with leading zero (e.g., 01 - 12)
+        'M': (d.getMonth() + 1).toString(),                  // Month without leading zero (e.g., 1 - 12)
+        'DD': padZero(d.getDate(), 2),                       // Day with leading zero (e.g., 01 - 31)
+        'D': d.getDate().toString(),                         // Day without leading zero (e.g., 1 - 31)
+        'HH': padZero(hour, 2),                              // 24-hour format with leading zero (e.g., 00 - 23)
+        'H': hour.toString(),                                // 24-hour format without leading zero (e.g., 0 - 23)
+        'hh': padZero(hour % 12 || 12, 2),                   // 12-hour format with leading zero (e.g., 01 - 12)
+        'h': (hour % 12 || 12).toString(),                   // 12-hour format without leading zero (e.g., 1 - 12)
+        'nn': padZero(d.getMinutes(), 2),                    // Minute with leading zero (e.g., 00 - 59)
+        'n': d.getMinutes().toString(),                      // Minute without leading zero (e.g., 0 - 59)
+        'ss': padZero(d.getSeconds(), 2),                    // Second with leading zero (e.g., 00 - 59)
+        's': d.getSeconds().toString(),                      // Second without leading zero (e.g., 0 - 59)
+        'AM': isPM ? 'PM' : 'AM',                            // AM/PM uppercase
+        'PM': isPM ? 'PM' : 'AM',                            // AM/PM uppercase
+        'am': isPM ? 'pm' : 'am',                            // am/pm lowercase
+        'pm': isPM ? 'pm' : 'am'                             // am/pm lowercase
+    };
+
+    return format.replace(/YYYY|YY|MM|M|DD|D|HH|H|hh|h|nn|n|ss|s|AM|PM|am|pm/g, match => replacements[match]);
+}
+
+
 export {
     fromBlockchainTimestamp,
     getEstimatedBlockNumberForDuration,
@@ -310,5 +398,6 @@ export {
     JSTimeToUTC,
     JSDateToBlockchainTimestamp,
     DiffDuration,
-    isValidDate
+    isValidDate,
+    toFormat
 }

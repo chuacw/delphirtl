@@ -39,6 +39,7 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.17 | 12 Oct 2024 | Added various add* functionality to Date |
 | 1.1.18 | 13 Oct 2024 | Added isArbitraryObject |
 | 1.1.19-20 | 19 Oct 2024 | Added haveNoDuplicates to ArrayUtils |
+| 1.1.25 | 14 Nov 2024 | Added toFormat to ArrayUtils and Date |
 
 
 ## Documentation
