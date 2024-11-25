@@ -97,6 +97,18 @@ describe('test SysUtils.test functions', () => {
 
 describe('testing SysUtils library', () => {
 
+    test('DirectoryExists', () => {
+        const path = "C:\\Windows";
+        const isDirectory = DirectoryExists(path);
+        expect(isDirectory).toBeTruthy();
+    });
+
+    test('!DirectoryExists', () => {
+        const path = "C:\\XXXXXXXXXXXXX";
+        const isDirectory = DirectoryExists(path);
+        expect(isDirectory).toBeFalsy();
+    });
+    
     test('GetCurrentDir', () => {
         const currentDir = GetCurrentDir();
         expect(__dirname).toContain(currentDir);

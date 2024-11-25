@@ -109,7 +109,14 @@ function CreateDir(Dir: string): boolean {
  * @category SysUtils
  */
 function DirectoryExists(Dir: string): boolean {
-    const result = fs.existsSync(Dir);
+    let result: boolean;
+    try {
+        const exists = fs.existsSync(Dir);
+        const statSync = fs.statSync(Dir);
+        result = statSync.isDirectory() && exists;
+    } catch (e) {
+        result = false;
+    }
     return result;
 }
 
