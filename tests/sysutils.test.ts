@@ -181,6 +181,11 @@ describe('testing SysUtils library', () => {
         expect(FileExists(__filename)).toEqual(true);
     });
 
+    test("FileExist on directory shouldn't succeed", () => {
+        const result = FileExists(__dirname);
+        expect(result).toBeFalsy();
+    });
+
     test('ExtractFileDir filename without dir', () => {
         expect(ExtractFileDir("Nothing.pas")).toEqual("");
     });

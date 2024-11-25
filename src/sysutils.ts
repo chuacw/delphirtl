@@ -325,7 +325,8 @@ function ExtractFileName(AFileName: string): string {
 function FileExists(AFileName: string): boolean {
     let result = false;
     try {
-        result = fs.existsSync(AFileName);
+        const statSync = fs.statSync(AFileName);
+        result = fs.existsSync(AFileName) && statSync.isFile();
     } catch (e) {
         // silent
     }
