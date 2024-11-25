@@ -195,7 +195,7 @@ function GetDirectories(path: string, predicate?: TFilterPredicate): string[] {
         // filters through the callback
         const rdsResult = fs.readdirSync(path, { withFileTypes: true });
         const filterResult = rdsResult.filter(dirent => {
-            const path = (dirent as unknown as IPaths).parentPath;
+            const path = dirent.path;
             const filename = IncludeTrailingPathDelimiter(path) + dirent.name;
             const fsstatResult = fs.statSync(filename);
             const attr = (fsstatResult.isDirectory() ? faDirectory : 0) | (fsstatResult.isFile() ? faNormal : 0);
