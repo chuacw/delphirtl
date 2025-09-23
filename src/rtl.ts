@@ -118,6 +118,14 @@ class OutputFile {
     open(mode: "w" | "a" = "w") {
         if (!this.filename) throw new Error("Filename not assigned");
         this.mode = mode;
+
+        // Treat Delphi pseudo-filenames for console specially:
+        if (this.filename === 'CONOUT$') {
+            // use process.stdout as the stream
+            this.stream = process.stdout;
+            return;
+        }
+
         if (mode === "w") {
             fs.writeFileSync(this.filename, ""); // truncate/create
         } else {
@@ -128,6 +136,11 @@ class OutputFile {
 
     write(text: string) {
         if (!this.mode) throw new Error("File not opened");
+        if (this.stream) {
+            // process.stdout (a Writable) accepts strings
+            this.stream.write(text);
+            return;
+        }
         if (this.mode === "w") {
             fs.appendFileSync(this.filename!, text);
         } else if (this.mode === "a") {
@@ -136,7 +149,7 @@ class OutputFile {
     }
 
     writelnText(text: string) {
-        this.write(text + '\n');
+        this.write(text + sLineBreak);
     }
 
     close() {
@@ -256,7 +269,7 @@ function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
  * Specifies a write-only text file associated with the process's standard output file. 
 */
 const Output: OutputFile = new OutputFile();
-AssignFile(Output, '$CONOUT');
+AssignFile(Output, 'CONOUT$');
 Rewrite(Output);
 
 export {

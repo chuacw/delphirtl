@@ -1,4 +1,4 @@
-import { ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn } from "../src/rtl";
+import { ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn,Output } from "../src/rtl";
 
 function clearArgv() {
     while (process.argv.length > 0) process.argv.pop();
@@ -63,7 +63,7 @@ describe('sLineBreak (cross-platform)', () => {
     expect(sLineBreak).toBe('\r\n');
   });
 
-  test('returns \\n when platform is non-windows', () => {
+  test('returns \\n when platform is non-Windows', () => {
     // mock process.platform to return 'linux'
     Object.defineProperty(process, 'platform', {
       value: 'linux',
@@ -108,16 +108,30 @@ describe('testing Write/WriteLn', () => {
         expect(out).toEqual(sLineBreak);
     });
 
-    test('Write single string', () => {
+    test('Write single string no file', () => {
         let out = captureStdout(() => {
             Write('hey');
         });
         expect(out).toEqual('hey');
     });
 
-    test('WriteLn single string', () => {
+    test('WriteLn single string no file', () => {
         let out = captureStdout(() => {
             WriteLn('hello there');
+        });
+        expect(out).toEqual('hello there'+sLineBreak);
+    });
+
+    test('Write single string Output file', () => {
+        let out = captureStdout(() => {
+            Write(Output, 'hey');
+        });
+        expect(out).toEqual('hey');
+    });
+
+    test('WriteLn single string Output file', () => {
+        let out = captureStdout(() => {
+            WriteLn(Output, 'hello there');
         });
         expect(out).toEqual('hello there'+sLineBreak);
     });
