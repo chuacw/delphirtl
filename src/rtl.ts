@@ -150,21 +150,42 @@ class OutputFile {
 
 // Delphi-style functions
 
+/**
+ * Associates the name of an external file with a file class
+ * 
+ * @category RTL
+ */
 function AssignFile(ofile: OutputFile, filename: string) {
     if (!(ofile instanceof OutputFile)) throw new TypeError('First arg must be OutputFile');
     ofile.filename = filename;
 }
 
+/**
+ * Creates a new file and opens it. 
+ * 
+ * @category RTL
+ */
 function Rewrite(ofile: OutputFile | any) {
     if (!(ofile instanceof OutputFile)) throw new TypeError('RewriteFile expects an OutputFile');
     ofile.open('w');
 }
 
+/**
+ * Prepares an existing file for adding text to the end. 
+ * 
+ * @category RTL
+ */
 function Append(ofile: OutputFile) {
     if (!(ofile instanceof OutputFile)) throw new TypeError('Append expects an OutputFile');
     ofile.open('a');
 }
 
+
+/**
+ * Terminates the association between a file variable and an external disk file. 
+ * 
+ * @category RTL
+ */
 function CloseFile(ofile: OutputFile | any) {
     if (!(ofile instanceof OutputFile)) throw new TypeError('CloseFile expects an OutputFile');
     ofile.close();
@@ -231,7 +252,12 @@ function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
     }
 }
 
+/*
+ * Specifies a write-only text file associated with the process's standard output file. 
+*/
 let Output: OutputFile = new OutputFile();
+AssignFile(Output, '$CONOUT');
+Rewrite(Output);
 
 export {
     hasInstanceMethod, hasPrototypeMethodFromConstructor,
