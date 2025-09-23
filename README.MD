@@ -42,6 +42,7 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.25-26 | 14 Nov 2024 | Added toFormat to ArrayUtils and Date |
 | 1.1.27-29 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path |
 | 1.1.30-33 | 23 Sep 2025 | Added isLastDayOfMonth to Date |
+| 1.1.34 | 23 Sep 2025 | Added Assign, AssignFile, Close/CloseFile, Rewrite, Write/WriteLn |
 
 
 ## Documentation

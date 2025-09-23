@@ -1,6 +1,8 @@
 import assert = require("assert");
 import './dateutils'; // Import all the prototypes into delphirtl
 
+const sLineBreak = process.platform === 'win32' ? '\r\n' : '\n';
+
 /**
  * Declares a type that extracts common properties or methods of two classes.
  * Usage: "type CommonType = CommonMethodsOrProperties<ClassA, ClassB>;"
@@ -100,11 +102,118 @@ async function sleep(ms: number) {
  */
 function UNUSED(...x: any) { }
 
+const fs = require('fs');
+
+class OutputFile {
+    filename: string | null;
+    stream: any;
+    mode: string | null;
+
+    constructor() {
+        this.filename = null;
+        this.stream = null;
+        this.mode = null;
+    }
+
+    open(mode: "w" | "a" = "w") {
+        if (!this.filename) throw new Error("Filename not assigned");
+        this.mode = mode;
+        if (mode === "w") {
+            fs.writeFileSync(this.filename, ""); // truncate/create
+        } else {
+            // mode 'a': create if not exists
+            if (!fs.existsSync(this.filename)) fs.writeFileSync(this.filename, "");
+        }
+    }
+
+    write(text: string) {
+        if (!this.mode) throw new Error("File not opened");
+        if (this.mode === "w") {
+            fs.appendFileSync(this.filename!, text);
+        } else if (this.mode === "a") {
+            fs.appendFileSync(this.filename!, text);
+        }
+    }
+
+    writelnText(text: string) {
+        this.write(text + '\n');
+    }
+
+    close() {
+        if (this.stream) {
+            this.stream.end();
+            this.stream = null;
+            this.mode = null;
+        }
+    }
+}
+
+// Delphi-style functions
+
+function AssignFile(ofile: OutputFile, filename: string) {
+    if (!(ofile instanceof OutputFile)) throw new TypeError('First arg must be OutputFile');
+    ofile.filename = filename;
+}
+
+function Rewrite(ofile: OutputFile | any) {
+    if (!(ofile instanceof OutputFile)) throw new TypeError('RewriteFile expects an OutputFile');
+    ofile.open('w');
+}
+
+function Append(ofile: OutputFile) {
+    if (!(ofile instanceof OutputFile)) throw new TypeError('Append expects an OutputFile');
+    ofile.open('a');
+}
+
+function CloseFile(ofile: OutputFile | any) {
+    if (!(ofile instanceof OutputFile)) throw new TypeError('CloseFile expects an OutputFile');
+    ofile.close();
+}
+
+function concatArgs(args: IArguments, startIndex = 0) {
+    return Array.prototype.slice.call(args, startIndex).map(x => {
+        if (x === null || x === undefined) return '';
+        return typeof x === 'object' ? JSON.stringify(x) : String(x);
+    }).join('');
+}
+
+function Write(outFile?: OutputFile | any, arg?: any/* args */) {
+    const args = arguments;
+    if (args.length === 0) return;
+    const first = args[0];
+    if (first instanceof OutputFile) {
+        const text = concatArgs(args, 1);
+        if (text.length) first.write(text);
+    } else {
+        const text = concatArgs(args, 0);
+        process.stdout.write(text);
+    }
+}
+
+function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
+    const args = arguments;
+    if (args.length > 0 && args[0] instanceof OutputFile) {
+        // Pass OutputFile + all args + newline as one string to Write
+        const file = args[0] as OutputFile;
+        const text = concatArgs(args, 1) + sLineBreak;
+        Write(file, text);
+    } else {
+        const text = concatArgs(args, 0) + sLineBreak;
+        Write(text);
+    }
+}
+
+let Output: OutputFile = new OutputFile();
+
 export {
     hasInstanceMethod, hasPrototypeMethodFromConstructor,
     ParamCount, ParamCount as getParamCount,
     ParamStr, ParamStr as getParamStr,
-    sleep, sleep as Sleep,
+    sleep, sleep as Sleep, sLineBreak,
     CommonMethodsOrProperties,
-    UNUSED, getLauncher
+    UNUSED, getLauncher,
+    AssignFile, AssignFile as Assign, Append,
+    CloseFile, CloseFile as Close, Output, Rewrite,
+    Write, WriteLn
 }
+

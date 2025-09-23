@@ -24,7 +24,7 @@
             "request": "launch",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "program": "${workspaceFolder}\\npx",
+            "program": "npx",
             "cwd": "${workspaceFolder}",
             "args": [
                 "jest",
