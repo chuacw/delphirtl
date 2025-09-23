@@ -1,4 +1,5 @@
 import assert = require("assert");
+import './dateutils'; // Import all the prototypes into delphirtl
 
 /**
  * Declares a type that extracts common properties or methods of two classes.
@@ -23,6 +24,22 @@ type CommonMethodsOrProperties<A extends {}, B extends {}> = {
 function getProcessArgs(): string[] {
     const result = process.argv.slice(1);
     return result;
+}
+
+/**
+ * Returns true if the named method exists as a function on the constructor's prototype
+ * or on the given instance.
+ *
+ * This helper is useful for checking prototype-augmented methods added at runtime.
+ */
+function hasPrototypeMethodFromConstructor(constructorFn: Function, name: string): boolean {
+    if (!constructorFn || typeof constructorFn !== 'function') return false;
+    return typeof (constructorFn as any).prototype?.[name] === 'function';
+}
+
+function hasInstanceMethod(instance: unknown, name: string): boolean {
+    if (!instance || typeof instance !== 'object') return false;
+    return typeof (instance as any)[name] === 'function';
 }
 
 /**
@@ -84,6 +101,7 @@ async function sleep(ms: number) {
 function UNUSED(...x: any) { }
 
 export {
+    hasInstanceMethod, hasPrototypeMethodFromConstructor,
     ParamCount, ParamCount as getParamCount,
     ParamStr, ParamStr as getParamStr,
     sleep, sleep as Sleep,

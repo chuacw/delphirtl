@@ -1,3 +1,4 @@
+import './rtl'; // Ensure rtl.ts is executed to patch prototypes
 export * from './arrayutils';
 export * from './BaseJsonRpcServer';
 export * from './collections';

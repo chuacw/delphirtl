@@ -27,7 +27,8 @@
   "typesVersions": {
     "*": {
       ".": [
-        "dist/rtl"
+        "dist/rtl",
+        "dist/dateutils"
       ],
       "ArrayUtils": [
         "dist/arrayutils"
