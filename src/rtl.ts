@@ -255,7 +255,7 @@ function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
 /*
  * Specifies a write-only text file associated with the process's standard output file. 
 */
-let Output: OutputFile = new OutputFile();
+const Output: OutputFile = new OutputFile();
 AssignFile(Output, '$CONOUT');
 Rewrite(Output);
 
