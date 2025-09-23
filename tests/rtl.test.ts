@@ -1,4 +1,4 @@
-import { ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn,Output } from "../src/rtl";
+import { ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn, Output } from "../src/rtl";
 
 function clearArgv() {
     while (process.argv.length > 0) process.argv.pop();
@@ -44,34 +44,34 @@ describe('testing rtl', () => {
 
 // tests/sLineBreak.test.ts
 describe('sLineBreak (cross-platform)', () => {
-  const RTL = '../src/rtl';
+    const RTL = '../src/rtl';
 
-  afterEach(() => {
-    jest.resetModules();        // clear module cache so requiring reloads module code
-    jest.restoreAllMocks();     // restore process.platform getter
-  });
-
-  test('returns \\r\\n when platform is win32', () => {
-    // mock process.platform to return 'win32'
-    Object.defineProperty(process, 'platform', {
-      value: 'win32',
-      configurable: true,
+    afterEach(() => {
+        jest.resetModules();        // clear module cache so requiring reloads module code
+        jest.restoreAllMocks();     // restore process.platform getter
     });
 
-    // require after mocking so module computes sLineBreak with mocked platform
-    const { sLineBreak } = require(RTL);
-    expect(sLineBreak).toBe('\r\n');
-  });
+    test('returns \\r\\n when platform is win32', () => {
+        // mock process.platform to return 'win32'
+        Object.defineProperty(process, 'platform', {
+            value: 'win32',
+            configurable: true,
+        });
 
-  test('returns \\n when platform is non-Windows', () => {
-    // mock process.platform to return 'linux'
-    Object.defineProperty(process, 'platform', {
-      value: 'linux',
-      configurable: true,
+        // require after mocking so module computes sLineBreak with mocked platform
+        const { sLineBreak } = require(RTL);
+        expect(sLineBreak).toBe('\r\n');
     });
-    const { sLineBreak } = require(RTL);
-    expect(sLineBreak).toBe('\n');
-  });
+
+    test('returns \\n when platform is non-Windows', () => {
+        // mock process.platform to return 'linux'
+        Object.defineProperty(process, 'platform', {
+            value: 'linux',
+            configurable: true,
+        });
+        const { sLineBreak } = require(RTL);
+        expect(sLineBreak).toBe('\n');
+    });
 });
 
 describe('testing Write/WriteLn', () => {
@@ -119,7 +119,7 @@ describe('testing Write/WriteLn', () => {
         let out = captureStdout(() => {
             WriteLn('hello there');
         });
-        expect(out).toEqual('hello there'+sLineBreak);
+        expect(out).toEqual('hello there' + sLineBreak);
     });
 
     test('Write single string Output file', () => {
@@ -133,7 +133,36 @@ describe('testing Write/WriteLn', () => {
         let out = captureStdout(() => {
             WriteLn(Output, 'hello there');
         });
-        expect(out).toEqual('hello there'+sLineBreak);
+        expect(out).toEqual('hello there' + sLineBreak);
     });
 
 });
+
+describe('Halt', () => {
+    const System = require('../src/rtl'); // require so it uses runtime exports
+
+    beforeEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    test('calls Halt with default code 0', () => {
+        const exitMock = jest.spyOn(process, 'exit').mockImplementation((code?: string | number | null | undefined) => { 
+            throw new Error("Halt called");
+        });
+        expect(() => { System.Halt() }).toThrow("Halt called");
+        exitMock.mockRestore();
+    });
+
+
+    test('calls Halt with code 1', () => {
+        let exitCode = 0;
+        const exitMock = jest.spyOn(process, 'exit').mockImplementation((code?: string | number | null | undefined) => { 
+            exitCode = code as number;
+            throw new Error("Halt called");
+        });
+        expect(() => { System.Halt(1) }).toThrow("Halt called");
+        expect(exitCode).toBe(1);
+        exitMock.mockRestore();
+    });
+
+}); 

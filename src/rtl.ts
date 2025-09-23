@@ -281,12 +281,12 @@ function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
 }
 
 /*
- * Halts the program with the given codeand returns control to the operating system.
+ * Halts the program with the given code and returns control to the operating system.
  *
  * @returns {void}
  * @category RTL
  */
-function Halt(code: number = 0): never {
+function Halt(code?: number): never {
     process.exit(code);
 }
 
