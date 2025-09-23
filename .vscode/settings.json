@@ -1,3 +1,5 @@
 {
-    "jest.jestCommandLine": "npx jest"
+    "jest.jestCommandLine": "npx jest",
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "deno.enable": true
 }

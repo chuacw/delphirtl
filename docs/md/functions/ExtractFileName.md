@@ -24,4 +24,4 @@ string is equal to FileName, if FileName contains no drive and directory parts.
 
 ## Defined in
 
-[src/sysutils.ts:304](https://github.com/chuacw/delphirtl/blob/b2d86277a5251f0037cf01044224c3e29dc4c6be/src/sysutils.ts#L304)
+[src/sysutils.ts:318](https://github.com/chuacw/delphirtl/blob/7ea4891110a48e6aa35744474c09ae59d2a501a7/src/sysutils.ts#L318)

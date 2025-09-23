@@ -6,6 +6,12 @@
 
 ## Other
 
+### FormatDateTime
+
+Renames and re-exports [toFormat](functions/toFormat.md)
+
+***
+
 ### getParamCount
 
 Renames and re-exports [ParamCount](functions/ParamCount.md)
@@ -60,6 +66,7 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [CNoContent](variables/CNoContent.md)
 - [ENV\_NEXT\_PREFIX](variables/ENV_NEXT_PREFIX.md)
 - [ENV\_REACT\_PREFIX](variables/ENV_REACT_PREFIX.md)
+- [ENV\_VITE\_PREFIX](variables/ENV_VITE_PREFIX.md)
 - [SEntityParseFailed](variables/SEntityParseFailed.md)
 - [SInvalidParams](variables/SInvalidParams.md)
 - [SInvalidRequest](variables/SInvalidRequest.md)
@@ -83,6 +90,7 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 
 ## Other
 
+- [FormatDateTime](globals.md#formatdatetime)
 - [getParamCount](globals.md#getparamcount)
 - [getParamStr](globals.md#getparamstr)
 - [lowerCase](globals.md#lowercase)
@@ -149,6 +157,7 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [JSDateToBlockchainTimestamp](functions/JSDateToBlockchainTimestamp.md)
 - [JSTimeToUTC](functions/JSTimeToUTC.md)
 - [timePerformance](functions/timePerformance.md)
+- [toFormat](functions/toFormat.md)
 
 ## RTL
 

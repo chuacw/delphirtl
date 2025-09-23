@@ -84,7 +84,7 @@ node\_modules/json-rpc-2.0/dist/models.d.ts:36
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1077
+node\_modules/typescript/lib/lib.es5.d.ts:1054
 
 ***
 
@@ -98,7 +98,7 @@ node\_modules/typescript/lib/lib.es5.d.ts:1077
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1076
+node\_modules/typescript/lib/lib.es5.d.ts:1053
 
 ***
 
@@ -112,7 +112,7 @@ node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 #### Defined in
 
-node\_modules/typescript/lib/lib.es5.d.ts:1078
+node\_modules/typescript/lib/lib.es5.d.ts:1055
 
 ***
 
@@ -142,7 +142,7 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 #### Defined in
 
-node\_modules/@types/node/globals.d.ts:11
+node\_modules/@types/node/globals.d.ts:143
 
 ***
 
@@ -156,7 +156,7 @@ node\_modules/@types/node/globals.d.ts:11
 
 #### Defined in
 
-node\_modules/@types/node/globals.d.ts:13
+node\_modules/@types/node/globals.d.ts:145
 
 ## Methods
 
@@ -196,4 +196,4 @@ Create .stack property on a target object
 
 #### Defined in
 
-node\_modules/@types/node/globals.d.ts:4
+node\_modules/@types/node/globals.d.ts:136

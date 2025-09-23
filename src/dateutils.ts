@@ -60,6 +60,13 @@ declare global {
         addYears(years: number): Date;
 
         /**
+         * Checks if this date instance is the last day of the month
+         *
+         * @returns {boolean}
+         */
+        isLastDayOfMonth(): boolean;
+
+        /**
          * Checks if this date instance is a valid date
          *
          * @returns {boolean}
@@ -176,6 +183,17 @@ Date.prototype.addYears = function (years: number) {
     }
     return result;
 };
+
+Date.prototype.isLastDayOfMonth = function (): boolean {
+  const year = this.getFullYear();
+  const month = this.getMonth();
+  const day = this.getDate();
+
+  // Create a date for the 0th day of the next month ? gives last day of current month
+  const lastDay = new Date(year, month + 1, 0).getDate();
+
+  return day === lastDay;
+}
 
 Date.prototype.isValidDate = function (): boolean {
     const result = this instanceof Date && !isNaN(this.valueOf());

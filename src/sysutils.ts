@@ -146,8 +146,14 @@ export const faAnyFile = 0x000001FF;
 
 export type TSearchRec = {
     Time: number
+    /**
+     * Size of the file
+     */
     Size: number
     Attr: number
+    /**
+     * File Name
+     */
     Name: string
     ExcludeAttr: number
     /**
@@ -195,7 +201,7 @@ function GetDirectories(path: string, predicate?: TFilterPredicate): string[] {
         // filters through the callback
         const rdsResult = fs.readdirSync(path, { withFileTypes: true });
         const filterResult = rdsResult.filter(dirent => {
-            const path = dirent.path;
+            const path = dirent.parentPath;
             const filename = IncludeTrailingPathDelimiter(path) + dirent.name;
             const fsstatResult = fs.statSync(filename);
             const attr = (fsstatResult.isDirectory() ? faDirectory : 0) | (fsstatResult.isFile() ? faNormal : 0);
@@ -393,6 +399,14 @@ const ENV_REACT_PREFIX = "REACT_APP_";
  */
 const ENV_NEXT_PREFIX = "NEXT_PUBLIC_";
 
+/**
+ * Only environment variables starting with VITE_PREFIX are returned in Vite
+ *
+ * @type {"VITE_"}
+ * @category Constants
+ */
+const ENV_VITE_PREFIX = "VITE_";
+
 // In Reactjs, only env vars starting with REACT_APP_ is allowed
 // Anything else will not show up
 // Nextjs, only env vars starting with NEXT_PUBLIC_ are allowed
@@ -507,5 +521,5 @@ export {
     GetEnvironmentVariable, SetEnvironmentVariable,
     hasMessageField, hasFieldOfType, isArbitraryObject,
     IsLeapYear,
-    ENV_NEXT_PREFIX, ENV_REACT_PREFIX
+    ENV_NEXT_PREFIX, ENV_REACT_PREFIX, ENV_VITE_PREFIX,
 }

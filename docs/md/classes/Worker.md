@@ -11,16 +11,17 @@ Most Node.js APIs are available inside of it.
 
 Notable differences inside a Worker environment are:
 
-* The `process.stdin`, `process.stdout` and `process.stderr` may be redirected by the parent thread.
-* The `require('worker_threads').isMainThread` property is set to `false`.
-* The `require('worker_threads').parentPort` message port is available.
+* The `process.stdin`, `process.stdout`, and `process.stderr` streams may be redirected by the parent thread.
+* The `import { isMainThread } from 'node:worker_threads'` variable is set to `false`.
+* The `import { parentPort } from 'node:worker_threads'` message port is available.
 * `process.exit()` does not stop the whole program, just the single thread,
 and `process.abort()` is not available.
 * `process.chdir()` and `process` methods that set group or user ids
 are not available.
 * `process.env` is a copy of the parent thread's environment variables,
 unless otherwise specified. Changes to one copy are not visible in other
-threads, and are not visible to native add-ons (unless `worker.SHARE_ENV` is passed as the `env` option to the `Worker` constructor).
+threads, and are not visible to native add-ons (unless `worker.SHARE_ENV` is passed as the `env` option to the `Worker` constructor). On Windows, unlike the main thread, a copy of the
+environment variables operates in a case-sensitive manner.
 * `process.title` cannot be modified.
 * Signals are not delivered through `process.on('...')`.
 * Execution may stop at any point as a result of `worker.terminate()` being invoked.
@@ -30,11 +31,11 @@ threads, and are not visible to native add-ons (unless `worker.SHARE_ENV` is pas
 
 Creating `Worker` instances inside of other `Worker`s is possible.
 
-Like [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) and the `cluster module`, two-way communication can be
-achieved through inter-thread message passing. Internally, a `Worker` has a
-built-in pair of `MessagePort` s that are already associated with each other
-when the `Worker` is created. While the `MessagePort` object on the parent side
-is not directly exposed, its functionalities are exposed through `worker.postMessage()` and the `worker.on('message')` event
+Like [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) and the `node:cluster module`, two-way communication
+can be achieved through inter-thread message passing. Internally, a `Worker` has
+a built-in pair of `MessagePort` s that are already associated with each
+other when the `Worker` is created. While the `MessagePort` object on the parent
+side is not directly exposed, its functionalities are exposed through `worker.postMessage()` and the `worker.on('message')` event
 on the `Worker` object for the parent thread.
 
 To create custom messaging channels (which is encouraged over using the default
@@ -47,10 +48,10 @@ and what kind of JavaScript values can be successfully transported through
 the thread barrier.
 
 ```js
-const assert = require('assert');
-const {
-  Worker, MessageChannel, MessagePort, isMainThread, parentPort
-} = require('worker_threads');
+import assert from 'node:assert';
+import {
+  Worker, MessageChannel, MessagePort, isMainThread, parentPort,
+} from 'node:worker_threads';
 if (isMainThread) {
   const worker = new Worker(__filename);
   const subChannel = new MessageChannel();
@@ -101,7 +102,7 @@ The path to the Worker’s main script or module.
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:395
+node\_modules/@types/node/worker\_threads.d.ts:405
 
 ## Properties
 
@@ -118,7 +119,7 @@ v15.1.0, v14.17.0, v12.22.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:389
+node\_modules/@types/node/worker\_threads.d.ts:399
 
 ***
 
@@ -138,7 +139,7 @@ v13.2.0, v12.16.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:383
+node\_modules/@types/node/worker\_threads.d.ts:393
 
 ***
 
@@ -155,7 +156,7 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:367
+node\_modules/@types/node/worker\_threads.d.ts:377
 
 ***
 
@@ -173,7 +174,7 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:355
+node\_modules/@types/node/worker\_threads.d.ts:365
 
 ***
 
@@ -190,7 +191,7 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:361
+node\_modules/@types/node/worker\_threads.d.ts:371
 
 ***
 
@@ -199,7 +200,7 @@ node\_modules/@types/node/worker\_threads.d.ts:361
 > `readonly` **threadId**: `number`
 
 An integer identifier for the referenced thread. Inside the worker thread,
-it is available as `require('worker_threads').threadId`.
+it is available as `import { threadId } from 'node:worker_threads'`.
 This value is unique for each `Worker` instance inside a single process.
 
 #### Since
@@ -208,7 +209,7 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:374
+node\_modules/@types/node/worker\_threads.d.ts:384
 
 ***
 
@@ -216,7 +217,13 @@ node\_modules/@types/node/worker\_threads.d.ts:374
 
 > `static` **captureRejections**: `boolean`
 
-Sets or gets the default captureRejection value for all emitters.
+Value: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
+
+Change the default `captureRejections` option on all new `EventEmitter` objects.
+
+#### Since
+
+v13.4.0, v12.16.0
 
 #### Inherited from
 
@@ -224,7 +231,7 @@ Sets or gets the default captureRejection value for all emitters.
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:306
+node\_modules/@types/node/events.d.ts:459
 
 ***
 
@@ -232,13 +239,21 @@ node\_modules/@types/node/events.d.ts:306
 
 > `readonly` `static` **captureRejectionSymbol**: *typeof* [`captureRejectionSymbol`](Worker.md#capturerejectionsymbol)
 
+Value: `Symbol.for('nodejs.rejection')`
+
+See how to write a custom `rejection handler`.
+
+#### Since
+
+v13.4.0, v12.16.0
+
 #### Inherited from
 
 `EventEmitter.captureRejectionSymbol`
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:301
+node\_modules/@types/node/events.d.ts:452
 
 ***
 
@@ -246,13 +261,53 @@ node\_modules/@types/node/events.d.ts:301
 
 > `static` **defaultMaxListeners**: `number`
 
+By default, a maximum of `10` listeners can be registered for any single
+event. This limit can be changed for individual `EventEmitter` instances
+using the `emitter.setMaxListeners(n)` method. To change the default
+for _all_`EventEmitter` instances, the `events.defaultMaxListeners` property
+can be used. If this value is not a positive number, a `RangeError` is thrown.
+
+Take caution when setting the `events.defaultMaxListeners` because the
+change affects _all_ `EventEmitter` instances, including those created before
+the change is made. However, calling `emitter.setMaxListeners(n)` still has
+precedence over `events.defaultMaxListeners`.
+
+This is not a hard limit. The `EventEmitter` instance will allow
+more listeners to be added but will output a trace warning to stderr indicating
+that a "possible EventEmitter memory leak" has been detected. For any single
+`EventEmitter`, the `emitter.getMaxListeners()` and `emitter.setMaxListeners()` methods can be used to
+temporarily avoid this warning:
+
+```js
+import { EventEmitter } from 'node:events';
+const emitter = new EventEmitter();
+emitter.setMaxListeners(emitter.getMaxListeners() + 1);
+emitter.once('event', () => {
+  // do stuff
+  emitter.setMaxListeners(Math.max(emitter.getMaxListeners() - 1, 0));
+});
+```
+
+The `--trace-warnings` command-line flag can be used to display the
+stack trace for such warnings.
+
+The emitted warning can be inspected with `process.on('warning')` and will
+have the additional `emitter`, `type`, and `count` properties, referring to
+the event emitter instance, the event's name and the number of attached
+listeners, respectively.
+Its `name` property is set to `'MaxListenersExceededWarning'`.
+
+#### Since
+
+v0.11.2
+
 #### Inherited from
 
 `EventEmitter.defaultMaxListeners`
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:307
+node\_modules/@types/node/events.d.ts:498
 
 ***
 
@@ -260,13 +315,14 @@ node\_modules/@types/node/events.d.ts:307
 
 > `readonly` `static` **errorMonitor**: *typeof* [`errorMonitor`](Worker.md#errormonitor)
 
-This symbol shall be used to install a listener for only monitoring `'error'`
-events. Listeners installed using this symbol are called before the regular
-`'error'` listeners are called.
+This symbol shall be used to install a listener for only monitoring `'error'` events. Listeners installed using this symbol are called before the regular `'error'` listeners are called.
 
-Installing a listener using this symbol does not change the behavior once an
-`'error'` event is emitted, therefore the process will still crash if no
+Installing a listener using this symbol does not change the behavior once an `'error'` event is emitted. Therefore, the process will still crash if no
 regular `'error'` listener is installed.
+
+#### Since
+
+v13.6.0, v12.17.0
 
 #### Inherited from
 
@@ -274,9 +330,39 @@ regular `'error'` listener is installed.
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:300
+node\_modules/@types/node/events.d.ts:445
 
 ## Methods
+
+### \[captureRejectionSymbol\]()?
+
+> `optional` **\[captureRejectionSymbol\]**\<`K`\>(`error`, `event`, ...`args`): `void`
+
+#### Type Parameters
+
+• **K**
+
+#### Parameters
+
+• **error**: `Error`
+
+• **event**: `string` \| `symbol`
+
+• ...**args**: `AnyRest`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+`EventEmitter.[captureRejectionSymbol]`
+
+#### Defined in
+
+node\_modules/@types/node/events.d.ts:136
+
+***
 
 ### addListener()
 
@@ -306,7 +392,7 @@ v0.1.26
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:431
+node\_modules/@types/node/worker\_threads.d.ts:459
 
 #### addListener(event, listener)
 
@@ -328,7 +414,7 @@ node\_modules/@types/node/worker\_threads.d.ts:431
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:432
+node\_modules/@types/node/worker\_threads.d.ts:460
 
 #### addListener(event, listener)
 
@@ -350,7 +436,7 @@ node\_modules/@types/node/worker\_threads.d.ts:432
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:433
+node\_modules/@types/node/worker\_threads.d.ts:461
 
 #### addListener(event, listener)
 
@@ -372,7 +458,7 @@ node\_modules/@types/node/worker\_threads.d.ts:433
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:434
+node\_modules/@types/node/worker\_threads.d.ts:462
 
 #### addListener(event, listener)
 
@@ -394,7 +480,7 @@ node\_modules/@types/node/worker\_threads.d.ts:434
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:435
+node\_modules/@types/node/worker\_threads.d.ts:463
 
 #### addListener(event, listener)
 
@@ -416,7 +502,7 @@ node\_modules/@types/node/worker\_threads.d.ts:435
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:436
+node\_modules/@types/node/worker\_threads.d.ts:464
 
 ***
 
@@ -426,13 +512,13 @@ node\_modules/@types/node/worker\_threads.d.ts:436
 
 > **emit**(`event`, `err`): `boolean`
 
-Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
+Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
 to each.
 
 Returns `true` if the event had listeners, `false` otherwise.
 
 ```js
-const EventEmitter = require('events');
+import { EventEmitter } from 'node:events';
 const myEmitter = new EventEmitter();
 
 // First listener
@@ -484,7 +570,7 @@ v0.1.26
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:437
+node\_modules/@types/node/worker\_threads.d.ts:465
 
 #### emit(event, exitCode)
 
@@ -506,7 +592,7 @@ node\_modules/@types/node/worker\_threads.d.ts:437
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:438
+node\_modules/@types/node/worker\_threads.d.ts:466
 
 #### emit(event, value)
 
@@ -528,7 +614,7 @@ node\_modules/@types/node/worker\_threads.d.ts:438
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:439
+node\_modules/@types/node/worker\_threads.d.ts:467
 
 #### emit(event, error)
 
@@ -550,7 +636,7 @@ node\_modules/@types/node/worker\_threads.d.ts:439
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:440
+node\_modules/@types/node/worker\_threads.d.ts:468
 
 #### emit(event)
 
@@ -570,7 +656,7 @@ node\_modules/@types/node/worker\_threads.d.ts:440
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:441
+node\_modules/@types/node/worker\_threads.d.ts:469
 
 #### emit(event, args)
 
@@ -592,7 +678,7 @@ node\_modules/@types/node/worker\_threads.d.ts:441
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:442
+node\_modules/@types/node/worker\_threads.d.ts:470
 
 ***
 
@@ -604,7 +690,8 @@ Returns an array listing the events for which the emitter has registered
 listeners. The values in the array are strings or `Symbol`s.
 
 ```js
-const EventEmitter = require('events');
+import { EventEmitter } from 'node:events';
+
 const myEE = new EventEmitter();
 myEE.on('foo', () => {});
 myEE.on('bar', () => {});
@@ -630,7 +717,7 @@ v6.0.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:642
+node\_modules/@types/node/events.d.ts:922
 
 ***
 
@@ -656,7 +743,7 @@ v13.9.0, v12.17.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:430
+node\_modules/@types/node/worker\_threads.d.ts:458
 
 ***
 
@@ -681,21 +768,31 @@ v1.0.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:499
+node\_modules/@types/node/events.d.ts:774
 
 ***
 
 ### listenerCount()
 
-> **listenerCount**(`eventName`): `number`
+> **listenerCount**\<`K`\>(`eventName`, `listener`?): `number`
 
-Returns the number of listeners listening to the event named `eventName`.
+Returns the number of listeners listening for the event named `eventName`.
+If `listener` is provided, it will return how many times the listener is found
+in the list of the listeners of the event.
+
+#### Type Parameters
+
+• **K**
 
 #### Parameters
 
 • **eventName**: `string` \| `symbol`
 
 The name of the event being listened for
+
+• **listener?**: `Function`
+
+The event handler function
 
 #### Returns
 
@@ -711,13 +808,13 @@ v3.2.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:589
+node\_modules/@types/node/events.d.ts:868
 
 ***
 
 ### listeners()
 
-> **listeners**(`eventName`): `Function`[]
+> **listeners**\<`K`\>(`eventName`): `Function`[]
 
 Returns a copy of the array of listeners for the event named `eventName`.
 
@@ -728,6 +825,10 @@ server.on('connection', (stream) => {
 console.log(util.inspect(server.listeners('connection')));
 // Prints: [ [Function] ]
 ```
+
+#### Type Parameters
+
+• **K**
 
 #### Parameters
 
@@ -747,7 +848,7 @@ v0.1.26
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:512
+node\_modules/@types/node/events.d.ts:787
 
 ***
 
@@ -779,7 +880,7 @@ v10.0.0
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:473
+node\_modules/@types/node/worker\_threads.d.ts:501
 
 #### off(event, listener)
 
@@ -801,7 +902,7 @@ node\_modules/@types/node/worker\_threads.d.ts:473
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:474
+node\_modules/@types/node/worker\_threads.d.ts:502
 
 #### off(event, listener)
 
@@ -823,7 +924,7 @@ node\_modules/@types/node/worker\_threads.d.ts:474
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:475
+node\_modules/@types/node/worker\_threads.d.ts:503
 
 #### off(event, listener)
 
@@ -845,7 +946,7 @@ node\_modules/@types/node/worker\_threads.d.ts:475
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:476
+node\_modules/@types/node/worker\_threads.d.ts:504
 
 #### off(event, listener)
 
@@ -867,7 +968,7 @@ node\_modules/@types/node/worker\_threads.d.ts:476
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:477
+node\_modules/@types/node/worker\_threads.d.ts:505
 
 #### off(event, listener)
 
@@ -889,7 +990,7 @@ node\_modules/@types/node/worker\_threads.d.ts:477
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:478
+node\_modules/@types/node/worker\_threads.d.ts:506
 
 ***
 
@@ -899,10 +1000,10 @@ node\_modules/@types/node/worker\_threads.d.ts:478
 
 > **on**(`event`, `listener`): `this`
 
-Adds the `listener` function to the end of the listeners array for the
-event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
+Adds the `listener` function to the end of the listeners array for the event
+named `eventName`. No checks are made to see if the `listener` has already
+been added. Multiple calls passing the same combination of `eventName` and
+`listener` will result in the `listener` being added, and called, multiple times.
 
 ```js
 server.on('connection', (stream) => {
@@ -912,10 +1013,11 @@ server.on('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
+By default, event listeners are invoked in the order they are added. The `emitter.prependListener()` method can be used as an alternative to add the
 event listener to the beginning of the listeners array.
 
 ```js
+import { EventEmitter } from 'node:events';
 const myEE = new EventEmitter();
 myEE.on('foo', () => console.log('a'));
 myEE.prependListener('foo', () => console.log('b'));
@@ -947,7 +1049,7 @@ v0.1.101
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:443
+node\_modules/@types/node/worker\_threads.d.ts:471
 
 #### on(event, listener)
 
@@ -969,7 +1071,7 @@ node\_modules/@types/node/worker\_threads.d.ts:443
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:444
+node\_modules/@types/node/worker\_threads.d.ts:472
 
 #### on(event, listener)
 
@@ -991,7 +1093,7 @@ node\_modules/@types/node/worker\_threads.d.ts:444
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:445
+node\_modules/@types/node/worker\_threads.d.ts:473
 
 #### on(event, listener)
 
@@ -1013,7 +1115,7 @@ node\_modules/@types/node/worker\_threads.d.ts:445
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:446
+node\_modules/@types/node/worker\_threads.d.ts:474
 
 #### on(event, listener)
 
@@ -1035,7 +1137,7 @@ node\_modules/@types/node/worker\_threads.d.ts:446
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:447
+node\_modules/@types/node/worker\_threads.d.ts:475
 
 #### on(event, listener)
 
@@ -1057,7 +1159,7 @@ node\_modules/@types/node/worker\_threads.d.ts:447
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:448
+node\_modules/@types/node/worker\_threads.d.ts:476
 
 ***
 
@@ -1067,7 +1169,7 @@ node\_modules/@types/node/worker\_threads.d.ts:448
 
 > **once**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName`. The
+Adds a **one-time** `listener` function for the event named `eventName`. The
 next time `eventName` is triggered, this listener is removed and then invoked.
 
 ```js
@@ -1078,10 +1180,11 @@ server.once('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
+By default, event listeners are invoked in the order they are added. The `emitter.prependOnceListener()` method can be used as an alternative to add the
 event listener to the beginning of the listeners array.
 
 ```js
+import { EventEmitter } from 'node:events';
 const myEE = new EventEmitter();
 myEE.once('foo', () => console.log('a'));
 myEE.prependOnceListener('foo', () => console.log('b'));
@@ -1113,7 +1216,7 @@ v0.3.0
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:449
+node\_modules/@types/node/worker\_threads.d.ts:477
 
 #### once(event, listener)
 
@@ -1135,7 +1238,7 @@ node\_modules/@types/node/worker\_threads.d.ts:449
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:450
+node\_modules/@types/node/worker\_threads.d.ts:478
 
 #### once(event, listener)
 
@@ -1157,7 +1260,7 @@ node\_modules/@types/node/worker\_threads.d.ts:450
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:451
+node\_modules/@types/node/worker\_threads.d.ts:479
 
 #### once(event, listener)
 
@@ -1179,7 +1282,7 @@ node\_modules/@types/node/worker\_threads.d.ts:451
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:452
+node\_modules/@types/node/worker\_threads.d.ts:480
 
 #### once(event, listener)
 
@@ -1201,7 +1304,7 @@ node\_modules/@types/node/worker\_threads.d.ts:452
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:453
+node\_modules/@types/node/worker\_threads.d.ts:481
 
 #### once(event, listener)
 
@@ -1223,7 +1326,7 @@ node\_modules/@types/node/worker\_threads.d.ts:453
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:454
+node\_modules/@types/node/worker\_threads.d.ts:482
 
 ***
 
@@ -1231,7 +1334,7 @@ node\_modules/@types/node/worker\_threads.d.ts:454
 
 > **postMessage**(`value`, `transferList`?): `void`
 
-Send a message to the worker that is received via `require('worker_threads').parentPort.on('message')`.
+Send a message to the worker that is received via `require('node:worker_threads').parentPort.on('message')`.
 See `port.postMessage()` for more details.
 
 #### Parameters
@@ -1250,7 +1353,67 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:401
+node\_modules/@types/node/worker\_threads.d.ts:411
+
+***
+
+### postMessageToThread()
+
+#### postMessageToThread(threadId, value, timeout)
+
+> **postMessageToThread**(`threadId`, `value`, `timeout`?): `Promise`\<`void`\>
+
+Sends a value to another worker, identified by its thread ID.
+
+##### Parameters
+
+• **threadId**: `number`
+
+The target thread ID. If the thread ID is invalid, a `ERR_WORKER_MESSAGING_FAILED` error will be thrown.
+If the target thread ID is the current thread ID, a `ERR_WORKER_MESSAGING_SAME_THREAD` error will be thrown.
+
+• **value**: `any`
+
+The value to send.
+
+• **timeout?**: `number`
+
+Time to wait for the message to be delivered in milliseconds. By default it's `undefined`, which means wait forever.
+If the operation times out, a `ERR_WORKER_MESSAGING_TIMEOUT` error is thrown.
+
+##### Returns
+
+`Promise`\<`void`\>
+
+##### Since
+
+v22.5.0
+
+##### Defined in
+
+node\_modules/@types/node/worker\_threads.d.ts:423
+
+#### postMessageToThread(threadId, value, transferList, timeout)
+
+> **postMessageToThread**(`threadId`, `value`, `transferList`, `timeout`?): `Promise`\<`void`\>
+
+##### Parameters
+
+• **threadId**: `number`
+
+• **value**: `any`
+
+• **transferList**: readonly `TransferListItem`[]
+
+• **timeout?**: `number`
+
+##### Returns
+
+`Promise`\<`void`\>
+
+##### Defined in
+
+node\_modules/@types/node/worker\_threads.d.ts:424
 
 ***
 
@@ -1262,8 +1425,8 @@ node\_modules/@types/node/worker\_threads.d.ts:401
 
 Adds the `listener` function to the _beginning_ of the listeners array for the
 event named `eventName`. No checks are made to see if the `listener` has
-already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-times.
+already been added. Multiple calls passing the same combination of `eventName`
+and `listener` will result in the `listener` being added, and called, multiple times.
 
 ```js
 server.prependListener('connection', (stream) => {
@@ -1295,7 +1458,7 @@ v6.0.0
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:455
+node\_modules/@types/node/worker\_threads.d.ts:483
 
 #### prependListener(event, listener)
 
@@ -1317,7 +1480,7 @@ node\_modules/@types/node/worker\_threads.d.ts:455
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:456
+node\_modules/@types/node/worker\_threads.d.ts:484
 
 #### prependListener(event, listener)
 
@@ -1339,7 +1502,7 @@ node\_modules/@types/node/worker\_threads.d.ts:456
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:457
+node\_modules/@types/node/worker\_threads.d.ts:485
 
 #### prependListener(event, listener)
 
@@ -1361,7 +1524,7 @@ node\_modules/@types/node/worker\_threads.d.ts:457
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:458
+node\_modules/@types/node/worker\_threads.d.ts:486
 
 #### prependListener(event, listener)
 
@@ -1383,7 +1546,7 @@ node\_modules/@types/node/worker\_threads.d.ts:458
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:459
+node\_modules/@types/node/worker\_threads.d.ts:487
 
 #### prependListener(event, listener)
 
@@ -1405,7 +1568,7 @@ node\_modules/@types/node/worker\_threads.d.ts:459
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:460
+node\_modules/@types/node/worker\_threads.d.ts:488
 
 ***
 
@@ -1415,7 +1578,7 @@ node\_modules/@types/node/worker\_threads.d.ts:460
 
 > **prependOnceListener**(`event`, `listener`): `this`
 
-Adds a **one-time**`listener` function for the event named `eventName` to the_beginning_ of the listeners array. The next time `eventName` is triggered, this
+Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
 listener is removed, and then invoked.
 
 ```js
@@ -1448,7 +1611,7 @@ v6.0.0
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:461
+node\_modules/@types/node/worker\_threads.d.ts:489
 
 #### prependOnceListener(event, listener)
 
@@ -1470,7 +1633,7 @@ node\_modules/@types/node/worker\_threads.d.ts:461
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:462
+node\_modules/@types/node/worker\_threads.d.ts:490
 
 #### prependOnceListener(event, listener)
 
@@ -1492,7 +1655,7 @@ node\_modules/@types/node/worker\_threads.d.ts:462
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:463
+node\_modules/@types/node/worker\_threads.d.ts:491
 
 #### prependOnceListener(event, listener)
 
@@ -1514,7 +1677,7 @@ node\_modules/@types/node/worker\_threads.d.ts:463
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:464
+node\_modules/@types/node/worker\_threads.d.ts:492
 
 #### prependOnceListener(event, listener)
 
@@ -1536,7 +1699,7 @@ node\_modules/@types/node/worker\_threads.d.ts:464
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:465
+node\_modules/@types/node/worker\_threads.d.ts:493
 
 #### prependOnceListener(event, listener)
 
@@ -1558,18 +1721,19 @@ node\_modules/@types/node/worker\_threads.d.ts:465
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:466
+node\_modules/@types/node/worker\_threads.d.ts:494
 
 ***
 
 ### rawListeners()
 
-> **rawListeners**(`eventName`): `Function`[]
+> **rawListeners**\<`K`\>(`eventName`): `Function`[]
 
 Returns a copy of the array of listeners for the event named `eventName`,
 including any wrappers (such as those created by `.once()`).
 
 ```js
+import { EventEmitter } from 'node:events';
 const emitter = new EventEmitter();
 emitter.once('log', () => console.log('log once'));
 
@@ -1593,6 +1757,10 @@ newListeners[0]();
 emitter.emit('log');
 ```
 
+#### Type Parameters
+
+• **K**
+
 #### Parameters
 
 • **eventName**: `string` \| `symbol`
@@ -1611,7 +1779,7 @@ v9.4.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:542
+node\_modules/@types/node/events.d.ts:818
 
 ***
 
@@ -1619,7 +1787,7 @@ node\_modules/@types/node/events.d.ts:542
 
 > **ref**(): `void`
 
-Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does_not_ let the program exit if it's the only active handle left (the default
+Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does _not_ let the program exit if it's the only active handle left (the default
 behavior). If the worker is `ref()`ed, calling `ref()` again has
 no effect.
 
@@ -1633,13 +1801,13 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:408
+node\_modules/@types/node/worker\_threads.d.ts:436
 
 ***
 
 ### removeAllListeners()
 
-> **removeAllListeners**(`event`?): `this`
+> **removeAllListeners**(`eventName`?): `this`
 
 Removes all listeners, or those of the specified `eventName`.
 
@@ -1651,7 +1819,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### Parameters
 
-• **event?**: `string` \| `symbol`
+• **eventName?**: `string` \| `symbol`
 
 #### Returns
 
@@ -1667,7 +1835,7 @@ v0.1.26
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:483
+node\_modules/@types/node/events.d.ts:758
 
 ***
 
@@ -1677,7 +1845,7 @@ node\_modules/@types/node/events.d.ts:483
 
 > **removeListener**(`event`, `listener`): `this`
 
-Removes the specified `listener` from the listener array for the event named`eventName`.
+Removes the specified `listener` from the listener array for the event named `eventName`.
 
 ```js
 const callback = (stream) => {
@@ -1694,10 +1862,12 @@ listener array for the specified `eventName`, then `removeListener()` must be
 called multiple times to remove each instance.
 
 Once an event is emitted, all listeners attached to it at the
-time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and_before_ the last listener finishes execution will
-not remove them from`emit()` in progress. Subsequent events behave as expected.
+time of emitting are called in order. This implies that any `removeListener()` or `removeAllListeners()` calls _after_ emitting and _before_ the last listener finishes execution
+will not remove them from`emit()` in progress. Subsequent events behave as expected.
 
 ```js
+import { EventEmitter } from 'node:events';
+class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
 
 const callbackA = () => {
@@ -1735,9 +1905,10 @@ the `emitter.listeners()` method will need to be recreated.
 
 When a single function has been added as a handler multiple times for a single
 event (as in the example below), `removeListener()` will remove the most
-recently added instance. In the example the `once('ping')`listener is removed:
+recently added instance. In the example the `once('ping')` listener is removed:
 
 ```js
+import { EventEmitter } from 'node:events';
 const ee = new EventEmitter();
 
 function pong() {
@@ -1774,7 +1945,7 @@ v0.1.26
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:467
+node\_modules/@types/node/worker\_threads.d.ts:495
 
 #### removeListener(event, listener)
 
@@ -1796,7 +1967,7 @@ node\_modules/@types/node/worker\_threads.d.ts:467
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:468
+node\_modules/@types/node/worker\_threads.d.ts:496
 
 #### removeListener(event, listener)
 
@@ -1818,7 +1989,7 @@ node\_modules/@types/node/worker\_threads.d.ts:468
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:469
+node\_modules/@types/node/worker\_threads.d.ts:497
 
 #### removeListener(event, listener)
 
@@ -1840,7 +2011,7 @@ node\_modules/@types/node/worker\_threads.d.ts:469
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:470
+node\_modules/@types/node/worker\_threads.d.ts:498
 
 #### removeListener(event, listener)
 
@@ -1862,7 +2033,7 @@ node\_modules/@types/node/worker\_threads.d.ts:470
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:471
+node\_modules/@types/node/worker\_threads.d.ts:499
 
 #### removeListener(event, listener)
 
@@ -1884,7 +2055,7 @@ node\_modules/@types/node/worker\_threads.d.ts:471
 
 ##### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:472
+node\_modules/@types/node/worker\_threads.d.ts:500
 
 ***
 
@@ -1895,7 +2066,7 @@ node\_modules/@types/node/worker\_threads.d.ts:472
 By default `EventEmitter`s will print a warning if more than `10` listeners are
 added for a particular event. This is a useful default that helps finding
 memory leaks. The `emitter.setMaxListeners()` method allows the limit to be
-modified for this specific `EventEmitter` instance. The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
+modified for this specific `EventEmitter` instance. The value can be set to `Infinity` (or `0`) to indicate an unlimited number of listeners.
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
@@ -1917,7 +2088,7 @@ v0.3.5
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:493
+node\_modules/@types/node/events.d.ts:768
 
 ***
 
@@ -1938,7 +2109,7 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:420
+node\_modules/@types/node/worker\_threads.d.ts:448
 
 ***
 
@@ -1947,7 +2118,7 @@ node\_modules/@types/node/worker\_threads.d.ts:420
 > **unref**(): `void`
 
 Calling `unref()` on a worker allows the thread to exit if this is the only
-active handle in the event system. If the worker is already `unref()`ed calling`unref()` again has no effect.
+active handle in the event system. If the worker is already `unref()`ed calling `unref()` again has no effect.
 
 #### Returns
 
@@ -1959,7 +2130,69 @@ v10.5.0
 
 #### Defined in
 
-node\_modules/@types/node/worker\_threads.d.ts:414
+node\_modules/@types/node/worker\_threads.d.ts:442
+
+***
+
+### addAbortListener()
+
+> `static` **addAbortListener**(`signal`, `resource`): `Disposable`
+
+**`Experimental`**
+
+Listens once to the `abort` event on the provided `signal`.
+
+Listening to the `abort` event on abort signals is unsafe and may
+lead to resource leaks since another third party with the signal can
+call `e.stopImmediatePropagation()`. Unfortunately Node.js cannot change
+this since it would violate the web standard. Additionally, the original
+API makes it easy to forget to remove listeners.
+
+This API allows safely using `AbortSignal`s in Node.js APIs by solving these
+two issues by listening to the event such that `stopImmediatePropagation` does
+not prevent the listener from running.
+
+Returns a disposable so that it may be unsubscribed from more easily.
+
+```js
+import { addAbortListener } from 'node:events';
+
+function example(signal) {
+  let disposable;
+  try {
+    signal.addEventListener('abort', (e) => e.stopImmediatePropagation());
+    disposable = addAbortListener(signal, (e) => {
+      // Do something when signal is aborted.
+    });
+  } finally {
+    disposable?.[Symbol.dispose]();
+  }
+}
+```
+
+#### Parameters
+
+• **signal**: `AbortSignal`
+
+• **resource**
+
+#### Returns
+
+`Disposable`
+
+Disposable that removes the `abort` listener.
+
+#### Since
+
+v20.5.0
+
+#### Inherited from
+
+`EventEmitter.addAbortListener`
+
+#### Defined in
+
+node\_modules/@types/node/events.d.ts:437
 
 ***
 
@@ -1976,25 +2209,25 @@ For `EventTarget`s this is the only way to get the event listeners for the
 event target. This is useful for debugging and diagnostic purposes.
 
 ```js
-const { getEventListeners, EventEmitter } = require('events');
+import { getEventListeners, EventEmitter } from 'node:events';
 
 {
   const ee = new EventEmitter();
   const listener = () => console.log('Events are fun');
   ee.on('foo', listener);
-  getEventListeners(ee, 'foo'); // [listener]
+  console.log(getEventListeners(ee, 'foo')); // [ [Function: listener] ]
 }
 {
   const et = new EventTarget();
   const listener = () => console.log('Events are fun');
   et.addEventListener('foo', listener);
-  getEventListeners(et, 'foo'); // [listener]
+  console.log(getEventListeners(et, 'foo')); // [ [Function: listener] ]
 }
 ```
 
 #### Parameters
 
-• **emitter**: `EventEmitter` \| `DOMEventTarget`
+• **emitter**: `EventEmitter`\<`DefaultEventMap`\> \| `EventTarget`
 
 • **name**: `string` \| `symbol`
 
@@ -2012,7 +2245,59 @@ v15.2.0, v14.17.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:270
+node\_modules/@types/node/events.d.ts:358
+
+***
+
+### getMaxListeners()
+
+> `static` **getMaxListeners**(`emitter`): `number`
+
+Returns the currently set max amount of listeners.
+
+For `EventEmitter`s this behaves exactly the same as calling `.getMaxListeners` on
+the emitter.
+
+For `EventTarget`s this is the only way to get the max event listeners for the
+event target. If the number of event handlers on a single EventTarget exceeds
+the max set, the EventTarget will print a warning.
+
+```js
+import { getMaxListeners, setMaxListeners, EventEmitter } from 'node:events';
+
+{
+  const ee = new EventEmitter();
+  console.log(getMaxListeners(ee)); // 10
+  setMaxListeners(11, ee);
+  console.log(getMaxListeners(ee)); // 11
+}
+{
+  const et = new EventTarget();
+  console.log(getMaxListeners(et)); // 10
+  setMaxListeners(11, et);
+  console.log(getMaxListeners(et)); // 11
+}
+```
+
+#### Parameters
+
+• **emitter**: `EventEmitter`\<`DefaultEventMap`\> \| `EventTarget`
+
+#### Returns
+
+`number`
+
+#### Since
+
+v19.9.0
+
+#### Inherited from
+
+`EventEmitter.getMaxListeners`
+
+#### Defined in
+
+node\_modules/@types/node/events.d.ts:387
 
 ***
 
@@ -2020,10 +2305,11 @@ node\_modules/@types/node/events.d.ts:270
 
 > `static` **listenerCount**(`emitter`, `eventName`): `number`
 
-A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
+A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
 
 ```js
-const { EventEmitter, listenerCount } = require('events');
+import { EventEmitter, listenerCount } from 'node:events';
+
 const myEmitter = new EventEmitter();
 myEmitter.on('event', () => {});
 myEmitter.on('event', () => {});
@@ -2033,7 +2319,7 @@ console.log(listenerCount(myEmitter, 'event'));
 
 #### Parameters
 
-• **emitter**: `EventEmitter`
+• **emitter**: `EventEmitter`\<`DefaultEventMap`\>
 
 The emitter to query
 
@@ -2059,34 +2345,35 @@ Since v3.2.0 - Use `listenerCount` instead.
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:242
+node\_modules/@types/node/events.d.ts:330
 
 ***
 
 ### on()
 
-> `static` **on**(`emitter`, `eventName`, `options`?): `AsyncIterableIterator`\<`any`, `any`, `any`\>
+#### on(emitter, eventName, options)
+
+> `static` **on**(`emitter`, `eventName`, `options`?): `AsyncIterator`\<`any`[], `any`, `any`\>
 
 ```js
-const { on, EventEmitter } = require('events');
+import { on, EventEmitter } from 'node:events';
+import process from 'node:process';
 
-(async () => {
-  const ee = new EventEmitter();
+const ee = new EventEmitter();
 
-  // Emit later on
-  process.nextTick(() => {
-    ee.emit('foo', 'bar');
-    ee.emit('foo', 42);
-  });
+// Emit later on
+process.nextTick(() => {
+  ee.emit('foo', 'bar');
+  ee.emit('foo', 42);
+});
 
-  for await (const event of on(ee, 'foo')) {
-    // The execution of this inner block is synchronous and it
-    // processes one event at a time (even with await). Do not use
-    // if concurrent execution is required.
-    console.log(event); // prints ['bar'] [42]
-  }
-  // Unreachable here
-})();
+for await (const event of on(ee, 'foo')) {
+  // The execution of this inner block is synchronous and it
+  // processes one event at a time (even with await). Do not use
+  // if concurrent execution is required.
+  console.log(event); // prints ['bar'] [42]
+}
+// Unreachable here
 ```
 
 Returns an `AsyncIterator` that iterates `eventName` events. It will throw
@@ -2097,7 +2384,9 @@ composed of the emitted event arguments.
 An `AbortSignal` can be used to cancel waiting on events:
 
 ```js
-const { on, EventEmitter } = require('events');
+import { on, EventEmitter } from 'node:events';
+import process from 'node:process';
+
 const ac = new AbortController();
 
 (async () => {
@@ -2121,33 +2410,77 @@ const ac = new AbortController();
 process.nextTick(() => ac.abort());
 ```
 
-#### Parameters
+Use the `close` option to specify an array of event names that will end the iteration:
 
-• **emitter**: `EventEmitter`
+```js
+import { on, EventEmitter } from 'node:events';
+import process from 'node:process';
 
-• **eventName**: `string`
+const ee = new EventEmitter();
 
-The name of the event being listened for
+// Emit later on
+process.nextTick(() => {
+  ee.emit('foo', 'bar');
+  ee.emit('foo', 42);
+  ee.emit('close');
+});
 
-• **options?**: `StaticEventEmitterOptions`
+for await (const event of on(ee, 'foo', { close: ['close'] })) {
+  console.log(event); // prints ['bar'] [42]
+}
+// the loop will exit after 'close' is emitted
+console.log('done'); // prints 'done'
+```
 
-#### Returns
+##### Parameters
 
-`AsyncIterableIterator`\<`any`, `any`, `any`\>
+• **emitter**: `EventEmitter`\<`DefaultEventMap`\>
 
-that iterates `eventName` events emitted by the `emitter`
+• **eventName**: `string` \| `symbol`
 
-#### Since
+• **options?**: `StaticEventEmitterIteratorOptions`
+
+##### Returns
+
+`AsyncIterator`\<`any`[], `any`, `any`\>
+
+An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
+
+##### Since
 
 v13.6.0, v12.16.0
 
-#### Inherited from
+##### Inherited from
 
 `EventEmitter.on`
 
-#### Defined in
+##### Defined in
 
-node\_modules/@types/node/events.d.ts:221
+node\_modules/@types/node/events.d.ts:303
+
+#### on(emitter, eventName, options)
+
+> `static` **on**(`emitter`, `eventName`, `options`?): `AsyncIterator`\<`any`[], `any`, `any`\>
+
+##### Parameters
+
+• **emitter**: `EventTarget`
+
+• **eventName**: `string`
+
+• **options?**: `StaticEventEmitterIteratorOptions`
+
+##### Returns
+
+`AsyncIterator`\<`any`[], `any`, `any`\>
+
+##### Inherited from
+
+`EventEmitter.on`
+
+##### Defined in
+
+node\_modules/@types/node/events.d.ts:308
 
 ***
 
@@ -2166,45 +2499,42 @@ This method is intentionally generic and works with the web platform [EventTarge
 semantics and does not listen to the `'error'` event.
 
 ```js
-const { once, EventEmitter } = require('events');
+import { once, EventEmitter } from 'node:events';
+import process from 'node:process';
 
-async function run() {
-  const ee = new EventEmitter();
+const ee = new EventEmitter();
 
-  process.nextTick(() => {
-    ee.emit('myevent', 42);
-  });
+process.nextTick(() => {
+  ee.emit('myevent', 42);
+});
 
-  const [value] = await once(ee, 'myevent');
-  console.log(value);
+const [value] = await once(ee, 'myevent');
+console.log(value);
 
-  const err = new Error('kaboom');
-  process.nextTick(() => {
-    ee.emit('error', err);
-  });
+const err = new Error('kaboom');
+process.nextTick(() => {
+  ee.emit('error', err);
+});
 
-  try {
-    await once(ee, 'myevent');
-  } catch (err) {
-    console.log('error happened', err);
-  }
+try {
+  await once(ee, 'myevent');
+} catch (err) {
+  console.error('error happened', err);
 }
-
-run();
 ```
 
-The special handling of the `'error'` event is only used when `events.once()`is used to wait for another event. If `events.once()` is used to wait for the
+The special handling of the `'error'` event is only used when `events.once()` is used to wait for another event. If `events.once()` is used to wait for the
 '`error'` event itself, then it is treated as any other kind of event without
 special handling:
 
 ```js
-const { EventEmitter, once } = require('events');
+import { EventEmitter, once } from 'node:events';
 
 const ee = new EventEmitter();
 
 once(ee, 'error')
   .then(([err]) => console.log('ok', err.message))
-  .catch((err) => console.log('error', err.message));
+  .catch((err) => console.error('error', err.message));
 
 ee.emit('error', new Error('boom'));
 
@@ -2214,7 +2544,7 @@ ee.emit('error', new Error('boom'));
 An `AbortSignal` can be used to cancel waiting for the event:
 
 ```js
-const { EventEmitter, once } = require('events');
+import { EventEmitter, once } from 'node:events';
 
 const ee = new EventEmitter();
 const ac = new AbortController();
@@ -2239,7 +2569,7 @@ ee.emit('foo'); // Prints: Waiting for the event was canceled!
 
 ##### Parameters
 
-• **emitter**: `NodeEventTarget`
+• **emitter**: `EventEmitter`\<`DefaultEventMap`\>
 
 • **eventName**: `string` \| `symbol`
 
@@ -2259,7 +2589,7 @@ v11.13.0, v10.16.0
 
 ##### Defined in
 
-node\_modules/@types/node/events.d.ts:157
+node\_modules/@types/node/events.d.ts:217
 
 #### once(emitter, eventName, options)
 
@@ -2267,7 +2597,7 @@ node\_modules/@types/node/events.d.ts:157
 
 ##### Parameters
 
-• **emitter**: `DOMEventTarget`
+• **emitter**: `EventTarget`
 
 • **eventName**: `string`
 
@@ -2283,7 +2613,7 @@ node\_modules/@types/node/events.d.ts:157
 
 ##### Defined in
 
-node\_modules/@types/node/events.d.ts:162
+node\_modules/@types/node/events.d.ts:222
 
 ***
 
@@ -2291,28 +2621,25 @@ node\_modules/@types/node/events.d.ts:162
 
 > `static` **setMaxListeners**(`n`?, ...`eventTargets`?): `void`
 
-By default `EventEmitter`s will print a warning if more than `10` listeners are
-added for a particular event. This is a useful default that helps finding
-memory leaks. The `EventEmitter.setMaxListeners()` method allows the default limit to be
-modified (if eventTargets is empty) or modify the limit specified in every `EventTarget` | `EventEmitter` passed as arguments.
-The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
-
 ```js
-EventEmitter.setMaxListeners(20);
-// Equivalent to
-EventEmitter.defaultMaxListeners = 20;
+import { setMaxListeners, EventEmitter } from 'node:events';
 
-const eventTarget = new EventTarget();
-// Only way to increase limit for `EventTarget` instances
-// as these doesn't expose its own `setMaxListeners` method
-EventEmitter.setMaxListeners(20, eventTarget);
+const target = new EventTarget();
+const emitter = new EventEmitter();
+
+setMaxListeners(5, target, emitter);
 ```
 
 #### Parameters
 
 • **n?**: `number`
 
-• ...**eventTargets?**: (`EventEmitter` \| `DOMEventTarget`)[]
+A non-negative number. The maximum number of listeners per `EventTarget` event.
+
+• ...**eventTargets?**: (`EventEmitter`\<`DefaultEventMap`\> \| `EventTarget`)[]
+
+Zero or more {EventTarget} or {EventEmitter} instances. If none are specified, `n` is set as the default max for all newly created {EventTarget} and {EventEmitter}
+objects.
 
 #### Returns
 
@@ -2320,7 +2647,7 @@ EventEmitter.setMaxListeners(20, eventTarget);
 
 #### Since
 
-v15.3.0, v14.17.0
+v15.4.0
 
 #### Inherited from
 
@@ -2328,4 +2655,4 @@ v15.3.0, v14.17.0
 
 #### Defined in
 
-node\_modules/@types/node/events.d.ts:290
+node\_modules/@types/node/events.d.ts:402

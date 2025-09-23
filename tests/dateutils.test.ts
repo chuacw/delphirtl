@@ -92,58 +92,83 @@ describe('testing DateUtils library', () => {
         expect(JSDateAddYears(startDate, years)).toEqual(expectedDate);
     });
 
-    test('toFormat for Date 1', () => {
+    test('toFormat for Jan 1, 2020', () => {
         const d = new Date(2020, 0, 1, 1, 1, 1, 1);
         const result = d.toFormat('YYYY-MM-DD HH:nn:ss');
         expect(result).toBe('2020-01-01 01:01:01');
     });
 
-    test('toFormat for Date 2', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD HH:nn:ss');
         expect(result).toBe('2020-12-01 23:59:59');
     });
 
-    test('toFormat for Date 3', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss AM');
         expect(result).toBe('2020-12-01 11:59:59 PM');
     });
 
-    test('toFormat for Date 4', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
-    test('toFormat for Date 5', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss am');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
-    test('toFormat for Date 6', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss pm');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
-    test('toFormat for Date 7', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY-MM-DD hh:nn:ss am');
         expect(result).toBe('2020-12-01 11:59:59 pm');
     });
 
-    test('toFormat for Date 8', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY MMM DD hh:nn:ss am');
         expect(result).toBe('2020 Dec 01 11:59:59 pm');
     });
 
-    test('toFormat for Date 9', () => {
+    test('toFormat for Dec 1, 2020', () => {
         const d = new Date(2020, 11, 1, 23, 59, 59);
         const result = d.toFormat('YYYY MMMM DD hh:nn:ss am');
         expect(result).toBe('2020 December 01 11:59:59 pm');
+    });
+
+    test('isLastDayOfMonth for Jan 31, 2020', () => {
+        const d1 = new Date(2020, 0, 31); // Jan 31, 2020
+        expect(d1.isLastDayOfMonth()).toBe(true);
+    });
+    test('isLastDayOfMonth for Feb 29, 2020', () => {
+        const d2 = new Date(2020, 1, 29); // Feb 29, 2020 (leap year)
+        expect(d2.isLastDayOfMonth()).toBe(true);
+    });
+    test('isLastDayOfMonth for Feb 28, 2021', () => {
+        const d3 = new Date(2021, 1, 28); // Feb 28, 2021 (not a leap year)
+        expect(d3.isLastDayOfMonth()).toBe(true);
+    });
+    test('isLastDayOfMonth for Apr 30, 2020', () => {
+        const d4 = new Date(2020, 3, 30); // Apr 30, 2020
+        expect(d4.isLastDayOfMonth()).toBe(true);
+    }); 
+    test('isLastDayOfMonth for Mar 30, 2020', () => {
+        const d5 = new Date(2020, 2, 30); // Mar 30, 2020
+        expect(d5.isLastDayOfMonth()).toBe(false);
+    });
+    test('isLastDayOfMonth for Dec 30, 2020', () => {
+        const d6 = new Date(2020, 11, 30); // Dec 30, 2020
+        expect(d6.isLastDayOfMonth()).toBe(false);
     });
 
 });
