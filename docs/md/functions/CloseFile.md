@@ -6,13 +6,13 @@
 
 # Function: CloseFile()
 
-> **CloseFile**(`ofile`): `void`
+> **CloseFile**(`outFile`): `void`
 
 Terminates the association between a file variable and an external disk file.
 
 ## Parameters
 
-• **ofile**: `any`
+• **outFile**: `any`
 
 ## Returns
 
@@ -20,4 +20,4 @@ Terminates the association between a file variable and an external disk file.
 
 ## Defined in
 
-[src/rtl.ts:211](https://github.com/chuacw/delphirtl/blob/1a0a3e89a2d0f0bb95b58dc274ba81b7da57ba8c/src/rtl.ts#L211)
+[src/rtl.ts:214](https://github.com/chuacw/delphirtl/blob/fec3f5d663dd7c36654525a8693564dece7e3b0d/src/rtl.ts#L214)

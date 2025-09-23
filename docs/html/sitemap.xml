@@ -2,514 +2,518 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/modules.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/index.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/enums/JSONRPCErrorCode.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/BaseJsonRpcServer.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/Dictionary.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/JSONRPCClient.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/JSONRPCErrorException.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/JSONRPCServer.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/List.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/Queue.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/Stack.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/TMessage.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/TMessageManager.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/Tree.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/classes/Worker.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/interfaces/JSONRPCRequest.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/interfaces/TDiffDuration.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/interfaces/TSendHandler.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/ArbitraryObject.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/CommonMethodsOrProperties.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/JSONRPC.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/JSONRPCParameters.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/JSONRPCParams.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/JSONRPCResponsePromise.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/JSONRPCServerMiddlewareNext.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/MessageType.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/PTreeNode.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/Request.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/Response.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/SimpleJSONRPCMethod.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/SubscriptionIdentifierType.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/SubscriptionIndex.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/TFilterPredicate.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/types/TSearchRec.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/CNoContent.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/ENV_NEXT_PREFIX.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/ENV_REACT_PREFIX.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/ENV_VITE_PREFIX.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faAnyFile.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faArchive.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faCompressed.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faDirectory.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faEncrypted.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faHidden.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faInvalid.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faNormal.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faReadOnly.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faSymLink.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faSysFile.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faTemporary.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faVirtual.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/faVolumeID.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/isMainThread.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/JSONRPC-1.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/Output.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
+	</url>
+	<url>
+		<loc>https://chuacw.github.io/delphirtl/html/variables/ParamCount.html</loc>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/parentPort.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SEmptyIterables.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SEntityParseFailed.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SFunction.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SInvalidParams.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SInvalidRequest.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/sLineBreak.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SMethodNotFound.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SMethodNotImplemented.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/SParseError.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/variables/workerData.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/Append.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/AssignFile.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/CloseFile.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/CreateDir.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/createJSONRPCErrorResponse.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/dedupArray.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/DeleteEnvironmentVariable.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/DiffDuration.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/DirectoryExists.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/error.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/ExistsEnvironmentVariable.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/ExtractFileDir.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/ExtractFileExt.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/ExtractFileName.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/FileExists.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/fromBlockchainTimestamp.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/getAllMethods.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/GetCurrentDir.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/GetDirectories.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/GetEnvironmentVariable.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/getEstimatedBlockNumberForDuration.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/getLauncher.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
+	</url>
+	<url>
+		<loc>https://chuacw.github.io/delphirtl/html/functions/getParamCount.html</loc>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/Halt.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/hasFieldOfType.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/hasInstanceMethod.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/hasMessageField.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/hasPrototypeMethodFromConstructor.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/haveNoDuplicates.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/IncludeTrailingPathDelimiter.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/info.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/isArbitraryObject.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/isJSONRPCID.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/isLastDayOfMonth.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/IsLeapYear.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/isValidDate.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddDays.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddHours.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddMins.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddMonths.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddSecs.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddWeeks.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateAddYears.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSDateToBlockchainTimestamp.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/JSTimeToUTC.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/log.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/LowerCase-1.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/maxLen.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
-	</url>
-	<url>
-		<loc>https://chuacw.github.io/delphirtl/html/functions/ParamCount.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/ParamStr.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/RemoveDir.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/Rewrite.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/runInThread.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/SetCurrentDir.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/SetEnvironmentVariable.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/sleep-1.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/sort.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/timePerformance.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/toFormat.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/UNUSED.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/UpperCase-1.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/Write.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 	<url>
 		<loc>https://chuacw.github.io/delphirtl/html/functions/WriteLn.html</loc>
-		<lastmod>2025-09-23T09:36:32.082Z</lastmod>
+		<lastmod>2025-09-23T11:35:52.357Z</lastmod>
 	</url>
 </urlset>

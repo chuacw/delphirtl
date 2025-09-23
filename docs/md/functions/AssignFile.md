@@ -6,13 +6,13 @@
 
 # Function: AssignFile()
 
-> **AssignFile**(`ofile`, `filename`): `void`
+> **AssignFile**(`outFile`, `filename`): `void`
 
 Associates the name of an external file with a file class
 
 ## Parameters
 
-• **ofile**: `OutputFile`
+• **outFile**: `TextFile`
 
 • **filename**: `string`
 
@@ -22,4 +22,4 @@ Associates the name of an external file with a file class
 
 ## Defined in
 
-[src/rtl.ts:174](https://github.com/chuacw/delphirtl/blob/1a0a3e89a2d0f0bb95b58dc274ba81b7da57ba8c/src/rtl.ts#L174)
+[src/rtl.ts:177](https://github.com/chuacw/delphirtl/blob/fec3f5d663dd7c36654525a8693564dece7e3b0d/src/rtl.ts#L177)

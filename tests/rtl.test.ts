@@ -8,13 +8,24 @@ describe('testing rtl', () => {
     const LScriptName = "myscriptname";
     test('ParamCount empty', () => {
         clearArgv();
-        process.argv.push("node.exe"); process.argv.push(LScriptName);
-        expect(ParamCount()).toEqual(0);
+        process.argv.push("node.exe"); 
+        process.argv.push(LScriptName);
+        expect(ParamCount).toEqual(0);
     });
     test('ParamCount 1', () => {
         clearArgv();
-        process.argv.push("node.exe"); process.argv.push(LScriptName); process.argv.push("Param 1");
-        expect(ParamCount()).toEqual(1);
+        process.argv.push("node.exe"); 
+        process.argv.push(LScriptName); 
+        process.argv.push("Param 1");
+        expect(ParamCount).toEqual(1);
+    });
+    test('ParamCount 2', () => {
+        clearArgv();
+        process.argv.push("node.exe"); 
+        process.argv.push(LScriptName); 
+        process.argv.push("Param 1");
+        process.argv.push("Param 2");
+        expect(ParamCount).toEqual(2);
     });
 
     test('ParamStr(0)', () => {

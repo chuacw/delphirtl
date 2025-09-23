@@ -24,12 +24,6 @@ Renames and re-exports [toFormat](functions/toFormat.md)
 
 ***
 
-### getParamCount
-
-Renames and re-exports [ParamCount](functions/ParamCount.md)
-
-***
-
 ### getParamStr
 
 Renames and re-exports [ParamStr](functions/ParamStr.md)
@@ -105,7 +99,6 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [Assign](globals.md#assign)
 - [Close](globals.md#close)
 - [FormatDateTime](globals.md#formatdatetime)
-- [getParamCount](globals.md#getparamcount)
 - [getParamStr](globals.md#getparamstr)
 - [lowerCase](globals.md#lowercase)
 - [Sleep](globals.md#sleep)
@@ -182,11 +175,12 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 ## RTL
 
 - [CommonMethodsOrProperties](type-aliases/CommonMethodsOrProperties.md)
+- [ParamCount](variables/ParamCount.md)
 - [Append](functions/Append.md)
 - [AssignFile](functions/AssignFile.md)
 - [CloseFile](functions/CloseFile.md)
 - [getLauncher](functions/getLauncher.md)
-- [ParamCount](functions/ParamCount.md)
+- [getParamCount](functions/getParamCount.md)
 - [ParamStr](functions/ParamStr.md)
 - [Rewrite](functions/Rewrite.md)
 - [sleep](functions/sleep.md)

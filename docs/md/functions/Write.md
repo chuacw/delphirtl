@@ -6,7 +6,7 @@
 
 # Function: Write()
 
-> **Write**(`outFile`?, `arg`?): `void`
+> **Write**(`outFile`?, ...`arg`?): `void`
 
 Writes to a text file.
 
@@ -22,7 +22,9 @@ If F is omitted, the global variable Output is used to access the processed stan
 
 • **outFile?**: `any`
 
-• **arg?**: `any`
+optional output file, otherwise uses standard output
+
+• ...**arg?**: `any`
 
 any number of arguments to write
 
@@ -32,4 +34,4 @@ any number of arguments to write
 
 ## Defined in
 
-[src/rtl.ts:240](https://github.com/chuacw/delphirtl/blob/1a0a3e89a2d0f0bb95b58dc274ba81b7da57ba8c/src/rtl.ts#L240)
+[src/rtl.ts:243](https://github.com/chuacw/delphirtl/blob/fec3f5d663dd7c36654525a8693564dece7e3b0d/src/rtl.ts#L243)

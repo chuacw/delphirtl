@@ -110,7 +110,7 @@ function fromBlockchainTimestamp(time: number): Date {
     return result;
 }
 
-Date.prototype.ToBlockchainTimestamp = function (): number {
+Date.prototype.ToBlockchainTimestamp = function(): number {
     const timestamp = this.getTime(); // in seconds
     const result = Math.floor((timestamp) / 1000);
     return result;
@@ -119,7 +119,7 @@ Date.prototype.ToBlockchainTimestamp = function (): number {
 /**
  * Returns a new instance of Date with the added number of seconds
 */
-Date.prototype.addSeconds = function (seconds: number) {
+Date.prototype.addSeconds = function(seconds: number) {
     const result = new Date(this);
     result.setSeconds(result.getSeconds() + seconds);
     return result;
@@ -128,7 +128,7 @@ Date.prototype.addSeconds = function (seconds: number) {
 /**
 * Returns a new instance of Date with the added number of minutes
 */
-Date.prototype.addMinutes = function (minutes: number) {
+Date.prototype.addMinutes = function(minutes: number) {
     const result = new Date(this);
     result.setMinutes(result.getMinutes() + minutes);
     return result;
@@ -137,7 +137,7 @@ Date.prototype.addMinutes = function (minutes: number) {
 /**
  * Returns a new instance of Date with the added number of hours
 */
-Date.prototype.addHours = function (hours: number) {
+Date.prototype.addHours = function(hours: number) {
     const result = new Date(this);
     result.setHours(result.getHours() + hours);
     return result;
@@ -146,7 +146,7 @@ Date.prototype.addHours = function (hours: number) {
 /**
  * Returns a new instance of Date with the added number of days
 */
-Date.prototype.addDays = function (days: number) {
+Date.prototype.addDays = function(days: number) {
     const result = new Date(this);
     result.setDate(result.getDate() + days);
     return result;
@@ -155,25 +155,25 @@ Date.prototype.addDays = function (days: number) {
 /**
  * Returns a new instance of Date with the added number of weeks
 */
-Date.prototype.addWeeks = function (weeks: number) {
+Date.prototype.addWeeks = function(weeks: number) {
     const newDate = new Date(this);
     const result = newDate.addDays(weeks * 7);
     return result;
 };
 
 /**
- * Returns a new instance of Date with the added number of months (30 days per month)
+ * Returns a new instance of Date with the added number of months
 */
-Date.prototype.addMonths = function (months: number) {
-    const newDate = new Date(this);
-    const result = newDate.addDays(months * 30);
+Date.prototype.addMonths = function(months?: number) {
+    const result = new Date(this);
+    result.setMonth(result.getMonth() + (months == undefined ? 1 : months));
     return result;
 };
 
 /**
  * Returns a new instance of Date with the added number of years
 */
-Date.prototype.addYears = function (years: number) {
+Date.prototype.addYears = function(years: number) {
     const result = new Date(this);
     var dt = result.getDate();
     result.setFullYear(result.getFullYear() + years);
@@ -184,23 +184,23 @@ Date.prototype.addYears = function (years: number) {
     return result;
 };
 
-Date.prototype.isLastDayOfMonth = function (): boolean {
-  const year = this.getFullYear();
-  const month = this.getMonth();
-  const day = this.getDate();
+Date.prototype.isLastDayOfMonth = function(): boolean {
+    const year = this.getFullYear();
+    const month = this.getMonth();
+    const day = this.getDate();
 
-  // Create a date for the 0th day of the next month ? gives last day of current month
-  const lastDay = new Date(year, month + 1, 0).getDate();
+    // Create a date for the 0th day of the next month ? gives last day of current month
+    const lastDay = new Date(year, month + 1, 0).getDate();
 
-  return day === lastDay;
+    return day === lastDay;
 }
 
-Date.prototype.isValidDate = function (): boolean {
+Date.prototype.isValidDate = function(): boolean {
     const result = this instanceof Date && !isNaN(this.valueOf());
     return result;
 }
 
-Date.prototype.toFormat = function (format: string) {
+Date.prototype.toFormat = function(format: string) {
     const result = toFormat(format, this);
     return result;
 }

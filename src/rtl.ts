@@ -50,7 +50,7 @@ function hasInstanceMethod(instance: unknown, name: string): boolean {
  * @returns {number}
  * @category RTL
  */
-function ParamCount(): number {
+function getParamCount(): number {
     const processArgs = getProcessArgs();
     return processArgs.length - 1;
 }
@@ -104,7 +104,7 @@ function UNUSED(...x: any) { }
 
 const fs = require('fs');
 
-class OutputFile {
+class TextFile {
     filename: string | null;
     stream: any;
     mode: string | null;
@@ -154,10 +154,13 @@ class OutputFile {
 
     close() {
         if (this.stream) {
-            this.stream.end();
+            if (this.stream !== process.stdout) {
+                this.stream.end();
+            }
             this.stream = null;
-            this.mode = null;
         }
+        this.filename = null;
+        this.mode = null;
     }
 }
 
@@ -166,51 +169,51 @@ class OutputFile {
 /**
  * Associates the name of an external file with a file class
  * 
- * @param {OutputFile} ofile
+ * @param {TextFile} outFile
  * @param {string} filename
  * @returns {void}
  * @category RTL
  */
-function AssignFile(ofile: OutputFile, filename: string) {
-    if (!(ofile instanceof OutputFile)) throw new TypeError('First arg must be OutputFile');
-    ofile.filename = filename;
+function AssignFile(outFile: TextFile, filename: string) {
+    if (!(outFile instanceof TextFile)) throw new TypeError('First arg must be TextFile');
+    outFile.filename = filename;
 }
 
 /**
  * Creates a new file and opens it. 
  * 
- * @param {OutputFile} ofile
+ * @param {TextFile} outFile
  * @returns {void}
  * @category RTL
  */
-function Rewrite(ofile: OutputFile | any) {
-    if (!(ofile instanceof OutputFile)) throw new TypeError('RewriteFile expects an OutputFile');
-    ofile.open('w');
+function Rewrite(outFile: TextFile | any) {
+    if (!(outFile instanceof TextFile)) throw new TypeError('RewriteFile expects a TextFile');
+    outFile.open('w');
 }
 
 /**
  * Prepares an existing file for adding text to the end. 
  * 
- * @param {OutputFile} ofile
+ * @param {TextFile} outFile
  * @returns {void}
  * @category RTL
  */
-function Append(ofile: OutputFile) {
-    if (!(ofile instanceof OutputFile)) throw new TypeError('Append expects an OutputFile');
-    ofile.open('a');
+function Append(outFile: TextFile) {
+    if (!(outFile instanceof TextFile)) throw new TypeError('Append expects a TextFile');
+    outFile.open('a');
 }
 
 
 /**
  * Terminates the association between a file variable and an external disk file. 
  * 
- * @param {OutputFile} ofile
+ * @param {TextFile} outFile
  * @returns {void}
  * @category RTL
  */
-function CloseFile(ofile: OutputFile | any) {
-    if (!(ofile instanceof OutputFile)) throw new TypeError('CloseFile expects an OutputFile');
-    ofile.close();
+function CloseFile(outFile: TextFile | any) {
+    if (!(outFile instanceof TextFile)) throw new TypeError('CloseFile expects a TextFile');
+    outFile.close();
 }
 
 function concatArgs(args: IArguments, startIndex = 0) {
@@ -232,16 +235,16 @@ function concatArgs(args: IArguments, startIndex = 0) {
  * 
  * If F is omitted, the global variable Output is used to access the processed standard input file.
  * 
- * @param {OutputFile} outFile
+ * @param {TextFile} outFile optional output file, otherwise uses standard output
  * @param {...*} arg any number of arguments to write
  * @returns {void}
  * @category RTL
  */
-function Write(outFile?: OutputFile | any, arg?: any/* args */) {
+function Write(outFile?: TextFile | any, ...arg: any/* args */) {
     const args = arguments;
     if (args.length === 0) return;
     const first = args[0];
-    if (first instanceof OutputFile) {
+    if (first instanceof TextFile) {
         const text = concatArgs(args, 1);
         if (text.length) first.write(text);
     } else {
@@ -262,16 +265,16 @@ function Write(outFile?: OutputFile | any, arg?: any/* args */) {
  * 
  * If F is omitted, the global variable Output is used to access the processed standard input file.
  * 
- * @param {OutputFile} outFile
+ * @param {TextFile} outFile optional output file, otherwise uses standard output
  * @param {...*} arg any number of arguments to write
  * @returns {void}
  * @category RTL
  */
-function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
+function WriteLn(outFile?: TextFile | any, ...arg: any/* args */) {
     const args = arguments;
-    if (args.length > 0 && args[0] instanceof OutputFile) {
+    if (args.length > 0 && args[0] instanceof TextFile) {
         // Pass OutputFile + all args + newline as one string to Write
-        const file = args[0] as OutputFile;
+        const file = args[0] as TextFile;
         const text = concatArgs(args, 1) + sLineBreak;
         Write(file, text);
     } else {
@@ -294,13 +297,31 @@ function Halt(code?: number): never {
  * Specifies a write-only text file associated with the process's standard output file. 
  * @category RTL
  */
-const Output: OutputFile = new OutputFile();
+const Output: TextFile = new TextFile();
 AssignFile(Output, 'CONOUT$');
 Rewrite(Output);
 
+declare const exports: any;
+
+Object.defineProperty(exports, 'ParamCount', {
+  get() { 
+    const processArgs = getProcessArgs();
+    return processArgs.length - 1;
+  },
+  enumerable: true
+});
+
+/**
+ * ParamCount returns the number of parameters passed to the program on the command line. Separate parameters with spaces or tabs.
+ * 
+ * @returns {number} the number of parameters passed on the command line. 
+ * @category RTL
+ */
+export let ParamCount: number;
+
 export {
     hasInstanceMethod, hasPrototypeMethodFromConstructor,
-    ParamCount, ParamCount as getParamCount,
+    getParamCount,
     ParamStr, ParamStr as getParamStr,
     sleep, sleep as Sleep, sLineBreak,
     CommonMethodsOrProperties,

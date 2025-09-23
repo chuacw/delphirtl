@@ -1,5 +1,6 @@
 
-import path = require("path");
+import path from "path";
+
 import {
     CreateDir, ExtractFileDir, DirectoryExists, RemoveDir,
 
@@ -39,7 +40,7 @@ function GenerateVarName(maxLen?: number): string {
     const secondGroup = "0123456789" + firstGroup;
     const firstLen = firstGroup.length;
     const len1 = getRandomInt(firstLen);
-    const tempResult = [];
+    const tempResult: string[] = [];
     for (let i = 0; i < len1; i++) {
         tempResult.push(firstGroup[getRandomInt(firstLen)])
         if (maxLen && tempResult.length >= maxLen) {
