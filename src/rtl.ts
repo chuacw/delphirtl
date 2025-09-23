@@ -166,6 +166,9 @@ class OutputFile {
 /**
  * Associates the name of an external file with a file class
  * 
+ * @param {OutputFile} ofile
+ * @param {string} filename
+ * @returns {void}
  * @category RTL
  */
 function AssignFile(ofile: OutputFile, filename: string) {
@@ -176,6 +179,8 @@ function AssignFile(ofile: OutputFile, filename: string) {
 /**
  * Creates a new file and opens it. 
  * 
+ * @param {OutputFile} ofile
+ * @returns {void}
  * @category RTL
  */
 function Rewrite(ofile: OutputFile | any) {
@@ -186,6 +191,8 @@ function Rewrite(ofile: OutputFile | any) {
 /**
  * Prepares an existing file for adding text to the end. 
  * 
+ * @param {OutputFile} ofile
+ * @returns {void}
  * @category RTL
  */
 function Append(ofile: OutputFile) {
@@ -197,6 +204,8 @@ function Append(ofile: OutputFile) {
 /**
  * Terminates the association between a file variable and an external disk file. 
  * 
+ * @param {OutputFile} ofile
+ * @returns {void}
  * @category RTL
  */
 function CloseFile(ofile: OutputFile | any) {
@@ -223,6 +232,9 @@ function concatArgs(args: IArguments, startIndex = 0) {
  * 
  * If F is omitted, the global variable Output is used to access the processed standard input file.
  * 
+ * @param {OutputFile} outFile
+ * @param {...*} arg any number of arguments to write
+ * @returns {void}
  * @category RTL
  */
 function Write(outFile?: OutputFile | any, arg?: any/* args */) {
@@ -250,6 +262,9 @@ function Write(outFile?: OutputFile | any, arg?: any/* args */) {
  * 
  * If F is omitted, the global variable Output is used to access the processed standard input file.
  * 
+ * @param {OutputFile} outFile
+ * @param {...*} arg any number of arguments to write
+ * @returns {void}
  * @category RTL
  */
 function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
@@ -266,8 +281,19 @@ function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
 }
 
 /*
+ * Halts the program with the given codeand returns control to the operating system.
+ *
+ * @returns {void}
+ * @category RTL
+ */
+function Halt(code: number = 0): never {
+    process.exit(code);
+}
+
+/*
  * Specifies a write-only text file associated with the process's standard output file. 
-*/
+ * @category RTL
+ */
 const Output: OutputFile = new OutputFile();
 AssignFile(Output, 'CONOUT$');
 Rewrite(Output);
@@ -281,6 +307,6 @@ export {
     UNUSED, getLauncher,
     AssignFile, AssignFile as Assign, Append,
     CloseFile, CloseFile as Close, Output, Rewrite,
-    Write, WriteLn
+    Write, WriteLn, Halt
 }
 

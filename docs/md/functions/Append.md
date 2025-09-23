@@ -8,6 +8,8 @@
 
 > **Append**(`ofile`): `void`
 
+Prepares an existing file for adding text to the end.
+
 ## Parameters
 
 • **ofile**: `OutputFile`
@@ -18,4 +20,4 @@
 
 ## Defined in
 
-[src/rtl.ts:163](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/rtl.ts#L163)
+[src/rtl.ts:198](https://github.com/chuacw/delphirtl/blob/1a0a3e89a2d0f0bb95b58dc274ba81b7da57ba8c/src/rtl.ts#L198)
