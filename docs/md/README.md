@@ -43,8 +43,8 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.18 | 13 Oct 2024 | Added isArbitraryObject |
 | 1.1.19-20 | 19 Oct 2024 | Added haveNoDuplicates to ArrayUtils |
 | 1.1.25-26 | 14 Nov 2024 | Added toFormat to ArrayUtils and Date |
-| 1.1.27-28 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path |
-| 1.1.29    | 23 Sep 2025 | Added isLastDayOfMonth to Date |
+| 1.1.27-29 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path |
+| 1.1.30-32 | 23 Sep 2025 | Added isLastDayOfMonth to Date |
 
 ## Documentation
 For further documentation, see the 

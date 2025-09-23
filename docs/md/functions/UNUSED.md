@@ -22,4 +22,4 @@ any number of parameters to ignore
 
 ## Defined in
 
-[src/rtl.ts:84](https://github.com/chuacw/delphirtl/blob/7ea4891110a48e6aa35744474c09ae59d2a501a7/src/rtl.ts#L84)
+[src/rtl.ts:101](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/rtl.ts#L101)
