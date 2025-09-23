@@ -341,6 +341,14 @@ function DiffDuration(d1: Date, d2: Date): TDiffDuration {
 }
 
 /**
+ * Checks if the given date is the last day of the month
+ */
+function isLastDayOfMonth(date: Date): boolean {
+    const result = date.isLastDayOfMonth();
+    return result;
+}
+
+/**
  * Checks if a date is valid
  *
  * @param {Date} date
@@ -425,6 +433,7 @@ export {
     JSTimeToUTC,
     JSDateToBlockchainTimestamp,
     DiffDuration,
+    isLastDayOfMonth,
     isValidDate,
     toFormat,
     toFormat as FormatDateTime
