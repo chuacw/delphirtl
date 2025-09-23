@@ -177,6 +177,20 @@ function concatArgs(args: IArguments, startIndex = 0) {
     }).join('');
 }
 
+/**
+ * 
+ * Writes to a text file.
+ *
+ * Writeln is an extension of the Write procedure, as it is defined for text files.
+ * 
+ * The syntax shown here for the Writeln procedure is illustrates that WriteLn can take a variable number of arguments.
+ * 
+ * After executing Write, Writeln writes an end-of-line marker (line feed or carriage return/line feed) to the file.
+ * 
+ * If F is omitted, the global variable Output is used to access the processed standard input file.
+ * 
+ * @category RTL
+ */
 function Write(outFile?: OutputFile | any, arg?: any/* args */) {
     const args = arguments;
     if (args.length === 0) return;
@@ -190,6 +204,20 @@ function Write(outFile?: OutputFile | any, arg?: any/* args */) {
     }
 }
 
+/**
+ * 
+ * Writes to a text file and adds an end-of-line marker.
+ *
+ * Writeln is an extension of the Write procedure, as it is defined for text files.
+ * 
+ * The syntax shown here for the Writeln procedure is illustrates that WriteLn can take a variable number of arguments.
+ * 
+ * After executing Write, Writeln writes an end-of-line marker (line feed or carriage return/line feed) to the file.
+ * 
+ * If F is omitted, the global variable Output is used to access the processed standard input file.
+ * 
+ * @category RTL
+ */
 function WriteLn(outFile?: OutputFile | any, arg?: any/* args */) {
     const args = arguments;
     if (args.length > 0 && args[0] instanceof OutputFile) {
