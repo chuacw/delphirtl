@@ -22,7 +22,7 @@ TMessageManager enables messaging between different code points.
 
 #### Defined in
 
-[src/messaging.ts:124](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L124)
+[src/messaging.ts:124](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L124)
 
 ## Messaging
 
@@ -48,7 +48,7 @@ Sends the given message to listeners that subscribes to the given class.
 
 #### Defined in
 
-[src/messaging.ts:181](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L181)
+[src/messaging.ts:181](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L181)
 
 ***
 
@@ -74,7 +74,7 @@ Subscribes to the given class and receives the given message
 
 #### Defined in
 
-[src/messaging.ts:227](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L227)
+[src/messaging.ts:227](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L227)
 
 ***
 
@@ -96,7 +96,7 @@ Unsubscribes from messages on the given class
 
 #### Defined in
 
-[src/messaging.ts:269](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L269)
+[src/messaging.ts:269](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L269)
 
 ***
 
@@ -118,7 +118,7 @@ Unsubscribes from the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:288](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L288)
+[src/messaging.ts:288](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L288)
 
 ## Other
 
@@ -136,7 +136,7 @@ Unsubscribes from the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:135](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L135)
+[src/messaging.ts:135](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L135)
 
 ***
 
@@ -154,7 +154,7 @@ Unsubscribes from the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:140](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L140)
+[src/messaging.ts:140](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L140)
 
 ***
 
@@ -172,7 +172,7 @@ Unsubscribes from the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:153](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L153)
+[src/messaging.ts:153](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L153)
 
 ***
 
@@ -186,7 +186,7 @@ Unsubscribes from the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:128](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L128)
+[src/messaging.ts:128](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L128)
 
 ***
 
@@ -212,7 +212,7 @@ Sends a wrapped message to listeners on the given class
 
 #### Defined in
 
-[src/messaging.ts:203](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L203)
+[src/messaging.ts:203](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L203)
 
 ***
 
@@ -238,7 +238,7 @@ Subscribes to the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:248](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L248)
+[src/messaging.ts:248](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L248)
 
 ***
 
@@ -252,7 +252,7 @@ Subscribes to the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:161](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L161)
+[src/messaging.ts:161](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L161)
 
 ***
 
@@ -266,4 +266,4 @@ Subscribes to the wrapped message on the given class
 
 #### Defined in
 
-[src/messaging.ts:165](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/messaging.ts#L165)
+[src/messaging.ts:165](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/messaging.ts#L165)

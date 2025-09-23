@@ -24,4 +24,4 @@ extends {}
 
 ## Defined in
 
-[src/rtl.ts:14](https://github.com/chuacw/delphirtl/blob/48cfb097286672c971bbebd46ef739959b561e2a/src/rtl.ts#L14)
+[src/rtl.ts:16](https://github.com/chuacw/delphirtl/blob/df8a1102afe240ac0634e8cf60783cbd5a5ad06f/src/rtl.ts#L16)

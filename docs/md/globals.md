@@ -6,6 +6,18 @@
 
 ## Other
 
+### Assign
+
+Renames and re-exports [AssignFile](functions/AssignFile.md)
+
+***
+
+### Close
+
+Renames and re-exports [CloseFile](functions/CloseFile.md)
+
+***
+
 ### FormatDateTime
 
 Renames and re-exports [toFormat](functions/toFormat.md)
@@ -90,6 +102,8 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 
 ## Other
 
+- [Assign](globals.md#assign)
+- [Close](globals.md#close)
 - [FormatDateTime](globals.md#formatdatetime)
 - [getParamCount](globals.md#getparamcount)
 - [getParamStr](globals.md#getparamstr)
@@ -135,11 +149,16 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [faVolumeID](variables/faVolumeID.md)
 - [isMainThread](variables/isMainThread.md)
 - [JSONRPC](variables/JSONRPC.md)
+- [Output](variables/Output.md)
 - [parentPort](variables/parentPort.md)
 - [SEmptyIterables](variables/SEmptyIterables.md)
 - [SFunction](variables/SFunction.md)
+- [sLineBreak](variables/sLineBreak.md)
 - [SMethodNotImplemented](variables/SMethodNotImplemented.md)
 - [workerData](variables/workerData.md)
+- [Append](functions/Append.md)
+- [AssignFile](functions/AssignFile.md)
+- [CloseFile](functions/CloseFile.md)
 - [createJSONRPCErrorResponse](functions/createJSONRPCErrorResponse.md)
 - [DiffDuration](functions/DiffDuration.md)
 - [fromBlockchainTimestamp](functions/fromBlockchainTimestamp.md)
@@ -159,6 +178,7 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [JSDateAddYears](functions/JSDateAddYears.md)
 - [JSDateToBlockchainTimestamp](functions/JSDateToBlockchainTimestamp.md)
 - [JSTimeToUTC](functions/JSTimeToUTC.md)
+- [Rewrite](functions/Rewrite.md)
 - [timePerformance](functions/timePerformance.md)
 - [toFormat](functions/toFormat.md)
 
@@ -170,6 +190,8 @@ Renames and re-exports [UpperCase](functions/UpperCase.md)
 - [ParamStr](functions/ParamStr.md)
 - [sleep](functions/sleep.md)
 - [UNUSED](functions/UNUSED.md)
+- [Write](functions/Write.md)
+- [WriteLn](functions/WriteLn.md)
 
 ## SysUtils
 
