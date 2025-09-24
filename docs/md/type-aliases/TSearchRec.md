@@ -52,4 +52,4 @@ Last modified time
 
 ## Defined in
 
-[src/sysutils.ts:147](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/sysutils.ts#L147)
+[src/sysutils.ts:147](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/sysutils.ts#L147)

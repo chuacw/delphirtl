@@ -26,4 +26,4 @@ The function to run in a thread
 
 ## Defined in
 
-[src/threadutils.ts:11](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/threadutils.ts#L11)
+[src/threadutils.ts:11](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/threadutils.ts#L11)

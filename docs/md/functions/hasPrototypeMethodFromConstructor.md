@@ -25,4 +25,4 @@ This helper is useful for checking prototype-augmented methods added at runtime.
 
 ## Defined in
 
-[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/rtl.ts#L37)
+[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/rtl.ts#L37)

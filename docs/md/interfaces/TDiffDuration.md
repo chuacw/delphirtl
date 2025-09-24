@@ -16,7 +16,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:310](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L310)
+[src/dateutils.ts:310](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L310)
 
 ***
 
@@ -26,7 +26,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:311](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L311)
+[src/dateutils.ts:311](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L311)
 
 ***
 
@@ -36,7 +36,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:312](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L312)
+[src/dateutils.ts:312](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L312)
 
 ***
 
@@ -48,7 +48,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:309](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L309)
+[src/dateutils.ts:309](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L309)
 
 ***
 
@@ -58,7 +58,7 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:313](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L313)
+[src/dateutils.ts:313](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L313)
 
 ***
 
@@ -70,4 +70,4 @@ The difference / duration between 2 dates
 
 #### Defined in
 
-[src/dateutils.ts:304](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L304)
+[src/dateutils.ts:304](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L304)

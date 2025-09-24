@@ -42,4 +42,4 @@ date instance
 
 ## Defined in
 
-[src/dateutils.ts:386](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/dateutils.ts#L386)
+[src/dateutils.ts:386](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L386)

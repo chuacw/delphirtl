@@ -535,8 +535,12 @@ const invalidFmt = (spec: string) => `Format '${spec}' invalid or incompatible w
 // Format('Hello %0:s, %1:d and %2:.2f %%', ['world', 7, 1.2345])
 // -> 'Hello world, 7 and 1.23 %'
 /**
- * Delphi-style Format (manual parser, no RegExp)
+ * Delphi-style Format
  * Spec: "%" [index ":"] ["-"] [width] ["." prec] type
+ *
+ * @param (string) fmt Format specifier
+ * @param (FormatArg[]) args Arguments to format
+ * @returns (string) Formatted string
  */
 function Format(fmt: string, args: FormatArg[]): string {
     if (fmt === undefined || fmt === null) return '';
