@@ -419,22 +419,190 @@ function toFormat(format: string, d: Date): string {
     return format.replace(/YYYY|YY|MMMM|MMM|MM|M|DD|D|HH|H|hh|h|nn|n|ss|s|AM|PM|am|pm/g, match => replacements[match]);
 }
 
+/**
+ * Returns the millisecond of the second
+ * @param {Date} date The date to get the milliseconds for
+ * @returns {number} Returns the millisecond of the second
+ */
+function MillisecondOf(date: Date): number {
+    return date.getMilliseconds();
+}
+/**
+ * Returns the second of the minute
+ * @param {Date} date The date to get the seconds for
+ * @returns {number} Returns the second of the minute
+ */
+function SecondOf(date: Date): number {
+    return date.getSeconds();
+}
+/**
+ * Returns the minute of the hour
+ * @param {Date} date The date to get the minutes for
+ * @returns {number} Returns the minute of the hour
+ */
+function MinutesOf(date: Date): number {
+    return Math.floor(date.getTime() / 60000);
+}
+/*
+ * Returns the hour of the day
+ * @param {Date} date The date to get the hours for
+ * @returns {number} Returns the hour of the day
+ */
+function HoursOf(date: Date): number {
+    return Math.floor(date.getTime() / 3600000);
+}
+/**
+ * Returns the number of days in the given date
+ * @param {Date} date The date to get the days for
+ * @returns {number} Returns the number of days
+ */
+function DaysOf(date: Date): number {
+    return Math.floor(date.getTime() / 86400000);
+}
+/*
+ * Returns the minute of the hour
+ * @param {Date} date The date to get the minutes for
+ * @returns {number} Returns the minute of the hour
+ */
+function MinuteOf(date: Date): number {
+    return date.getMinutes();
+}
+/*
+ * Returns the hour of the day
+ * @param {Date} date The date to get the hours for
+ * @returns {number} Returns the hour of the day
+ */
+function HourOf(date: Date): number {
+    return date.getHours();
+}
+/*
+ * Returns the day of the month
+ * @param {Date} date The date to get the day of the month for
+ * @returns {number} Returns the day of the month
+ */
+function DayOf(date: Date): number {
+    return date.getDate();
+}
+/*
+ * Returns the week of the year for the given date
+ * @param {Date} date The date to get the week of the year for
+ * @returns {number} Returns the week of the year
+ */
+function WeekOf(date: Date): number {
+    const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    // Map Sun(0) -> 7, Mon..Sat stay 1..6
+    const day = d.getDay() || 7;
+    // Nearest Thursday
+    d.setDate(d.getDate() + 4 - day);
+
+    const yearStart = new Date(d.getFullYear(), 0, 1);
+    const diffDays = Math.floor((d.getTime() - yearStart.getTime()) / 86400000) + 1;
+
+    return Math.ceil(diffDays / 7);
+}
+/*
+ * Returns the month of the year for the given date
+ * @param {Date} date The date to get the month of the year for
+ * @returns {number} Returns the month of the year
+ */
+function MonthOf(date: Date): number {
+    return date.getMonth()+1;
+}
+/*
+ * Returns the year of the date
+ * @param {Date} date The date to get the year for
+ * @returns {number} Returns the year
+ */
+function YearOf(date: Date): number {
+    return date.getFullYear();
+}
+
+/*
+ * Replaces the millisecond of the second
+ * @param {Date} date The date to replace the milliseconds for
+ * @param {number} millisecond The new millisecond
+ * @returns {Date} Returns the new date with the replaced milliseconds
+ */
+function RecodeMillisecond(date: Date, millisecond: number): Date {
+    const result = new Date(date.getTime());
+    result.setMilliseconds(millisecond);
+    return result;
+}
+/*
+ * Replaces the second of the minute
+ * @param {Date} date The date to replace the seconds for
+ * @param {number} second The new second
+ * @returns {Date} Returns the new date with the replaced seconds
+ */
+function RecodeSecond(date: Date, second: number): Date {
+    const result = new Date(date.getTime());
+    result.setSeconds(second);
+    return result;
+}
+/*
+ * Replaces the minute of the hour
+ * @param {Date} date The date to replace the minutes for
+ * @param {number} minute The new minute
+ * @returns {Date} Returns the new date with the replaced minutes
+ */
+function RecodeMinute(date: Date, minute: number): Date {
+    const result = new Date(date.getTime());
+    result.setMinutes(minute);
+    return result;
+}
+/*
+ * Replaces the hour of the day
+ * @param {Date} date The date to replace the hours for
+ * @param {number} hour The new hour
+ * @returns {Date} Returns the new date with the replaced hours
+ */
+function RecodeHour(date: Date, hour: number): Date {
+    const result = new Date(date.getTime());
+    result.setHours(hour);
+    return result;
+}
+/*
+ * Replaces the day of the month
+ * @param {Date} date The date to replace the day for
+ * @param {number} day The new day
+ * @returns {Date} Returns the new date with the replaced day
+ */
+function RecodeDay(date: Date, day: number): Date {
+    const result = new Date(date.getTime());
+    result.setDate(day);
+    return result;
+}
+/*
+ * Replaces the month of the year
+ * @param {Date} date The date to replace the month for
+ * @param {number} month The new month
+ * @returns {Date} Returns the new date with the replaced month
+ */
+function RecodeMonth(date: Date, month: number): Date {
+    const result = new Date(date.getTime());
+    result.setMonth(month);
+    return result;
+}
+/*
+ * Replaces the year of the date
+ * @param {Date} date The date to replace the year for
+ * @param {number} year The new year
+ * @returns {Date} Returns the new date with the replaced year
+ */
+function RecodeYear(date: Date, year: number): Date {
+    const result = new Date(date.getTime());
+    result.setFullYear(year);
+    return result;
+}
 
 export {
     fromBlockchainTimestamp,
     getEstimatedBlockNumberForDuration,
-    JSDateAddYears,
-    JSDateAddMonths,
-    JSDateAddWeeks,
-    JSDateAddDays,
-    JSDateAddHours,
-    JSDateAddMins,
-    JSDateAddSecs,
-    JSTimeToUTC,
+    JSDateAddYears, JSDateAddMonths, JSDateAddWeeks, JSDateAddDays,
+    JSDateAddHours, JSDateAddMins, JSDateAddSecs, JSTimeToUTC,
     JSDateToBlockchainTimestamp,
-    DiffDuration,
-    isLastDayOfMonth,
-    isValidDate,
-    toFormat,
-    toFormat as FormatDateTime
+    DiffDuration, isLastDayOfMonth, isValidDate,
+    toFormat, toFormat as FormatDateTime,
+    MillisecondOf, SecondOf, MinuteOf, HourOf, DayOf, WeekOf, MonthOf, YearOf,
+    RecodeMillisecond, RecodeSecond, RecodeMinute, RecodeHour, RecodeDay, RecodeMonth, RecodeYear,
 }

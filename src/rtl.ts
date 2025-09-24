@@ -154,6 +154,7 @@ class TextFile {
 
     close() {
         if (this.stream) {
+            // Do not end process.stdout, otherwise, future writes in the same process will fail
             if (this.stream !== process.stdout) {
                 this.stream.end();
             }
@@ -301,16 +302,17 @@ const Output: TextFile = new TextFile();
 AssignFile(Output, 'CONOUT$');
 Rewrite(Output);
 
-declare const exports: any;
-
+// Define ParamCount, and this is a run-time definition
 Object.defineProperty(exports, 'ParamCount', {
-  get() { 
+  get(): number { 
     const processArgs = getProcessArgs();
     return processArgs.length - 1;
   },
   enumerable: true
 });
 
+// declare that ParamCount is a number for TypeScript checking purpose,
+// this is a compile-time declaration and has no runtime effect
 /**
  * ParamCount returns the number of parameters passed to the program on the command line. Separate parameters with spaces or tabs.
  * 
@@ -322,11 +324,12 @@ export declare const ParamCount: number;
 export {
     hasInstanceMethod, hasPrototypeMethodFromConstructor,
     getParamCount,
-    ParamStr, ParamStr as getParamStr,
-    sleep, sleep as Sleep, sLineBreak,
     CommonMethodsOrProperties,
     UNUSED, getLauncher,
-    AssignFile, AssignFile as Assign, Append,
+
+    sleep, sleep as Sleep, sLineBreak,
+    ParamStr, ParamStr as getParamStr,
+    TextFile, AssignFile, AssignFile as Assign, Append,
     CloseFile, CloseFile as Close, Output, Rewrite,
     Write, WriteLn, Halt
 }

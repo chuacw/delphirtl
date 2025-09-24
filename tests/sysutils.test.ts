@@ -7,7 +7,7 @@ import {
     DeleteEnvironmentVariable,
     ExistsEnvironmentVariable,
 
-    ExtractFileExt, ExtractFileName, FileExists,
+    ExtractFileExt, ExtractFileName, FileExists, Format,
     GetDirectories,
     GetEnvironmentVariable,
     IncludeTrailingPathDelimiter,
@@ -348,4 +348,161 @@ describe('testing SysUtils library', () => {
 
     });
 
+});
+
+describe('Format - specifiers', () => {
+    test('%s - string', () => {
+        expect(Format('%0:s %0:s', ['hello', 'there'])).toBe('hello hello');
+        expect(Format('%.3s', ['abcdef'])).toBe('abc'); // precision truncation
+        expect(Format('%s %d', ['Hello', 15])).toBe('Hello 15');
+    });
+
+    test('%d / %i - signed integer', () => {
+        expect( () => {
+            Format('%0:d', [42.9])
+        }).toThrow("Format '%0:d' invalid or incompatible with argument");
+        expect(() => {
+            Format('%0:d', [-42.2])
+        }).toThrow("Format '%0:d' invalid or incompatible with argument");
+        expect(Format('%d%%', [100])).toBe('100%');
+        expect(Format('%d', [7])).toBe('7');
+    });
+
+    test('%u - unsigned integer', () => {
+        expect(Format('%u', [-5])).toBe('4294967291');
+        expect( () => {
+            Format('%u', [123.8])
+        }).toThrow("Format '%u' invalid or incompatible with argument");
+    });
+
+    test('%f - fixed-point', () => {
+        expect(Format('%.2f', [1.234])).toBe('1.23'); // 1.23
+        expect(Format('%.1f', [-1.25])).toBe('-1.3');
+        expect(Format('%.0f', [2.49])).toBe('2');
+    });
+
+    test('%e / %E - scientific', () => {
+        expect( () => {
+            Format('%.2e', [1234])
+        }).toThrow("Format '%.2e' invalid or incompatible with argument");
+        expect(Format('%.2E', [0.01234])).toBe('1.2E-002');
+    });
+
+    test('%g / %G - general', () => {
+        expect(() => {Format('%.3g', [12345])}).toThrow("Format '%.3g' invalid or incompatible with argument");
+        const G = Format('%.3G', [0.0012345]);
+        expect(G).toBe('0.00123');
+    });
+
+    test('%x / %X - hex', () => {
+        expect(Format('%x', [255])).toBe('ff');
+        expect(Format('%X', [255])).toBe('FF');
+    });
+
+    test('%p - pointer-like hex', () => {
+        expect(Format('%p', [255])).toBe('000000FF');
+        expect(Format('%p %P  ', [255, 255])).toBe('000000FF 000000FF  ');
+        expect(Format('%p %PHey', [255, 255])).toBe('000000FF 000000FFHey');
+    });
+
+    test('%c - char from code', () => {
+        expect(Format('%c', [65])).toBe('A');
+    });
+
+    test('%% - literal percent', () => {
+        expect(Format('value=%%', [])).toBe('value=%');
+        expect(Format("value=%% and I'm happy", [])).toBe("value=% and I'm happy");
+    });
+});
+
+describe('Format - index/width/precision/alignment independently', () => {
+    test('indexed arguments', () => {
+        expect(Format('%1:s %0:s', ['first', 'second'])).toBe('second first');
+        expect(Format('%2:d-%0:d-%1:d', [10, 20, 30])).toBe('30-10-20');
+        expect(Format('%1:s %0:s %s %2:s', ['first', 'second', 'third'])).toBe('second first second third');
+        expect(() => Format('%1:s %0:s %s %2:s %s %s', ['first', 'second', 'third'])).toThrow("No argument for format '%1:s %0:s %s %2:s %s %s'");
+    });
+
+    test('width (right align default)', () => {
+        expect(Format('%5s', ['a'])).toBe('    a');
+        expect(Format('%5d', [42])).toBe('   42');
+    });
+
+    test('left alignment with "-" flag', () => {
+        expect(Format('%-5s', ['a'])).toBe('a    ');
+        expect(Format('%-6d', [42])).toBe('42    ');
+    });
+
+    test('precision for strings (truncation)', () => {
+        expect(Format('%.3s', ['abcdef'])).toBe('abc');
+        expect(Format('%.8s', ['abcdef'])).toBe('abcdef');
+        const S = ['hello', 'there', 'here'];
+        expect(Format('array [0..%d] of %s', [S.length-1, 'something'])).toBe('array [0..2] of something');
+    });
+
+    test('precision for floats', () => {
+        expect(Format('%.2f', [1.239])).toBe('1.24');
+        expect(Format('%.0f', [1.5])).toBe('2');
+        expect(Format('%.8f', [1.1e-3])).toBe('0.00110000');
+    });
+
+    test('sign flags for integers and floats', () => {
+        expect(Format('%d', [5])).toBe('5');
+        expect(Format('%f', [-1.2])).toBe('-1.200000');
+        expect(Format('%f', [1.23e7])).toBe('12300000.00');
+        expect(Format('%f', [1.1e1])).toBe('11.00');
+        expect(Format('%f', [1.1e-1])).toBe('0.11');
+        expect(Format('%f', [1.1e-3])).toBe('0.00');
+    });
+
+    test('width with sign', () => {
+        expect(Format('%5d', [7])).toBe('    7');
+    });
+
+    test('Width with precision', () => {
+        expect(Format('%-2.6d', [42])).toBe('000042');
+        expect(Format('%-2.6d', [-42])).toBe('-000042');
+    })
+});
+
+describe('Format - errors', () => {
+    test('out of range index', () => {
+        expect(() => Format('%3:s', ['a', 'b'])).toThrow("No argument for format '%3:s'");
+    });
+    test('non-finite number', () => {
+        expect(() => Format('%d', [Infinity])).toThrow("Format '%d' invalid or incompatible with argument");
+    });
+    test('Invalid format specifier', () => {
+        expect(() => Format('%d %o', [124, 'Hey'])).toThrow("Format '%d %o' invalid or incompatible with argument");
+        expect(() => Format('%d', [1.3])).toThrow("Format '%d' invalid or incompatible with argument");
+        expect(() => Format('%f', [50])).toThrow("Format '%f' invalid or incompatible with argument");
+        expect(() => Format('%d', [Infinity])).toThrow("Format '%d' invalid or incompatible with argument");
+        expect(() => Format('%s', [Infinity])).toThrow("Format '%s' invalid or incompatible with argument");
+    });
+    test('Empty specifier', () => {
+        expect(Format('%', [1.2345, -0.45, 1.1e3])).toBe('');
+    });
+});
+
+
+describe('Format - combined index/width/precision/alignment', () => {
+    test('integers with index/width/precision/alignment', () => {
+        expect(Format('%2:.6d|%0:8.4d|%-10d', [7, -42, 123])).toBe('000123|    0007|-42       ');
+    });
+
+    test('booleans as strings with width/precision/alignment and index', () => {
+        expect(() => Format('%1:-6.3s|%0:5s', [true, false])).toThrow("Format '%1:-6.3s|%0:5s' invalid or incompatible with argument");
+    });
+
+    test('floats (including exponential) with width/precision and alignment', () => {
+        expect(Format('%0:8.2f|%1:-7.3f|%2:10f', [1.2345, -0.45, 1.1e3])).toBe('    1.23|-0.450 |   1100.00');
+    });
+
+    test('positive/negative ints with width and precision', () => {
+        expect(Format('%1:8.5d|%0:-6.4d', [5, -12])).toBe('  -00012|0005  ');
+    });
+
+    test('small exponential to fixed with width and precision', () => {
+        expect(Format('%6.2f', [1.1e-1])).toBe('  0.11');
+    });
 });

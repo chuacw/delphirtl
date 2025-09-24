@@ -1,5 +1,7 @@
-import { DiffDuration, fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears } from "../src/dateutils";
-
+import {
+    DiffDuration, fromBlockchainTimestamp, JSDateAddDays, JSDateAddMins, JSDateAddYears,
+    YearOf, MonthOf, DayOf, HourOf, MinuteOf, SecondOf, MillisecondOf
+} from "../src/dateutils";
 
 describe('test DateUtils Date.add functionality', () => {
     /**
@@ -172,6 +174,36 @@ describe('testing DateUtils library', () => {
     });
 
 });
+
+describe('Date parts extraction', () => {
+    it('MillisecondOf/SecondOf/MinuteOf/HourOf return respective parts of local time', () => {
+        const d = new Date(2025, 0, 2, 3, 4, 5, 6); // Jan 2, 2025 03:04:05.006 local
+        expect(MillisecondOf(d)).toBe(6);
+        expect(SecondOf(d)).toBe(5);
+        expect(MinuteOf(d)).toBe(4);
+        expect(HourOf(d)).toBe(3);
+    });
+
+    it('DayOf/MonthOf/YearOf return respective calendar parts of local time', () => {
+        const d = new Date(2025, 10, 15, 12, 0, 0, 0); // Nov 15, 2025
+        expect(DayOf(d)).toBe(15);
+        // Delphi MonthOf is 1-based; ensure MonthOf matches that contract
+        expect(MonthOf(d)).toBe(11);
+        expect(YearOf(d)).toBe(2025);
+    });
+
+    it('Handles edge times correctly (end of day)', () => {
+        const d = new Date(2024, 1, 29, 23, 59, 59, 999); // Leap year Feb 29
+        expect(YearOf(d)).toBe(2024);
+        expect(MonthOf(d)).toBe(2);
+        expect(DayOf(d)).toBe(29);
+        expect(HourOf(d)).toBe(23);
+        expect(MinuteOf(d)).toBe(59);
+        expect(SecondOf(d)).toBe(59);
+        expect(MillisecondOf(d)).toBe(999);
+    });
+});
+
 
 // function getEstimatedBlockNumberForDuration(Block1: ethers.providers.Block, Block2: ethers.providers.Block, timestampInMS: number): number {
 //     const diffBlockNumber = Math.abs(Block1.number - Block2.number);
