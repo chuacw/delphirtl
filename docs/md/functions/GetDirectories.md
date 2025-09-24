@@ -26,4 +26,4 @@ Get subdirectories from the given path, using the optional predicate to filter o
 
 ## Defined in
 
-[src/sysutils.ts:189](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/sysutils.ts#L189)
+[src/sysutils.ts:189](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/sysutils.ts#L189)

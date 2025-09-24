@@ -30,7 +30,7 @@ TreeNode
 
 #### Defined in
 
-[src/collections.ts:280](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L280)
+[src/collections.ts:280](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L280)
 
 ## Properties
 
@@ -40,7 +40,7 @@ TreeNode
 
 #### Defined in
 
-[src/collections.ts:278](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L278)
+[src/collections.ts:278](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L278)
 
 ***
 
@@ -50,7 +50,7 @@ TreeNode
 
 #### Defined in
 
-[src/collections.ts:276](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L276)
+[src/collections.ts:276](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L276)
 
 ***
 
@@ -60,7 +60,7 @@ TreeNode
 
 #### Defined in
 
-[src/collections.ts:277](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L277)
+[src/collections.ts:277](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L277)
 
 ## Accessors
 
@@ -78,7 +78,7 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:310](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L310)
+[src/collections.ts:310](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L310)
 
 ## Methods
 
@@ -100,4 +100,4 @@ Returns the height of the tree. Call only when this is the root.
 
 #### Defined in
 
-[src/collections.ts:285](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/collections.ts#L285)
+[src/collections.ts:285](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/collections.ts#L285)

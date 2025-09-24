@@ -22,4 +22,4 @@ Logs the given message to the console
 
 ## Defined in
 
-[src/logutils.ts:8](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/logutils.ts#L8)
+[src/logutils.ts:8](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/logutils.ts#L8)

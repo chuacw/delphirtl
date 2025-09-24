@@ -12,7 +12,7 @@ Associates the name of an external file with a file class
 
 ## Parameters
 
-• **outFile**: `TextFile`
+• **outFile**: [`TextFile`](../classes/TextFile.md)
 
 • **filename**: `string`
 
@@ -22,4 +22,4 @@ Associates the name of an external file with a file class
 
 ## Defined in
 
-[src/rtl.ts:177](https://github.com/chuacw/delphirtl/blob/f0fe3802fcf930859eb4297a0ec19446d57ff540/src/rtl.ts#L177)
+[src/rtl.ts:178](https://github.com/chuacw/delphirtl/blob/1d6969b8a199060a984c4375d6be1f0ffa838be2/src/rtl.ts#L178)
