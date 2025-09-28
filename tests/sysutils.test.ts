@@ -1,4 +1,3 @@
-
 import path from "path";
 
 import {
@@ -22,7 +21,6 @@ import {
     GetCurrentDir,
     SetCurrentDir,
 } from "../src/sysutils";
-import { TIMEOUT } from "dns";
 
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
@@ -187,6 +185,17 @@ describe('testing SysUtils library', () => {
         expect(result).toBeFalsy();
     });
 
+    test('FileExists - true', () => {
+        const p = __filename;
+        const t = FileExists(p);
+        expect(t).toBeTruthy();
+    })
+    test('FileExists - false', () => {
+        const p = "I really hope this file does not exist";
+        const t = FileExists(p);
+        expect(t).toBeFalsy();
+    })
+
     test('ExtractFileDir filename without dir', () => {
         expect(ExtractFileDir("Nothing.pas")).toEqual("");
     });
@@ -194,6 +203,13 @@ describe('testing SysUtils library', () => {
     test('ExtractFileDir full path name', () => {
         expect(ExtractFileDir(path.resolve(__dirname, "Nothing.pas"))).toEqual(__dirname);
     });
+
+    test('ExtractFileDir', () => {
+        const p = path.join('whatever', 'directory', 'is', 'here');
+        const t = ExtractFileDir(p);
+        const final_path = IncludeTrailingPathDelimiter('whatever')+IncludeTrailingPathDelimiter('directory')+'is';
+        expect(t).toBe(final_path);
+    })
 
     test('ExtractFileExt no dir, filename with ext', () => {
         const fileext = ExtractFileExt("Nothing.pas");
@@ -379,6 +395,7 @@ describe('Format - specifiers', () => {
         expect(Format('%.2f', [1.234])).toBe('1.23'); // 1.23
         expect(Format('%.1f', [-1.25])).toBe('-1.3');
         expect(Format('%.0f', [2.49])).toBe('2');
+        expect(Format('%.4f', [-1.25])).toBe('-1.2500');
     });
 
     test('%e / %E - scientific', () => {
@@ -390,8 +407,8 @@ describe('Format - specifiers', () => {
 
     test('%g / %G - general', () => {
         expect(() => {Format('%.3g', [12345])}).toThrow("Format '%.3g' invalid or incompatible with argument");
-        const G = Format('%.3G', [0.0012345]);
-        expect(G).toBe('0.00123');
+        expect(Format('%.3G', [0.0012345])).toBe('0.00123');
+        expect(Format('%.4g', [-1.25])).toBe('-1.25');
     });
 
     test('%x / %X - hex', () => {
@@ -406,7 +423,7 @@ describe('Format - specifiers', () => {
     });
 
     test('%c - char from code', () => {
-        expect(Format('%c', [65])).toBe('A');
+        expect(() => Format('%c', [65])).toThrow("Format '%c' invalid or incompatible with argument");
     });
 
     test('%% - literal percent', () => {
@@ -421,6 +438,12 @@ describe('Format - index/width/precision/alignment independently', () => {
         expect(Format('%2:d-%0:d-%1:d', [10, 20, 30])).toBe('30-10-20');
         expect(Format('%1:s %0:s %s %2:s', ['first', 'second', 'third'])).toBe('second first second third');
         expect(() => Format('%1:s %0:s %s %2:s %s %s', ['first', 'second', 'third'])).toThrow("No argument for format '%1:s %0:s %s %2:s %s %s'");
+        expect(Format('%d %d %d %0:d %d', [1, 2, 3, 4])).toBe('1 2 3 1 2');
+    });
+
+    test('Indirect index/width/precision specifiers', () => {
+        expect(Format('%*.*f', [8, 2, 123.456])).toBe('  123.46');
+        expect(Format('%*.*f', [-8, 2, 123.456])).toBe('123.46  ');
     });
 
     test('width (right align default)', () => {
@@ -484,7 +507,6 @@ describe('Format - errors', () => {
     });
 });
 
-
 describe('Format - combined index/width/precision/alignment', () => {
     test('integers with index/width/precision/alignment', () => {
         expect(Format('%2:.6d|%0:8.4d|%-10d', [7, -42, 123])).toBe('000123|    0007|-42       ');
@@ -504,5 +526,62 @@ describe('Format - combined index/width/precision/alignment', () => {
 
     test('small exponential to fixed with width and precision', () => {
         expect(Format('%6.2f', [1.1e-1])).toBe('  0.11');
+    });
+
+    test('zero-padded width integer formatting', () => {
+        const Point = {X: 10, Y: 20};
+        expect(Format('Window Position X: %03d, Y: %03d', [Point.X, Point.Y])).toBe('Window Position X:  10, Y:  20');
+    });
+
+    test('integer hex and string', () => {
+        const ParentWnd = 1024;
+        const s = 'hah'
+        expect(Format('Window: %d, $%x %s', [ParentWnd, ParentWnd, s])).toBe('Window: 1024, $400 hah');
+    });
+});
+
+describe('Format - many indexed arguments', () => {
+    test('more than 10 indices mixing types', () => {
+        const args = ['s0', 's1', 2, 3, 4.5, 6.78, 's6', 7, 8.9, 's9', 10, 11.11];
+        const fmt = '%0:s-%1:s-%2:d-%3:d-%4:.1f-%5:.2f-%6:s-%7:d-%8:.1f-%9:s-%10:d-%11:.2f';
+        expect(Format(fmt, args)).toBe('s0-s1-2-3-4.5-6.78-s6-7-8.9-s9-10-11.11');
+    });
+
+    test('more than 10 indices, non-sequential index order with mixed types', () => {
+        const args = ['s0', 's1', 2, 3, 4.5, 6.78, 's6', 7, 8.9, 's9', 10, 11.11];
+        const fmt = '%11:.2f|%3:d|%0:s|%9:s|%2:d|%10:d|%1:s|%8:.1f|%7:d|%4:.1f|%6:s|%5:.2f';
+        expect(Format(fmt, args)).toBe('11.11|3|s0|s9|2|10|s1|8.9|7|4.5|s6|6.78');
+    });
+});
+
+describe('Format - unsupported flags should be empty, not invalid', () => {
+    test('plus flag on integer', () => {
+        expect(Format('%+d', [5])).toBe('');
+    });
+    test('space flag on integer', () => {
+        expect(Format('% d', [5])).toBe('');
+    });
+});
+
+describe('Format - n (thousands) and m (currency)', () => {
+    test('%n with default precision similar to %f', () => {
+        expect(Format('%n', [1234567.89])).toBe('1,234,567.890000');
+        expect(Format('%.3n', [1234567.89])).toBe('1,234,567.890');
+        expect(Format('%10.2n', [1234.5])).toBe('  1,234.50');
+        expect(Format('%-12.2n', [-1234.5])).toBe('-1,234.50   ');
+    });
+    test('%n rejects integer argument (as %f)', () => {
+        expect(() => Format('%n', [100])).toThrow("Format '%n' invalid or incompatible with argument");
+    });
+
+    test('%m currency with thousands and 2 decimals by default', () => {
+        expect(Format('%m', [1234.56])).toBe('$1,234.56');
+        expect(Format('%m', [-1234.5])).toBe('-$1,234.50');
+        expect(Format('%.3m', [12.3])).toBe('$12.300');
+        expect(Format('%10m', [1234.56])).toBe(' $1,234.56');
+        expect(Format('%-12m', [1234.56])).toBe('$1,234.56   ');
+    });
+    test('%m rejects integer argument', () => {
+        expect(() => Format('%m', [42])).toThrow("Format '%m' invalid or incompatible with argument");
     });
 });

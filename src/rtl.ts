@@ -319,6 +319,7 @@ Object.defineProperty(exports, 'ParamCount', {
  * @returns {number} the number of parameters passed on the command line. 
  * @category RTL
  */
+// noinspection JSUnusedGlobalSymbols
 export declare const ParamCount: number;
 
 export {
