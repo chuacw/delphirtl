@@ -9,7 +9,9 @@ npm install delphirtl
 * arrayutils
 * BaseJsonRpcServer
 * collections
-* dateutils  
+* dateutils
+* env 
+* inifiles
 * logutils  
 * messaging / Messaging
 * performanceutils
@@ -42,7 +44,8 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.25-26 | 14 Nov 2024 | Added toFormat to ArrayUtils and Date                                                                                                      |
 | 1.1.27-29 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path                                                   |
 | 1.1.30-41 | 23 Sep 2025 | Added isLastDayOfMonth to Date, Assign, AssignFile, Close/CloseFile, Rewrite, Write/WriteLn, updated usage of ParamCount from ParamCount() |
-| 1.2.1-2   | 24 Sep 2025 | Added date extraction functions, SysUtils.Format and tests |
+| 1.2.1-2   | 24 Sep 2025 | Added date extraction functions, SysUtils.Format and tests                                                                                 |
+| 1.2.3     | 30 Sep 2025 | Added .env, .ini reader/writer and parser                                                                                                  |
 
 ## Documentation
 For further documentation, see the 

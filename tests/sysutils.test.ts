@@ -213,7 +213,7 @@ describe('testing SysUtils library', () => {
 
     test('ExtractFileExt no dir, filename with ext', () => {
         const fileext = ExtractFileExt("Nothing.pas");
-        expect(fileext).toEqual("pas");
+        expect(fileext).toEqual(".pas");
     });
 
     test('ExtractFileExt no dir, filename without ext', () => {
@@ -223,7 +223,7 @@ describe('testing SysUtils library', () => {
         expect(ExtractFileExt(path.resolve("path1.path2", "Nothing"))).toEqual("");
     });
     test('ExtractFileExt dirname with dot, filename with dot', () => {
-        expect(ExtractFileExt(path.resolve("path1.path2", "Nothing.ext"))).toEqual("ext");
+        expect(ExtractFileExt(path.resolve("path1.path2", "Nothing.ext"))).toEqual(".ext");
     });
 
     test('ExtractFileName dirname with dot, filename with dot', () => {

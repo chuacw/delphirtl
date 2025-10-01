@@ -24,4 +24,4 @@ The value of the given environment variable
 
 ## Defined in
 
-[src/sysutils.ts:420](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/sysutils.ts#L420)
+[src/sysutils.ts:421](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/sysutils.ts#L421)

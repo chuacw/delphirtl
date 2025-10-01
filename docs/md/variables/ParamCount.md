@@ -16,4 +16,4 @@ the number of parameters passed on the command line.
 
 ## Defined in
 
-[src/rtl.ts:322](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/rtl.ts#L322)
+[src/rtl.ts:377](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L377)

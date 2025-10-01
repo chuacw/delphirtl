@@ -1,8 +1,104 @@
-import { ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn, Output } from "../src/rtl";
+import {ParamCount, ParamStr, Sleep, sLineBreak, Write, WriteLn, Output, TObject} from "../src/rtl";
+import {FreeAndNil} from "../src";
 
 function clearArgv() {
     while (process.argv.length > 0) process.argv.pop();
 }
+
+describe('test AfterConstruction', () => {
+    let line = "";
+    beforeEach(() => {
+        line = "";
+    });
+
+    class A extends TObject {
+        constructor() {
+            super();
+            line += `A constructor${sLineBreak}`;
+        }
+        public AfterConstruction() {
+            super.AfterConstruction();
+            line += `A AfterConstruction${sLineBreak}`;
+        }
+    }
+
+    class B extends A {
+        constructor() {
+            super();
+            line += `B constructor${sLineBreak}`;
+        }
+        // does not override AfterConstruction
+    }
+
+    class C extends B {
+        constructor() {
+            super();
+            line += `C constructor${sLineBreak}`;
+        }
+        public AfterConstruction() {
+            super.AfterConstruction();
+            line += `C AfterConstruction${sLineBreak}`;
+        }
+    }
+
+    test('AfterConstruction', () => {
+        let a = A.Create(); // → "C AfterConstruction"
+        expect(line).toEqual(`A constructor${sLineBreak}A AfterConstruction${sLineBreak}`);
+        a.Free();
+        line = "";
+        let b = B.Create(); // → "A AfterConstruction"
+        expect(line).toEqual(`A constructor${sLineBreak}B constructor${sLineBreak}A AfterConstruction${sLineBreak}`);
+        line = "";
+        let c = C.Create();
+        expect(line).toEqual(`A constructor${sLineBreak}B constructor${sLineBreak}C constructor${sLineBreak}A AfterConstruction${sLineBreak}C AfterConstruction${sLineBreak}`);
+    });
+
+});
+
+describe('test AfterDestruction', () => {
+    let line = "";
+    beforeEach(() => {
+        line = "";
+    });
+
+    class A extends TObject {
+        BeforeDestruction() {
+            super.BeforeDestruction();
+            line += `A BeforeDestruction${sLineBreak}`;
+        }
+    }
+
+    class B extends A {
+    }
+
+    class C extends B {
+        BeforeDestruction() {
+            super.BeforeDestruction();
+            line += `C BeforeDestruction${sLineBreak}`;
+        }
+    }
+
+    test('BeforeDestruction 1', () => {
+        line = '';
+        let a = A.Create(); // → "C AfterConstruction"
+        a.Free();
+        expect(line).toEqual(`A BeforeDestruction${sLineBreak}`);
+    });
+
+    test('BeforeDestruction 2', () => {
+        line = '';
+        let b = B.Create(); // → "C AfterConstruction"
+        b.Free();
+        expect(line).toEqual(`A BeforeDestruction${sLineBreak}`);
+    });
+
+    test('BeforeDestruction 3', () => {
+        line = '';
+        let c = C.Create(); // → "C AfterConstruction"
+        c.Free();
+        expect(line).toEqual(`A BeforeDestruction${sLineBreak}C BeforeDestruction${sLineBreak}`);
+    });
+});
 
 describe('testing rtl', () => {
     const LScriptName = "myscriptname";

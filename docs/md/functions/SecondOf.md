@@ -24,4 +24,4 @@ Returns the second of the minute
 
 ## Defined in
 
-[src/dateutils.ts:435](https://github.com/chuacw/delphirtl/blob/01752da42abbae178d000244800240d96a86d86e/src/dateutils.ts#L435)
+[src/dateutils.ts:435](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/dateutils.ts#L435)

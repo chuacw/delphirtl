@@ -10,3 +10,4 @@ export * from './reflectutils';
 export * from './rtl';
 export * from './sysutils';
 export * from './threadutils';
+export * from "./inifiles";

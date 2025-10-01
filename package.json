@@ -7,19 +7,28 @@
   "exports": {
     ".": "./dist/rtl.js",
     "./ArrayUtils": "./dist/arrayutils.js",
+    "./arrayUtils": "./dist/arrayutils.js",
     "./BaseJsonRpcServer": "./dist/BaseJsonRpcServer.js",
+    "./Collections": "./dist/collections.js",
     "./collections": "./dist/collections.js",
-    "./dateutils": "./dist/dateutils.js",
     "./DateUtils": "./dist/dateutils.js",
+    "./dateutils": "./dist/dateutils.js",
+    "./Env": "./dist/env.js",
+    "./env": "./dist/env.js",
+    "./IniFiles": "./dist/inifiles.js",
+    "./inifiles": "./dist/inifiles.js",
     "./logutils": "./dist/logutils.js",
     "./LogUtils": "./dist/logutils.js",
     "./Messaging": "./dist/messaging.js",
     "./messaging": "./dist/messaging.js",
+    "./Rtl": "./dist/rtl.js",
     "./rtl": "./dist/rtl.js",
-    "./sysutils": "./dist/sysutils.js",
     "./SysUtils": "./dist/sysutils.js",
+    "./sysutils": "./dist/sysutils.js",
     "./ReflectUtils": "./dist/reflectutils.js",
+    "./reflectutils": "./dist/reflectutils.js",
     "./PerformanceUtils": "./dist/performanceutils.js",
+    "./performanceutils": "./dist/performanceutils.js",
     "./ThreadUtils": "./dist/threadutils.js",
     "./threadutils": "./dist/threadutils.js"
   },
@@ -41,6 +50,12 @@
       ],
       "DateUtils": [
         "dist/dateutils"
+      ],
+      "Env": [
+        "dist/env"
+      ],
+      "IniFiles": [
+        "dist/inifiles"
       ],
       "LogUtils": [
         "dist/logutils"

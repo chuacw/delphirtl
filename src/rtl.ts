@@ -1,6 +1,63 @@
 import assert = require("assert");
 import './dateutils'; // Import all the prototypes into delphirtl
 
+/**
+ * Implements Delphi TObject semantics where you have to call .Free() to destroy the object.
+ * Has AfterConstruction and BeforeDestruction methods, which can be overridden.
+ *
+ * @category RTL
+ */
+class TObject {
+
+    private _isDestroyed: boolean = false;
+
+    /**
+     * performs cleanup tasks and destroys the object
+     */
+    public destroy(): void {
+        if (this._isDestroyed) return;
+        this.BeforeDestruction();
+        // destruction code
+        this._isDestroyed = true;
+    }
+    public Destroy(): void { this.destroy(); }
+
+    /**
+     * Calls destroy to perform any cleanup tasks. Call Free() to destroy the object, so as to retain Delphi-style AfterConstruction and BeforeDestruction semantics.
+     */
+    public free() {
+        this.destroy();
+    }
+
+    /**
+     * Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestruction semantics.
+     */
+    public Free() {
+        this.free();
+    }
+
+    /**
+     * Creates a new instance of the class. To create a new constructor, declare the constructor(args) method
+     * and call the super constructor. Then, to instantiate the class, call YourClass.Create(args) instead of new YourClass(args),
+     * so as to retain Delphi-style AfterConstruction and BeforeDestruction semantics.
+     *
+     * @param args
+     * @constructor
+     */
+    static Create<T extends TObject>(this: new (...args: any[]) => T, ...args: any[]): T {
+        const instance = new this(...args);
+
+        if (instance.AfterConstruction && typeof instance.AfterConstruction === 'function') {
+            instance.AfterConstruction();
+        }
+
+        return instance;
+    }
+
+    public AfterConstruction(): void { }
+    public BeforeDestruction(): void { }
+}
+
 const sLineBreak = process.platform === 'win32' ? '\r\n' : '\n';
 
 /**
@@ -91,7 +148,9 @@ function getLauncher(): string {
  * @category RTL
  */
 async function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    // Ensure we do not resolve earlier than requested due to timer rounding
+    const delay = Math.max(0, Math.ceil(ms));
+    return new Promise(resolve => setTimeout(resolve, delay + 1));
 }
 
 /**
@@ -328,10 +387,10 @@ export {
     CommonMethodsOrProperties,
     UNUSED, getLauncher,
 
+    TObject,
     sleep, sleep as Sleep, sLineBreak,
     ParamStr, ParamStr as getParamStr,
     TextFile, AssignFile, AssignFile as Assign, Append,
     CloseFile, CloseFile as Close, Output, Rewrite,
     Write, WriteLn, Halt
 }
-

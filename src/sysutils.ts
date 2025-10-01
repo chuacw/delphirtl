@@ -1,8 +1,9 @@
 import path from "path";
 import * as fs from "fs";
 import assert from "assert";
-import { chdir, cwd } from "process";
-import { FormatDateTime } from "./dateutils";
+import {chdir, cwd} from "process";
+import {FormatDateTime} from "./dateutils";
+import {TObject} from "./rtl";
 
 /**
  * Returs true if the given year is a leap year
@@ -12,7 +13,7 @@ import { FormatDateTime } from "./dateutils";
  * @category SysUtils
  */
 function IsLeapYear(Year: number): boolean {
-    //   Result := (Year mod 4 = 0) and ((Year mod 100 <> 0) or (Year mod 400 = 0));
+    //   Result := (Year mod 4 = 0) and ((Year mod 100 <> 0) or Free(Year mod 400 = 0));
     const result = (Year % 4 == 0) && ((Year % 100 != 0) || (Year % 400 == 0));
     return result;
 }
@@ -288,7 +289,7 @@ function ExtractFileDir(AFileNameOrPath: string): string {
 
 /**
  * Extracts the file extension, given the filename, AFileName
- * For example, if given "Nothing.pas", returns "pas"
+ * For example, if given "Nothing.pas", returns ".pas"
  * If given "Nothing", returns ""
  *
  * @param {string} AFilename
@@ -300,7 +301,7 @@ function ExtractFileExt(AFilename: string): string {
     const LPathDelimIndex = AFilename.lastIndexOf(path.sep);
     const index = AFilename.lastIndexOf(".");
     if (index > LPathDelimIndex) { // ensure . is after path separator
-        result = (index == -1) ? "" : AFilename.substring(index, AFilename.length);
+        result = (index === -1) ? "" : AFilename.substring(index, AFilename.length);
     }
     return result;
 }
@@ -1067,6 +1068,7 @@ type TEraInfo = {
     EraEnd: Date;
 }
 
+/// A single character
 type Char =
     | 'A' | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M"
     | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
@@ -1100,55 +1102,66 @@ type TFormatSettings = {
     NormalizedLocaleName: string;
 }
 
-Object.defineProperty(exports, 'FormatSettings',
-    {
-        get(): TFormatSettings {
-            return {
-                CurrencyString: '',
-                CurrencyFormat: 0,
-                CurrencyDecimals: 0,
-                DateSeparator: '/',
-                TimeSeparator: ':',
-                ListSeparator: ',',
-                ShortDateFormat: 'dd/MM/yyyy',
-                LongDateFormat: 'dddd, dd MMMMM yyyy HH:nn:ss',
-                TimeAMString: 'AM',
-                TimePMString: 'PM',
-                ShortTimeFormat: 'HH:nn',
-                LongTimeFormat: 'HH:nn:ss',
-                ShortMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                LongMonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                ShortDayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                LongDayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                EraInfo: [],
-                ThousandSeparator: ',',
-                DecimalSeparator: '.',
-                TwoDigitYearCenturyWindow: 50,
-                NegCurrFormat: 0,
-                NormalizedLocaleName: "",
-            };
-        },
-        enumerable: true
-    }
-);
+class FormatSettings {
+    static CurrencyString: string = '';
+    static CurrencyFormat: number = 0;
+    static CurrencyDecimals: number = 0;
+    static DateSeparator: Char = '/';
+    static TimeSeparator: Char = ':';
+    static ListSeparator: Char = ',';
+    static ShortDateFormat: string = 'dd/MM/yyyy';
+    static LongDateFormat: string = 'dddd, dd MMMMM yyyy HH:nn:ss';
+    static TimeAMString: string = 'AM';
+    static TimePMString: string = 'PM';
+    static ShortTimeFormat: string = 'HH:nn';
+    static LongTimeFormat: string = 'HH:nn:ss';
+    static ShortMonthNames: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    static LongMonthNames: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    static ShortDayNames: string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    static LongDayNames: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    static EraInfo: TEraInfo[] = [];
+    static ThousandSeparator: Char = ',';
+    static DecimalSeparator: Char = '.';
+    static TwoDigitYearCenturyWindow: number = 50;
+    static NegCurrFormat: number = 0;
+    static NormalizedLocaleName: string = "";
 
-// noinspection JSUnusedGlobalSymbols
-export declare const FormatSettings: TFormatSettings;
+}
+
+/**
+ * This separates the end of a path from a filename
+ */
+const PathDelim = path.sep;
+/**
+ * This separates a path from another path
+ */
+const PathSep = path.delimiter;
+
+// /**
+//  * Not possible to implement Delphi-style FreeAndNil properly in TypeScript/JavaScript
+//  * @param o
+//  *
+//  */
+// function FreeAndNil(o: Object | TObject) {
+//     if (o instanceof TObject) {
+//         o.destroy();
+//     }
+// }
 
 export {
     CreateDir, DirectoryExists,
-    GetDirectories, GetCurrentDir, SetCurrentDir, 
+    GetDirectories, GetCurrentDir, SetCurrentDir,
     RemoveDir,
     ExtractFileDir,
     ExtractFileExt,
     ExtractFileName,
     FileExists,
-    FormatDateTime, Format,
+    FormatDateTime, Format, FormatSettings,
     IncludeTrailingPathDelimiter,
     LowerCase, UpperCase, LowerCase as lowerCase, UpperCase as upperCase,
     DeleteEnvironmentVariable, ExistsEnvironmentVariable,
     GetEnvironmentVariable, SetEnvironmentVariable,
     hasMessageField, hasFieldOfType, isArbitraryObject,
-    IsLeapYear,
+    IsLeapYear, PathDelim, PathSep,
     ENV_NEXT_PREFIX, ENV_REACT_PREFIX, ENV_VITE_PREFIX,
 }
