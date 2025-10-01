@@ -36,8 +36,8 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.0     | 11 Jul 2022 | Added Messaging and example                                                                                                                |
 | 1.1.1     | 11 Jul 2022 | Fixed Messaging and example to use better names                                                                                            |
 | 1.1.2     | 12 Jul 2022 | added subscribeToWrappedMessage, sendWrappedMessage, unsubscribeWrappedMessage and more unit tests                                         |
-| 1.1.8     | 2 Oct 2024 | Added threadutils, reflectutils and hasMessageField, hasFieldOfType in sysutils, fixed exports in index.ts                                 |
-| 1.1.13-16 | 6 Oct 2024 | Added List\<T\> to collections                                                                                                             |
+| 1.1.8     | 2 Oct 2024  | Added threadutils, reflectutils and hasMessageField, hasFieldOfType in sysutils, fixed exports in index.ts                                 |
+| 1.1.13-16 | 6 Oct 2024  | Added List\<T\> to collections                                                                                                             |
 | 1.1.17    | 12 Oct 2024 | Added various add* functionality to Date                                                                                                   |
 | 1.1.18    | 13 Oct 2024 | Added isArbitraryObject                                                                                                                    |
 | 1.1.19-20 | 19 Oct 2024 | Added haveNoDuplicates to ArrayUtils                                                                                                       |
@@ -45,7 +45,7 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.27-29 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path                                                   |
 | 1.1.30-41 | 23 Sep 2025 | Added isLastDayOfMonth to Date, Assign, AssignFile, Close/CloseFile, Rewrite, Write/WriteLn, updated usage of ParamCount from ParamCount() |
 | 1.2.1-2   | 24 Sep 2025 | Added date extraction functions, SysUtils.Format and tests                                                                                 |
-| 1.2.3     | 30 Sep 2025 | Added .env, .ini reader/writer and parser                                                                                                  |
+| 1.2.3     | 1 Oct 2025  | Added .env, .ini reader/writer and parser                                                                                                  |
 
 ## Documentation
 For further documentation, see the 
