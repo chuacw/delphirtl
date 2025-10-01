@@ -17,7 +17,9 @@ class TObject {
     public destroy(): void {
         if (this._isDestroyed) return;
         this.BeforeDestruction();
-        // destruction code
+        // place future destruction code below
+
+        // end destruction code above
         this._isDestroyed = true;
     }
     public Destroy(): void { this.destroy(); }
@@ -54,7 +56,22 @@ class TObject {
         return instance;
     }
 
+    /**
+     * Responds after the last constructor has executed.
+     *
+     * AfterConstruction is called automatically after the object's last constructor has executed. Do not call it explicitly in your applications.
+     *
+     * The AfterConstruction method implemented in TObject does nothing. Override this method when creating a class that performs an action after the object is created.
+     */
     public AfterConstruction(): void { }
+
+    /**
+     * Responds before the first destructor executes.
+     *
+     * BeforeDestruction is called automatically before the object's first destructor executes. Do not call it explicitly in your applications.
+     *
+     * The BeforeDestruction method implemented in TObject does nothing. Override this method when creating a class that performs an action before the object is destroyed.
+     */
     public BeforeDestruction(): void { }
 }
 

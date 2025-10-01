@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/rtl.ts:166](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L166)
+[src/rtl.ts:188](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L188)
 
 ## Properties
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/rtl.ts:162](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L162)
+[src/rtl.ts:184](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L184)
 
 ***
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[src/rtl.ts:164](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L164)
+[src/rtl.ts:186](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L186)
 
 ***
 
@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[src/rtl.ts:163](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L163)
+[src/rtl.ts:185](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L185)
 
 ## Methods
 
@@ -62,7 +62,7 @@
 
 #### Defined in
 
-[src/rtl.ts:209](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L209)
+[src/rtl.ts:231](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L231)
 
 ***
 
@@ -80,7 +80,7 @@
 
 #### Defined in
 
-[src/rtl.ts:172](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L172)
+[src/rtl.ts:194](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L194)
 
 ***
 
@@ -98,7 +98,7 @@
 
 #### Defined in
 
-[src/rtl.ts:191](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L191)
+[src/rtl.ts:213](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L213)
 
 ***
 
@@ -116,4 +116,4 @@
 
 #### Defined in
 
-[src/rtl.ts:205](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L205)
+[src/rtl.ts:227](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L227)

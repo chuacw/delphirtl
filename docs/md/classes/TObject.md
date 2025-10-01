@@ -25,13 +25,19 @@ Has AfterConstruction and BeforeDestruction methods, which can be overridden.
 
 > **AfterConstruction**(): `void`
 
+Responds after the last constructor has executed.
+
+AfterConstruction is called automatically after the object's last constructor has executed. Do not call it explicitly in your applications.
+
+The AfterConstruction method implemented in TObject does nothing. Override this method when creating a class that performs an action after the object is created.
+
 #### Returns
 
 `void`
 
 #### Defined in
 
-[src/rtl.ts:52](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L52)
+[src/rtl.ts:66](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L66)
 
 ***
 
@@ -39,13 +45,19 @@ Has AfterConstruction and BeforeDestruction methods, which can be overridden.
 
 > **BeforeDestruction**(): `void`
 
+Responds before the first destructor executes.
+
+BeforeDestruction is called automatically before the object's first destructor executes. Do not call it explicitly in your applications.
+
+The BeforeDestruction method implemented in TObject does nothing. Override this method when creating a class that performs an action before the object is destroyed.
+
 #### Returns
 
 `void`
 
 #### Defined in
 
-[src/rtl.ts:53](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L53)
+[src/rtl.ts:75](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L75)
 
 ***
 
@@ -61,7 +73,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/rtl.ts:14](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L14)
+[src/rtl.ts:17](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L17)
 
 ***
 
@@ -75,7 +87,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/rtl.ts:18](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L18)
+[src/rtl.ts:25](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L25)
 
 ***
 
@@ -91,7 +103,7 @@ Calls destroy to perform any cleanup tasks. Call Free() to destroy the object, s
 
 #### Defined in
 
-[src/rtl.ts:23](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L23)
+[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L30)
 
 ***
 
@@ -107,7 +119,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L30)
+[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L37)
 
 ***
 
@@ -135,4 +147,4 @@ so as to retain Delphi-style AfterConstruction and BeforeDestruction semantics.
 
 #### Defined in
 
-[src/rtl.ts:42](https://github.com/chuacw/delphirtl/blob/05c2ea653decdb53a49ed6866b6aa0d956ef8b01/src/rtl.ts#L42)
+[src/rtl.ts:49](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L49)
