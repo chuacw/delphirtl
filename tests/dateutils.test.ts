@@ -18,9 +18,19 @@ describe('test DateUtils Date.add functionality', () => {
         const newDate = now.addSeconds(1);
         expect(newDate.getTime()).toEqual(now.getTime() + ONE_SEC);
     });
+    test('Date.addSeconds()', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addSeconds();
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_SEC);
+    });
     test('Date.addMinutes(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addMinutes(1);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_MIN);
+    });
+    test('Date.addMinutes()', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addMinutes();
         expect(newDate.getTime()).toEqual(now.getTime() + ONE_MIN);
     });
     test('Date.addHours(1)', () => {
@@ -28,14 +38,29 @@ describe('test DateUtils Date.add functionality', () => {
         const newDate = now.addHours(1);
         expect(newDate.getTime()).toEqual(now.getTime() + ONE_HOUR);
     });
+    test('Date.addHours()', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addHours();
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_HOUR);
+    });
     test('Date.addDays(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addDays(1);
         expect(newDate.getTime()).toEqual(now.getTime() + ONE_DAY);
     });
+    test('Date.addDays()', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addDays();
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_DAY);
+    });
     test('Date.addWeeks(1)', () => {
         const now = new Date(1990, 1, 1, 0, 0, 0);
         const newDate = now.addWeeks(1);
+        expect(newDate.getTime()).toEqual(now.getTime() + ONE_WEEK);
+    });
+    test('Date.addWeeks()', () => {
+        const now = new Date(1990, 1, 1, 0, 0, 0);
+        const newDate = now.addWeeks();
         expect(newDate.getTime()).toEqual(now.getTime() + ONE_WEEK);
     });
     test('Date.addMonths(1)', () => {
@@ -44,9 +69,21 @@ describe('test DateUtils Date.add functionality', () => {
         const duration = DiffDuration(newDate, now);
         expect(duration.months).toEqual(1);
     });
+    test('Date.addMonths()', () => {
+        const now = new Date(1990, 0, 1, 0, 0, 0);
+        const newDate = now.addMonths();
+        const duration = DiffDuration(newDate, now);
+        expect(duration.months).toEqual(1);
+    });
     test('Date.addYears(1)', () => {
         const now = new Date(1990, 0, 1, 0, 0, 0);
         const newDate = now.addYears(1);
+        const duration = DiffDuration(newDate, now);
+        expect(duration.years).toEqual(1);
+    });
+    test('Date.addYears()', () => {
+        const now = new Date(1990, 0, 1, 0, 0, 0);
+        const newDate = now.addYears();
         const duration = DiffDuration(newDate, now);
         expect(duration.years).toEqual(1);
     });

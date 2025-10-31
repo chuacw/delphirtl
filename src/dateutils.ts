@@ -11,21 +11,21 @@ declare global {
          * @param {number} seconds The number of seconds to add
          * @returns {Date} 
          */
-        addSeconds(seconds: number): Date;
+        addSeconds(seconds?: number): Date;
 
         /**
          * Adds the given number of minutes to a new instance of Date, with the starting value from this instance
          * @param minutes The number of minutes to add
          * @returns {Date}
          */
-        addMinutes(minutes: number): Date;
+        addMinutes(minutes?: number): Date;
 
         /**
          * Adds the given number of hours to a new instance of Date, with the starting value from this instance
          * @param hours The number of hours to add
          * @returns {Date}
          */
-        addHours(hours: number): Date;
+        addHours(hours?: number): Date;
 
         /**
          * 
@@ -33,7 +33,7 @@ declare global {
          * @param days The number of days to add
          * @returns {Date}
          */
-        addDays(days: number): Date;
+        addDays(days?: number): Date;
 
         /**
          * 
@@ -41,7 +41,7 @@ declare global {
          * @param weeks The number of weeks to add
          * @returns {Date}
          */
-        addWeeks(weeks: number): Date;
+        addWeeks(weeks?: number): Date;
 
         /**
          * 
@@ -49,7 +49,7 @@ declare global {
          * @param months The number of months (30 days) to add
          * @returns {Date}
          */
-        addMonths(months: number): Date;
+        addMonths(months?: number): Date;
 
         /**
          * 
@@ -57,7 +57,7 @@ declare global {
          * @param years The number of years (365 days per year) to add
          * @returns {Date}
          */
-        addYears(years: number): Date;
+        addYears(years?: number): Date;
 
         /**
          * Checks if this date instance is the last day of the month
@@ -119,45 +119,45 @@ Date.prototype.ToBlockchainTimestamp = function(): number {
 /**
  * Returns a new instance of Date with the added number of seconds
 */
-Date.prototype.addSeconds = function(seconds: number) {
+Date.prototype.addSeconds = function(seconds?: number) {
     const result = new Date(this);
-    result.setSeconds(result.getSeconds() + seconds);
+    result.setSeconds(result.getSeconds() + (seconds ?? 1));
     return result;
 };
 
 /**
 * Returns a new instance of Date with the added number of minutes
 */
-Date.prototype.addMinutes = function(minutes: number) {
+Date.prototype.addMinutes = function(minutes?: number) {
     const result = new Date(this);
-    result.setMinutes(result.getMinutes() + minutes);
+    result.setMinutes(result.getMinutes() + (minutes ?? 1));
     return result;
 };
 
 /**
  * Returns a new instance of Date with the added number of hours
 */
-Date.prototype.addHours = function(hours: number) {
+Date.prototype.addHours = function(hours?: number) {
     const result = new Date(this);
-    result.setHours(result.getHours() + hours);
+    result.setHours(result.getHours() + (hours ?? 1));
     return result;
 };
 
 /**
  * Returns a new instance of Date with the added number of days
 */
-Date.prototype.addDays = function(days: number) {
+Date.prototype.addDays = function(days?: number) {
     const result = new Date(this);
-    result.setDate(result.getDate() + days);
+    result.setDate(result.getDate() + (days ?? 1));
     return result;
 };
 
 /**
  * Returns a new instance of Date with the added number of weeks
 */
-Date.prototype.addWeeks = function(weeks: number) {
+Date.prototype.addWeeks = function(weeks?: number) {
     const newDate = new Date(this);
-    const result = newDate.addDays(weeks * 7);
+    const result = newDate.addDays((weeks ?? 1) * 7);
     return result;
 };
 
@@ -183,10 +183,10 @@ Date.prototype.addMonths = function(months?: number) {
 /**
  * Returns a new instance of Date with the added number of years
 */
-Date.prototype.addYears = function(years: number) {
+Date.prototype.addYears = function(years?: number) {
     const result = new Date(this);
     var dt = result.getDate();
-    result.setFullYear(result.getFullYear() + years);
+    result.setFullYear(result.getFullYear() + (years ?? 1));
     var currDt = result.getDate();
     if (dt !== currDt) {
         result.addDays(-currDt);
