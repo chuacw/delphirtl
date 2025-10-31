@@ -37,7 +37,7 @@ The AfterConstruction method implemented in TObject does nothing. Override this 
 
 #### Defined in
 
-[src/rtl.ts:66](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L66)
+[src/rtl.ts:66](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L66)
 
 ***
 
@@ -57,7 +57,7 @@ The BeforeDestruction method implemented in TObject does nothing. Override this 
 
 #### Defined in
 
-[src/rtl.ts:75](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L75)
+[src/rtl.ts:75](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L75)
 
 ***
 
@@ -73,7 +73,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/rtl.ts:17](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L17)
+[src/rtl.ts:17](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L17)
 
 ***
 
@@ -87,7 +87,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/rtl.ts:25](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L25)
+[src/rtl.ts:25](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L25)
 
 ***
 
@@ -103,7 +103,7 @@ Calls destroy to perform any cleanup tasks. Call Free() to destroy the object, s
 
 #### Defined in
 
-[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L30)
+[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L30)
 
 ***
 
@@ -119,7 +119,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L37)
+[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L37)
 
 ***
 
@@ -147,4 +147,4 @@ so as to retain Delphi-style AfterConstruction and BeforeDestruction semantics.
 
 #### Defined in
 
-[src/rtl.ts:49](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L49)
+[src/rtl.ts:49](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L49)

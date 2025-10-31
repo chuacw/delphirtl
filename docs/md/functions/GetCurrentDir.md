@@ -18,4 +18,4 @@ The current working directory
 
 ## Defined in
 
-[src/sysutils.ts:259](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/sysutils.ts#L259)
+[src/sysutils.ts:259](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/sysutils.ts#L259)

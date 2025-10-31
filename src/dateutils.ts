@@ -165,9 +165,19 @@ Date.prototype.addWeeks = function(weeks: number) {
  * Returns a new instance of Date with the added number of months
 */
 Date.prototype.addMonths = function(months?: number) {
-    const result = new Date(this);
-    result.setMonth(result.getMonth() + (months == undefined ? 1 : months));
-    return result;
+  const result = new Date(this);          // work on a copy
+  const originalDay = result.getDate();
+
+  // avoid month overflow by moving to the 1st, then change month
+  result.setDate(1);
+  const value = result.getMonth() + (months ?? 1);
+  result.setMonth(value);
+
+  // clamp to last day of the target month
+  const daysInTarget = new Date(result.getFullYear(), result.getMonth() + 1, 0).getDate();
+  result.setDate(Math.min(originalDay, daysInTarget));
+
+  return result;
 };
 
 /**

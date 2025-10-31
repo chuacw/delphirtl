@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/inifiles.ts:16](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L16)
+[src/inifiles.ts:16](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L16)
 
 ## Properties
 
@@ -40,7 +40,7 @@
 
 #### Defined in
 
-[src/inifiles.ts:14](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L14)
+[src/inifiles.ts:14](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L14)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/inifiles.ts:13](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L13)
+[src/inifiles.ts:13](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L13)
 
 ## Methods
 
@@ -78,7 +78,7 @@ The AfterConstruction method implemented in TObject does nothing. Override this 
 
 #### Defined in
 
-[src/rtl.ts:66](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L66)
+[src/rtl.ts:66](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L66)
 
 ***
 
@@ -102,7 +102,7 @@ The BeforeDestruction method implemented in TObject does nothing. Override this 
 
 #### Defined in
 
-[src/rtl.ts:75](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L75)
+[src/rtl.ts:75](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L75)
 
 ***
 
@@ -126,7 +126,7 @@ The BeforeDestruction method implemented in TObject does nothing. Override this 
 
 #### Defined in
 
-[src/inifiles.ts:215](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L215)
+[src/inifiles.ts:215](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L215)
 
 ***
 
@@ -146,7 +146,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/inifiles.ts:20](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L20)
+[src/inifiles.ts:20](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L20)
 
 ***
 
@@ -164,7 +164,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/rtl.ts:25](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L25)
+[src/rtl.ts:25](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L25)
 
 ***
 
@@ -186,7 +186,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/inifiles.ts:25](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L25)
+[src/inifiles.ts:25](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L25)
 
 ***
 
@@ -208,7 +208,7 @@ performs cleanup tasks and destroys the object
 
 #### Defined in
 
-[src/inifiles.ts:208](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L208)
+[src/inifiles.ts:208](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L208)
 
 ***
 
@@ -228,7 +228,7 @@ Calls destroy to perform any cleanup tasks. Call Free() to destroy the object, s
 
 #### Defined in
 
-[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L30)
+[src/rtl.ts:30](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L30)
 
 ***
 
@@ -248,7 +248,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L37)
+[src/rtl.ts:37](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L37)
 
 ***
 
@@ -266,7 +266,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:224](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L224)
+[src/inifiles.ts:224](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L224)
 
 ***
 
@@ -288,7 +288,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/env.ts:45](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/env.ts#L45)
+[src/env.ts:45](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/env.ts#L45)
 
 ***
 
@@ -314,7 +314,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:147](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L147)
+[src/inifiles.ts:147](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L147)
 
 ***
 
@@ -340,7 +340,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:77](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L77)
+[src/inifiles.ts:77](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L77)
 
 ***
 
@@ -366,7 +366,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:111](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L111)
+[src/inifiles.ts:111](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L111)
 
 ***
 
@@ -392,7 +392,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:121](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L121)
+[src/inifiles.ts:121](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L121)
 
 ***
 
@@ -418,7 +418,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:90](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L90)
+[src/inifiles.ts:90](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L90)
 
 ***
 
@@ -444,7 +444,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:65](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L65)
+[src/inifiles.ts:65](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L65)
 
 ***
 
@@ -470,7 +470,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:54](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L54)
+[src/inifiles.ts:54](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L54)
 
 ***
 
@@ -494,7 +494,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:176](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L176)
+[src/inifiles.ts:176](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L176)
 
 ***
 
@@ -518,7 +518,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:183](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L183)
+[src/inifiles.ts:183](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L183)
 
 ***
 
@@ -544,7 +544,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:41](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L41)
+[src/inifiles.ts:41](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L41)
 
 ***
 
@@ -570,7 +570,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:190](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L190)
+[src/inifiles.ts:190](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L190)
 
 ***
 
@@ -596,7 +596,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:117](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L117)
+[src/inifiles.ts:117](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L117)
 
 ***
 
@@ -614,7 +614,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:228](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L228)
+[src/inifiles.ts:228](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L228)
 
 ***
 
@@ -636,7 +636,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:33](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L33)
+[src/inifiles.ts:33](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L33)
 
 ***
 
@@ -654,7 +654,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:232](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L232)
+[src/inifiles.ts:232](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L232)
 
 ***
 
@@ -678,7 +678,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:37](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L37)
+[src/inifiles.ts:37](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L37)
 
 ***
 
@@ -704,7 +704,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:157](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L157)
+[src/inifiles.ts:157](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L157)
 
 ***
 
@@ -730,7 +730,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:86](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L86)
+[src/inifiles.ts:86](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L86)
 
 ***
 
@@ -756,7 +756,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:125](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L125)
+[src/inifiles.ts:125](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L125)
 
 ***
 
@@ -782,7 +782,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:133](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L133)
+[src/inifiles.ts:133](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L133)
 
 ***
 
@@ -808,7 +808,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:97](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L97)
+[src/inifiles.ts:97](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L97)
 
 ***
 
@@ -834,7 +834,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:73](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L73)
+[src/inifiles.ts:73](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L73)
 
 ***
 
@@ -860,7 +860,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:61](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L61)
+[src/inifiles.ts:61](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L61)
 
 ***
 
@@ -886,7 +886,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:46](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L46)
+[src/inifiles.ts:46](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L46)
 
 ***
 
@@ -912,7 +912,7 @@ Destroys the object, maintaining Delphi-style AfterConstruction and BeforeDestru
 
 #### Defined in
 
-[src/inifiles.ts:129](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/inifiles.ts#L129)
+[src/inifiles.ts:129](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/inifiles.ts#L129)
 
 ***
 
@@ -944,4 +944,4 @@ so as to retain Delphi-style AfterConstruction and BeforeDestruction semantics.
 
 #### Defined in
 
-[src/rtl.ts:49](https://github.com/chuacw/delphirtl/blob/d71b924f22790501bc0f05faa45f3a3158bae305/src/rtl.ts#L49)
+[src/rtl.ts:49](https://github.com/chuacw/delphirtl/blob/99d8c44e63124381b30b888cd4b51a7f5a9f03a2/src/rtl.ts#L49)

@@ -48,7 +48,7 @@ import { ExtractFileName } from "delphirtl/sysutils"; // import ExtractFileName 
 | 1.1.27-29 | 25 Nov 2024 | Fixed FileExists test on directory, Fixed DirectoryExists and GetDirectories dirent.path                                                   |
 | 1.1.30-41 | 23 Sep 2025 | Added isLastDayOfMonth to Date, Assign, AssignFile, Close/CloseFile, Rewrite, Write/WriteLn, updated usage of ParamCount from ParamCount() |
 | 1.2.1-2   | 24 Sep 2025 | Added date extraction functions, SysUtils.Format and tests                                                                                 |
-| 1.2.3     | 1 Oct 2025  | Added .env, .ini reader/writer and parser                                                                                                  |
+| 1.2.3-4   | 1 Oct 2025  | Added .env, .ini reader/writer and parser, Added TObject and Before/AfterCons/Destruction, TIniFile, TMemIniFile, updated Sleep            |   
 
 ## Documentation
 For further documentation, see the 
