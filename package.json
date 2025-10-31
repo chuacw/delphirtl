@@ -1,6 +1,6 @@
 {
   "name": "delphirtl",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "RTL functions from Delphi",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
